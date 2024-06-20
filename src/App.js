@@ -3,11 +3,21 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { Login } from './pages/OnBoarding/Login';
+import { SignUp } from "./pages/OnBoarding/SignUp";
+import { Dashboard } from "./pages/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Login />,
+  },
+  {
+    path: "/signUp",
+    element: <SignUp />,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
   },
 ]);
 function App() {
