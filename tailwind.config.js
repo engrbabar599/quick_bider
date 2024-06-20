@@ -13,10 +13,13 @@ module.exports = {
           "4": "#828282",
           "5": "#E0E0E0"
         }
-
-      }
+      },
+      screens: {
+        'xs': '420px',
+      },
     },
   },
+  
   plugins: [],
 }
 
