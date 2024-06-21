@@ -34,4 +34,8 @@ input[type="number"] {
   .font-heading {
     @apply font-poppins font-semibold text-gray-1 text-xl;
   }
+
+  .font-base-2 {
+    @apply font-inter font-semibold text-sm text-gray-4;
+  }
 }

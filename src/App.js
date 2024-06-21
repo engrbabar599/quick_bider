@@ -5,11 +5,12 @@ import {
 import { Login } from './pages/OnBoarding/Login';
 import { SignUp } from "./pages/OnBoarding/SignUp";
 import { Dashboard } from "./pages/Dashboard/Dashboard";
+import { Layout } from "./pages/Layout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: (<Login />),
   },
   {
     path: "/signUp",
@@ -17,7 +18,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <Layout>
+        <Dashboard />
+      </Layout>
+    ),
   },
 ]);
 function App() {

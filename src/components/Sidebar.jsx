@@ -48,7 +48,7 @@ export const Sidebar = () => {
         },
     ]
     return (
-        <div className='flex flex-col w-full  justify-start border-r'>
+        <div className='xl:flex hidden flex-col w-full  justify-start border-r'>
             <div className='p-6'>
                 <img src={IMAGES.coloredLogoWithName} alt="" className='h-12 object-contain' />
             </div>

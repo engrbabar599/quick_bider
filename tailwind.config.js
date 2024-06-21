@@ -4,11 +4,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "poppins": ["Poppins"]
+        "poppins": ["Poppins"],
+        "inter": ["Inter"]
       },
       colors: {
         "custom-blue": "#6F9CFF",
         "custom-green": "#3EB14A",
+        "custom-gray": "#F5F5F5",
         gray: {
           "1": "#333333",
           "2": "#4F4F4F",
