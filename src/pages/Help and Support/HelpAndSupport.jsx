@@ -52,7 +52,7 @@ function HelpAndSupport() {
             </div>
             <div className="text-center">
               <button className="mx-auto bg-blue text-white px-6 py-2 rounded-lg hover:bg-blue-600 mt-4">
-                Update bank details
+                submit
               </button>
             </div>
           </form>

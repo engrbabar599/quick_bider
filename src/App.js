@@ -7,6 +7,8 @@ import Setting from "./pages/Account Settings/Setting";
 import HelpAndSupport from "./pages/Help and Support/HelpAndSupport";
 import Wallet from "./pages/Wallet/Wallet";
 import Claim from "./pages/Claim/Claim";
+import Investment from "./pages/Investment/Investment";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,8 +29,11 @@ const router = createBrowserRouter([
   {
     path: "claim",
     element: <Claim/>
+  },
+  {
+    path: "investment",
+    element: <Investment/>
   }
-  
 ]);
 function App() {
   return (
