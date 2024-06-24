@@ -10,7 +10,9 @@ const IMAGES = {
     sipAd: require("../assets/images/sipAd.png"),
     mustang: require("../assets/images/mustang.png"),
     winnerPic: require("../assets/images/winner-image.png"),
-    mybids1: require("../assets/images/mybids-1.png")
+    mybids1: require("../assets/images/mybids-1.png"),
+    reviewPic: require("../assets/images/reviewPic.png"),
+    adPlaceholder: require("../assets/images/video-ad-placeholder.png")
 
 }
 

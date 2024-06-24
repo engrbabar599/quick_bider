@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       fontFamily: {
         "poppins": ["Poppins"],
-        "inter": ["Inter"]
+        "inter": ["Inter"],
+        "open-sans": ["Open Sans"]
       },
       colors: {
         "custom-blue": "#6F9CFF",

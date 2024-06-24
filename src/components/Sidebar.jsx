@@ -44,13 +44,14 @@ export const Sidebar = () => {
         {
             name: "Logout",
             icon: LogoutIcon,
-            navigate: "/logout"
+            navigate: "/"
         },
     ]
+
     return (
         <div className='xl:flex hidden flex-col w-full  justify-start border-r'>
             <div className='p-6'>
-                <img src={IMAGES.coloredLogoWithName} alt="" className='h-12 object-contain' />
+                <img src={IMAGES.coloredLogoWithName} alt="" className='h-10 object-contain' />
             </div>
 
             <div className='flex flex-col  space-y-4'>
@@ -59,12 +60,12 @@ export const Sidebar = () => {
                     return (
                         <NavLink
                             to={data?.navigate}
-                            className={({ isActive }) => `w-full flex flex-row space-x-4 py-4 px-6 hover:bg-custom-blue hover:bg-opacity-10 outline-none ${isActive ? "bg-custom-blue bg-opacity-10" : " bg-white"}`}>
+                            className={({ isActive }) => `w-full flex lg:flex-row flex-col items-center lg:justify-start justify-center space-x-4 py-4 px-6 hover:bg-custom-blue hover:bg-opacity-10 outline-none ${isActive ? "bg-custom-blue bg-opacity-10" : " bg-white"}`}>
                             {({ isActive }) => (
                                 <>
-                                    <IconComponent color={isActive ? "" : "#828282"} />
+                                    <IconComponent color={isActive ? "#6F9CFF" : "#828282"} />
                                     <p
-                                        className={`${isActive ? "text-custom-blue" : "text-gray-4"} font-poppins font-semibold text-xl`}>
+                                        className={`${isActive ? "text-custom-blue" : "text-gray-4"} font-poppins font-semibold xl:text-lg text-base`}>
                                         {data?.name}
                                     </p>
                                 </>

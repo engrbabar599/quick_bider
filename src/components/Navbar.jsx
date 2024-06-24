@@ -10,18 +10,18 @@ export const Navbar = () => {
     const [openDropdown, setOpenDropdown] = useState(false)
     return (
         <>
-            <nav className="bg-white border-gray-200">
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto xl:p-4 gap-x-4">
+            <nav className="bg-white border-gray-200 relative">
+                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto xl:p-3 gap-x-4">
 
                     {/* Mobile Logo */}
                     <Link to={""} className="flex xl:hidden items-center space-x-3 rtl:space-x-reverse">
-                        <img src={IMAGES?.coloredLogoWithName} className="h-12" alt="Quick Bid Logo" />
+                        <img src={IMAGES?.coloredLogoWithName} className="h-10" alt="Quick Bid Logo" />
                     </Link>
 
                     {/* Greeting (visible on medium and larger screens) */}
                     <div className='xl:flex hidden flex-row gap-x-8 w-full'>
                         <div className='xl:flex flex-col font-poppins '>
-                            <p className='text-custom-blue font-semibold text-2xl'>
+                            <p className='text-custom-blue font-semibold text-xl'>
                                 Hello, Robert Fox!
                             </p>
                             <p className='font-medium text-gray-4 text-sm'>
@@ -29,9 +29,9 @@ export const Navbar = () => {
                             </p>
                         </div>
 
-                        <div className='bg-[#F5F5F5] rounded-xl border col-span-2 flex flex-row space-x-4 px-4 py-4 flex-1'>
+                        <div className='bg-[#F5F5F5] rounded-xl border col-span-2 flex flex-row space-x-4 px-3 py-3 flex-1 items-center'>
                             <SearchIcon />
-                            <input type="text" className='bg-transparent w-full font-poppins font-normal text-gray-4 text-base outline-none' placeholder='Search here' />
+                            <input type="text" className='bg-transparent w-full font-poppins font-normal placeholder:text-gray-4 text-gray-1 text-base outline-none' placeholder='Search here' />
                         </div>
 
                         <div className='flex flex-row space-x-4 col-span-2'>
@@ -72,9 +72,9 @@ export const Navbar = () => {
 
 
                     {/* Navbar Items (visible on medium and larger screens) */}
-                    <div className={`items-center justify-between w-full ${openDropdown ? "flex transform ease-in duration-1000 " : "hidden "} xl:w-auto xl:order-1 z-50`} id="navbar-language">
+                    <div className={` absolute top-14 pb-10 bg-white z-50 items-center justify-between w-full ${openDropdown ? " transform ease-in duration-1000 " : "hidden "} xl:w-auto xl:order-1 z-50`} id="navbar-language">
                         <div className="flex flex-col font-medium p-4 xl:p-0 mt-4 border border-gray-5 rounded-lg  xl:space-x-8 rtl:space-x-reverse xl:flex-row xl:mt-0 xl:border-0 xl:bg-white xl:w-full space-y-8">
-                            <div className='bg-custom-gray rounded-xl border col-span-2 flex flex-row space-x-4 px-4 py-4 flex-1'>
+                            <div className='bg-custom-gray rounded-xl border col-span-2 flex flex-row space-x-4 px-4 py-4 flex-1 w-full'>
                                 <SearchIcon />
                                 <input type="text" className='bg-transparent w-full font-poppins font-normal placeholder:text-gray-4 text-gray-1 text-base outline-none' placeholder='Search here' />
                             </div>
@@ -83,8 +83,8 @@ export const Navbar = () => {
                                 <div className='space-x-4 flex flex-row items-center'>
                                     <img src={IMAGES?.profilePic} alt="Profile Pic" className='aspect-square h-12' />
                                     <div className='font-poppins'>
-                                        <p className='text-gray-1 text-lg font-medium'>Robert Fox</p>
-                                        <p className='text-gray-4 text-base font-normal'>robertfox@gmail.com</p>
+                                        <p className='text-gray-1 text-base font-medium'>Robert Fox</p>
+                                        <p className='text-gray-4 text-sm font-normal'>robertfox@gmail.com</p>
                                     </div>
                                 </div>
                                 <button>
