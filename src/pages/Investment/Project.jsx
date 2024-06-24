@@ -1,7 +1,17 @@
 import React from "react";
 import vectorImage from "../../assets/images/Vector.png"
+import BEProject from "./BEProject";
+import { useState } from "react";
 
 function Project() {
+
+  const [isVisible, setIsVisible] = useState(false);
+  
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+
+
   const card = [
     {
       pname: "Project 21",
@@ -69,9 +79,13 @@ function Project() {
             </div>
           </div>
           <div className="flex items-center justify-center pt-3">
-            <button className="px-10 py-2 bg-blue text-white rounded-lg">
+          <button
+              // onClick={toggleVisibility}
+              className="bg-blue text-white px-6 py-2 rounded-lg "
+            >
               Invest
             </button>
+            {/* {isVisible && <BEProject/>} */}
           </div>
         </div>
                 </>

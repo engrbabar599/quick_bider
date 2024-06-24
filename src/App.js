@@ -8,6 +8,8 @@ import HelpAndSupport from "./pages/Help and Support/HelpAndSupport";
 import Wallet from "./pages/Wallet/Wallet";
 import Claim from "./pages/Claim/Claim";
 import Investment from "./pages/Investment/Investment";
+import BEProject from "./pages/Investment/BEProject";
+import MyBids from "./pages/My Bids/MyBids";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
   {
     path: "investment",
     element: <Investment/>
+  },
+  {
+    path: "BEProject",
+    element: <BEProject/>
+  },
+  {
+    path: "myBids",
+    element: <MyBids/>
   }
 ]);
 function App() {

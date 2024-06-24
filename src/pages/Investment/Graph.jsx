@@ -71,7 +71,7 @@ const Graph = () => {
     },
     scales: {
       x: {
-        display: true,
+        display: false,
       },
       y: {
         display: true,
@@ -87,10 +87,10 @@ const Graph = () => {
       setIsVisible(!isVisible);
     };
   return (
-    <div className=" mx-auto ">
+    <div className=" mx-auto">
       <div className="lg:col-span-2">
        
-        <div className="bg-white shadow-md rounded p-6">
+        <div className="bg-white shadow-md rounded p-6 h-full">
           <div className="">
             <div className="flex  justify-between items-center">
               <div>
@@ -101,7 +101,7 @@ const Graph = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-between items-center px-4 py-4">
+          <div className="flex justify-between items-center px-4 py-10">
             <div className=" flex items-center justify-between">
               <select name="" id="" className="border rounded-lg w-40 px-2 py-2 outline-none">
                 <option value="last 7 days">last 7 days</option>
