@@ -21,7 +21,7 @@ export const DropdownSidebar = () => {
         {
             name: "My Bids",
             icon: <MyBidsIcon />,
-            navigate: "/myBids"
+            navigate: "/mybids"
         },
         {
             name: "Investments",
@@ -36,7 +36,7 @@ export const DropdownSidebar = () => {
         {
             name: "Help & Support",
             icon: <SupportIcon />,
-            navigate: "/help"
+            navigate: "/helpAndSupport"
         },
         {
             name: "Settings",

@@ -4,6 +4,13 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { Login } from './pages/OnBoarding/Login';
+import Setting from "./pages/Account Settings/Setting";
+import HelpAndSupport from "./pages/Help and Support/HelpAndSupport";
+import Wallet from "./pages/Wallet/Wallet";
+import Claim from "./pages/Claim/Claim";
+import Investment from "./pages/Investment/Investment";
+import BEProject from "./pages/Investment/BEProject";
+import MyBids from "./pages/My Bids/MyBids";
 import { SignUp } from "./pages/OnBoarding/SignUp";
 import { Dashboard } from "./pages/Dashboard/Dashboard";
 import { Sidebar } from "./components/Sidebar";
@@ -33,8 +40,9 @@ const router = createBrowserRouter([
     path: "/",
     element: <Login />,
   },
+
   {
-    path: "/signUp",
+    path: "/signup",
     element: <SignUp />,
   },
   {
@@ -52,7 +60,31 @@ const router = createBrowserRouter([
       {
         path: "/mybids",
         element: <MyBidsPage />
-      }
+      },
+      {
+        path: "/investments",
+        element: <Investment />
+      },
+      {
+        path: "/wallet",
+        element: <Wallet />
+      },
+      {
+        path: "/helpAndSupport",
+        element: <HelpAndSupport />
+      },
+      {
+        path: "/settings",
+        element: <Setting />
+      },
+      {
+        path: "/claim",
+        element: <Claim />
+      },
+      {
+        path: "/BEProject",
+        element: <BEProject />
+      },
     ]
   },
 ]);

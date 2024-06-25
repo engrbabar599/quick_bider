@@ -1,0 +1,312 @@
+import React from "react";
+import { useState } from "react";
+import { Switch } from "@headlessui/react";
+
+function Setting() {
+  const tabs = [
+    "Account",
+    "Security",
+    "Bank details",
+    "Notifications",
+    "Privacy policy",
+  ];
+  const [activeTab, setActiveTab] = useState("Account");
+
+  const [notificationsEnabled, setNotificationsEnabled] = useState(true);
+  const [soundEnabled, setSoundEnabled] = useState(false);
+  const [sendToEmail, setSendToEmail] = useState(false);
+  const [sendToPhone, setSendToPhone] = useState(false);
+
+  const ToggleSwitch = ({ enabled, setEnabled }) => (
+    <Switch
+      checked={enabled}
+      onChange={setEnabled}
+      className={`${enabled ? "bg-custom-blue" : "bg-gray-200"
+        } relative inline-flex h-6 w-11 items-center rounded-full`}
+    >
+      <span
+        className={`${enabled ? "translate-x-6" : "translate-x-1"
+          } inline-block h-4 w-4 transform bg-white rounded-full transition-transform`}
+      />
+    </Switch>
+  );
+
+  return (
+    <div className=" w-[60%] mx-auto  border rounded-lg my-4 p-6 ">
+      <div className="flex flex-wrap justify-center sm:justify-start space-x-0 sm:space-x-4 mb-4">
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            className={`pb-1 mx-1 sm:mx-0  text-lg font-semibold opacity-75 ${activeTab === tab
+              ? "border-b-2 border-blue text-custom-blue"
+              : "text-gray-600 hover:border-b-2 hover:border-blue"
+              }`}
+            onClick={() => setActiveTab(tab)}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+
+      {activeTab === "Account" && (
+        <>
+          <div className="border-b-[1px]">
+            <div className="flex flex-col gap-2 sm:flex-row items-center mb-4">
+              <img
+                src="https://images.unsplash.com/photo-1623184663110-89ba5b565eb6?q=80&w=1412&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Profile"
+                className="w-24 h-24 rounded-lg mr-4 mb-4 sm:mb-0"
+              />
+              <div className="flex-1 text-center sm:text-left">
+                <h2 className="text-2xl font-bold">Robert Fox</h2>
+                <p className="text-gray-600">robertfox@gmail.com</p>
+              </div>
+              <button className="ml-0 sm:ml-auto border border-blue  text-custom-blue xs:px-1 md:px-4  py-2 rounded-lg hover:bg-custom-blue hover:text-white">
+                Update Profile Picture
+              </button>
+            </div>
+          </div>
+          <div className="pt-6">
+            <div>
+              <h1 className="font-semibold">Personal details</h1>
+            </div>
+            <form className="space-y-4">
+              <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pt-3">
+                <div className="w-full">
+                  <label className="block font-semibold">Full name</label>
+                  <input
+                    type="text"
+                    placeholder="Full name"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="w-full">
+                  <label className="block font-semibold">Last name</label>
+                  <input
+                    type="text"
+                    placeholder="Last name"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                <div className="w-full">
+                  <label className="block font-semibold">Phone number</label>
+                  <input
+                    type="text"
+                    placeholder="+1"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="w-full">
+                  <label className="block font-semibold">Email ID</label>
+                  <input
+                    type="text"
+                    placeholder="Email id"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                <div className="w-full">
+                  <label className="block font-semibold">Street address</label>
+                  <input
+                    type="text"
+                    placeholder="Type address"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="w-full">
+                  <label className="block font-semibold">Zip code</label>
+                  <input
+                    type="text"
+                    placeholder="Type nearby location"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                <div className="w-full">
+                  <label className="block font-semibold">City</label>
+                  <input
+                    type="text"
+                    placeholder="Type city name"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="w-full">
+                  <label className="block font-semibold">Province</label>
+                  <input
+                    type="text"
+                    placeholder="Type province name"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+              </div>
+
+              <div className="text-center">
+                <button className="mx-auto bg-custom-blue text-white px-14 py-2 rounded-lg hover:bg-custom-blue-600">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </>
+      )}
+      {activeTab === "Security" && (
+        <>
+          <div className="pt-6">
+            <div>
+              <h1 className="font-semibold">Update pasword</h1>
+            </div>
+            <form className="space-y-4">
+              <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pt-3">
+                <div className="w-full">
+                  <label className="block font-semibold">New password</label>
+                  <input
+                    type="text"
+                    placeholder="Type new password"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="w-full">
+                  <label className="block font-semibold">
+                    Confirm new password
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Confirm new password"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+              </div>
+              <div className="text-center">
+                <button className="mx-auto bg-custom-blue text-white px-8 py-2 rounded-lg hover:bg-custom-blue-600">
+                  Update password
+                </button>
+              </div>
+            </form>
+          </div>
+        </>
+      )}
+      {activeTab === "Bank details" && (
+        <>
+          <div className="pt-6">
+            <div>
+              <h1 className="font-semibold">Bank details</h1>
+            </div>
+            <form className="space-y-4">
+              <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pt-3">
+                <div className="w-full">
+                  <label className="block font-semibold">Account number</label>
+                  <input
+                    type="text"
+                    placeholder="343535434333"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="w-full">
+                  <label className="block font-semibold">
+                    Confirm account number
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="343535434333"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                <div className="w-full">
+                  <label className="block font-semibold">IFSC code</label>
+                  <input
+                    type="text"
+                    placeholder="ICIC00033343"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="w-full">
+                  <label className="block font-semibold">Bank name</label>
+                  <input
+                    type="text"
+                    placeholder="ICICI bank"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                <div className="w-full">
+                  <label className="block font-semibold">Name on account</label>
+                  <input
+                    type="text"
+                    placeholder="Robert Fox"
+                    className="w-1/2 p-2 border rounded"
+                  />
+                </div>
+              </div>
+
+              <div className="text-center">
+                <button className="mx-auto bg-custom-blue text-white px-8 py-3 rounded-lg hover:bg-custom-blue-600">
+                  Update bank details
+                </button>
+              </div>
+            </form>
+          </div>
+        </>
+      )}
+      {activeTab === "Notifications" && (
+        <>
+          <div className="pt-6 w-[100%]">
+            <div>
+              <h1 className="font-semibold">Notifications</h1>
+            </div>
+
+            <div className="pt-6">
+              <div className="flex items-center justify-between mb-4 border-b-[1px] pb-3 px-2">
+                <label className="text-gray-700 font-bold">Notifications</label>
+                <ToggleSwitch
+                  enabled={notificationsEnabled}
+                  setEnabled={setNotificationsEnabled}
+                />
+              </div>
+              <div className="flex items-center justify-between mb-4 border-b-[1px] pb-3 px-2">
+                <label className="text-gray-700 font-bold">
+                  Notifications Sound
+                </label>
+                <ToggleSwitch
+                  enabled={soundEnabled}
+                  setEnabled={setSoundEnabled}
+                />
+              </div>
+              <div className="flex items-center justify-between mb-4 border-b-[1px] pb-3 px-2">
+                <label className="text-gray-700 font-bold">
+                  Send to email id
+                </label>
+                <ToggleSwitch
+                  enabled={sendToEmail}
+                  setEnabled={setSendToEmail}
+                />
+              </div>
+              <div className="flex items-center justify-between border-b-[1px] pb-3 px-2">
+                <label className="text-gray-700 font-bold">Send to phone</label>
+                <ToggleSwitch
+                  enabled={sendToPhone}
+                  setEnabled={setSendToPhone}
+                />
+              </div>
+              <div className="text-center pt-6">
+                <button className="mx-auto bg-custom-blue text-white px-8 py-3 rounded-lg hover:bg-custom-blue-600">
+                  Update settings
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {activeTab === "Privacy policy" && <p>Privacy Policy</p>}
+    </div>
+  );
+}
+
+export default Setting;

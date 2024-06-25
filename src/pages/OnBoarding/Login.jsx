@@ -80,8 +80,8 @@ export const Login = () => {
 
                             <div className=' text-center flex flex-col md:flex-row font-poppins font-normal text-gray-4 text-base space-x-1'>
                                 <p>Doesn’t have an account?</p>
-                                <Link to="/signUp"
-                                    className='text-custom-blue hover:text-blue-500'>Sign up now</Link>
+                                <Link to="/signup"
+                                    className='text-custom-blue hover:text-custom-blue-500'>Sign up now</Link>
                             </div>
 
 

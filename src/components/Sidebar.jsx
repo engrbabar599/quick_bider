@@ -19,7 +19,7 @@ export const Sidebar = () => {
         {
             name: "My Bids",
             icon: MyBidsIcon,
-            navigate: "/myBids"
+            navigate: "/mybids"
         },
         {
             name: "Investments",
@@ -34,7 +34,7 @@ export const Sidebar = () => {
         {
             name: "Help & Support",
             icon: SupportIcon,
-            navigate: "/help"
+            navigate: "/helpAndSupport"
         },
         {
             name: "Settings",

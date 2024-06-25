@@ -96,7 +96,7 @@ export const SignUp = () => {
 
                         <div className='text-center font-poppins font-normal flex flex-col md:flex-row space-x-1 text-gray-4 text-base'>
                             <p>Already have an account?</p>
-                            <Link to="/" className='text-custom-blue hover:text-blue-500'>
+                            <Link to="/" className='text-custom-blue hover:text-custom-blue-500'>
                                 Sign in
                             </Link>
                         </div>

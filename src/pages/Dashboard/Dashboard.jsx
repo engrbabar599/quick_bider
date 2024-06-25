@@ -294,7 +294,7 @@ export const Dashboard = () => {
                                     <span className='text-custom-blue lg:text-base font-normal'>(3 active)</span>
                                 </div>
 
-                                <button className='text-custom-blue hover:scale-105 hover:text-blue-500 text-sm '>
+                                <button className='text-custom-blue hover:scale-105 hover:text-custom-blue-500 text-sm '>
                                     View all
                                 </button>
 
