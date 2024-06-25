@@ -27,7 +27,7 @@ function Employees() {
               <form onSubmit={handleSubmit}>
                 {step === 1 && (
                   <>
-                    <div className="w-[25vw]">
+                    <div className="md:w-[50vw] xs:w-[70vw]">
                       <div className="mb-4">
                         <h2 className="text-2xl font-semibold mb-6 text-center">
                           Add money to wallet

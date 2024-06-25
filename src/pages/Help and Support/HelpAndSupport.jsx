@@ -3,7 +3,7 @@ import React from "react";
 function HelpAndSupport() {
   return (
     <>
-      <div className="container mx-auto p-4">
+      <div className=" mx-auto p-4">
         <div className="border rounded p-6 grid gap-6 md:grid-cols-3">
           <form className="md:col-span-2">
             <h2 className="text-xl font-semibold mb-4">Send enquiry</h2>
@@ -65,7 +65,7 @@ function HelpAndSupport() {
               </div>
               <div>
                 <p className="">Contact us by email</p>
-                <p className="text-blue">support@quickbet.com</p>
+                <p className="text-blue md:text-xs lg:text-base">support@quickbet.com</p>
               </div>
             </div>
             <div className="border rounded-md shadow p-4 flex items-center gap-5 cursor-pointer">

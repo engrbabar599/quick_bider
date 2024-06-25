@@ -26,7 +26,7 @@ function Employees() {
               <form onSubmit={handleSubmit}>
                 {step === 1 && (
                   <>
-                    <div className=" md:w-[50vw] max-h-fit">
+                    <div className=" xs:w-[80vw] md:w-[70vw] h-[80vh]">
                       <div className="text-center">
                         <h1 className=" text-xl font-bold">
                           Activate Investment
@@ -34,30 +34,30 @@ function Employees() {
                       </div>
                       <div className="p-5">
                         <ul className="list-decimal">
-                          <li>
+                          <li className="xs:text-xs lg:text-base">
                             Eligibility: Users must be at least 18 years old and
                             provide valid identification and contact
                             information.
                           </li>
-                          <li>
+                          <li className="xs:text-xs lg:text-base">
                             Investment Process: Funds are committed for the
                             entire duration of the project, with no early
                             withdrawal permitted unless explicitly stated
                             otherwise.
                           </li>
-                          <li>
+                          <li className="xs:text-xs lg:text-base">
                             Return on Investment: A guaranteed 21% return on the
                             initial investment upon project completion, credited
                             to the user’s account within [Number] days after the
                             project’s successful completion.
                           </li>
-                          <li>
+                          <li className="xs:text-xs lg:text-base">
                             Project Completion: Defined by achieving all
                             predefined milestones and deliverables. Any delays
                             or changes in project timelines will be communicated
                             to investors promptly.
                           </li>
-                          <li>
+                          <li className="xs:text-xs lg:text-base">
                             Risk and Disclaimer: All investments carry inherent
                             risks. [Your Company Name] is not responsible for
                             losses due to unforeseen circumstances beyond our
@@ -69,7 +69,7 @@ function Employees() {
                       </div>
                       <div className=" flex items-center gap-3">
                         <input type="checkbox" className=" h-4 w-4" />
-                        <span className="opacity-60">
+                        <span className="opacity-60 xs:text-xs lg:text-base">
                           I have read and agree to the Terms of Service
                         </span>
                       </div>
@@ -87,7 +87,8 @@ function Employees() {
                 )}
                 {step === 2 && (
                   <>
-                    <div className=" md:w-[25vw]">
+                  <div className="xs:w-[80vw] md:w-[30vw]">
+                    <div className=" max-w-lg ">
                       <div className="mb-4">
                         <h2 className="text-2xl font-semibold mb-6 text-center">
                           Verify to continue
@@ -120,6 +121,7 @@ function Employees() {
                     </button>
                     <div className="text-center pt-9">
                       <button className="text-blue">Resend OTP</button>
+                    </div>
                     </div>
                   </>
                 )}

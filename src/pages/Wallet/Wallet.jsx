@@ -93,7 +93,7 @@ const Wallet = () => {
         <div className="bg-white shadow-md rounded p-6">
           <div className="flex justify-between items-center mb-4">
             <div>
-              <p className="text-4xl font-bold">$12500.00</p>
+              <p className="xs:text-xl md:text-4xl font-bold">$12500.00</p>
               <p className="text-gray-500">Current Balance</p>
             </div>
             <div>

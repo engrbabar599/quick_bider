@@ -34,12 +34,14 @@ function Setting() {
   );
 
   return (
-    <div className=" w-[60%] mx-auto  border rounded-lg my-4 p-6 ">
+    <>
+
+    <div className=" md:w-[60%] mx-auto  border rounded-lg p-5 m-5">
       <div className="flex flex-wrap justify-center sm:justify-start space-x-0 sm:space-x-4 mb-4">
         {tabs.map((tab) => (
           <button
             key={tab}
-            className={`pb-1 mx-1 sm:mx-0  text-lg font-semibold opacity-75 ${
+            className={`pb-1 mx-1 sm:mx-0  text-base font-semibold opacity-75 ${
               activeTab === tab
                 ? "border-b-2 border-blue text-blue"
                 : "text-gray-600 hover:border-b-2 hover:border-blue"
@@ -61,26 +63,26 @@ function Setting() {
                 className="w-24 h-24 rounded-lg mr-4 mb-4 sm:mb-0"
               />
               <div className="flex-1 text-center sm:text-left">
-                <h2 className="text-2xl font-bold">Robert Fox</h2>
+                <h2 className="text-xl font-bold">Robert Fox</h2>
                 <p className="text-gray-600">robertfox@gmail.com</p>
               </div>
-              <button className="ml-0 sm:ml-auto border border-blue  text-blue xs:px-1 md:px-4  py-2 rounded-lg hover:bg-blue hover:text-white">
+              <button className="ml-0 sm:ml-auto border xs:text-base border-blue md:text-xs lg:text-base  text-blue xs:px-4 md:px-4  py-2 rounded-lg hover:bg-blue hover:text-white">
                 Update Profile Picture
               </button>
             </div>
           </div>
-          <div className="pt-6">
+          <div className="pt-5">
             <div>
-              <h1 className="font-semibold">Personal details</h1>
+              <h1 className="font-semibold text-base">Personal details</h1>
             </div>
             <form className="space-y-4">
               <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pt-3">
                 <div className="w-full">
-                  <label className="block font-semibold">Full name</label>
+                  <label className="block font-semibold text-base">Full name</label>
                   <input
                     type="text"
                     placeholder="Full name"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-2 border rounded-lg"
                   />
                 </div>
                 <div className="w-full">
@@ -88,7 +90,7 @@ function Setting() {
                   <input
                     type="text"
                     placeholder="Last name"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-2 border rounded-lg"
                   />
                 </div>
               </div>
@@ -98,7 +100,7 @@ function Setting() {
                   <input
                     type="text"
                     placeholder="+1"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-2 border rounded-lg"
                   />
                 </div>
                 <div className="w-full">
@@ -106,7 +108,7 @@ function Setting() {
                   <input
                     type="text"
                     placeholder="Email id"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-2 border rounded-lg"
                   />
                 </div>
               </div>
@@ -116,7 +118,7 @@ function Setting() {
                   <input
                     type="text"
                     placeholder="Type address"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-2 border rounded-lg"
                   />
                 </div>
                 <div className="w-full">
@@ -124,7 +126,7 @@ function Setting() {
                   <input
                     type="text"
                     placeholder="Type nearby location"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-2 border rounded-lg"
                   />
                 </div>
               </div>
@@ -134,7 +136,7 @@ function Setting() {
                   <input
                     type="text"
                     placeholder="Type city name"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-2 border rounded-lg"
                   />
                 </div>
                 <div className="w-full">
@@ -142,13 +144,13 @@ function Setting() {
                   <input
                     type="text"
                     placeholder="Type province name"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-2 border rounded-lg"
                   />
                 </div>
               </div>
 
               <div className="text-center">
-                <button className="mx-auto bg-blue text-white px-14 py-2 rounded-lg hover:bg-blue-600">
+                <button className="mx-auto bg-blue text-white px-14 py-2 rounded-lg hover:bg-blue-600 text-sm">
                   Submit
                 </button>
               </div>
@@ -156,6 +158,7 @@ function Setting() {
           </div>
         </>
       )}
+
       {activeTab === "Security" && (
         <>
           <div className="pt-6">
@@ -309,6 +312,7 @@ function Setting() {
 
       {activeTab === "Privacy policy" && <p>Privacy Policy</p>}
     </div>
+    </>
   );
 }
 

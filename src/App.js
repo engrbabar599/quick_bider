@@ -10,6 +10,7 @@ import Claim from "./pages/Claim/Claim";
 import Investment from "./pages/Investment/Investment";
 import BEProject from "./pages/Investment/BEProject";
 import MyBids from "./pages/My Bids/MyBids";
+import BidDetails from "./pages/My Bids/BidDetails";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "myBids",
     element: <MyBids/>
+  },
+  {
+    path: "bidDetails",
+    element: <BidDetails/>
   }
 ]);
 function App() {
