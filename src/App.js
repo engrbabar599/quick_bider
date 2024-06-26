@@ -17,6 +17,7 @@ import { Navbar } from "./components/Navbar";
 import { DropdownSidebar } from "./components/DropdownSidebar";
 import { AuctionPage } from "./pages/Auction";
 import { MyBidsPage } from "./pages/MyBids";
+import MyBids from "./pages/My Bids/MyBids";
 
 
 export const Layout = () => {
@@ -57,8 +58,9 @@ const router = createBrowserRouter([
         element: <AuctionPage />
       },
       {
-        path: "/mybids",
+        path: "mybids",
         element: <MyBidsPage />
+        // element: <MyBids/>
       },
       {
         path: "/investments",
@@ -84,6 +86,7 @@ const router = createBrowserRouter([
         path: "/BEProject",
         element: <BEProject />
       },
+     
     ]
   },
 ]);

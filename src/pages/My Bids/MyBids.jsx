@@ -81,25 +81,25 @@ function MyBids() {
           </div>
         </div>
 
-        <div className="cardspart grid xs:grid-cols-1 lg:grid-cols-2 gap-5 ">
+        <div className="cardspart grid xs:grid-cols-1 md:grid-cols-2 gap-5 ">
           {cards.map(() => {
             return (
               <>
-                <div className="card border rounded-3xl p-8 shadow-sm">
+                <div className="card border rounded-3xl p-8 shadow-sm ">
                   <div className="cars flex items-center justify-center gap-5">
-                    <img src={car1} className="xs:hidden md:block" alt="" />
-                    <img src={car2} className=" " alt="" />
-                    <img src={car3} className=" xs:hidden sm:block" alt="" />
+                    <img src={car1} className="xs:hidden md:block w-[28%]" alt="" />
+                    <img src={car2} className="xs:w-[80%] sm:w-[40%] " alt="" />
+                    <img src={car3} className=" xs:hidden sm:block w-[28%]" alt="" />
                   </div>
                   <div className="xs:flex xs:items-center xs:justify-between md:block">
                     <div className=" pt-5">
-                      <h1 className="text-lg font-bold">Investment audi</h1>
-                      <p className=" opacity-60 py-3">@invest.audi</p>
+                      <h1 className="text-lg font-semibold">Investment audi</h1>
+                      <p className=" opacity-60 py-3 ">@invest.audi</p>
                     </div>
 
                     <div>
                       <div className="text-center xs:block md:hidden">
-                        <button className="px-4 py-2 border border-blue rounded-lg text-custom-blue">
+                        <button className="px-4 py-2 border border-blue rounded-lg text-custom-blue ">
                           View details
                         </button>
                       </div>
@@ -109,7 +109,7 @@ function MyBids() {
                     <div className="upside flex justify-between items-center">
                       <div className="upfirst flex items-center gap-1">
                         <h1 className="opacity-60">Date:</h1>
-                        <h1 className="text-md font-bold">25/06/2024</h1>
+                        <h1 className="text-base font-semibold">25/06/2024</h1>
                       </div>
                       <div className="upsecond flex gap-1">
                         <h1 className="opacity-60">Total rounds:</h1>
@@ -119,7 +119,7 @@ function MyBids() {
                     <div className="downside flex justify-between items-center">
                       <div className="dwnfirst flex items-center gap-1">
                         <h1 className=" opacity-60">Time:</h1>
-                        <h1 className=" text-md font-bold">9:00 PM</h1>
+                        <h1 className=" text-base font-semibold">9:00 PM</h1>
                       </div>
                       <div className="dwnsecond flex items-center gap-1">
                         <h1 className=" opacity-60">Bid amount:</h1>
@@ -151,8 +151,8 @@ function MyBids() {
                       <h1 className="pt-4">ROI</h1>
                     </div>
                   </div>
-                  <div className=" flex justify-center items-center gap-10 p-5 xs:hidden">
-                    <div className="border rounded-xl p-2 w-[20%] flex flex-col items-center">
+                  <div className=" flex justify-center items-center gap-5 p-5 xs:hidden lg:flex">
+                    <div className="border rounded-xl p-2 w-[30%] flex flex-col items-center">
                       <div>
                         <img src={stars} alt="" />
                       </div>
@@ -163,7 +163,7 @@ function MyBids() {
                         <h1 className=" font-semibold opacity-60">Score</h1>
                       </div>
                     </div>
-                    <div className="border rounded-xl p-3 w-[20%] flex flex-col items-center">
+                    <div className="border rounded-xl p-3 w-[30%] flex flex-col items-center">
                       <div>
                         <img src={people} alt="" />
                       </div>
@@ -176,7 +176,7 @@ function MyBids() {
                         </h1>
                       </div>
                     </div>
-                    <div className="border rounded-xl p-2 w-[20%] flex flex-col items-center">
+                    <div className="border rounded-xl p-2 w-[30%] flex flex-col items-center">
                       <div>
                         <img src={clock} alt="" />
                       </div>
@@ -192,7 +192,7 @@ function MyBids() {
                   <div>
 
                     <div className="text-center pt-6 xs:hidden md:block">
-                      <button className="px-4 py-2 border border-blue rounded-lg text-custom-blue">
+                      <button className="px-4 py-2 border border-blue rounded-lg text-custom-blue hover:bg-custom-blue hover:text-white">
                         <Link to={'/bidDetails'}>
                           View details
                         </Link>

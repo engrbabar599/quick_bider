@@ -169,13 +169,13 @@ const Investment = () => {
       <div className="md:p-5">
         <div>
           <div>
-            <h1 className="text-lg font-semibold">Investments</h1>
+            <h1 className="text-2xl font-medium">Investments</h1>
           </div>
           <div className="flex md:justify-start xs:flex xs:justify-center gap-4 py-4">
             <div>
               <button
                 onClick={handleFirstButtonClick}
-                className={`px-4 py-2 font-semibold rounded-lg ${activeTab === "first"
+                className={`px-4 py-2 font-semibold text-sm rounded-lg ${activeTab === "first"
                   ? " bg-custom-blue text-white "
                   : " bg-custom-gray text-gray-700 "
                   }`}
@@ -186,7 +186,7 @@ const Investment = () => {
             <div>
               <button
                 onClick={handleSecondButtonClick}
-                className={`px-4 py-2 font-semibold rounded-lg ${activeTab === "second"
+                className={`px-4 py-2 font-semibold text-sm rounded-lg ${activeTab === "second"
                   ? "bg-custom-blue text-white"
                   : "bg-gray-200 text-gray-700"
                   }`}
@@ -200,11 +200,11 @@ const Investment = () => {
         {activeTab === "first" && (
           <>
             <div className="lg:grid lg:grid-cols-12 gap-6 ">
-              <div className="bg-white p-6 rounded-lg shadow-md lg:col-span-8">
-                <h2 className="text-xl font-bold mb-4 text-wrap ">
+              <div className="bg-white p-6 rounded-lg shadow-sm border lg:col-span-8">
+                <h2 className="text-xl font-medium mb-4 text-wrap ">
                   Empower Your Financial Future with Our Investment Portal
                 </h2>
-                <p className="text-gray-600 mb-4 text-wrap ">
+                <p className="text-gray-600 mb-4 text-sm text-wrap ">
                   Welcome to a new era of investment management. Our advanced
                   Investment Portal is designed to empower you with the tools
                   and insights needed to maximize your financial growth.
@@ -213,7 +213,7 @@ const Investment = () => {
                 </p>
                 <div className="bg-sky-100 px-4 py-6 border rounded-xl mb-4 flex  lg:flex-row flex-col justify-between items-center gap-4">
                   <div className="items-center flex">
-                    <span className="text-center lg:text-justify">
+                    <span className="xs:text-center md:text-start">
                       Unlock the Potential of Your Investments, activate
                       investment services.
                     </span>
@@ -222,28 +222,28 @@ const Investment = () => {
                   <div>
                     <button
                       onClick={toggleVisibility}
-                      className="bg-custom-blue text-white px-6 py-2 rounded-xl min-w-max"
+                      className="bg-custom-blue text-white px-8 py-2.5 rounded-xl min-w-max text-sm"
                     >
-                      Add money
+                      Activate now
                     </button>
                     {isVisible && <Employees />}
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
                   <div className="bg-white p-4 rounded-lg shadow-md">
-                    <p>Total investment</p>
+                    <p className=" text-sm font-normal">Total investment</p>
                     <h3 className="text-2xl font-bold">$12 M</h3>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow-md">
-                    <p>ROI</p>
+                    <p className=" text-sm font-normal">ROI</p>
                     <h3 className="text-2xl font-bold text-green-500">21%</h3>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow-md">
-                    <p>Total projects</p>
+                    <p className=" text-sm font-normal">Total projects</p>
                     <h3 className="text-2xl font-bold">224</h3>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow-md">
-                    <p>Total investors</p>
+                    <p className=" text-sm font-normal">Total investors</p>
                     <h3 className="text-2xl font-bold">11K</h3>
                   </div>
                 </div>
@@ -261,30 +261,31 @@ const Investment = () => {
               <div className="">
                 <div className=" flex justify-between items-center">
                   <div className="w-[20%]">
-                    <h1 className="text-lg font-semibold min-w-max">All Investers</h1>
+                    <h1 className="text-xl font-semibold min-w-max">All Investers</h1>
                   </div>
-                  <div className="min-w-max mx-auto border-b-2"></div>
+                  <div className="w-[55%] border-b-2"></div>
                   <div className="text-custom-blue min-w-max">
-                    <button>View all</button>
+                    <button className=" font-semibold">View all</button>
                   </div>
                 </div>
                 <div className="pt-5">
                   <div className="border rounded-xl p-5">
-                    <div className="grid grid-cols-3 border-b-2">
-                      <div className="text-md font-semibold">Name</div>
-                      <div className="text-md font-semibold">Time</div>
-                      <div className="text-md font-semibold">Investment</div>
+                    <div className="grid grid-cols-3">
+                      <div className="text-lg font-medium">Name</div>
+                      <div className="text-lg font-medium">Time</div>
+                      <div className="text-lg font-medium">Investment</div>
+                      <div className="border-b-2 pt-2 col-span-3"></div>
                     </div>
                     {investment.map((value, i) => {
                       return (
                         <>
                           <div
                             key={i}
-                            className="grid grid-cols-3 pt-3 border-b py-2"
+                            className="grid grid-cols-3 pt-4 border-b"
                           >
-                            <div>{value.name}</div>
-                            <div>10:20:40 AM</div>
-                            <div>$**</div>
+                            <div><h1 className=" font-normal opacity-60">{value.name}</h1></div>
+                            <div><p className="text-lg font-light">10:20:40 AM</p></div>
+                            <div><p className="text-lg font-light">$**</p></div>
                           </div>
                         </>
                       );
@@ -299,17 +300,17 @@ const Investment = () => {
                   </div>
                   <div className="w-full border-b-2"></div>
                   <div className="text-custom-blue min-w-max">
-                    <button>View all</button>
+                    <button className="text-sm font-semibold">View all</button>
                   </div>
                 </div>
                 <div className="flex gap-4 py-4">
                   <div>
-                    <button className="bg-custom-blue px-4 py-2 rounded-lg text-white">
+                    <button className="bg-custom-blue px-4 py-2 rounded-lg text-white text-sm font-semibold">
                       All reviews
                     </button>
                   </div>
                   <div>
-                    <button className="bg-white px-4 py-2 rounded-lg border">
+                    <button className="bg-white px-4 py-2 rounded-lg border text-sm font-semibold">
                       write a review
                     </button>
                   </div>
@@ -317,7 +318,7 @@ const Investment = () => {
                 {review.map((value, i) => {
                   return (
                     <>
-                      <div className="border p-3 rounded-xl shadow-xl my-8">
+                      <div className="border p-3 rounded-xl shadow my-6">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-4">
                             <div className="icon">
@@ -329,7 +330,7 @@ const Investment = () => {
                               <h1 className="text-xl font-semibold">
                                 Jonas Sousa
                               </h1>
-                              <p className="opacity-65">Investor</p>
+                              <p className="opacity-65 font-normal">Investor</p>
                             </div>
                           </div>
                           <div>
@@ -337,7 +338,7 @@ const Investment = () => {
                           </div>
                         </div>
                         <div className="pt-4">
-                          <p className=" opacity-55">
+                          <p className=" text-sm font-normal opacity-55">
                             I didn't know the first thing about investing. This
                             book helped me understand some basic topics. It even
                             taught me who to be careful with when taking advice
@@ -358,15 +359,15 @@ const Investment = () => {
         {activeTab === "second" && (
           <>
             <div className="lg:grid lg:grid-cols-12 flex flex-col gap-5">
-              <div className="bg-white md:p-6 p-4 border-2 rounded-2xl shadow-lg xs:col-span-12 md:lg:col-span-8">
+              <div className="bg-white md:p-6 p-4 border rounded-2xl shadow xs:col-span-12 md:lg:col-span-8">
                 <div className="flex flex-row justify-between items-center ">
                   <div>
                     <h2 className="text-lg font-medium opacity-50 min-w-max">
                       My Investments
                     </h2>
-                    <p className="text-xl font-semibold ">
+                    <p className="lg:text-5xl xs:text-3xl font-medium py-3">
                       $12,000.00
-                      <span className="hidden md:inline text-xl text-green-500">(+21%)</span>
+                      <span className="hidden md:inline text-3xl text-green-500">(+21%)</span>
                     </p>
                   </div>
                   <div className="w-1/4">
@@ -379,7 +380,7 @@ const Investment = () => {
                   <div className=" hidden lg:flex justify-between p-6 border-2 rounded-xl">
                     <div className="flex flex-col justify-between">
                       <p className="text-gray-600">Total Returns</p>
-                      <p className="text-2xl font-bold text-green-600">
+                      <p className="text-2xl font-semibold text-green-600">
                         $2,520.00
                       </p>
                       <p className="text-green-600">↑ 21%</p>
@@ -387,7 +388,7 @@ const Investment = () => {
                     <div className="border"></div>
                     <div className="flex flex-col justify-between">
                       <p className="text-gray-600">My balance</p>
-                      <p className="text-2xl font-bold text-green-600">
+                      <p className="text-2xl font-semibold text-green-600">
                         $14,500.00
                       </p>
                       <p className="text-green-600">↑ 21%</p>
@@ -396,7 +397,7 @@ const Investment = () => {
                     <div className="xs:hidden md:flex md:flex-col md:justify-between">
                       <p></p>
                       <p className="text-gray-600">Active investments</p>
-                      <p className="text-2xl font-bold text-green-600">5</p>
+                      <p className="text-2xl text-right font-semibold text-green-600">5</p>
                     </div>
                   </div>
 
@@ -432,7 +433,7 @@ const Investment = () => {
                   <div>
                     <button
                       onClick={handleActiveButtonClick}
-                      className={`px-4 py-2 font-semibold rounded-lg ${activeButton === "active"
+                      className={`px-4 py-2 font-semibold text-sm rounded-lg ${activeButton === "active"
                         ? "bg-custom-blue text-white"
                         : "bg-gray-200 text-gray-700"
                         }`}
@@ -443,7 +444,7 @@ const Investment = () => {
                   <div>
                     <button
                       onClick={handleCompletedButtonClick}
-                      className={`px-4 py-2 font-semibold rounded-lg ${activeButton === "completed"
+                      className={`px-4 py-2 font-semibold text-sm rounded-lg ${activeButton === "completed"
                         ? "bg-custom-blue text-white"
                         : "bg-gray-200 text-gray-700"
                         }`}

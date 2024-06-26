@@ -61,7 +61,7 @@ function InvestmentCompleted() {
   return (
     <>
       <div className="allpage grid xs:grid-cols-1 md:grid-cols-12 gap-4">
-        <div className="leftside xs:col-span-12 md:col-span-8">
+        <div className="leftside xs:col-span-12 md:col-span-12 lg:col-span-7">
           <div className="upsidebox border bg-[#F1F5ff] rounded-xl py-8 px-10">
             <div className="flex justify-center items-center gap-1">
               <img src={partyImage} alt="" />
@@ -140,14 +140,14 @@ function InvestmentCompleted() {
             </div>
           </div>
         </div>
-        <div className="rightside col-span-4">
+        <div className="rightside lg:col-span-5 xs:col-span-12">
           <div className="">
             <div className=" flex justify-between items-center">
-              <div className="w-[20%]">
-                <h1 className="text-lg font-bold">All Investers</h1>
+              <div className="">
+                <h1 className=" font-bold">All Investers</h1>
               </div>
-              <div className="w-[65%] mx-auto border-b-2"></div>
-              <div className="text-custom-blue w-[10%]">
+              <div className="w-[55%] mx-auto border-b-2"></div>
+              <div className="text-custom-blue">
                 <button>view all</button>
               </div>
             </div>
@@ -177,11 +177,11 @@ function InvestmentCompleted() {
           </div>
           <div className=" pt-6">
             <div className=" flex justify-between items-center">
-              <div className="w-[20%]">
-                <h1 className="text-lg font-bold">All Reviews</h1>
+              <div className="">
+                <h1 className=" font-bold">All Reviews</h1>
               </div>
-              <div className="w-[65%] border-b-2"></div>
-              <div className="text-custom-blue w-[10%]">
+              <div className="w-[55%] border-b-2"></div>
+              <div className="text-custom-blue">
                 <button>view all</button>
               </div>
             </div>

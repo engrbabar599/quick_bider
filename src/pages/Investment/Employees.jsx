@@ -26,38 +26,38 @@ function Employees() {
               <form onSubmit={handleSubmit}>
                 {step === 1 && (
                   <>
-                    <div className=" xs:w-[80vw] md:w-[70vw] h-[80vh]">
+                    <div className=" xs:w-[85vw] md:w-[70vw] h-[80vh]">
                       <div className="text-center">
-                        <h1 className=" text-xl font-bold">
+                        <h1 className=" md:text-xl font-bold">
                           Activate Investment
                         </h1>
                       </div>
                       <div className="p-5">
                         <ul className="list-decimal">
-                          <li className="xs:text-xs lg:text-base">
+                          <li className="xs:text-xs lg:text-sm">
                             Eligibility: Users must be at least 18 years old and
                             provide valid identification and contact
                             information.
                           </li>
-                          <li className="xs:text-xs lg:text-base">
+                          <li className="xs:text-xs lg:text-sm">
                             Investment Process: Funds are committed for the
                             entire duration of the project, with no early
                             withdrawal permitted unless explicitly stated
                             otherwise.
                           </li>
-                          <li className="xs:text-xs lg:text-base">
+                          <li className="xs:text-xs lg:text-sm">
                             Return on Investment: A guaranteed 21% return on the
                             initial investment upon project completion, credited
                             to the user’s account within [Number] days after the
                             project’s successful completion.
                           </li>
-                          <li className="xs:text-xs lg:text-base">
+                          <li className="xs:text-xs lg:text-sm">
                             Project Completion: Defined by achieving all
                             predefined milestones and deliverables. Any delays
                             or changes in project timelines will be communicated
                             to investors promptly.
                           </li>
-                          <li className="xs:text-xs lg:text-base">
+                          <li className="xs:text-xs lg:text-sm">
                             Risk and Disclaimer: All investments carry inherent
                             risks. [Your Company Name] is not responsible for
                             losses due to unforeseen circumstances beyond our

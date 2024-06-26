@@ -36,13 +36,13 @@ function Project() {
   return (
     <>
       <div className="py-5">
-        <h1 className=" text-xl font-medium">Upcoming projects</h1>
+        <h1 className=" text-2xl font-medium">Upcoming projects</h1>
       </div>
       <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5">
         {card.map((value, i) => {
           return (
             <>
-              <div key={i} className="border p-3 rounded-xl shadow-xl">
+              <div key={i} className="border p-3 rounded-xl shadow-sm">
                 <div className="flex items-center gap-4">
                   <div className="icon">
                     <p>
@@ -50,7 +50,7 @@ function Project() {
                     </p>
                   </div>
                   <div>
-                    <h1 className="text-xl font-semibold">{value.pname}</h1>
+                    <h1 className="text-2xl font-medium">{value.pname}</h1>
                     <p className="opacity-65">TechDX, Inc</p>
                   </div>
                 </div>
@@ -80,7 +80,7 @@ function Project() {
                 <div className="flex items-center justify-center pt-3">
                   <button
                     // onClick={toggleVisibility}
-                    className="bg-custom-blue text-white px-6 py-2 rounded-lg "
+                    className="bg-custom-blue text-white text-sm px-10 py-2 rounded-lg "
                   >
                     Invest
                   </button>

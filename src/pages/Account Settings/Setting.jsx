@@ -33,15 +33,19 @@ function Setting() {
 
   return (
     <>
-
-      <div className=" md:w-[60%] mx-auto  border rounded-lg p-5 m-5">
+    <div className=" px-5 ">
+          <h1 className=" text-2xl font-medium font-poppins">
+            Settings
+          </h1>
+        </div>
+      <div className=" md:w-[60%]  border rounded-lg p-5 m-5">
         <div className="flex flex-wrap justify-center sm:justify-start space-x-0 sm:space-x-4 mb-4">
           {tabs.map((tab) => (
             <button
               key={tab}
-              className={`pb-1 mx-1 sm:mx-0  text-lg font-semibold opacity-75 ${activeTab === tab
-                ? "border-b-2 border-blue text-custom-blue"
-                : "text-gray-600 hover:border-b-2 hover:border-blue"
+              className={`pb-1 mx-1 sm:mx-0  text-base font-normal ${activeTab === tab
+                ? "border-b-2 border-blue text-custom-blue font-medium opacity-100"
+                : "text-gray-600 hover:border-b-2 hover:border-blue opacity-60"
                 }`}
               onClick={() => setActiveTab(tab)}
             >
@@ -60,8 +64,8 @@ function Setting() {
                   className="w-24 h-24 rounded-lg mr-4 mb-4 sm:mb-0"
                 />
                 <div className="flex-1 text-center sm:text-left">
-                  <h2 className="text-xl font-bold">Robert Fox</h2>
-                  <p className="text-gray-600">robertfox@gmail.com</p>
+                  <h2 className="text-xl font-medium">Robert Fox</h2>
+                  <p className="text-[#828282] font-normal text-lg">robertfox@gmail.com</p>
                 </div>
                 <button className="ml-0 sm:ml-auto border border-blue  text-custom-blue xs:px-1 md:px-4  py-2 rounded-lg hover:bg-custom-blue hover:text-white">
                   Update Profile Picture
@@ -70,12 +74,12 @@ function Setting() {
             </div>
             <div className="pt-5">
               <div>
-                <h1 className="font-semibold text-base">Personal details</h1>
+                <h1 className="font-medium text-base">Personal details</h1>
               </div>
               <form className="space-y-4">
                 <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pt-3">
                   <div className="w-full">
-                    <label className="block font-semibold text-base">Full name</label>
+                    <label className="block font-medium text-base">Full name</label>
                     <input
                       type="text"
                       placeholder="Full name"
@@ -83,7 +87,7 @@ function Setting() {
                     />
                   </div>
                   <div className="w-full">
-                    <label className="block font-semibold">Last name</label>
+                    <label className="block font-medium">Last name</label>
                     <input
                       type="text"
                       placeholder="Last name"
@@ -93,7 +97,7 @@ function Setting() {
                 </div>
                 <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
                   <div className="w-full">
-                    <label className="block font-semibold">Phone number</label>
+                    <label className="block font-medium">Phone number</label>
                     <input
                       type="text"
                       placeholder="+1"
@@ -101,7 +105,7 @@ function Setting() {
                     />
                   </div>
                   <div className="w-full">
-                    <label className="block font-semibold">Email ID</label>
+                    <label className="block font-medium">Email ID</label>
                     <input
                       type="text"
                       placeholder="Email id"
@@ -111,7 +115,7 @@ function Setting() {
                 </div>
                 <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
                   <div className="w-full">
-                    <label className="block font-semibold">Street address</label>
+                    <label className="block font-medium">Street address</label>
                     <input
                       type="text"
                       placeholder="Type address"
@@ -119,7 +123,7 @@ function Setting() {
                     />
                   </div>
                   <div className="w-full">
-                    <label className="block font-semibold">Zip code</label>
+                    <label className="block font-medium">Zip code</label>
                     <input
                       type="text"
                       placeholder="Type nearby location"
@@ -129,7 +133,7 @@ function Setting() {
                 </div>
                 <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
                   <div className="w-full">
-                    <label className="block font-semibold">City</label>
+                    <label className="block font-medium">City</label>
                     <input
                       type="text"
                       placeholder="Type city name"
@@ -137,7 +141,7 @@ function Setting() {
                     />
                   </div>
                   <div className="w-full">
-                    <label className="block font-semibold">Province</label>
+                    <label className="block font-medium">Province</label>
                     <input
                       type="text"
                       placeholder="Type province name"
@@ -160,12 +164,12 @@ function Setting() {
           <>
             <div className="pt-6">
               <div>
-                <h1 className="font-semibold">Update pasword</h1>
+                <h1 className="font-medium">Update pasword</h1>
               </div>
               <form className="space-y-4">
                 <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pt-3">
                   <div className="w-full">
-                    <label className="block font-semibold">New password</label>
+                    <label className="block font-medium">New password</label>
                     <input
                       type="text"
                       placeholder="Type new password"
@@ -173,7 +177,7 @@ function Setting() {
                     />
                   </div>
                   <div className="w-full">
-                    <label className="block font-semibold">
+                    <label className="block font-medium">
                       Confirm new password
                     </label>
                     <input
@@ -196,12 +200,12 @@ function Setting() {
           <>
             <div className="pt-6">
               <div>
-                <h1 className="font-semibold">Bank details</h1>
+                <h1 className="font-medium">Bank details</h1>
               </div>
               <form className="space-y-4">
                 <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pt-3">
                   <div className="w-full">
-                    <label className="block font-semibold">Account number</label>
+                    <label className="block font-medium">Account number</label>
                     <input
                       type="text"
                       placeholder="343535434333"
@@ -209,7 +213,7 @@ function Setting() {
                     />
                   </div>
                   <div className="w-full">
-                    <label className="block font-semibold">
+                    <label className="block font-medium">
                       Confirm account number
                     </label>
                     <input
@@ -221,7 +225,7 @@ function Setting() {
                 </div>
                 <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
                   <div className="w-full">
-                    <label className="block font-semibold">IFSC code</label>
+                    <label className="block font-medium">IFSC code</label>
                     <input
                       type="text"
                       placeholder="ICIC00033343"
@@ -229,7 +233,7 @@ function Setting() {
                     />
                   </div>
                   <div className="w-full">
-                    <label className="block font-semibold">Bank name</label>
+                    <label className="block font-medium">Bank name</label>
                     <input
                       type="text"
                       placeholder="ICICI bank"
@@ -239,7 +243,7 @@ function Setting() {
                 </div>
                 <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
                   <div className="w-full">
-                    <label className="block font-semibold">Name on account</label>
+                    <label className="block font-medium">Name on account</label>
                     <input
                       type="text"
                       placeholder="Robert Fox"
@@ -261,19 +265,19 @@ function Setting() {
           <>
             <div className="pt-6 w-[100%]">
               <div>
-                <h1 className="font-semibold">Notifications</h1>
+                <h1 className="font-medium">Notifications</h1>
               </div>
 
               <div className="pt-6">
                 <div className="flex items-center justify-between mb-4 border-b-[1px] pb-3 px-2">
-                  <label className="text-gray-700 font-bold">Notifications</label>
+                  <label className="text-gray-700 font-medium">Notifications</label>
                   <ToggleSwitch
                     enabled={notificationsEnabled}
                     setEnabled={setNotificationsEnabled}
                   />
                 </div>
                 <div className="flex items-center justify-between mb-4 border-b-[1px] pb-3 px-2">
-                  <label className="text-gray-700 font-bold">
+                  <label className="text-gray-700 font-medium">
                     Notifications Sound
                   </label>
                   <ToggleSwitch
@@ -282,7 +286,7 @@ function Setting() {
                   />
                 </div>
                 <div className="flex items-center justify-between mb-4 border-b-[1px] pb-3 px-2">
-                  <label className="text-gray-700 font-bold">
+                  <label className="text-gray-700 font-medium">
                     Send to email id
                   </label>
                   <ToggleSwitch
@@ -291,7 +295,7 @@ function Setting() {
                   />
                 </div>
                 <div className="flex items-center justify-between border-b-[1px] pb-3 px-2">
-                  <label className="text-gray-700 font-bold">Send to phone</label>
+                  <label className="text-gray-700 font-medium">Send to phone</label>
                   <ToggleSwitch
                     enabled={sendToPhone}
                     setEnabled={setSendToPhone}

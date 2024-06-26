@@ -29,10 +29,10 @@ function Employees() {
                   <>
                     <div className="md:w-[50vw] xs:w-[70vw]">
                       <div className="mb-4">
-                        <h2 className="text-2xl font-semibold mb-6 text-center">
+                        <h2 className="md:text-2xl font-semibold mb-6 text-center">
                           Add money to wallet
                         </h2>
-                        <label className="block text-gray-700 mb-2">
+                        <label className="block text-gray-700 mb-2 font-medium">
                           Full Name
                         </label>
                         <input
@@ -42,7 +42,7 @@ function Employees() {
                         />
                       </div>
                       <div className="mb-4">
-                        <label className="block text-gray-700 mb-2">
+                        <label className="block text-gray-700 mb-2 font-medium">
                           Full Name
                         </label>
                         <select
