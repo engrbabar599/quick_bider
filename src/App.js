@@ -10,7 +10,6 @@ import Wallet from "./pages/Wallet/Wallet";
 import Claim from "./pages/Claim/Claim";
 import Investment from "./pages/Investment/Investment";
 import BEProject from "./pages/Investment/BEProject";
-import MyBids from "./pages/My Bids/MyBids";
 import { SignUp } from "./pages/OnBoarding/SignUp";
 import { Dashboard } from "./pages/Dashboard/Dashboard";
 import { Sidebar } from "./components/Sidebar";

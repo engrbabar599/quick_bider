@@ -87,13 +87,13 @@ const Wallet = () => {
     setIsVisible(!isVisible);
   };
   return (
-    <div className="container mx-auto p-4 grid grid-cols-1 lg:grid-cols-3 gap-4">
+    <div className="container mx-auto p-4 lg:grid flex flex-col lg:grid-cols-3 gap-5">
       <div className="lg:col-span-2">
         <h2 className="text-xl font-semibold mb-4">Wallet</h2>
         <div className="bg-white shadow-md rounded p-6">
           <div className="flex justify-between items-center mb-4">
             <div>
-              <p className="text-4xl font-bold">$12500.00</p>
+              <p className="xs:text-xl md:text-4xl font-bold">$12500.00</p>
               <p className="text-gray-500">Current Balance</p>
             </div>
             <div>

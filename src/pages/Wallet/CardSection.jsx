@@ -19,8 +19,8 @@ const CardSection = () => {
         </div>
       </div>
       <div className="mt-4 ">
-        <h3 className="text-lg font-semibold opacity-50">Total Balance</h3>
-        <p className="text-2xl font-bold">$12,500.00</p>
+        <h3 className="text-sm font-normal  text-[#B8B8B8]">Total Balance</h3>
+        <p className="text-4xl font-semibold text-gray-1">$12,500.00</p>
       </div>
       <div className="mt-4 ">
         <div className="shadow bg-white p-2 rounded-lg">

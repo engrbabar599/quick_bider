@@ -88,9 +88,9 @@ const Graph = () => {
   };
   return (
     <div className=" mx-auto ">
-      <div className="lg:col-span-2">
+      <div className="lg:col-span-4">
 
-        <div className="bg-white shadow-md rounded p-6 h-full">
+        <div className="bg-white  rounded p-6 h-full">
           <div className="">
             <div className="flex  justify-between items-center">
               <div>
@@ -101,9 +101,9 @@ const Graph = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-between items-center px-4 py-10 gap-4">
-            <div className=" flex items-center justify-between ">
-              <select name="" id="" className="border rounded-lg w-40 px-2 py-2 outline-none">
+          <div className="flex justify-center gap-4 items-center px-4 py-10 w-full">
+            <div className=" flex items-center justify-between">
+              <select name="" id="" className=" rounded-lg px-2 py-2 outline-2 border-2">
                 <option value="last 7 days">last 7 days</option>
                 <option value="last 7 days">last 7 days</option>
                 <option value="last 7 days">last 7 days</option>
@@ -116,7 +116,7 @@ const Graph = () => {
             <div>
               <button
                 onClick={toggleVisibility}
-                className="bg-custom-blue text-white px-6 py-2 rounded-lg min-w-max "
+                className="bg-custom-blue text-white px-6 py-3 rounded-lg xs:text-smmin-w-max "
               >
                 Add money
               </button>

@@ -166,12 +166,12 @@ const Investment = () => {
 
   return (
     <>
-      <div className="p-5">
+      <div className="md:p-5">
         <div>
           <div>
             <h1 className="text-lg font-semibold">Investments</h1>
           </div>
-          <div className="flex gap-4 py-4">
+          <div className="flex md:justify-start xs:flex xs:justify-center gap-4 py-4">
             <div>
               <button
                 onClick={handleFirstButtonClick}
@@ -212,7 +212,7 @@ const Investment = () => {
                   strategic decisions that drive success.
                 </p>
                 <div className="bg-sky-100 px-4 py-6 border rounded-xl mb-4 flex  lg:flex-row flex-col justify-between items-center gap-4">
-                  <div>
+                  <div className="items-center flex">
                     <span className="text-center lg:text-justify">
                       Unlock the Potential of Your Investments, activate
                       investment services.
@@ -249,7 +249,7 @@ const Investment = () => {
                 </div>
               </div>
               <div className=" col-span-4">
-                {/* <Graph /> */}
+                <Graph />
               </div>
             </div>
 
@@ -357,24 +357,26 @@ const Investment = () => {
 
         {activeTab === "second" && (
           <>
-            <div className=" lg:grid lg:grid-cols-12 gap-5">
-              <div className="bg-white p-6 border-[3px] rounded-lg shadow-lg lg:col-span-8">
-                <div className="flex justify-between items-center mb-4">
+            <div className="lg:grid lg:grid-cols-12 flex flex-col gap-5">
+              <div className="bg-white md:p-6 p-4 border-2 rounded-2xl shadow-lg xs:col-span-12 md:lg:col-span-8">
+                <div className="flex flex-row justify-between items-center ">
                   <div>
-                    <h2 className="text-xl font-semibold opacity-50">
+                    <h2 className="text-lg font-medium opacity-50 min-w-max">
                       My Investments
                     </h2>
-                    <p className="text-3xl font-bold pt-5">
+                    <p className="text-xl font-semibold ">
                       $12,000.00
-                      <span className="text-xl text-green-500">(+21%)</span>
+                      <span className="hidden md:inline text-xl text-green-500">(+21%)</span>
                     </p>
                   </div>
-                  <div className="lg:w-40 lg:h-30">
+                  <div className="w-1/4">
                     <Line data={data} options={options} />
                   </div>
                 </div>
+
+
                 <div className="pt-14">
-                  <div className="flex justify-between p-6 border-[3px] rounded-xl h-[30vh]">
+                  <div className=" hidden lg:flex justify-between p-6 border-2 rounded-xl">
                     <div className="flex flex-col justify-between">
                       <p className="text-gray-600">Total Returns</p>
                       <p className="text-2xl font-bold text-green-600">
@@ -390,16 +392,31 @@ const Investment = () => {
                       </p>
                       <p className="text-green-600">↑ 21%</p>
                     </div>
-                    <div className="border"></div>
-                    <div className="flex flex-col justify-between">
+                    <div className="xs:hidden md:block border"></div>
+                    <div className="xs:hidden md:flex md:flex-col md:justify-between">
                       <p></p>
                       <p className="text-gray-600">Active investments</p>
                       <p className="text-2xl font-bold text-green-600">5</p>
                     </div>
                   </div>
+
+                  <div className=" flex lg:hidden flex-row justify-between items-center">
+                    <div>
+                      <p className="text-[#737373] text-xs">
+                        Total returns </p>
+                      <p className="text-custom-green text-base font-bold"> $2520.00</p>
+                      <p className="text-custom-green text-xs font-medium">↑ 21%</p>
+                    </div>
+
+                    <div>
+                      <p className="text-[#737373] text-xs">My balance</p>
+                      <p className="text-gray-1 text-base font-bold">$14250.00</p>
+                      <p className="text-custom-green text-xs font-medium">↑ 21%</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className=" col-span-4 border-[3px] rounded-lg">
+              <div className=" xs:col-span-12 md:col-span-4  border-[3px] rounded-lg">
                 <Graph />
               </div>
             </div>

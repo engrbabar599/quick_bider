@@ -6,7 +6,8 @@ module.exports = {
       fontFamily: {
         "poppins": ["Poppins"],
         "inter": ["Inter"],
-        "open-sans": ["Open Sans"]
+        "open-sans": ["Open Sans"],
+        "lato": ["Lato"]
       },
       colors: {
         "custom-blue": "#6F9CFF",
@@ -24,7 +25,7 @@ module.exports = {
       },
     },
   },
-  
+
   plugins: [],
 }
 
