@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import car1 from "../../assets/images/car1.png";
 import car2 from "../../assets/images/car2.png";
 import car3 from "../../assets/images/car3.png";
 import stars from "../../assets/images/stars.png";
 import people from "../../assets/images/people.png";
 import clock from "../../assets/images/clock.png";
+
 function BidDetails() {
   const cards = [
     {
@@ -72,9 +72,8 @@ function BidDetails() {
     },
   ];
 
-  const [activeTab, setActiveTab] = useState("first")
+  const [activeTab, setActiveTab] = useState("first");
 
- 
   return (
     <>
       <div className="cardspart grid xs:grid-cols-1 lg:grid-cols-12 gap-5 p-5">
@@ -83,17 +82,68 @@ function BidDetails() {
             <>
               <div className="card border rounded-3xl p-8 shadow-sm  col-span-8">
                 <div className="cars flex items-center justify-center gap-5">
-                  <div onClick={()=>{setActiveTab("first")}} className="flex flex-col gap-4">
-                    <img src={car1} className={`${(activeTab === "first")? 'scale-110 duration' : ''} xs:hidden md:block`} alt="" />
-                    <hr className={`${(activeTab === "first")? "border-2 rounded-full border-blue": "border-2 rounded-full"}`} />
+                  <div
+                    onClick={() => {
+                      setActiveTab("first");
+                    }}
+                    className="flex flex-col gap-4"
+                  >
+                    <img
+                      src={car1}
+                      className={`${
+                        activeTab === "first" ? "scale-110 duration" : ""
+                      } xs:hidden md:block`}
+                      alt=""
+                    />
+                    <hr
+                      className={`${
+                        activeTab === "first"
+                          ? "border-2 rounded-full border-blue"
+                          : "border-2 rounded-full"
+                      }`}
+                    />
                   </div>
-                  <div onClick={()=>{setActiveTab("second")}} className="flex flex-col gap-4">
-                    <img src={car2} className={`${(activeTab === "second")? 'scale-110 duration' : ''}`} alt="" />
-                    <hr className={`${(activeTab === "second")? "border-2 rounded-full border-blue": "border-2 rounded-full"}`} />
+                  <div
+                    onClick={() => {
+                      setActiveTab("second");
+                    }}
+                    className="flex flex-col gap-4"
+                  >
+                    <img
+                      src={car2}
+                      className={`${
+                        activeTab === "second" ? "scale-110 duration" : ""
+                      }`}
+                      alt=""
+                    />
+                    <hr
+                      className={`${
+                        activeTab === "second"
+                          ? "border-2 rounded-full border-blue"
+                          : "border-2 rounded-full"
+                      }`}
+                    />
                   </div>
-                  <div onClick={()=>{setActiveTab("third")}} className="flex flex-col gap-4">
-                    <img src={car3} className={`${(activeTab === "third")? 'scale-110 duration' : ''} xs:hidden md:block`} alt="" />
-                    <hr className={`${(activeTab === "third")? "border-2 rounded-full border-blue": "border-2 rounded-full"}`} />
+                  <div
+                    onClick={() => {
+                      setActiveTab("third");
+                    }}
+                    className="flex flex-col gap-4"
+                  >
+                    <img
+                      src={car3}
+                      className={`${
+                        activeTab === "third" ? "scale-110 duration" : ""
+                      } xs:hidden md:block`}
+                      alt=""
+                    />
+                    <hr
+                      className={`${
+                        activeTab === "third"
+                          ? "border-2 rounded-full border-blue"
+                          : "border-2 rounded-full"
+                      }`}
+                    />
                   </div>
                 </div>
 

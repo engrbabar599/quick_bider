@@ -19,7 +19,6 @@ import { AuctionPage } from "./pages/Auction";
 import { MyBidsPage } from "./pages/MyBids";
 import MyBids from "./pages/My Bids/MyBids";
 
-
 export const Layout = () => {
   return (
     <div className='xl:grid xl:grid-cols-6 w-full flex'>
@@ -58,10 +57,11 @@ const router = createBrowserRouter([
         element: <AuctionPage />
       },
       {
-        path: "mybids",
-        element: <MyBidsPage />
-        // element: <MyBids/>
+        path: "/mybids",
+        // element: <MyBidsPage />
+        element: <MyBids/>
       },
+     
       {
         path: "/investments",
         element: <Investment />
@@ -78,16 +78,19 @@ const router = createBrowserRouter([
         path: "/settings",
         element: <Setting />
       },
-      {
-        path: "/claim",
-        element: <Claim />
-      },
+      // {
+      //   path: "/claim",
+      //   element: <Claim />
+      // },
       {
         path: "/BEProject",
         element: <BEProject />
       },
-     
     ]
+  },
+  {
+    path: "/claim",
+    element: <Claim />
   },
 ]);
 

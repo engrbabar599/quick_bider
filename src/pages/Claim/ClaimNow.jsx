@@ -19,15 +19,15 @@ function ClaimNow({ onClose }) {
   return (
     <div>
       {
-        <div className=" fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className=" flex items-center justify-center h-[100vh]">
-            <div className=" mx-auto p-8 bg-white rounded-lg shadow-md py-7 ">
+        <div className=" fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ">
+          <div className=" flex items-center justify-center ">
+            <div className=" mx-auto p-8 bg-white rounded-lg shadow-md xs:py-7 md:py-2 ">
               <div className="flex justify-between mb-6"></div>
               <form onSubmit={handleSubmit}>
                 {
                   <>
-                    <div className="w-[25vw]">
-                      <h2 className="text-2xl font-semibold mb-6 text-center">
+                    <div className="xs:w-[90vw] md:w-[30vw]">
+                      <h2 className="lg:text-2xl font-semibold mb-4 text-center">
                         Claim now
                       </h2>
                       <div className="mb-4">
@@ -110,7 +110,7 @@ function ClaimNow({ onClose }) {
                       Submit claim
                     </button>
 
-                    <div className="text-center pt-9">
+                    <div className="text-center pt-5">
                       <button className="text-custom-blue underline">
                         + add new card
                       </button>

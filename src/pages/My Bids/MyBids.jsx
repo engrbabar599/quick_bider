@@ -1,13 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import car1 from "../../assets/images/car1.png";
 import car2 from "../../assets/images/car2.png";
 import car3 from "../../assets/images/car3.png";
 import stars from "../../assets/images/stars.png";
 import people from "../../assets/images/people.png";
 import clock from "../../assets/images/clock.png";
-
 
 
 function MyBids() {
@@ -49,6 +48,7 @@ function MyBids() {
     setActiveTab("second");
   };
 
+ 
   return (
     <>
       <div className="p-6">
@@ -99,7 +99,7 @@ function MyBids() {
 
                     <div>
                       <div className="text-center xs:block md:hidden">
-                        <button className="px-4 py-2 border border-blue rounded-lg text-custom-blue ">
+                        <button  className="px-4 py-2 border border-blue rounded-lg text-custom-blue ">
                           View details
                         </button>
                       </div>
@@ -192,10 +192,10 @@ function MyBids() {
                   <div>
 
                     <div className="text-center pt-6 xs:hidden md:block">
-                      <button className="px-4 py-2 border border-blue rounded-lg text-custom-blue hover:bg-custom-blue hover:text-white">
-                        <Link to={'/bidDetails'}>
+                      <button  className="px-4 py-2 border border-blue rounded-lg text-custom-blue hover:bg-custom-blue hover:text-white">
+                        
                           View details
-                        </Link>
+                        
                       </button>
                     </div>
                   </div>

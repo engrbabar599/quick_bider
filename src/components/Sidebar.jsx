@@ -26,6 +26,8 @@ export const Sidebar = () => {
             icon: InvestmentsIcon,
             navigate: "/investments"
         },
+       
+
         {
             name: "Wallet",
             icon: WalletIcon,
