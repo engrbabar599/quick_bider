@@ -1,6 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import ClaimNow from "./ClaimNow";
+import { Button } from "../../components/Button";
+import { OutlineButton } from "../../components/OutlineButton";
+import IMAGES from "../../assets/IMAGES";
 
 function Claim() {
   const cardItem = [
@@ -48,47 +51,60 @@ function Claim() {
             <h1 className="text-lg font-semibold">My winnings</h1>
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-            {cardItem.map((value, i) => {
+
+            {cardItem.map((value, index) => {
               return (
-                <div className="bg-sky-100 rounded-xl shadow-lg">
-                  <div className="shadow-lg bg-white p-5">
-                    <div className="">
-                      <img
-                        className="rounded-xl"
-                        src="https://images.unsplash.com/photo-1584902645120-f86567d892b6?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt=""
-                      />
+                <div
+                  // onClick={() => { setOpenBidsInfo(true) }}
+                  className=' bg-white border shadow-sm  rounded-xl cursor-pointer '>
+                  <div className='space-y-4 p-4'>
+                    <img src={IMAGES?.mustang} alt="" className='object-contain !rounded-lg md:w-56 ' />
+
+                    <div className='font-poppins font-semibold text-base'>
+                      <div className='flex flex-col'>
+                        <p className='text-gray-1'>Ford Mustang
+                          <span className='text-gray-4 text-sm font-normal'>(2017 Model)</span>
+                        </p>
+                        <p className='font-poppins font-medium text-sm text-custom-green'>You are the winner! </p>
+                      </div>
                     </div>
-                    <div className="flex items-center pt-2">
-                      <h1 className="text-lg font-semibold">{value.model}</h1>
-                      <p className="opacity-70">{value.year}</p>
-                    </div>
-                    <div>
-                      <h1 className="text-green-500 font-semibold">
-                        You are the winner!
-                      </h1>
+
+                  </div>
+
+
+                  <div className={`flex flex-row justify-around items-center ${index === 3 ? " bg-white " : " bg-custom-blue bg-opacity-10 "} `}>
+
+                    <div className='flex flex-row w-full justify-between  p-3'>
+                      <div className='font-poppins text-gray-4 font-normal'>
+                        <p className='text-xs'>My Score</p>
+                        <p className='font-semibold text-sm text-gray-1'>1280</p>
+                      </div>
+                      <div>
+                        {index === 3 ?
+                          <OutlineButton
+                            className={"!p-2"}
+                            title={"Claim sent"} />
+                          :
+
+                          <Button
+                            onClick={showDialog}
+                            className={"!p-2 "}
+                            title={"Claim now"}
+                          />
+                        }
+                      </div>
+
                     </div>
                   </div>
-                  <div className="flex items-center justify-between p-5">
-                    <div>
-                      <p className="opacity-60">My score</p>
-                      <p className="text-lg font-bold">{value.score}</p>
-                    </div>
-                    <div>
-                      <button
-                        onClick={showDialog}
-                        className="bg-custom-blue text-white px-4 py-2 rounded mb-4"
-                      >
-                        Add money
-                      </button>
-                      {isVisible && <ClaimNow onClose={closeDialog} />}
-                    </div>
-                  </div>
+
+
                 </div>
               );
             })}
           </div>
+
         </div>
+        {isVisible && <ClaimNow onClose={() => setIsVisible(false)} />}
       </div>
     </>
   );

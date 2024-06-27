@@ -7,9 +7,11 @@ module.exports = {
         "poppins": ["Poppins"],
         "inter": ["Inter"],
         "open-sans": ["Open Sans"],
-        "lato": ["Lato"]
+        "lato": ["Lato"],
+        "dm-sans": ["DM Sans"]
       },
       colors: {
+        "custom-red": "#F43A3A",
         "custom-blue": "#6F9CFF",
         "custom-green": "#3EB14A",
         "custom-gray": "#F5F5F5",

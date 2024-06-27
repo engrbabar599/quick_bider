@@ -1,61 +1,56 @@
 import React from "react";
+import { Input } from "../../components/Input";
+import { Button } from "../../components/Button";
 
 function HelpAndSupport() {
   return (
     <>
       <div className=" mx-auto md:p-4">
-        <div className="px-4">
-            <h2 className="text-2xl font-medium">Send enquiry</h2>
+        <div className="md:px-4">
+          <h2 className="md:text-2xl text-lg font-medium">Send enquiry</h2>
         </div>
-        <div className=" rounded p-4 md:grid gap-6 md:grid-cols-3 flex flex-col ">
+        <div className=" rounded md:p-4 py-4 md:grid gap-6 md:grid-cols-3 flex flex-col ">
           <form className="md:col-span-2 shadow-lg p-4 border rounded-lg">
             <div className="grid gap-4 md:grid-cols-2 ">
               <div>
-                <label className="block text-gray-700 font-medium">Full name</label>
-                <input
-                  type="text"
-                  placeholder="Full name"
-                  className="mt-1 p-2 w-full border rounded-lg"
+                <Input
+                  label={"Full name"}
+                  placeholder={"Full name"}
                 />
               </div>
               <div>
-                <label className="block text-gray-700 font-medium">Last name</label>
-                <input
-                  type="text"
-                  placeholder="Last name"
-                  className="mt-1 p-2 w-full border rounded-lg"
+                <Input
+                  label={"Last name"}
+                  placeholder={"Last name"}
                 />
               </div>
             </div>
             <div className="grid gap-4 md:grid-cols-2 mt-4">
               <div>
-                <label className="block text-gray-700 font-medium">Phone number</label>
-                <input
-                  type="text"
-                  placeholder="+1"
-                  className="mt-1 p-2 w-full border rounded-lg"
+                <Input
+                  label={"Phone number"}
+                  placeholder={"+1"}
                 />
               </div>
               <div>
-                <label className="block text-gray-700 font-medium">Email ID</label>
-                <input
-                  type="email"
-                  placeholder="Email id"
-                  className="mt-1 p-2 w-full border rounded-lg"
+                <Input
+                  label={"Email ID"}
+                  placeholder={"Email id"}
                 />
               </div>
             </div>
             <div className="mt-4">
-              <label className="block text-gray-700 font-medium">Your message</label>
+              <label className="block text-gray-1 font-medium">Your message</label>
               <textarea
                 placeholder="Type your message here"
-                className="mt-1 p-2 w-full border rounded-lg h-32"
+                className="mt-1 p-2 w-full border rounded-lg h-32 resize-none focus:ring-2 ring-custom-blue outline-none"
               ></textarea>
             </div>
-            <div className="text-center">
-              <button className=" bg-custom-blue text-sm font-semibold text-white px-12 py-3 rounded-lg hover:bg-white hover:text-custom-blue hover:border hover:border-custom-blue mt-4">
-                Submit
-              </button>
+            <div className="w-full flex justify-center mt-6">
+              <Button
+                className={"md:w-1/5"}
+                title={"Submit"}
+              />
             </div>
           </form>
           <div className="space-y-4">
@@ -66,8 +61,8 @@ function HelpAndSupport() {
                 </p>
               </div>
               <div>
-                <p className=" font-medium">Contact us by email</p>
-                <p className="text-custom-blue md:text-xs lg:text-sm font-normal">support@quickbet.com</p>
+                <p className=" font-medium text-gray-1">Contact us by email</p>
+                <p className="text-custom-blue text-xs  font-normal">support@quickbet.com</p>
               </div>
             </div>
             <div className="border rounded-md shadow p-4 flex items-center gap-5 cursor-pointer">
@@ -78,7 +73,7 @@ function HelpAndSupport() {
               </div>
               <div>
                 <p className=" font-medium">Give us a call</p>
-                <p className="text-custom-blue text-sm font-normal">+12 3456 7890</p>
+                <p className="text-custom-blue text-xs font-normal">+12 3456 7890</p>
               </div>
             </div>
             <div className="border p-4 rounded-md shadow flex items-center gap-5 cursor-pointer">
@@ -89,7 +84,7 @@ function HelpAndSupport() {
               </div>
               <div>
                 <p className=" font-medium">Let’s chat</p>
-                <p className="text-custom-blue text-sm font-normal">Open live chat</p>
+                <p className="text-gray-4 text-xs font-normal">Open live chat</p>
               </div>
             </div>
           </div>

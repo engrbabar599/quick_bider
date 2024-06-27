@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Employees from "./Employees";
 import { Line } from "react-chartjs-2";
+import { Button } from "../../components/Button"
 import CardSection from "./CardSection";
 import {
   Chart as ChartJS,
@@ -87,22 +88,22 @@ const Wallet = () => {
     setIsVisible(!isVisible);
   };
   return (
-    <div className="container mx-auto p-4 lg:grid flex flex-col lg:grid-cols-3 gap-5">
+    <div className="container mx-auto md:p-4 lg:grid flex flex-col lg:grid-cols-3 gap-5">
       <div className="lg:col-span-2">
-        <h2 className="text-2xl font-medium font-poppins mb-4">Wallet</h2>
-        <div className="bg-white shadow rounded-lg border p-6">
+        <h2 className="md:text-2xl font-medium font-poppins text-gray-1 mb-4 text-lg">Wallet</h2>
+        <div className="bg-white shadow rounded-lg border md:p-6 p-4">
           <div className="flex justify-between items-center mb-4">
             <div>
-              <p className="xs:text-xl md:text-4xl font-bold">$12500.00</p>
-              <p className="">Current Balance</p>
+              <p className="xs:text-xl md:text-4xl font-semibold text-gray-1 font-poppins">$12500.00</p>
+              <p className="text-gray-1">Current Balance</p>
             </div>
             <div>
-              <button
+              <Button
+                className={"md:px-6 !text-xs"}
                 onClick={toggleVisibility}
-                className="bg-custom-blue text-xs font-semibold text-white px-8 py-3 rounded-lg mb-4"
-              >
-                Add money
-              </button>
+                title={"Add money"}
+              />
+
               {isVisible && <Employees />}
             </div>
           </div>

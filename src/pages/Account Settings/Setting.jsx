@@ -1,6 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import { Switch } from "@headlessui/react";
+import IMAGES from "../../assets/IMAGES";
+import { OutlineButton } from "../../components/OutlineButton";
+import { Input } from "../../components/Input";
+import { Button } from "../../components/Button";
 
 function Setting() {
   const tabs = [
@@ -33,33 +37,37 @@ function Setting() {
 
   return (
     <>
-    <div className=" px-5 ">
-          <h1 className=" text-2xl font-medium font-poppins">
-            Settings
-          </h1>
+      <div className=" px-5 ">
+        <h1 className=" text-2xl font-medium font-poppins text-gray-1">
+          Settings
+        </h1>
+      </div>
+      <div className=" md:w-[60%]  border rounded-lg p-5 m-5 flex flex-col gap-4 ">
+        <div className="overflow-x-auto">
+
+          <div className="flex flex-wrap  min-w-max flex-row gap-6 justify-center sm:justify-start space-x-0 sm:space-x-4 mb-4">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                className={`pb-1 mx-1 sm:mx-0  text-base font-normal ${activeTab === tab
+                  ? "border-b-2 border-custom-blue text-custom-blue font-medium "
+                  : "text-gray-4 hover:border-b-2 hover:border-custom-blue"
+                  }`}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
-      <div className=" md:w-[60%]  border rounded-lg p-5 m-5">
-        <div className="flex flex-wrap justify-center sm:justify-start space-x-0 sm:space-x-4 mb-4">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              className={`pb-1 mx-1 sm:mx-0  text-base font-normal ${activeTab === tab
-                ? "border-b-2 border-blue text-custom-blue font-medium opacity-100"
-                : "text-gray-600 hover:border-b-2 hover:border-blue opacity-60"
-                }`}
-              onClick={() => setActiveTab(tab)}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
+
 
         {activeTab === "Account" && (
           <>
             <div className="border-b-[1px]">
               <div className="flex flex-col gap-2 sm:flex-row items-center mb-4">
                 <img
-                  src="https://images.unsplash.com/photo-1623184663110-89ba5b565eb6?q=80&w=1412&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src={IMAGES.profilePic}
                   alt="Profile"
                   className="w-24 h-24 rounded-lg mr-4 mb-4 sm:mb-0"
                 />
@@ -67,93 +75,85 @@ function Setting() {
                   <h2 className="text-xl font-medium">Robert Fox</h2>
                   <p className="text-[#828282] font-normal text-lg">robertfox@gmail.com</p>
                 </div>
-                <button className="ml-0 sm:ml-auto border border-blue  text-custom-blue xs:px-1 md:px-4  py-2 rounded-lg hover:bg-custom-blue hover:text-white">
-                  Update Profile Picture
-                </button>
+                <div>
+                  <OutlineButton
+                    className={"px-4"}
+                    title={"Update Profile Picture"}
+                  />
+                </div>
               </div>
             </div>
-            <div className="pt-5">
+            <div className="pt-3">
               <div>
                 <h1 className="font-medium text-base">Personal details</h1>
               </div>
-              <form className="space-y-4">
-                <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pt-3">
-                  <div className="w-full">
-                    <label className="block font-medium text-base">Full name</label>
-                    <input
-                      type="text"
-                      placeholder="Full name"
-                      className="w-full p-2 border rounded-lg"
-                    />
+              <form className="space-y-8">
+                <div className="space-y-5">
+
+                  <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pt-3">
+                    <div className="w-full">
+                      <Input
+                        label={"Full name"}
+                        placeholder={"Full name"}
+                      />
+                    </div>
+                    <div className="w-full">
+                      <Input
+                        label={"Last name"}
+                        placeholder={"Last name"}
+                      />
+                    </div>
                   </div>
-                  <div className="w-full">
-                    <label className="block font-medium">Last name</label>
-                    <input
-                      type="text"
-                      placeholder="Last name"
-                      className="w-full p-2 border rounded-lg"
-                    />
+                  <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <div className="w-full">
+                      <Input
+                        type={"number"}
+                        label={"Phone Number"}
+                        placeholder={"+1"}
+                      />
+                    </div>
+                    <div className="w-full">
+                      <Input
+                        label={"Email ID"}
+                        placeholder={"Email id"}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                  <div className="w-full">
-                    <label className="block font-medium">Phone number</label>
-                    <input
-                      type="text"
-                      placeholder="+1"
-                      className="w-full p-2 border rounded-lg"
-                    />
+                  <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <div className="w-full">
+                      <Input
+                        label={"Street address"}
+                        placeholder={"Type address"}
+                      />
+                    </div>
+                    <div className="w-full">
+                      <Input
+                        label={"Zip code"}
+                        placeholder={"Type nearby location"}
+                      />
+                    </div>
                   </div>
-                  <div className="w-full">
-                    <label className="block font-medium">Email ID</label>
-                    <input
-                      type="text"
-                      placeholder="Email id"
-                      className="w-full p-2 border rounded-lg"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                  <div className="w-full">
-                    <label className="block font-medium">Street address</label>
-                    <input
-                      type="text"
-                      placeholder="Type address"
-                      className="w-full p-2 border rounded-lg"
-                    />
-                  </div>
-                  <div className="w-full">
-                    <label className="block font-medium">Zip code</label>
-                    <input
-                      type="text"
-                      placeholder="Type nearby location"
-                      className="w-full p-2 border rounded-lg"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                  <div className="w-full">
-                    <label className="block font-medium">City</label>
-                    <input
-                      type="text"
-                      placeholder="Type city name"
-                      className="w-full p-2 border rounded-lg"
-                    />
-                  </div>
-                  <div className="w-full">
-                    <label className="block font-medium">Province</label>
-                    <input
-                      type="text"
-                      placeholder="Type province name"
-                      className="w-full p-2 border rounded-lg"
-                    />
+                  <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <div className="w-full">
+                      <Input
+                        label={"City"}
+                        placeholder={"Type city name"}
+                      />
+                    </div>
+                    <div className="w-full">
+                      <Input
+                        label={"Province"}
+                        placeholder={"Type province name"}
+                      />
+                    </div>
                   </div>
                 </div>
 
-                <div className="text-center">
-                  <button className="mx-auto bg-custom-blue text-white px-14 py-2 rounded-lg hover:bg-custom-blue-600">
-                    Submit
-                  </button>
+                <div className="w-full text-center flex items-center justify-center">
+                  <Button
+                    className={"md:w-2/5 self-center items-center"}
+                    title={"Submit"}
+                  />
                 </div>
               </form>
             </div>
@@ -162,35 +162,28 @@ function Setting() {
 
         {activeTab === "Security" && (
           <>
-            <div className="pt-6">
+            <div className="space-y-2">
               <div>
-                <h1 className="font-medium">Update pasword</h1>
+                <h1 className="font-medium text-gray-1 text-base">Update pasword</h1>
               </div>
-              <form className="space-y-4">
+              <form className="space-y-8">
                 <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pt-3">
                   <div className="w-full">
-                    <label className="block font-medium">New password</label>
-                    <input
-                      type="text"
-                      placeholder="Type new password"
-                      className="w-full p-2 border rounded"
-                    />
+                    <Input
+                      label={"New password"}
+                      placeholder={"Type new password"} />
                   </div>
                   <div className="w-full">
-                    <label className="block font-medium">
-                      Confirm new password
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Confirm new password"
-                      className="w-full p-2 border rounded"
-                    />
+                    <Input
+                      label={"Confirm new password"}
+                      placeholder={"Confirm new password"} />
                   </div>
                 </div>
-                <div className="text-center">
-                  <button className="mx-auto bg-custom-blue text-white px-8 py-2 rounded-lg hover:bg-custom-blue-600">
-                    Update password
-                  </button>
+                <div className="text-center w-full">
+                  <Button
+                    className={"md:w-2/5"}
+                    title={"Update password"}
+                  />
                 </div>
               </form>
             </div>
@@ -198,64 +191,52 @@ function Setting() {
         )}
         {activeTab === "Bank details" && (
           <>
-            <div className="pt-6">
+            <div className="">
               <div>
-                <h1 className="font-medium">Bank details</h1>
+                <h1 className="font-medium text-gray-1 text-base">Bank details</h1>
               </div>
-              <form className="space-y-4">
-                <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pt-3">
-                  <div className="w-full">
-                    <label className="block font-medium">Account number</label>
-                    <input
-                      type="text"
-                      placeholder="343535434333"
-                      className="w-full p-2 border rounded"
-                    />
+              <form className="space-y-8">
+                <div className="space-y-4">
+
+                  <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pt-3">
+                    <div className="w-full">
+                      <Input
+                        label={"Account number"}
+                        placeholder={"343535434333"} />
+                    </div>
+                    <div className="w-full">
+                      <Input
+                        label={"Confirm account number"}
+                        placeholder={"343535434333"} />
+                    </div>
                   </div>
-                  <div className="w-full">
-                    <label className="block font-medium">
-                      Confirm account number
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="343535434333"
-                      className="w-full p-2 border rounded"
-                    />
+                  <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <div className="w-full">
+                      <Input
+                        label={"IFSC code"}
+                        placeholder={"ICIC00033343"} />
+                    </div>
+                    <div className="w-full">
+                      <Input
+                        label={"Bank name"}
+                        placeholder={"ICICI bank"} />
+                    </div>
                   </div>
-                </div>
-                <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                  <div className="w-full">
-                    <label className="block font-medium">IFSC code</label>
-                    <input
-                      type="text"
-                      placeholder="ICIC00033343"
-                      className="w-full p-2 border rounded"
-                    />
-                  </div>
-                  <div className="w-full">
-                    <label className="block font-medium">Bank name</label>
-                    <input
-                      type="text"
-                      placeholder="ICICI bank"
-                      className="w-full p-2 border rounded"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                  <div className="w-full">
-                    <label className="block font-medium">Name on account</label>
-                    <input
-                      type="text"
-                      placeholder="Robert Fox"
-                      className="w-1/2 p-2 border rounded"
-                    />
+                  <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <div className="md:w-2/4 w-full">
+                      <Input
+                        label={"Name on account"}
+                        placeholder={"Robert Fox"} />
+                    </div>
                   </div>
                 </div>
 
-                <div className="text-center">
-                  <button className="mx-auto bg-custom-blue text-white px-8 py-3 rounded-lg hover:bg-custom-blue-600">
-                    Update bank details
-                  </button>
+
+                <div className="text-center w-full">
+                  <Button
+                    className={"md:w-2/5"}
+                    title={"Update bank details"}
+                  />
                 </div>
               </form>
             </div>
@@ -263,21 +244,21 @@ function Setting() {
         )}
         {activeTab === "Notifications" && (
           <>
-            <div className="pt-6 w-[100%]">
+            <div className=" w-[100%]">
               <div>
                 <h1 className="font-medium">Notifications</h1>
               </div>
 
               <div className="pt-6">
                 <div className="flex items-center justify-between mb-4 border-b-[1px] pb-3 px-2">
-                  <label className="text-gray-700 font-medium">Notifications</label>
+                  <label className="text-gray-1 font-medium">Notifications</label>
                   <ToggleSwitch
                     enabled={notificationsEnabled}
                     setEnabled={setNotificationsEnabled}
                   />
                 </div>
                 <div className="flex items-center justify-between mb-4 border-b-[1px] pb-3 px-2">
-                  <label className="text-gray-700 font-medium">
+                  <label className="text-gray-1 font-medium">
                     Notifications Sound
                   </label>
                   <ToggleSwitch
@@ -286,7 +267,7 @@ function Setting() {
                   />
                 </div>
                 <div className="flex items-center justify-between mb-4 border-b-[1px] pb-3 px-2">
-                  <label className="text-gray-700 font-medium">
+                  <label className="text-gray-1 font-medium">
                     Send to email id
                   </label>
                   <ToggleSwitch
@@ -295,16 +276,16 @@ function Setting() {
                   />
                 </div>
                 <div className="flex items-center justify-between border-b-[1px] pb-3 px-2">
-                  <label className="text-gray-700 font-medium">Send to phone</label>
+                  <label className="text-gray-1 font-medium">Send to phone</label>
                   <ToggleSwitch
                     enabled={sendToPhone}
                     setEnabled={setSendToPhone}
                   />
                 </div>
-                <div className="text-center pt-6">
-                  <button className="mx-auto bg-custom-blue text-white px-8 py-3 rounded-lg hover:bg-custom-blue-600">
-                    Update settings
-                  </button>
+                <div className="w-full items-center flex justify-center pt-5">
+                  <Button
+                    className={"md:w-2/5"}
+                    title={"Update Settings"} />
                 </div>
               </div>
             </div>

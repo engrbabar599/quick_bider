@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { Input } from "../../components/Input"
+import { Button } from "../../components/Button";
 
 function ClaimNow({ onClose }) {
   // const [step, setStep] = useState(1);
@@ -21,53 +23,38 @@ function ClaimNow({ onClose }) {
       {
         <div className=" fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ">
           <div className=" flex items-center justify-center ">
-            <div className=" mx-auto p-8 bg-white rounded-lg shadow-md xs:py-7 md:py-2 ">
-              <div className="flex justify-between mb-6"></div>
+            <div className=" mx-auto p-8 bg-white rounded-lg shadow-md xs:py-7 md:py-2 w-[90%] md:w-full">
+              <div className="flex justify-between md:mb-6"></div>
               <form onSubmit={handleSubmit}>
                 {
                   <>
                     <div className="xs:w-[90vw] md:w-[30vw]">
-                      <h2 className="lg:text-2xl font-semibold mb-4 text-center">
+                      <h2 className="lg:text-2xl text-xl font-semibold mb-4 text-center">
                         Claim now
                       </h2>
                       <div className="mb-4">
-                        <label className="block text-gray-700 mb-2">
-                          Full Name
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="$00"
-                          className="w-full px-3 py-2 border rounded-lg"
+                        <Input
+                          label={"Full name"}
+                          placeholder={"Type full name"}
+
                         />
                       </div>
                       <div className="mb-4">
-                        <label className="block text-gray-700 mb-2">
-                          Phone no
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="+1"
-                          className="w-full px-3 py-2 border rounded-lg"
+                        <Input
+                          label={"Phone no"}
+                          placeholder={"+1 000000"}
                         />
                       </div>
                       <div className="mb-4">
-                        <label className="block text-gray-700 mb-2">
-                          Email
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="Type email"
-                          className="w-full px-3 py-2 border rounded-lg"
-                        />
+                        <Input
+                          type={"email"}
+                          label={"Email"}
+                          placeholder={"Type email id"} />
                       </div>
                       <div className="mb-4">
-                        <label className="block text-gray-700 mb-2">
-                          Address
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="Type address here"
-                          className="w-full px-3 py-2 border rounded-lg"
+                        <Input
+                          label={"Address"}
+                          placeholder={"Type address here"}
                         />
                       </div>
 
@@ -101,19 +88,13 @@ function ClaimNow({ onClose }) {
                       </div>
                     </div>
 
-                    <button
-                      type="button"
-                      // onClick={nextStep}
-                      onClick={onClose}
-                      className="w-full py-3 mt-4 bg-custom-blue text-white font-semibold rounded-lg"
-                    >
-                      Submit claim
-                    </button>
 
-                    <div className="text-center pt-5">
-                      <button className="text-custom-blue underline">
-                        + add new card
-                      </button>
+                    <div className="py-5">
+
+                      <Button
+                        onClick={onClose}
+                        title={"Submit claim"}
+                      />
                     </div>
                   </>
                 }

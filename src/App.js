@@ -17,7 +17,7 @@ import { Sidebar } from "./components/Sidebar";
 import { Navbar } from "./components/Navbar";
 import { DropdownSidebar } from "./components/DropdownSidebar";
 import { AuctionPage } from "./pages/Auction";
-import { MyBidsPage } from "./pages/MyBids";
+import MyBids from "./pages/My Bids/MyBids";
 import { BidsDetailsPage } from "./pages/Dashboard/BidDetailsPage";
 import { useEffect } from "react";
 import { BidDetailsSection } from "./pages/MyBids/BidDetailsSection";
@@ -73,7 +73,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/mybids",
-        element: <MyBidsPage />
+        element: <MyBids />
       },
       {
         path: "/mybids/bidDetails",
@@ -83,7 +83,7 @@ const router = createBrowserRouter([
         path: "/mybids/bidDetails",
         element: <BidDetailsSection />
       },
-     
+
       {
         path: "/investments",
         element: <Investment />
@@ -117,7 +117,7 @@ const router = createBrowserRouter([
   },
   {
     path: "bidResult",
-    element: <BidResult/>
+    element: <BidResult />
   }
 ]);
 

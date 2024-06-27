@@ -172,7 +172,7 @@ const Investment = () => {
       <div className="md:p-5">
         <div>
           <div>
-            <h1 className="text-2xl font-medium">Investments</h1>
+            <h1 className="text-2xl font-medium text-gray-1">Investments</h1>
           </div>
           <div className="flex md:justify-start xs:flex xs:justify-center gap-4 py-4">
             <div>
@@ -194,7 +194,7 @@ const Investment = () => {
                   : " text-gray-700"
                   }`}
               >
-              My portfolio
+                My portfolio
               </button>
             </div>
           </div>
@@ -224,6 +224,7 @@ const Investment = () => {
 
                   <div >
                     <Button
+                      onClick={toggleVisibility}
                       className={"!min-w-max px-4 py-3 text-sm font-poppins font-normal rounded-xl"}
                       title={"Activate now"}
                     />
@@ -256,7 +257,7 @@ const Investment = () => {
                 </div>
               </div>
               <div className=" col-span-4">
-                <BalanceGraph hidden="hidden"/>
+                <BalanceGraph hidden="hidden" />
               </div>
             </div>
 
@@ -319,7 +320,7 @@ const Investment = () => {
                   </div>
                   <div>
                     <OutlineButton
-                      className={"text-gray-2 px-5 py-3 text-sm font-semibold font-poppins rounded-xl border-gray-2 hover:bg-gray-2 hover:text-white"}
+                      className={"text-gray-2 px-5 py-3 text-sm font-semibold font-poppins rounded-xl border-gray-2 hover:bg-white hover:text-gray-1"}
                       title={"Write a review"}
                     />
 
@@ -428,7 +429,7 @@ const Investment = () => {
                 </div>
               </div>
               <div className=" xs:col-span-12 md:col-span-4  border-[3px] rounded-lg">
-                <Graph block="inline"/>
+                <Graph block="inline" />
               </div>
             </div>
 
