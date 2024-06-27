@@ -115,7 +115,7 @@ export const MyBidsPage = () => {
 
                                     <div className='flex flex-col font-poppins items-center'>
                                         <p className='text-gray-1 font-semibold lg:text-xl text-sm'>4:20</p>
-                                        <p className='text-gray-4 text-base text-xs'>Time</p>
+                                        <p className='text-gray-4  text-xs'>Time</p>
                                     </div>
                                 </div>
 

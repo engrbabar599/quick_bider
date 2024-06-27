@@ -30,7 +30,7 @@ export const DropdownSidebar = () => {
         {
             name: "Ads",
             icon: <AdsIcon />,
-            // navigate: "/ads"
+            navigate: "/ads"
         },
         {
             name: "Claim",
