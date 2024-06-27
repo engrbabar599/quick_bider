@@ -1,5 +1,5 @@
 import React from 'react'
-import { AuctionIcon, DashboardIcon, InvestmentsIcon, LogoutIcon, MyBidsIcon, SettingsIcon, SupportIcon, WalletIcon } from '../assets/svgs/SidebarSvg';
+import { AdsIcon, AuctionIcon, ClaimIcon, DashboardIcon, InvestmentsIcon, LogoutIcon, MyBidsIcon, SettingsIcon, SupportIcon, WalletIcon } from '../assets/svgs/SidebarSvg';
 import { NavLink } from 'react-router-dom';
 import IMAGES from '../assets/IMAGES';
 
@@ -26,6 +26,17 @@ export const Sidebar = () => {
             icon: InvestmentsIcon,
             navigate: "/investments"
         },
+        {
+            name: "Ads",
+            icon: AdsIcon,
+            navigate: "/ads"
+        },
+        {
+            name: "Claim",
+            icon: ClaimIcon,
+            navigate: "/claim"
+        },
+
         {
             name: "Wallet",
             icon: WalletIcon,

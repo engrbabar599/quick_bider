@@ -1,24 +1,27 @@
 import React from 'react'
-import IMAGES from '../../assets/IMAGES'
-import { Button } from '../../components/Button'
-import { OutlineButton } from '../../components/OutlineButton'
 import { ReviewIcon } from '../../assets/svgs/ReviewIcon'
+import { Button } from '@headlessui/react'
+import IMAGES from '../../assets/IMAGES'
+import { useNavigate } from 'react-router-dom'
+import { OutlineButton } from '../../components/OutlineButton'
 
-export const MyBid = ({ isBidsInfoOpen, setOpenBidsInfo }) => {
-    // const navigate = useNavigate()
+export const BidDetailsSection = () => {
+    const navigate = useNavigate()
+
     return (
         <div className='xl:grid xl:grid-cols-5 flex flex-col gap-8 '>
 
-            <div className='lg:col-span-3 flex flex-col gap-4'>
-                <img src={IMAGES.mainAd} alt="" />
+            <div className='lg:col-span-3 flex flex-col gap-6'>
+                {/* <img src={IMAGES.mainAd} alt="" /> */}
 
                 <div className='flex flex-row items-center gap-x-2'>
                     <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M6.9654 14C6.9049 13.9958 6.8895 13.9964 6.82959 13.986C6.69489 13.9628 6.56533 13.9117 6.45103 13.8367C6.39322 13.7988 6.34277 13.7547 6.29237 13.7077L0.292113 7.70743C0.250711 7.66308 0.23916 7.65298 0.202409 7.60453C0.161157 7.55012 0.125505 7.49147 0.0961541 7.42977C-0.0320514 7.16021 -0.0320514 6.84034 0.0961541 6.57078C0.125505 6.50908 0.161157 6.45043 0.202409 6.39602C0.23916 6.34762 0.250711 6.33747 0.292113 6.29317L6.29237 0.292913C6.33672 0.251511 6.34687 0.23991 6.39527 0.203209C6.52238 0.106755 6.67239 0.0416518 6.82959 0.0145006C6.94185 -0.00480021 7.0572 -0.00480021 7.16946 0.0145006C7.25921 0.0300013 7.34677 0.0578025 7.42902 0.0969042C7.74143 0.245461 7.95894 0.553624 7.99434 0.897738C8.00829 1.03374 7.99404 1.17225 7.95269 1.30256C7.91824 1.41111 7.86519 1.51356 7.79638 1.60427C7.75963 1.65272 7.74808 1.66282 7.70668 1.70717L2.41355 7.0003L7.70668 12.2934L7.75328 12.3433C7.79153 12.3903 7.80243 12.4013 7.83574 12.4521C7.89819 12.5473 7.94419 12.6531 7.97114 12.7637C7.99269 12.8523 8.00209 12.9437 7.99899 13.0347C7.98719 13.3804 7.79118 13.7027 7.48967 13.8722C7.39042 13.928 7.28166 13.9667 7.16946 13.986C7.10955 13.9964 7.09415 13.9958 7.03365 14C7.0109 14 6.98815 14 6.9654 14Z" fill="black" />
                     </svg>
                     <div className='flex flex-row font-poppins font-normal  text-base'>
-                        <p onClick={() => setOpenBidsInfo(false)} className='text-gray-1 hover:underline hover:cursor-pointer'>Dashboard/</p>
-                        <p className='font-semibold text-custom-blue'>Bid 1</p>
+                        <p onClick={() => navigate(-1)} className='text-gray-1  hover:cursor-pointer hover:text-black'>My bids/</p>
+                        <p onClick={() => navigate(-1)} className='text-gray-1  hover:cursor-pointer hover:text-black'>Active/</p>
+                        <p className='font-semibold text-custom-blue'>Investment audi</p>
                     </div>
                 </div>
 
@@ -131,7 +134,7 @@ export const MyBid = ({ isBidsInfoOpen, setOpenBidsInfo }) => {
                         </div>
                     </div>
 
-                    <button className='underline text-custom-blue cursor-pointer text-base underline-offset-2 font-poppins'>
+                    <button className='underline text-custom-blue cursor-pointer text-base underline-offset-2 font-poppins hover:scale-105 ease-in duration-150'>
                         Check terms & conditions
                     </button>
 
@@ -148,21 +151,21 @@ export const MyBid = ({ isBidsInfoOpen, setOpenBidsInfo }) => {
                 <div className='flex flex-col gap-8' >
                     <div className='flex flex-row justify-between items-center font-poppins font-semibold '>
                         <p className='text-gray-1 lg:text-xl text-base'>Leaderboard</p>
-                        <button className='text-custom-blue text-sm'>View all</button>
+                        <button className='text-custom-blue text-sm hover:text-blue-500 hover:scale-105'>View all</button>
                     </div>
 
 
                     <div className='flex flex-col border shadow-md rounded-2xl lg:p-8 p-4 gap-5 w-full items-center'>
                         <div className='flex flex-row justify-between font-poppins lg:text-base text-sm font-medium w-full'>
-                            <p className=''>Partcipants</p>
-                            <p>City</p>
+                            <p className=''>Winners</p>
+                            <p>Time</p>
                             <p>Province</p>
                         </div>
                         <div className='divide-y-2 w-full '>
                             {Array(6).fill().map((_, index) => (
                                 <div className='flex flex-row justify-between items-center text-justify font-poppins py-2 font-light lg:text-base text-sm text-gray-4'>
-                                    <p className='underline text-sm font-open-sans font-normal'>Paul Fisher</p>
-                                    <p>Surrey</p>
+                                    <p className='underline text-sm font-open-sans font-normal cursor-pointer'>Paul Fisher</p>
+                                    <p>10:20:04 AM</p>
                                     <p>AB</p>
                                 </div>
                             ))}
@@ -187,86 +190,43 @@ export const MyBid = ({ isBidsInfoOpen, setOpenBidsInfo }) => {
                         My bids
                     </h3>
 
-                    <div className='flex flex-row items-center justify-between border bg-white shadow-md rounded-2xl p-4'>
-                        <div className='flex flex-row items-center font-poppins lg:text-base text-xs gap-4'>
-                            <p className='text-custom-blue font-semibold'>Bid 1</p>
-                            <div className='font-poppins font-semibold gap-2 flex flex-col' >
-                                <div className='flex flex-row'>
-                                    <p className=''>Robert Fox</p>
-                                    <span className='font-normal'>(Rank 3)</span>
-                                </div>
-                                <div className='flex flex-row space-x-1'>
-                                    <p className='font-normal'>Time:</p>
-                                    <span>10:10:20 AM</span>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div className='flex flex-row space-x-2'>
-                            <svg width="43" height="41" viewBox="0 0 43 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M32.0367 25.7515L32.3191 25.4763L41.6607 16.3701C41.6609 16.3699 41.6611 16.3697 41.6613 16.3695C41.8682 16.166 41.94 15.8689 41.8525 15.6003C41.7638 15.3283 41.5287 15.13 41.2456 15.0886C41.2455 15.0886 41.2454 15.0885 41.2453 15.0885L28.3323 13.2136L27.942 13.1569L27.7675 12.8033L21.9925 1.10026L21.9925 1.10024C21.8958 0.904192 21.6543 0.75 21.3196 0.75C20.9848 0.75 20.7434 0.904192 20.6467 1.10024L20.6466 1.10026L14.8716 12.8033L14.6971 13.1569L14.3068 13.2136L1.39384 15.0885C1.39372 15.0885 1.39359 15.0886 1.39347 15.0886C1.39343 15.0886 1.39338 15.0886 1.39334 15.0886C1.11117 15.13 0.875289 15.3291 0.786454 15.6009C0.699008 15.8684 0.771663 16.1677 0.977111 16.3688C0.977225 16.3689 0.97734 16.3691 0.977454 16.3692L10.3215 25.4747L10.6039 25.75L10.5373 26.1387L8.33088 39.002L32.0367 25.7515ZM32.0367 25.7515L32.1034 26.1402M32.0367 25.7515L32.1034 26.1402M32.1034 26.1402L34.3098 39.0036C34.3578 39.2852 34.2422 39.5696 34.0109 39.7378L34.0099 39.7386M32.1034 26.1402L34.0099 39.7386M34.0099 39.7386C33.8814 39.8324 33.7268 39.8809 33.5701 39.8809C33.4508 39.8809 33.3312 39.8524 33.2224 39.795L33.2216 39.7945M34.0099 39.7386L33.2216 39.7945M33.2216 39.7945L21.6686 33.721L21.3196 33.5376M33.2216 39.7945L21.3196 33.5376M21.3196 33.5376L20.9706 33.721M21.3196 33.5376L20.9706 33.721M20.9706 33.721L9.41911 39.793L9.41698 39.7941M20.9706 33.721L9.41698 39.7941M9.41698 39.7941C9.16643 39.9269 8.86104 39.9053 8.63099 39.7373L8.6297 39.7363M9.41698 39.7941L8.6297 39.7363M8.6297 39.7363C8.3986 39.5683 8.28299 39.2841 8.33078 39.0027L8.6297 39.7363Z" stroke="#6F9CFF" stroke-width="1.5" />
-                            </svg>
-
-                            <div className='flex flex-col items-center font-poppins'>
-                                <p className=' font-semibold text-gray-1 lg:text-lg text-sm'>320</p>
-                                <p className='text-gray-4 lg:text-base text-xs'>Score</p>
-                            </div>
-
-
-                        </div>
-
-
-                    </div>
-
-                    <div className='flex flex-col gap-6'>
-                        <div className='flex flex-row justify-between items-center font-poppins gap-4'>
-                            <p className='text-gray-1 lg:text-xl text-sm font-semibold min-w-max'>All reviews</p>
-                            <div className='w-full border hidden lg:flex'></div>
-                            <button className='text-custom-blue text-base min-w-max'>View all</button>
-                        </div>
-                        <div className='flex flex-row gap-4 w-3/5'>
-                            <Button
-                                className={" !min-w-max"}
-                                title={"All reviews"}
-                            />
-                            <OutlineButton
-                                className={"!px-2 !min-w-max"}
-                                title={"Write a review"}
-                            />
-                        </div>
-
-                        {Array(3).fill().map((_, index) => (
-                            <div className='flex flex-col gap-2 p-4 border rounded-2xl shadow-md border-gray-5'>
-                                <div className='flex flex-row justify-between '>
-                                    <div className='flex flex-row items-center gap-2'>
-                                        <img src={IMAGES.reviewPic} alt="" className='lg:h-11 lg:w-11 h-8 w-8 object-contain' />
-                                        <div className="flex flex-col items-start justify-center font-poppins">
-                                            <p className='text-gray-1 font-semibold lg:text-lg text-sm'>Jonas Sousa</p>
-                                            <p className='text-[#7A7A7A] font-normal lg:text-base text-xs'>Investor</p>
-                                        </div>
+                    {Array(4).fill().map((_, index) => (
+                        <div className='flex flex-row items-center justify-between border bg-white shadow-md rounded-2xl p-4'>
+                            <div className='flex flex-row items-center font-poppins lg:text-base text-xs gap-4'>
+                                <p className='text-custom-blue font-semibold'>Bid 1</p>
+                                <div className='font-poppins font-semibold gap-2 flex flex-col' >
+                                    <div className='flex flex-row'>
+                                        <p className=''>Robert Fox</p>
+                                        <span className='font-normal'>(Rank 3)</span>
                                     </div>
-
-                                    <div className='flex flex-row gap-1'>
-                                        {Array(5).fill().map((_, index) => (
-                                            <ReviewIcon color={index === 4 && "#C5C5C5"} />
-                                        ))}
+                                    <div className='flex flex-row space-x-1'>
+                                        <p className='font-normal'>Time:</p>
+                                        <span>10:10:20 AM</span>
                                     </div>
 
                                 </div>
 
-                                <p className='font-poppins font-normal text-xs text-justify text-gray-4'>I didn't know the first thing about investing. This book helped me understand some basic topics. It even taught me who to be careful with when taking advice about investing, wink wink youtube gurus. I recommend this book to anyone trying to understand the stock market before investing.</p>
                             </div>
-                        ))}
 
-                    </div>
+                            <div className='flex flex-row space-x-2'>
+                                <svg width="43" height="41" viewBox="0 0 43 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M32.0367 25.7515L32.3191 25.4763L41.6607 16.3701C41.6609 16.3699 41.6611 16.3697 41.6613 16.3695C41.8682 16.166 41.94 15.8689 41.8525 15.6003C41.7638 15.3283 41.5287 15.13 41.2456 15.0886C41.2455 15.0886 41.2454 15.0885 41.2453 15.0885L28.3323 13.2136L27.942 13.1569L27.7675 12.8033L21.9925 1.10026L21.9925 1.10024C21.8958 0.904192 21.6543 0.75 21.3196 0.75C20.9848 0.75 20.7434 0.904192 20.6467 1.10024L20.6466 1.10026L14.8716 12.8033L14.6971 13.1569L14.3068 13.2136L1.39384 15.0885C1.39372 15.0885 1.39359 15.0886 1.39347 15.0886C1.39343 15.0886 1.39338 15.0886 1.39334 15.0886C1.11117 15.13 0.875289 15.3291 0.786454 15.6009C0.699008 15.8684 0.771663 16.1677 0.977111 16.3688C0.977225 16.3689 0.97734 16.3691 0.977454 16.3692L10.3215 25.4747L10.6039 25.75L10.5373 26.1387L8.33088 39.002L32.0367 25.7515ZM32.0367 25.7515L32.1034 26.1402M32.0367 25.7515L32.1034 26.1402M32.1034 26.1402L34.3098 39.0036C34.3578 39.2852 34.2422 39.5696 34.0109 39.7378L34.0099 39.7386M32.1034 26.1402L34.0099 39.7386M34.0099 39.7386C33.8814 39.8324 33.7268 39.8809 33.5701 39.8809C33.4508 39.8809 33.3312 39.8524 33.2224 39.795L33.2216 39.7945M34.0099 39.7386L33.2216 39.7945M33.2216 39.7945L21.6686 33.721L21.3196 33.5376M33.2216 39.7945L21.3196 33.5376M21.3196 33.5376L20.9706 33.721M21.3196 33.5376L20.9706 33.721M20.9706 33.721L9.41911 39.793L9.41698 39.7941M20.9706 33.721L9.41698 39.7941M9.41698 39.7941C9.16643 39.9269 8.86104 39.9053 8.63099 39.7373L8.6297 39.7363M9.41698 39.7941L8.6297 39.7363M8.6297 39.7363C8.3986 39.5683 8.28299 39.2841 8.33078 39.0027L8.6297 39.7363Z" stroke="#6F9CFF" stroke-width="1.5" />
+                                </svg>
 
+                                <div className='flex flex-col items-center font-poppins'>
+                                    <p className=' font-semibold text-gray-1 lg:text-lg text-sm'>320</p>
+                                    <p className='text-gray-4 lg:text-base text-xs'>Score</p>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                    ))}
                 </div>
             </div>
 
         </div >
-
-        // </div>
     )
 }

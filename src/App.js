@@ -2,6 +2,7 @@ import {
   createBrowserRouter,
   Outlet,
   RouterProvider,
+  useLocation,
 } from "react-router-dom";
 import { Login } from './pages/OnBoarding/Login';
 import Setting from "./pages/Account Settings/Setting";
@@ -17,10 +18,20 @@ import { Navbar } from "./components/Navbar";
 import { DropdownSidebar } from "./components/DropdownSidebar";
 import { AuctionPage } from "./pages/Auction";
 import { MyBidsPage } from "./pages/MyBids";
-import MyBids from "./pages/My Bids/MyBids";
+import { BidsDetailsPage } from "./pages/Dashboard/BidDetailsPage";
+import { useEffect } from "react";
+import BidDetails from "./pages/My Bids/BidDetails";
+import { BidDetailsSection } from "./pages/MyBids/BidDetailsSection";
+import { AdsPage } from "./pages/Ads";
 
 
 export const Layout = () => {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className='xl:grid xl:grid-cols-6 w-full flex'>
       <Sidebar />
@@ -51,20 +62,31 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <Dashboard />
+        element: <Dashboard />,
+      },
+      {
+        path: "/dashboard/bids",
+        element: <BidsDetailsPage />
       },
       {
         path: "/auction",
         element: <AuctionPage />
       },
       {
-        path: "mybids",
+        path: "/mybids",
         element: <MyBidsPage />
-        // element: <MyBids/>
+      },
+      {
+        path: "/mybids/bidDetails",
+        element: <BidDetailsSection />
       },
       {
         path: "/investments",
         element: <Investment />
+      },
+      {
+        path: "/ads",
+        element: <AdsPage />
       },
       {
         path: "/wallet",
@@ -86,7 +108,7 @@ const router = createBrowserRouter([
         path: "/BEProject",
         element: <BEProject />
       },
-     
+
     ]
   },
 ]);

@@ -13,20 +13,22 @@ export const Input = ({ label, value, onChange, placeholder, type }) => {
 
             {type === "password" ?
                 <div
-                    className='border-gray-5 pr-2 border rounded-lg flex flex-row w-full justify-between items-center '>
+                    className='border-gray-5 pr-2 border rounded-lg flex flex-row w-full justify-between items-center focus-within:ring-2 ring-custom-blue caret-custom-blue group '>
                     <input
                         type={tooglePasswordInput ? "text" : "password"}
                         // value={}
                         // onChange={}
-                        className=' p-2 w-full   rounded-lg font-poppins text-base placeholder:text-gray-4 outline-none'
+                        className=' p-2 w-full rounded-lg font-poppins text-base placeholder:text-gray-4 outline-none  '
                         placeholder={placeholder}
                     />
-                    <button onClick={() => {
-                        setTimeout(() => {
-                            setTogglePasswordInput(false)
-                        }, 500)
-                        setTogglePasswordInput(!tooglePasswordInput)
-                    }}>
+                    <button
+                        className='outline-none'
+                        onClick={() => {
+                            setTimeout(() => {
+                                setTogglePasswordInput(false)
+                            }, 500)
+                            setTogglePasswordInput(!tooglePasswordInput)
+                        }}>
                         <EyeIcon />
                     </button>
                 </div>
@@ -35,7 +37,7 @@ export const Input = ({ label, value, onChange, placeholder, type }) => {
                     type={type}
                     // value={}
                     // onChange={}
-                    className='border-gray-5 border p-2 rounded-lg font-poppins text-base placeholder:text-gray-4 outline-none'
+                    className='border-gray-5 border p-2 rounded-lg font-poppins text-base placeholder:text-gray-4 outline-none focus:ring-2 ring-custom-blue caret-custom-blue'
                     placeholder={placeholder}
                 />
             }

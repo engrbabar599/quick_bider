@@ -8,13 +8,12 @@ export const Login = () => {
     const navigate = useNavigate()
     return (
         <>
-            <title>QuickBid || Sign In</title>
-            <div className='bg-custom-blue relative z-50 h-screen md:p-12 p-6 flex justify-center items-center'>
+            <div className='bg-custom-blue relative z-50 min-h-screen h-fit md:p-12 p-6 flex justify-center items-center'>
                 <img src={IMAGES.logo} alt="" className="absolute right-0 top-0 h-[36rem] -rotate-8" />
                 <img src={IMAGES.logoWithName} alt="" className="absolute left-0 bottom-10 h-60 -rotate-8 -z-50" />
 
                 <div
-                    className='bg-white md:p-5 py-4 rounded-xl flex flex-col space-y-4 md:w-2/5 items-center justify-center z-50'>
+                    className='bg-white md:p-5 py-4 rounded-xl flex flex-col space-y-4 lg:w-3/5   xl:w-2/5 items-center justify-center z-50 w-full'>
                     <div
                         className='md:w-3/4 items-center justify-center flex flex-col space-y-8'>
                         <img src={IMAGES.coloredLogoWithName}
@@ -81,7 +80,7 @@ export const Login = () => {
                             <div className=' text-center flex flex-col md:flex-row font-poppins font-normal text-gray-4 text-base space-x-1'>
                                 <p>Doesn’t have an account?</p>
                                 <Link to="/signup"
-                                    className='text-custom-blue hover:text-custom-blue-500'>Sign up now</Link>
+                                    className='text-custom-blue hover:text-blue-500'>Sign up now</Link>
                             </div>
 
 

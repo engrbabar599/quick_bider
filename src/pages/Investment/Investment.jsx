@@ -7,6 +7,7 @@ import { useState } from "react";
 import Employees from "./Employees";
 import { Line } from "react-chartjs-2";
 // import CardSection from "./CardSection";
+import { BalanceGraph } from "../Dashboard/BalanceGraph"
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -18,6 +19,8 @@ import {
   Legend,
 } from "chart.js";
 import InvestmentCompleted from "./InvestmentCompleted";
+import { Button } from "../../components/Button";
+import { OutlineButton } from "../../components/OutlineButton";
 
 ChartJS.register(
   CategoryScale,
@@ -198,7 +201,7 @@ const Investment = () => {
         </div>
 
         {activeTab === "first" && (
-          <>
+          <div className="space-y-4">
             <div className="lg:grid lg:grid-cols-12 gap-6 ">
               <div className="bg-white p-6 rounded-lg shadow-sm border lg:col-span-8">
                 <h2 className="text-xl font-medium mb-4 text-wrap ">
@@ -211,7 +214,7 @@ const Investment = () => {
                   Experience unparalleled control over your portfolio and make
                   strategic decisions that drive success.
                 </p>
-                <div className="bg-sky-100 px-4 py-6 border rounded-xl mb-4 flex  lg:flex-row flex-col justify-between items-center gap-4">
+                <div className="bg-custom-blue bg-opacity-10 px-4 py-6 border rounded-xl mb-4 flex  lg:flex-row flex-col justify-between items-center gap-4">
                   <div className="items-center flex">
                     <span className="xs:text-center md:text-start">
                       Unlock the Potential of Your Investments, activate
@@ -220,60 +223,64 @@ const Investment = () => {
                   </div>
 
                   <div>
-                    <button
+                    <Button
+                      className={"!min-w-max"}
+                      title={"Activate now"}
+                    />
+                    {/* <button
                       onClick={toggleVisibility}
                       className="bg-custom-blue text-white px-8 py-2.5 rounded-xl min-w-max text-sm"
                     >
                       Activate now
-                    </button>
+                    </button> */}
                     {isVisible && <Employees />}
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
                   <div className="bg-white p-4 rounded-lg shadow-md">
-                    <p className=" text-sm font-normal">Total investment</p>
-                    <h3 className="text-2xl font-bold">$12 M</h3>
+                    <p className=" text-sm font-normal text-gray-2">Total investment</p>
+                    <h3 className="text-2xl font-semibold">$12 M</h3>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow-md">
-                    <p className=" text-sm font-normal">ROI</p>
-                    <h3 className="text-2xl font-bold text-green-500">21%</h3>
+                    <p className=" text-sm font-normal text-gray-2">ROI</p>
+                    <h3 className="text-2xl font-semibold text-green-500">21%</h3>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow-md">
-                    <p className=" text-sm font-normal">Total projects</p>
-                    <h3 className="text-2xl font-bold">224</h3>
+                    <p className=" text-sm font-normal text-gray-2">Total projects</p>
+                    <h3 className="text-2xl font-semibold">224</h3>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow-md">
-                    <p className=" text-sm font-normal">Total investors</p>
-                    <h3 className="text-2xl font-bold">11K</h3>
+                    <p className=" text-sm font-normal text-gray-2">Total investors</p>
+                    <h3 className="text-2xl font-semibold">11K</h3>
                   </div>
                 </div>
               </div>
               <div className=" col-span-4">
-                <Graph />
+                <BalanceGraph />
               </div>
             </div>
 
-            <div>
-              <Project />
-            </div>
+            {/* <div> */}
+            <Project />
+            {/* </div> */}
 
             <div className="grid lg:grid-cols-2 gap-5 pt-5">
               <div className="">
-                <div className=" flex justify-between items-center">
-                  <div className="w-[20%]">
-                    <h1 className="text-xl font-semibold min-w-max">All Investers</h1>
+                <div className=" flex justify-between items-center gap-4">
+                  <div className="">
+                    <h1 className="text-xl font-semibold min-w-max text-gray-1">All Investers</h1>
                   </div>
-                  <div className="w-[55%] border-b-2"></div>
+                  <div className="w-full border-b-2"></div>
                   <div className="text-custom-blue min-w-max">
-                    <button className=" font-semibold">View all</button>
+                    <button className=" font-semibold hover:scale-105 hover:text-blue-500">View all</button>
                   </div>
                 </div>
                 <div className="pt-5">
-                  <div className="border rounded-xl p-5">
-                    <div className="grid grid-cols-3">
-                      <div className="text-lg font-medium">Name</div>
-                      <div className="text-lg font-medium">Time</div>
-                      <div className="text-lg font-medium">Investment</div>
+                  <div className="border rounded-xl p-5  w-full justify-between flex flex-col items-stretch">
+                    <div className="grid grid-cols-3 text-[#1E1E1E]">
+                      <div className="text-base font-medium">Name</div>
+                      <div className="text-base font-medium">Time</div>
+                      <div className="text-base font-medium">Investment</div>
                       <div className="border-b-2 pt-2 col-span-3"></div>
                     </div>
                     {investment.map((value, i) => {
@@ -281,11 +288,11 @@ const Investment = () => {
                         <>
                           <div
                             key={i}
-                            className="grid grid-cols-3 pt-4 border-b"
+                            className="grid grid-cols-3 pt-4 border-b text-[#1E1E1E]"
                           >
-                            <div><h1 className=" font-normal opacity-60">{value.name}</h1></div>
-                            <div><p className="text-lg font-light">10:20:40 AM</p></div>
-                            <div><p className="text-lg font-light">$**</p></div>
+                            <div><h1 className=" font-normal text-[#686868] font-open-sans text-base underline">{value.name}</h1></div>
+                            <div><p className="text-base font-light">10:20:40 AM</p></div>
+                            <div><p className="text-base font-light">$**</p></div>
                           </div>
                         </>
                       );
@@ -296,29 +303,31 @@ const Investment = () => {
               <div className="">
                 <div className=" flex justify-between items-center gap-4">
                   <div className="">
-                    <h1 className="text-lg font-bold min-w-max">All Reviews</h1>
+                    <h1 className="text-lg font-semibold min-w-max">All Reviews</h1>
                   </div>
                   <div className="w-full border-b-2"></div>
                   <div className="text-custom-blue min-w-max">
-                    <button className="text-sm font-semibold">View all</button>
+                    <button className="text-sm font-semibold hover:scale-105 hover:text-blue-500">View all</button>
                   </div>
                 </div>
-                <div className="flex gap-4 py-4">
+                <div className="flex gap-4 pt-4 items-center">
                   <div>
-                    <button className="bg-custom-blue px-4 py-2 rounded-lg text-white text-sm font-semibold">
-                      All reviews
-                    </button>
+                    <Button
+                      title={"All reviews"}
+                    />
                   </div>
                   <div>
-                    <button className="bg-white px-4 py-2 rounded-lg border text-sm font-semibold">
-                      write a review
-                    </button>
+                    <OutlineButton
+                      className={"text-gray-2 border-gray-2 hover:bg-gray-2 hover:text-white"}
+                      title={"Write a review"}
+                    />
+
                   </div>
                 </div>
                 {review.map((value, i) => {
                   return (
                     <>
-                      <div className="border p-3 rounded-xl shadow my-6">
+                      <div className="border p-3 rounded-xl shadow my-4">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-4">
                             <div className="icon">
@@ -353,7 +362,7 @@ const Investment = () => {
                 })}
               </div>
             </div>
-          </>
+          </div>
         )}
 
         {activeTab === "second" && (
