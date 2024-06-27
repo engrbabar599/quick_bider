@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import { AuctionIcon, DashboardIcon, InvestmentsIcon, LogoutIcon, MyBidsIcon, SettingsIcon, SupportIcon, WalletIcon } from '../assets/svgs/SidebarSvg';
+import { AdsIcon, AuctionIcon, ClaimIcon, DashboardIcon, InvestmentsIcon, LogoutIcon, MyBidsIcon, SettingsIcon, SupportIcon, WalletIcon } from '../assets/svgs/SidebarSvg';
 
 export const DropdownSidebar = () => {
     const [isOpen, setIsOpen] = useState(false)
     let location = useLocation();
 
-    console.log(location)
     const dropdownData = [
         {
             name: "Dashboard",
@@ -27,6 +26,16 @@ export const DropdownSidebar = () => {
             name: "Investments",
             icon: <InvestmentsIcon />,
             navigate: "/investments"
+        },
+        {
+            name: "Ads",
+            icon: <AdsIcon />,
+            navigate: "/ads"
+        },
+        {
+            name: "Claim",
+            icon: <ClaimIcon />,
+            navigate: "/claim"
         },
         {
             name: "Wallet",
@@ -51,16 +60,6 @@ export const DropdownSidebar = () => {
 
     ]
 
-    // const IconComponent = (icon, color) => {
-    //     const IconComponent = icon
-    //     return (
-
-    //     )
-
-    // }
-
-
-
     return (
         <div className='w-full bg-white py-2 xl:hidden'>
             <button
@@ -68,8 +67,8 @@ export const DropdownSidebar = () => {
                 id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
                 className={`!text-custom-blue w-full bg-custom-blue bg-opacity-10 border border-custom-blue focus:ring-1 focus:outline-none focus:ring-custom-blue font-base-2 rounded-xl text-base px-4 py-4 text-center  items-center justify-between inline-flex xl:hidden  `} type="button">
                 <div className='flex flex-row gap-2 items-center text-base '>
-                    {React.cloneElement(dropdownData?.filter(item => item.navigate === location.pathname)[0]?.icon, { color: "#6F9CFF" })}
-                    {dropdownData?.filter(item => item.navigate === location.pathname)[0]?.name}
+                    {React.cloneElement(dropdownData?.filter(item => location.pathname.includes(item.navigate))[0]?.icon, { color: "#6F9CFF" })}
+                    {dropdownData?.filter(item => location.pathname.includes(item.navigate))[0].name}
                 </div>
                 <svg className="w-2.5 h-2.5 ms-3 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />

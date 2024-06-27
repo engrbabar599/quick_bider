@@ -24,7 +24,7 @@ ChartJS.register(
   Legend
 );
 
-const Graph = () => {
+const Graph = ({inline}) => {
   const data = {
     labels: [
       "Jun 12",
@@ -90,20 +90,24 @@ const Graph = () => {
     <div className=" mx-auto ">
       <div className="lg:col-span-4">
 
-        <div className="bg-white  rounded-lg p-6 ">
+        <div className="bg-white  rounded-xl p-6 ">
           <div className="">
             <div className="flex  justify-between items-center">
               <div>
-                <h1 className="font-semibold text-xl">My Balance</h1>
+                <h1 className="font-semibold text-xl font-poppins">My Balance</h1>
               </div>
               <div>
-                <p className="text-xl text-custom-blue font-semibold">$12500.00</p>
+                <p className="text-xl text-custom-blue font-semibold font-poppins">$12500.00
+                <span className={`text-[#3EB14A] text-lg font-medium font-poppins`}>
+                        (+21%)
+                    </span>
+                </p>
               </div>
             </div>
           </div>
           <div className="flex justify-center gap-4 items-center px-4 py-10 w-full">
             <div className=" flex items-center justify-between">
-              <select name="" id="" className=" rounded-lg px-2 py-2.5 outline-2 border text-sm opacity-60">
+              <select name="" id="" className=" rounded-xl px-4 py-3 outline-2 border text-sm opacity-60">
                 <option value="last 7 days">last 7 days</option>
                 <option value="last 7 days">last 7 days</option>
                 <option value="last 7 days">last 7 days</option>
@@ -116,7 +120,7 @@ const Graph = () => {
             <div>
               <button
                 onClick={toggleVisibility}
-                className="bg-custom-blue text-white px-6 py-3 rounded-lg xs:text-sm min-w-max "
+                className="bg-custom-blue text-white px-4 py-3 rounded-xl xs:text-sm min-w-max "
               >
                 Add money
               </button>

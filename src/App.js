@@ -2,6 +2,7 @@ import {
   createBrowserRouter,
   Outlet,
   RouterProvider,
+  useLocation,
 } from "react-router-dom";
 import { Login } from './pages/OnBoarding/Login';
 import Setting from "./pages/Account Settings/Setting";
@@ -17,9 +18,19 @@ import { Navbar } from "./components/Navbar";
 import { DropdownSidebar } from "./components/DropdownSidebar";
 import { AuctionPage } from "./pages/Auction";
 import { MyBidsPage } from "./pages/MyBids";
-import MyBids from "./pages/My Bids/MyBids";
+import { BidsDetailsPage } from "./pages/Dashboard/BidDetailsPage";
+import { useEffect } from "react";
+import { BidDetailsSection } from "./pages/MyBids/BidDetailsSection";
+import { AdsPage } from "./pages/Ads";
+import BidResult from "./pages/My Bids/BidResult";
 
 export const Layout = () => {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className='xl:grid xl:grid-cols-6 w-full flex'>
       <Sidebar />
@@ -50,7 +61,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <Dashboard />
+        element: <Dashboard />,
+      },
+      {
+        path: "/dashboard/bids",
+        element: <BidsDetailsPage />
       },
       {
         path: "/auction",
@@ -58,13 +73,24 @@ const router = createBrowserRouter([
       },
       {
         path: "/mybids",
-        // element: <MyBidsPage />
-        element: <MyBids/>
+        element: <MyBidsPage />
+      },
+      {
+        path: "/mybids/bidDetails",
+        element: <BidDetailsSection />
+      },
+      {
+        path: "/mybids/bidDetails",
+        element: <BidDetailsSection />
       },
      
       {
         path: "/investments",
         element: <Investment />
+      },
+      {
+        path: "/ads",
+        element: <AdsPage />
       },
       {
         path: "/wallet",
@@ -78,20 +104,21 @@ const router = createBrowserRouter([
         path: "/settings",
         element: <Setting />
       },
-      // {
-      //   path: "/claim",
-      //   element: <Claim />
-      // },
+      {
+        path: "/claim",
+        element: <Claim />
+      },
       {
         path: "/BEProject",
         element: <BEProject />
       },
+
     ]
   },
   {
-    path: "/claim",
-    element: <Claim />
-  },
+    path: "bidResult",
+    element: <BidResult/>
+  }
 ]);
 
 

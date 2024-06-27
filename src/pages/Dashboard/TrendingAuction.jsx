@@ -1,22 +1,29 @@
 import React from 'react'
 import { Button } from '../../components/Button'
 import IMAGES from '../../assets/IMAGES'
+import { useNavigate } from 'react-router-dom'
 
-export const AuctionPage = () => {
+export const TrendingAuction = () => {
+    const navigate = useNavigate()
     return (
-        <div className='flex flex-col gap-6'>
-            <div className="flex flex-row justify-between items-center font-poppins">
-                <h3 className='text-gray-1 font-semibold text-xl'>Trending Auctions</h3>
-                <button className='text-custom-blue text-base font-semibold hover:scale-105 hover:text-blue-500'>View all</button>
+        <div className='lg:col-span-2 space-y-4'>
+            <div className='flex flex-row justify-between font-poppins font-semibold'>
+                <h3 className='text-gray-1  lg:text-xl text-base'>
+                    Trending Auctions
+                </h3>
+                <button className='text-custom-blue lg:text-base text-sm hover:text-blue-500 cursor-pointer hover:scale-105'>
+                    View all
+                </button>
             </div>
 
-            <div className='flex md:flex-row flex-col  items-center justify-center gap-x-14 gap-y-6 flex-wrap w-full'>
-                {Array(8).fill().map((_, index) => (
+
+            <div className='flex  lg:flex-row flex-col gap-4 items-center px-7 lg:px-0 '>
+                {Array(3).fill().map((_, index) => (
                     <div
-                        // onClick={() => { setOpenBidsInfo(true) }}
+                        onClick={() => { navigate("/dashboard/bids") }}
                         className=' bg-white border shadow-sm  rounded-xl group lg:hover:scale-105 duration-300 transform ease-in cursor-pointer'>
                         <div className='space-y-4 p-4'>
-                            <img src={IMAGES?.mustang} alt="" className='object-contain !rounded-lg w-56 ' />
+                            <img src={IMAGES?.mustang} alt="" className='object-contain !rounded-lg ' />
 
                             <div className='font-poppins font-semibold text-base'>
                                 <div className='flex flex-col'>
@@ -53,9 +60,7 @@ export const AuctionPage = () => {
 
                     </div>
                 ))}
-
             </div>
-
 
         </div>
     )

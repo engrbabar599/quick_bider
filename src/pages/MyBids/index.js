@@ -2,13 +2,15 @@ import React from 'react'
 import IMAGES from '../../assets/IMAGES'
 import { OutlineButton } from '../../components/OutlineButton'
 import { Button } from '../../components/Button'
+import { useNavigate } from 'react-router-dom'
 
 export const MyBidsPage = () => {
+    const navigate = useNavigate()
     return (
         <div className='flex flex-col gap-6 '>
             <div className="flex flex-row justify-between items-center font-poppins">
                 <h3 className='text-gray-1 font-semibold text-xl'>My bids</h3>
-                <button className='text-custom-blue text-base'>View all</button>
+                <button className='text-custom-blue text-base font-semibold hover:scale-105 hover:text-blue-500'>View all</button>
             </div>
             <div className='flex flex-row min-w-max gap-4'>
                 <div>
@@ -112,8 +114,8 @@ export const MyBidsPage = () => {
                                     </svg>
 
                                     <div className='flex flex-col font-poppins items-center'>
-                                        <p className='text-gray-1 font-semibold lg:text-xl text-sm'>4:20</p>
-                                        <p className='text-gray-4 lg:text-base text-xs'>Time</p>
+                                        <p className='text-gray-1 font-semibold text-xl'>4:20</p>
+                                        <p className='text-gray-4  text-xs'>Time</p>
                                     </div>
                                 </div>
 
@@ -125,6 +127,7 @@ export const MyBidsPage = () => {
 
                         <div className='flex flex-col gap-5  items-center'>
                             <OutlineButton
+                                onClick={() => navigate("/mybids/bidDetails")}
                                 title={"View details"}
                             />
 

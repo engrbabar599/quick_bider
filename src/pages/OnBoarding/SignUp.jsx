@@ -6,12 +6,12 @@ import IMAGES from '../../assets/IMAGES'
 
 export const SignUp = () => {
     return (
-        <div className='bg-custom-blue relative z-50 min-h-max md:p-12 p-6 flex justify-center items-center'>
+        <div className='bg-custom-blue relative z-50 min-h-fit md:p-12 p-6 flex justify-center items-center'>
             <img src={IMAGES.logo} alt="" className="absolute right-0 top-0 h-[36rem] -rotate-8" />
             <img src={IMAGES.logoWithName} alt="" className="absolute left-0 bottom-10 h-60 -rotate-8 -z-50" />
 
             <div
-                className='bg-white p-5 rounded-xl flex flex-col space-y-4 md:w-2/5  items-center justify-center z-50'>
+                className='bg-white p-5 rounded-xl flex flex-col space-y-4 xl:w-2/5 lg:w-3/5   items-center justify-center z-50 w-full'>
                 <div
                     className='md:w-3/4 items-center justify-center flex flex-col space-y-4'>
                     <img src={IMAGES.coloredLogoWithName}
@@ -21,7 +21,7 @@ export const SignUp = () => {
                     <div className='flex flex-col md:w-full w-[95%]  items-center justify-center space-y-8'>
 
                         <div className=' flex flex-col w-full space-y-4 '>
-                            <h1 className='text-[1.75rem] font-semibold text-gray-1 font-poppins text-center'>
+                            <h1 className='text-[1.75rem]  font-semibold text-gray-1 font-poppins text-center'>
                                 Sign up to continue
                             </h1>
                             <Input
@@ -53,9 +53,11 @@ export const SignUp = () => {
                                         className=' !border-2 border-custom-blue rounded-md appearance-none
                                         checked:bg-custom-blue hover:scale-105 hover:cursor-pointer
                                         w-6 h-6 outline-none  checked:bg-no-repeat checked:bg-center' />
-                                    <div className='font-poppins text-sm text-gray-4 font-normal flex flex-col md:flex-row space-x-1'>
-                                        <p>I have read and agree to the</p>
-                                        <Link className="text-custom-blue underline">Terms of Service</Link>
+                                    <div className='font-poppins text-sm text-gray-4 font-normal flex flex-col md:flex-row space-x-2 '>
+                                        <div className='w-full flex flex-row flex-wrap md:space-x-1' >
+                                            <p>I have read and agree to the</p>
+                                            <Link className="text-custom-blue underline">Terms of Service</Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +98,7 @@ export const SignUp = () => {
 
                         <div className='text-center font-poppins font-normal flex flex-col md:flex-row space-x-1 text-gray-4 text-base'>
                             <p>Already have an account?</p>
-                            <Link to="/" className='text-custom-blue hover:text-custom-blue-500'>
+                            <Link to="/" className='text-custom-blue hover:text-blue-500 '>
                                 Sign in
                             </Link>
                         </div>
@@ -107,5 +109,5 @@ export const SignUp = () => {
                     </div>
                 </div>
             </div>
-        </div>)
+        </div >)
 }
