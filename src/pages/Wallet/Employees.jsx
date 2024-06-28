@@ -19,16 +19,12 @@ function Employees() {
     setDialog(false);
   }
 
-
-  useEffect(() => {
-
-  }, [])
+  useEffect(() => {}, []);
   return (
-
     <div>
-      {dialog &&
+      {dialog && (
         <div className=" fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ">
-          <div className=" flex items-center justify-center h-[100vh]  md:w-2/5 w-[90%]">
+          <div className=" flex items-center justify-center h-[100vh]  md:w-[30vw] w-[90%]">
             <div className=" mx-auto p-8 bg-white rounded-lg shadow-md  w-full py-7 ">
               <div className="flex justify-between "></div>
               <form onSubmit={handleSubmit}>
@@ -36,17 +32,27 @@ function Employees() {
                   <>
                     <div className="w-full">
                       <div className="mb-4">
-                        <h2 className="md:text-2xl font-semibold mb-6 text-center">
+                        <h2 className="lg:text-[28px] text-gray-1 font-poppins font-semibold mb-6 text-center">
                           Add money to wallet
                         </h2>
-                        <Input
-                          label={"Amount"}
-                          placeholder={"$00"}
+                      </div>
+
+                      <div className="mb-4">
+                        <label
+                          htmlFor=""
+                          className="text-base font-medium font-poppins text-gray-1"
+                        >
+                          Amount
+                        </label>
+                        <input type="text" 
+                        placeholder="$00"
+                        className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 ring-custom-blue"
                         />
                       </div>
+
                       <div className="mb-4">
-                        <label className="block text-gray-700 mb-2 font-medium">
-                          Select Card
+                        <label className="text-base font-medium font-poppins text-gray-1">
+                          Select card
                         </label>
                         <select
                           className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 ring-custom-blue"
@@ -60,14 +66,14 @@ function Employees() {
                       </div>
                     </div>
 
-                    <Button
-                      title={"Add money"}
-                      onClick={nextStep}
-                    />
+                    {/* <Button title={"Add money"} onClick={nextStep} /> */}
+                    <div className="pt-5">
+                    <button onClick={nextStep} className="text-base font-medium font-poppins bg-custom-blue text-white rounded-xl py-[14px] px-[24px] w-full">Add money</button>
 
-                    <div className="text-center pt-9">
-                      <button className="text-custom-blue underline hover:text-blue-500 hover:scale-105">
-                        + Add new card
+                    </div>
+                    <div className="text-center py-9">
+                      <button className="text-custom-blue text-base font-normal font-poppins hover:text-blue-500 hover:scale-105">
+                        Add new card
                       </button>
                     </div>
                   </>
@@ -84,10 +90,12 @@ function Employees() {
                         </p>
                       </div>
                       <div className="flex items-center justify-center py-2">
-                        <h1 className="text-custom-green font-semibold">$500</h1>
+                        <h1 className="text-custom-green font-semibold text-xl font-poppins">
+                          $500
+                        </h1>
                       </div>
-                      <div className="w-[60%] mx-auto">
-                        <h1 className="text-center font-semibold text-gray-1">
+                      <div className="w-[40%] mx-auto">
+                        <h1 className="text-center text-base font-poppins font-medium text-gray-1">
                           Added to wallet successfully!
                         </h1>
                       </div>
@@ -97,11 +105,11 @@ function Employees() {
                         </p>
                       </div>
                       <div className="flex items-center justify-center py-2 w-full">
-
                         <Button
                           className={"md:w-2/5 "}
                           title={"Close"}
-                          onClick={handleClick} />
+                          onClick={handleClick}
+                        />
                       </div>
                     </div>
                   </>
@@ -111,7 +119,7 @@ function Employees() {
             </div>
           </div>
         </div>
-      }
+      )}
     </div>
   );
 }

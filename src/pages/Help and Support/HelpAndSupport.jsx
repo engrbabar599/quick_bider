@@ -7,7 +7,7 @@ function HelpAndSupport() {
     <>
       <div className=" mx-auto md:p-4">
         <div className="md:px-4">
-          <h2 className="md:text-2xl text-lg font-medium">Send enquiry</h2>
+          <h2 className="md:text-2xl font-poppins font-medium">Send enquiry</h2>
         </div>
         <div className=" rounded md:p-4 py-4 md:grid gap-6 md:grid-cols-3 flex flex-col ">
           <form className="md:col-span-2 shadow-lg p-4 border rounded-lg">
@@ -48,7 +48,7 @@ function HelpAndSupport() {
             </div>
             <div className="w-full flex justify-center mt-6">
               <Button
-                className={"md:w-1/5"}
+                className={"w-[190px] text-sm text-[#FFFFFF] font-semibold font-inter rounded-xl "}
                 title={"Submit"}
               />
             </div>

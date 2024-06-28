@@ -72,12 +72,12 @@ function Setting() {
                   className="w-24 h-24 rounded-lg mr-4 mb-4 sm:mb-0"
                 />
                 <div className="flex-1 text-center sm:text-left">
-                  <h2 className="text-xl font-medium">Robert Fox</h2>
-                  <p className="text-[#828282] font-normal text-lg">robertfox@gmail.com</p>
+                  <h2 className="text-xl font-medium font-poppins text-gray-1">Robert Fox</h2>
+                  <p className="text-[#828282] font-poppins font-normal text-lg pt-3">robertfox@gmail.com</p>
                 </div>
                 <div>
                   <OutlineButton
-                    className={"px-4"}
+                    className={"px-4 text-sm font-normal font-poppins"}
                     title={"Update Profile Picture"}
                   />
                 </div>
@@ -85,7 +85,7 @@ function Setting() {
             </div>
             <div className="pt-3">
               <div>
-                <h1 className="font-medium text-base">Personal details</h1>
+                <h1 className="font-medium text-base font-poppins">Personal details</h1>
               </div>
               <form className="space-y-8">
                 <div className="space-y-5">
@@ -151,7 +151,7 @@ function Setting() {
 
                 <div className="w-full text-center flex items-center justify-center">
                   <Button
-                    className={"md:w-2/5 self-center items-center"}
+                    className={"w-[190px] text-sm  font-inter self-center items-center"}
                     title={"Submit"}
                   />
                 </div>
