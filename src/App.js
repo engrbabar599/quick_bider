@@ -76,6 +76,10 @@ const router = createBrowserRouter([
         element: <MyBids />
       },
       {
+        path: "/mybids/bidsdetails",
+        element:<BidDetailsSection/>
+      },
+      {
         path: "/mybids/bidDetails",
         element: <BidDetailsSection />
       },
@@ -87,6 +91,10 @@ const router = createBrowserRouter([
       {
         path: "/investments",
         element: <Investment />
+      },
+      {
+        path: "/investments/BEProject",
+        element: <BEProject/>
       },
       {
         path: "/ads",
@@ -108,17 +116,17 @@ const router = createBrowserRouter([
         path: "/claim",
         element: <Claim />
       },
-      {
-        path: "/BEProject",
-        element: <BEProject />
-      },
+      // {
+      //   path: "/BEProject",
+      //   element: <BEProject />
+      // },
 
     ]
   },
-  {
-    path: "bidResult",
-    element: <BidResult />
-  }
+  // {
+  //   path: "bidResult",
+  //   element: <BidResult />
+  // }
 ]);
 
 

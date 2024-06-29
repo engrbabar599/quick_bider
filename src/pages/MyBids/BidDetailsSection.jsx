@@ -124,22 +124,62 @@ export const BidDetailsSection = () => {
 
 
                     <div className='flex flex-col gap-5 lg:w-1/4 w-2/4 items-center'>
-                        <Button
+                        {/* <Button
                             title={"Bid now"}
-                        />
+                        /> */}
 
+                        <button className='px-4 py-3 bg-custom-blue text-white rounded-xl text-center text-sm font-medium font-poppins w-[190px]'>Bid now</button>
                         <div className='flex flex-row font-poppins text-base space-x-1'>
                             <p className='text-gray-4'>Wallet:</p>
                             <p className='text-custom-blue'>$1200</p>
                         </div>
                     </div>
 
-                    <button className='underline text-custom-blue cursor-pointer text-base underline-offset-2 font-poppins hover:scale-105 ease-in duration-150'>
+                    {/* <button className='underline text-custom-blue cursor-pointer text-base underline-offset-2 font-poppins hover:scale-105 ease-in duration-150'>
                         Check terms & conditions
-                    </button>
+                    </button> */}
 
 
                 </div>
+
+
+
+
+                <div className="leftpart col-span-12 md:col-span-7">
+          <div className="py-5">
+            <h1 className="xs:text-xl md:text-2xl font-semibold font-poppins text-gray-1">Terms & conditions</h1>
+          </div>
+          <div className="border p-5 rounded-xl">
+            <ul className="list-decimal px-10 py-1">
+              <li>
+                <p className="py-3 xs:text-xs md:text-sm font-normal text-gray-2 font-poppins">
+                  Bidders must be 18+ and register with valid ID. Registration implies agreement to these terms.
+                </p>
+              </li>
+              <li>
+                <p className="py-3 xs:text-xs md:text-sm font-normal text-gray-2 font-poppins">
+                  All bids are final and binding. The highest bid wins. The auctioneer can reject bids, withdraw items, and resolve disputes.
+                </p>
+              </li>
+              <li>
+                <p className="py-3 xs:text-xs md:text-sm font-normal text-gray-2 font-poppins">
+                  Full payment due within [Number] hours/days post-auction. A [Percentage]% buyer’s premium applies. Non-payment results in bid forfeiture.
+                </p>
+              </li>
+              <li>
+                <p className="py-3 xs:text-xs md:text-sm font-normal text-gray-2 font-poppins">
+                  Items sold "as is" without warranties. Bidders must inspect items before bidding. Auction house not liable for description errors.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+
+
+
 
 
 

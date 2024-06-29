@@ -2,9 +2,10 @@ import React from "react";
 import vectorImage from "../../assets/images/Vector.png"
 import { useState } from "react";
 import { Button } from "../../components/Button";
+import { useNavigate } from "react-router-dom";
 
 function Project() {
-
+  const navigate = useNavigate()
   const [isVisible, setIsVisible] = useState(false);
 
   // const toggleVisibility = () => {
@@ -37,7 +38,8 @@ function Project() {
   return (
     <>
       <div className="py-5">
-        <h1 className=" text-2xl font-medium text-gray-1 font-poppins">Upcoming projects</h1>
+      
+        <h1 className="xs:text-center md:text-start text-2xl font-medium text-gray-1 font-poppins">Upcoming projects</h1>
       </div>
       <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5">
         {card.map((value, i) => {
@@ -45,7 +47,7 @@ function Project() {
             <>
               <div key={i} className="border p-3 rounded-xl shadow-sm">
                 <div className="flex items-center gap-4">
-                  <div className="icon">
+                  <div className="icon" >
                     <p>
                       <img src={vectorImage} alt="" />
                     </p>
@@ -79,7 +81,9 @@ function Project() {
                   </div>
                 </div>
                 <div className="w-[60%] mx-auto flex items-center justify-center pt-3 rounded-xl">
+                
                   <Button
+                  onClick={()=>{navigate("/investments/BEProject")}}
                     title={"Invest"}
                     className={" text-sm font-medium"}
                   />

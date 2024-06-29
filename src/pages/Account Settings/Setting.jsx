@@ -150,10 +150,11 @@ function Setting() {
                 </div>
 
                 <div className="w-full text-center flex items-center justify-center">
-                  <Button
-                    className={"w-[190px] text-sm  font-inter self-center items-center"}
-                    title={"Submit"}
-                  />
+                  <button
+                    className={"w-[190px] text-sm rounded-xl px-4 py-3 font-inter self-center items-center bg-custom-blue text-white"}
+                    title={""}>
+                      Submit
+                  </button>
                 </div>
               </form>
             </div>
@@ -179,11 +180,12 @@ function Setting() {
                       placeholder={"Confirm new password"} />
                   </div>
                 </div>
-                <div className="text-center w-full">
-                  <Button
-                    className={"md:w-2/5"}
-                    title={"Update password"}
-                  />
+                <div className="w-full text-center flex items-center justify-center">
+                  <button
+                    className={"w-[190px] text-sm rounded-xl px-4 py-3 font-inter self-center items-center bg-custom-blue text-white"}
+                    title={""}>
+                      Update password
+                  </button>
                 </div>
               </form>
             </div>
@@ -232,11 +234,12 @@ function Setting() {
                 </div>
 
 
-                <div className="text-center w-full">
-                  <Button
-                    className={"md:w-2/5"}
-                    title={"Update bank details"}
-                  />
+                <div className="w-full text-center flex items-center justify-center">
+                  <button
+                    className={"w-[190px] text-sm rounded-xl px-4 py-3 font-inter self-center items-center bg-custom-blue text-white"}
+                    title={""}>
+                      Update bank details
+                  </button>
                 </div>
               </form>
             </div>
@@ -282,10 +285,12 @@ function Setting() {
                     setEnabled={setSendToPhone}
                   />
                 </div>
-                <div className="w-full items-center flex justify-center pt-5">
-                  <Button
-                    className={"md:w-2/5"}
-                    title={"Update Settings"} />
+                <div className="w-full text-center flex items-center justify-center py-6">
+                  <button
+                    className={"w-[190px] text-sm rounded-xl px-4 py-3 font-inter self-center items-center bg-custom-blue text-white"}
+                    title={""}>
+                      Update settings
+                  </button>
                 </div>
               </div>
             </div>

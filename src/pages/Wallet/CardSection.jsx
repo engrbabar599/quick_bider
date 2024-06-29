@@ -14,7 +14,7 @@ const CardSection = () => {
       </div>
       <div className="" >
         <div className="flex flex-col justify-between items-center">
-          <div className="p-4 flex flex-col justify-between relative bg-[#4b62f5] text-white rounded-xl w-full shadow-lg lg:h-[30vh] xs:h-[50vh]">
+          <div className="p-4 flex flex-col justify-between relative bg-[#4b62f5] text-white rounded-xl w-full shadow-lg lg:h-[30vh] ">
             <img src={cardBar} alt="" className='absolute top-0 right-0 z-10' />
             <div className='flex justify-between items-center'>
               <p className=' z-30 xs:text-base md:text-lg font-medium font-poppins'>Universal Card</p>
