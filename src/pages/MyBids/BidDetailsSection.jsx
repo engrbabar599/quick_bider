@@ -151,7 +151,9 @@ export const BidDetailsSection = () => {
                 <div className='flex flex-col gap-8' >
                     <div className='flex flex-row justify-between items-center font-poppins font-semibold '>
                         <p className='text-gray-1 lg:text-xl text-base'>Leaderboard</p>
-                        <button className='text-custom-blue text-sm hover:text-blue-500 hover:scale-105'>View all</button>
+                        <button
+                            // onClick={() => navigate("results")}
+                            className='text-custom-blue text-sm hover:text-blue-500 hover:scale-105'>View all</button>
                     </div>
 
 

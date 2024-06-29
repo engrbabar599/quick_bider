@@ -48,7 +48,7 @@ function HelpAndSupport() {
             </div>
             <div className="w-full flex justify-center mt-6">
               <Button
-                className={"w-[190px] text-sm text-[#FFFFFF] font-semibold font-inter rounded-xl "}
+                className={"md:w-2/5 text-sm text-[#FFFFFF] font-semibold font-inter rounded-xl "}
                 title={"Submit"}
               />
             </div>

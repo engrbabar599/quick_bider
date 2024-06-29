@@ -25,7 +25,7 @@ function Withdraw() {
       {dialog && (
         <div className=" fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ">
           <div className=" flex items-center justify-center h-[100vh]  lg:w-[30%] sm:w-[50%]">
-            <div className=" mx-auto p-12 bg-white rounded-lg shadow-md  w-full py-7 ">
+            <div className=" mx-auto p-12 bg-white rounded-lg shadow-md  md:w-full py-7 w-[90%]">
               <div className="flex justify-between "></div>
               <form onSubmit={handleSubmit}>
                 {

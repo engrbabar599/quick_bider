@@ -320,7 +320,7 @@ const Investment = () => {
                   </div>
                   <div>
                     <OutlineButton
-                      className={"text-gray-2 px-5 py-3 text-sm font-semibold font-poppins rounded-xl border-gray-2 hover:bg-white hover:text-gray-1"}
+                      className={"text-gray-2 px-5 py-3 text-sm font-semibold font-poppins rounded-xl border-gray-2 hover:text-gray-2 hover:bg-white"}
                       title={"Write a review"}
                     />
 

@@ -13,7 +13,7 @@ function ClaimNow({ onClose }) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="flex items-center justify-center">
-        <div className="mx-auto p-8 bg-white rounded-lg shadow-md xs:py-7 md:py-2">
+        <div className="mx-auto p-8 bg-white rounded-lg shadow-md xs:py-7 md:py-2 w-[90%] md:w-full" >
           <div className="flex justify-between md:mb-6"></div>
           <form onSubmit={handleSubmit}>
             <div className="xs:w-[80vw] md:w-[50vw] lg:w-[30vw]">
@@ -53,7 +53,7 @@ function ClaimNow({ onClose }) {
               <div className="flex justify-around items-center">
                 <div className="relative w-[48%]">
                   <label className="cursor-pointer block text-gray-700 mb-2">
-                    <img src={gallery} alt="Gallery" className="w-full"/>
+                    <img src={gallery} alt="Gallery" className="w-full" />
                     <input
                       className="hidden"
                       type="file"
@@ -62,7 +62,7 @@ function ClaimNow({ onClose }) {
                 </div>
                 <div className="relative w-[48%]">
                   <label className="cursor-pointer block text-gray-700 mb-2">
-                    <img src={photo} alt="Photo" className="w-full"/>
+                    <img src={photo} alt="Photo" className="w-full" />
                     <input
                       className="hidden"
                       type="file"

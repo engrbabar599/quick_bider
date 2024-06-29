@@ -2,6 +2,7 @@ import React from "react";
 import vectorImage from "../../assets/images/Vector.png"
 import { useState } from "react";
 import { Button } from "../../components/Button";
+import { useNavigate } from "react-router-dom";
 
 function Project() {
 
@@ -34,6 +35,8 @@ function Project() {
       investment: "$500",
     },
   ];
+
+  const navigate = useNavigate()
   return (
     <>
       <div className="py-5">
@@ -80,6 +83,7 @@ function Project() {
                 </div>
                 <div className="w-[60%] mx-auto flex items-center justify-center pt-3 rounded-xl">
                   <Button
+                    onClick={() => navigate("beproject")}
                     title={"Invest"}
                     className={" text-sm font-medium"}
                   />

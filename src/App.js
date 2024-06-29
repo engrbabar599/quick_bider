@@ -18,11 +18,14 @@ import { Navbar } from "./components/Navbar";
 import { DropdownSidebar } from "./components/DropdownSidebar";
 import { AuctionPage } from "./pages/Auction";
 import MyBids from "./pages/My Bids/MyBids";
+import { MyBidsPage } from "./pages/MyBids/index";
 import { BidsDetailsPage } from "./pages/Dashboard/BidDetailsPage";
 import { useEffect } from "react";
 import { BidDetailsSection } from "./pages/MyBids/BidDetailsSection";
 import { AdsPage } from "./pages/Ads";
 import BidResult from "./pages/My Bids/BidResult";
+import InvestmentCompleted from "./pages/Investment/InvestmentCompleted";
+import BidResultMyBidSection from "./pages/My Bids/BidResultMyBidSection";
 
 export const Layout = () => {
   const { pathname } = useLocation()
@@ -61,7 +64,16 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <Dashboard />,
+        children: [
+          {
+            path: "",
+            element: <Dashboard />,
+          },
+          {
+            path: "results",
+            element: <BidResult />,
+          },
+        ]
       },
       {
         path: "/dashboard/bids",
@@ -73,20 +85,35 @@ const router = createBrowserRouter([
       },
       {
         path: "/mybids",
-        element: <MyBids />
+        children: [
+          {
+            path: "",
+            element: <MyBids />
+          },
+          {
+            path: "bidDetails",
+            element: <BidDetailsSection />
+          },
+        ]
       },
-      {
-        path: "/mybids/bidDetails",
-        element: <BidDetailsSection />
-      },
-      {
-        path: "/mybids/bidDetails",
-        element: <BidDetailsSection />
-      },
+      // {
+      //   path: "/mybids/bidDetails",
+      // },
+      // {
+      //   path: "/mybids/bidDetails",
+      //   element: <BidDetailsSection />
+      // },
 
       {
         path: "/investments",
-        element: <Investment />
+        children: [{
+          path: "beproject",
+          element: <InvestmentCompleted />
+        },
+        {
+          path: "",
+          element: <Investment />
+        }]
       },
       {
         path: "/ads",
@@ -115,10 +142,10 @@ const router = createBrowserRouter([
 
     ]
   },
-  {
-    path: "bidResult",
-    element: <BidResult />
-  }
+  // {
+  //   path: "bidResult",
+  //   element: <BidResult />
+  // }
 ]);
 
 

@@ -123,8 +123,8 @@ const CardSection = () => {
               </p>
             </div>
           </div>
-          <div className=" text-center py-3">
-            <button className="text-custom-blue text-balance font-sans font-bold cursor-pointer">See All</button>
+          <div className=" text-center pt-3">
+            <button className="text-custom-blue text-balance  font-bold cursor-pointer font-dm-sans">See All</button>
           </div>
         </div>
       </div>

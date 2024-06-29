@@ -123,8 +123,8 @@ const Wallet = () => {
               <div>
                 <div>
                   <button
-                   onClick={toggleShow}
-                  className="px-4 py-3 border rounded-xl text-gray-1 text-sm font-semibold font-inter w-[172px] border-gray-1 xs:hidden md:block hover:bg-custom-blue hover:text-white hover:border-none">
+                    onClick={toggleShow}
+                    className="px-4 py-3 border rounded-xl text-gray-1 text-sm font-semibold font-inter w-[172px] border-gray-1 xs:hidden md:block hover:bg-custom-blue hover:text-white hover:border-none">
                     Withdraw
                   </button>
                   {show && <Withdraw />}
@@ -163,9 +163,13 @@ const Wallet = () => {
               </div>
             </div>
             <div className="pt-7">
-              <button className="py-3 w-[194px] bg-custom-blue text-white rounded-xl text-sm font-semibold font-inter">
+
+              <Button
+                className={"md:w-2/5 min-w-max font-inter"}
+                title={"+Add new bank account"} />
+              {/* <button className="py-3 w-[194px] bg-custom-blue text-white rounded-xl text-sm font-semibold font-inter">
                 +Add new bank account
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

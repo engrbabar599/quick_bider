@@ -3,8 +3,10 @@ import IMAGES from '../../assets/IMAGES'
 import { TrophyIcon } from '../../assets/svgs/TrophyIcon'
 import { OutlineButton } from '../../components/OutlineButton'
 import { StarIcon } from '../../assets/svgs/StarIcon'
+import { useNavigate } from 'react-router-dom'
 
 export const RecentWinnersSection = () => {
+    const navigate = useNavigate()
     return (
         <div className='flex flex-col w-full gap-8 lg:col-span-4'>
             <div className='flex flex-row w-full font-poppins font-semibold items-center justify-between gap-5'>
@@ -12,7 +14,9 @@ export const RecentWinnersSection = () => {
                     Recent winners
                 </h3>
                 <div className='border-[#F5F5F5] border-2 w-full'></div>
-                <button className='text-custom-blue text-sm min-w-max hover:text-blue-500 hover:scale-105'>
+                <button
+                    onClick={() => navigate("results")}
+                    className='text-custom-blue text-sm min-w-max hover:text-blue-500 hover:scale-105'>
                     All winners
                 </button>
             </div>

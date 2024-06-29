@@ -21,25 +21,25 @@ function Employees() {
       {dialog && (
         <div className=" fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className=" flex items-center justify-center h-[100vh]">
-            <div className=" mx-auto p-8 bg-white rounded-lg shadow-md py-7 ">
-              <div className="flex justify-between mb-6"></div>
+            <div className=" mx-auto p-8 bg-white rounded-lg shadow-md py-7 md:w-full  w-[90%]">
+              <div className="flex justify-between mb-6 "></div>
               <form onSubmit={handleSubmit}>
                 {step === 1 && (
-                  <>
-                    <div className=" xs:w-[85vw] md:w-[70vw] h-[80vh]">
+                  <div className="overflow-y-auto">
+                    <div className=" xs:w-[85vw] md:w-[70vw] h-[80vh]  ">
                       <div className="text-center">
                         <h1 className=" md:text-xl font-bold">
                           Activate Investment
                         </h1>
                       </div>
                       <div className="p-5">
-                        <ul className="list-decimal">
+                        <ul className="list-decimal flex-wrap">
                           <li className="xs:text-xs lg:text-sm">
                             Eligibility: Users must be at least 18 years old and
                             provide valid identification and contact
                             information.
                           </li>
-                          <li className="xs:text-xs lg:text-sm">
+                          <li className="xs:text-xs lg:text-sm text-wrap">
                             Investment Process: Funds are committed for the
                             entire duration of the project, with no early
                             withdrawal permitted unless explicitly stated
@@ -83,45 +83,45 @@ function Employees() {
                         </button>
                       </div>
                     </div>
-                  </>
+                  </div>
                 )}
                 {step === 2 && (
                   <>
-                  <div className="xs:w-[80vw] md:w-[30vw]">
-                    <div className=" max-w-lg ">
-                      <div className="mb-4">
-                        <h2 className="text-2xl font-semibold mb-6 text-center">
-                          Verify to continue
-                        </h2>
-                        <div className="w-[92%] text-center mx-auto">
-                          <p className="opacity-70">
-                            We have sent a One-Time Password (OTP) to your email
-                            address. Please check your inbox and enter the OTP to
-                            proceed.
-                          </p>
+                    <div className="xs:w-[80vw] md:w-[30vw]">
+                      <div className=" max-w-lg ">
+                        <div className="mb-4">
+                          <h2 className="text-2xl font-semibold mb-6 text-center">
+                            Verify to continue
+                          </h2>
+                          <div className="w-[92%] text-center mx-auto">
+                            <p className="opacity-70">
+                              We have sent a One-Time Password (OTP) to your email
+                              address. Please check your inbox and enter the OTP to
+                              proceed.
+                            </p>
+                          </div>
+
+                          <label className="block text-gray-700 mb-2 pt-6">
+                            Enter OTP
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="000"
+                            className="w-full px-3 py-2 border rounded-lg"
+                          />
                         </div>
-
-                        <label className="block text-gray-700 mb-2 pt-6">
-                          Enter OTP
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="000"
-                          className="w-full px-3 py-2 border rounded-lg"
-                        />
                       </div>
-                    </div>
 
-                    <button
-                      type="button"
-                      onClick={nextStep}
-                      className="w-full py-3 mt-4 bg-custom-blue text-white font-semibold rounded-lg"
-                    >
-                      Next
-                    </button>
-                    <div className="text-center pt-9">
-                      <button className="text-custom-blue">Resend OTP</button>
-                    </div>
+                      <button
+                        type="button"
+                        onClick={nextStep}
+                        className="w-full py-3 mt-4 bg-custom-blue text-white font-semibold rounded-lg"
+                      >
+                        Next
+                      </button>
+                      <div className="text-center pt-9">
+                        <button className="text-custom-blue">Resend OTP</button>
+                      </div>
                     </div>
                   </>
                 )}

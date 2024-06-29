@@ -48,7 +48,8 @@ function MyBids() {
     setActiveTab("second");
   };
 
- 
+  const navigate = useNavigate()
+
   return (
     <>
       <div className="p-6">
@@ -85,11 +86,11 @@ function MyBids() {
           {cards.map(() => {
             return (
               <>
-                <div className="card border rounded-3xl p-8 shadow-sm ">
-                  <div className="cars flex items-center justify-center gap-5">
-                    <img src={car1} className="xs:hidden md:block w-[28%]" alt="" />
-                    <img src={car2} className="xs:w-[80%] sm:w-[40%] " alt="" />
-                    <img src={car3} className=" xs:hidden sm:block w-[28%]" alt="" />
+                <div className="card border rounded-3xl p-8 shadow-sm  ">
+                  <div className="cars flex items-center justify-center md:gap-5">
+                    <img src={car1} className="hidden md:block w-[28%]" alt="" />
+                    <img src={car2} className="w-[%] md:w-[40%] " alt="" />
+                    <img src={car3} className=" hidden md:block w-[28%]" alt="" />
                   </div>
                   <div className="xs:flex xs:items-center xs:justify-between md:block">
                     <div className=" pt-5">
@@ -99,7 +100,9 @@ function MyBids() {
 
                     <div>
                       <div className="text-center xs:block md:hidden">
-                        <button  className="px-4 py-2 border border-blue rounded-lg text-custom-blue ">
+                        <button
+                          onClick={() => navigate("/mybids/bidDetails")}
+                          className="px-4 py-2 border border-blue rounded-lg text-custom-blue ">
                           View details
                         </button>
                       </div>
@@ -129,7 +132,7 @@ function MyBids() {
                   </div>
 
                   <div className="xs:block md:hidden ">
-                    <p className=" opacity-60">
+                    <p className=" opacity-60 text-wrap">
                       Bid Online and attend Bidding Events for Pre-owned Cars,
                       Bikes, Trucks, Construction Equipment, Tractors.
                     </p>
@@ -192,10 +195,13 @@ function MyBids() {
                   <div>
 
                     <div className="text-center pt-6 xs:hidden md:block">
-                      <button  className="px-4 py-2 border border-blue rounded-lg text-custom-blue hover:bg-custom-blue hover:text-white">
-                        
-                          View details
-                        
+                      <button
+                        onClick={() => navigate("bidDetails")}
+
+                        className="px-4 py-2 border border-blue rounded-lg text-custom-blue hover:bg-custom-blue hover:text-white">
+
+                        View details
+
                       </button>
                     </div>
                   </div>
