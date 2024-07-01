@@ -204,10 +204,10 @@ const Investment = () => {
           <div className="space-y-4">
             <div className="lg:grid lg:grid-cols-12 gap-6 ">
               <div className="bg-white p-6 rounded-lg shadow-sm border lg:col-span-8">
-                <h2 className="text-xl font-medium mb-4 text-wrap font-poppins">
+                <h2 className="md:text-xl font-medium mb-4 text-wrap font-poppins xs:text-center md:text-start">
                   Empower Your Financial Future with Our Investment Portal
                 </h2>
-                <p className="text-gray-600 mb-4 text-sm font-normal text-wrap ">
+                <p className="text-gray-600 mb-4 xs:text-xs md:text-sm font-normal text-wrap xs:text-center md:text-start">
                   Welcome to a new era of investment management. Our advanced
                   Investment Portal is designed to empower you with the tools
                   and insights needed to maximize your financial growth.
@@ -216,7 +216,7 @@ const Investment = () => {
                 </p>
                 <div className="bg-custom-blue bg-opacity-10 px-4 py-6 border rounded-xl mb-4 flex  lg:flex-row flex-col justify-between items-center gap-4">
                   <div className="items-center flex">
-                    <span className="xs:text-center md:text-start text-xl font-medium text-gray-2">
+                    <span className="xs:text-center md:text-start md:text-xl font-medium text-gray-2 ">
                       Unlock the Potential of Your Investments, activate
                       investment services.
                     </span>
@@ -261,9 +261,9 @@ const Investment = () => {
               </div>
             </div>
 
-            {/* <div> */}
-            <Project />
-            {/* </div> */}
+            <div>
+              <Project />
+            </div>
 
             <div className="grid lg:grid-cols-2 gap-5 pt-5">
               <div className="">
@@ -373,10 +373,10 @@ const Investment = () => {
               <div className="bg-white md:p-6 p-4 border rounded-2xl shadow xs:col-span-12 md:lg:col-span-8">
                 <div className="flex flex-row justify-between items-center ">
                   <div>
-                    <h2 className="text-lg font-medium text-[#737373] lato min-w-max">
+                    <h2 className="xs:text-base md:text-lg font-medium text-[#737373] lato min-w-max">
                       My Investments
                     </h2>
-                    <p className="lg:text-5xl xs:text-3xl font-semibold font-lato py-3">
+                    <p className="lg:text-5xl xs:text-2xl font-semibold font-lato py-3">
                       $12,000.00
                       <span className="hidden md:inline text-3xl text-green-500 font-lato">(+21%)</span>
                     </p>
@@ -390,16 +390,16 @@ const Investment = () => {
                 <div className="pt-14">
                   <div className=" hidden lg:flex justify-between p-3 border-2 rounded-xl">
                     <div className="flex flex-col justify-between gap-3">
-                      <p className="text-[#737373] text-lg font-normal font-lato">Total Returns</p>
-                      <p className="text-3xl font-bold font-lato text-[#66C87B]">
+                      <p className="text-[#737373] md:text-lg font-normal font-lato xs:text-xs">Total Returns</p>
+                      <p className="text-[32px] xs:text-base font-bold font-lato text-[#66C87B]">
                         $2,520.00
                       </p>
                       <p className="text-[#66C87B] text-xs lato font-normal">↑ 21%</p>
                     </div>
                     <div className="border"></div>
                     <div className="flex flex-col justify-between">
-                      <p className="text-[#737373] text-lg font-normal font-lato text-right">My balance</p>
-                      <p className="text-3xl font-bold font-lato text-[#66C87B]">
+                      <p className="text-[#737373] md:text-lg xs:text-xs font-normal font-lato text-right">My balance</p>
+                      <p className="text-[32px] xs:text-base font-bold font-lato text-[#66C87B]">
                         $14,500.00
                       </p>
                       <p className="text-[#66C87B] text-xs lato font-normal text-right">↑ 21%</p>
@@ -414,7 +414,7 @@ const Investment = () => {
 
                   <div className=" flex lg:hidden flex-row justify-between items-center">
                     <div>
-                      <p className="text-[#737373] text-xs">
+                      <p className="text-[#737373] text-xs md:text-lg">
                         Total returns </p>
                       <p className="text-custom-green text-base font-bold"> $2520.00</p>
                       <p className="text-custom-green text-xs font-medium">↑ 21%</p>

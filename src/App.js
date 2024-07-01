@@ -135,13 +135,17 @@ const router = createBrowserRouter([
         path: "/claim",
         element: <Claim />
       },
-      {
-        path: "/BEProject",
-        element: <BEProject />
-      },
+      // {
+      //   path: "/BEProject",
+      //   element: <BEProject />
+      // },
 
     ]
   },
+  // {
+  //   path: "bidResult",
+  //   element: <BidResult />
+  // }
   // {
   //   path: "bidResult",
   //   element: <BidResult />
