@@ -7,7 +7,7 @@ const CardSection = () => {
   return (
     <div className="bg-[#eff3ff] bg-opacity-10 shadow-md rounded-xl px-4 py-3">
       <div className='w-full flex flex-row justify-between items-center py-4'>
-        <h2 className="md:text-[28px] text-base font-semibold font-poppins">My Card</h2>
+        <h2 className="md:text-[28px] text-base font-semibold font-poppins text-gray-1">My Card</h2>
         <button className='text-custom-blue underline xs:text-sm md:text-base font-medium font-poppins hover:scale-105 hover:text-blue-500'>
           +Add New
         </button>
@@ -37,12 +37,12 @@ const CardSection = () => {
         </div>
       </div>
       <div className="mt-4 ">
-        <h3 className="text-base font-medium font-poppins  text-[#B8B8B8] py-2 ">Total Balance</h3>
-        <p className="text-[40px] font-semibold font-poppins text-gray-1 ">$12,500.00</p>
+        <h3 className="xs:text-xs md:text-base font-medium font-poppins  text-[#B8B8B8] py-2 ">Total Balance</h3>
+        <p className="xs:text-xl md:text-[40px] font-semibold font-poppins text-gray-1 ">$12,500.00</p>
       </div>
       <div className="mt-4 font-dm-sans ">
         <div className="shadow bg-white py-6 px-4 rounded-lg">
-          <h3 className="text-[22px] font-medium text-[#333333] font-poppins">Recent Transaction</h3>
+          <h3 className="md:text-[22px] font-medium text-[#333333] font-poppins">Recent Transaction</h3>
           <div className="flex justify-between items-center border-b p-2">
             <div className="flex gap-3 font-dm-sans items-centers">
               <div>

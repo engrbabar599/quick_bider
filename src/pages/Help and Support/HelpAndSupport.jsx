@@ -5,8 +5,8 @@ import { Button } from "../../components/Button";
 function HelpAndSupport() {
   return (
     <>
-      <div className=" mx-auto md:p-4">
-        <div className="md:px-4">
+      <div className=" mx-auto md:p-5">
+        <div className="md:px-5">
           <h2 className="md:text-2xl font-poppins font-medium">Send enquiry</h2>
         </div>
         <div className=" rounded md:p-4 py-4 md:grid gap-6 md:grid-cols-3 flex flex-col ">

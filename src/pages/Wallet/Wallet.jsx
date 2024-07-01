@@ -100,7 +100,7 @@ const Wallet = () => {
         <h2 className="text-base md:text-2xl font-medium font-poppins text-gray-1 mb-4">
           Wallet
         </h2>
-        <div className="bg-white shadow rounded-xl border xs:px-5 xs:py-6 md:py-12">
+        <div className="bg-white shadow rounded-xl border px-5 py-6 md:py-12">
           <div className="flex justify-between items-center">
             <div>
               <p className="xs:text-2xl md:text-[64px] xs:font-semibold text-gray-1 font-poppins">
@@ -110,7 +110,7 @@ const Wallet = () => {
                 Current Balance
               </p>
             </div>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col md:flex-row gap-3">
               <div>
                 <button
                   onClick={toggleVisibility}
@@ -124,7 +124,7 @@ const Wallet = () => {
                 <div>
                   <button
                    onClick={toggleShow}
-                  className="px-4 py-3 border rounded-xl text-gray-1 text-sm font-semibold font-inter w-[172px] border-gray-1 xs:hidden md:block hover:bg-custom-blue hover:text-white hover:border-none">
+                  className="px-4 py-3 border rounded-xl text-gray-1 text-sm font-semibold font-inter w-[172px] border-gray-1 hidden md:block hover:bg-custom-blue hover:text-white hover:border-none">
                     Withdraw
                   </button>
                   {show && <Withdraw />}

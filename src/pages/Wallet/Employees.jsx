@@ -95,7 +95,7 @@ function Employees() {
                         </h1>
                       </div>
                       <div className="w-[40%] mx-auto">
-                        <h1 className="text-center text-base font-poppins font-medium text-gray-1">
+                        <h1 className="text-center text-xs md:text-base font-poppins font-medium text-gray-1">
                           Added to wallet successfully!
                         </h1>
                       </div>

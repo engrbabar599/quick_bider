@@ -12,8 +12,8 @@ const IMAGES = {
     winnerPic: require("../assets/images/winner-image.png"),
     mybids1: require("../assets/images/mybids-1.png"),
     reviewPic: require("../assets/images/reviewPic.png"),
-    adPlaceholder: require("../assets/images/video-ad-placeholder.png")
-
+    adPlaceholder: require("../assets/images/video-ad-placeholder.png"),
+    updatedLogo: require("../assets/images/quickbider logo png.png")
 }
 
 export default IMAGES
