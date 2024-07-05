@@ -24,6 +24,7 @@ import { BidDetailsSection } from "./pages/MyBids/BidDetailsSection";
 import { AdsPage } from "./pages/Ads";
 import BidResult from "./pages/My Bids/BidResult";
 import InvestmentCompleted from "./pages/Investment/InvestmentCompleted";
+import LandingPage from "./pages/Landing Page/LandingPage";
 
 export const Layout = () => {
   const { pathname } = useLocation()
@@ -121,12 +122,11 @@ const router = createBrowserRouter([
         path: "/claim",
         element: <Claim />
       },
-      // {
-      //   path: "/BEProject",
-      //   element: <BEProject />
-      // },
-
     ]
+  },
+  {
+    path: "landingpage",
+    element: <LandingPage/>
   },
   // {
   //   path: "bidResult",

@@ -76,7 +76,7 @@ const navigate = useNavigate()
                     </div>
       </div>
 
-          <div className="upsidebox border bg-[#F1F5ff] rounded-xl py-6 px-10">
+          <div className="upsidebox border bg-[#F1F5ff] rounded-xl py-6 px-3 md:px-10">
             <div className="flex justify-center items-center gap-1">
               <img src={partyImage} alt="" />
               <h1 className=" md:text-xl font-medium font-poppins">Congratulations</h1>
@@ -84,21 +84,21 @@ const navigate = useNavigate()
             </div>
             <div className="pt-6">
               <div className="flex justify-between items-center">
-                <h1 className="text-[#3EB14A] md:text-4xl font-semibold font-poppins">$605.00</h1>
-                <h1 className="text-sm font-poppins font-normal text-gray-4">
-                  Invested amount: <span className="text-[#6F9CFF] font-poppins text-sm font-semibold">$500</span>
+                <h1 className="text-[#3EB14A]  md:text-4xl font-semibold font-poppins">$605.00</h1>
+                <h1 className="text-xs md:text-sm font-poppins font-normal text-gray-4">
+                  Invested amount: <span className="text-[#6F9CFF] font-poppins text-xs md:text-sm font-semibold">$500</span>
                 </h1>
               </div>
               <div className="flex justify-between items-center">
-                <h1 className="text-start xs:text-xs md:text-sm font-poppins font-normal text-gray-4">
+                <h1 className="text-start text-xs md:text-sm font-poppins font-normal text-gray-4">
                   Date of transfer:{" "}
-                  <span className="text-gray-1 font-poppins xs:text-start md:text-sm font-semibold">
+                  <span className="text-gray-1 font-poppins text-xs text-start md:text-sm font-semibold">
                     20/7/2024
                   </span>
                 </h1>
-                <h1 className="xs:text-xs md:text-sm font-poppins font-normal text-gray-4">
+                <h1 className=" text-xs md:text-sm font-poppins font-normal text-gray-4">
                   Return on investment:{" "}
-                  <span className="text-[#3EB14A] font-poppins xs:text-xs md:text-sm font-semibold">21%</span>
+                  <span className="text-[#3EB14A] font-poppins text-xs md:text-sm font-semibold">21%</span>
                 </h1>
               </div>
             </div>
@@ -127,12 +127,12 @@ const navigate = useNavigate()
               <div className="border rounded-xl p-5 my-6 shadow-sm md:w-[90%]">
                 <div className="flex justify-between">
                   <div className="flex gap-1">
-                    <h1 className="text-sm font-poppins font-normal text-gray-4 ">Date:</h1>
-                    <h1 className="text-gray-1 font-poppins text-sm font-semibold">24/05/2024</h1>
+                    <h1 className=" text-xs md:text-sm font-poppins font-normal text-gray-4 ">Date:</h1>
+                    <h1 className="text-gray-1 font-poppins text-xs md:text-sm font-semibold">24/05/2024</h1>
                   </div>
                   <div className="flex gap-1">
-                    <h1 className="text-sm font-poppins font-normal text-gray-4">Minimum Investment:</h1>
-                    <h1 className="text-[#6F9CFF] font-poppins text-sm font-semibold">%500</h1>
+                    <h1 className="text-xs md:text-sm font-poppins font-normal text-gray-4">Minimum Investment:</h1>
+                    <h1 className="text-[#6F9CFF] font-poppins text-xs md:text-sm font-semibold">%500</h1>
                   </div>
                 </div>
                 <div className="flex justify-between pt-3">
@@ -149,7 +149,7 @@ const navigate = useNavigate()
               <div className=""></div>
               <div className="border border-black p-3 w-fit rounded-xl flex items-center gap-2">
                 <img src={pdfImage} alt="" className="" />
-                <h1 className="text-sm font-semibold font-inter">Download investment certificate</h1>
+                <h1 className="text-xs md:text-sm font-semibold font-inter">Download investment certificate</h1>
               </div>
             </div>
           </div>

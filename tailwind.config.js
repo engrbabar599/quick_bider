@@ -8,7 +8,9 @@ module.exports = {
         "inter": ["Inter"],
         "open-sans": ["Open Sans"],
         "lato": ["Lato"],
-        "dm-sans": ["DM Sans"]
+        "dm-sans": ["DM Sans"],
+        "Work-sans": ["Work Sans"],
+        "hk-grotesk": ["Hanken Grotesk"],
       },
       colors: {
         "custom-red": "#F43A3A",
