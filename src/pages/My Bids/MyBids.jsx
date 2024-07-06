@@ -94,7 +94,9 @@ function MyBids() {
                     <p className="text-xs md:text-xl font-normal font-poppins text-gray-400 py-4">@invest.audi</p>
                   </div>
                   <div className="text-center block md:hidden">
-                    <button className="py-2 px-3 md:px-4 md:py-2 border border-blue-500 rounded-xl text-blue-500 text-xs md:text-sm font-semibold font-poppins hover:bg-blue-500 hover:text-white">
+                    <button
+                      onClick={() => navigate("/mybids/bidDetails")}
+                      className="py-2 px-3 md:px-4 md:py-2 border border-blue-500 rounded-xl text-blue-500 text-xs md:text-sm font-semibold font-poppins hover:bg-blue-500 hover:text-white">
                       View details
                     </button>
                   </div>
@@ -159,7 +161,7 @@ function MyBids() {
                   </div>
                 </div>
                 <div className="text-center pt-6 hidden md:block">
-                  <button onClick={() => navigate("/mybids/bidsdetails")} className="w-[127px] min-w-max px-5 py-2 border rounded-xl text-blue-500 hover:bg-blue-500 hover:text-white text-sm font-semibold font-poppins border-blue-500">
+                  <button onClick={() => navigate("/mybids/bidDetails")} className="w-[127px] min-w-max px-5 py-2 border rounded-xl text-blue-500 hover:bg-blue-500 hover:text-white text-sm font-semibold font-poppins border-blue-500">
                     View details
                   </button>
                 </div>
