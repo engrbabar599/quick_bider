@@ -468,7 +468,8 @@ const Investment = () => {
               {activeButton === "active" && (
                 <>
                   <div>
-                    <Project />
+                  
+                    <Project hadding={'hidden'} padding={'py-0'} />
                   </div>
 
                   <div>
@@ -480,7 +481,8 @@ const Investment = () => {
               {activeButton === "completed" && (
                 <>
                   <div>
-                    <InvestmentCompleted />
+                    {/* <InvestmentCompleted /> */}
+                    <Project button="view details" hadding={'hidden'} padding={'py-0'}/>
                   </div>
                 </>
               )}

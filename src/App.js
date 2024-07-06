@@ -25,6 +25,7 @@ import { BidDetailsSection } from "./pages/MyBids/BidDetailsSection";
 import { AdsPage } from "./pages/Ads";
 import BidResult from "./pages/My Bids/BidResult";
 import InvestmentCompleted from "./pages/Investment/InvestmentCompleted";
+import InvestmentCompleted from "./pages/Investment/InvestmentCompleted";
 import BidResultMyBidSection from "./pages/My Bids/BidResultMyBidSection";
 
 export const Layout = () => {
@@ -114,6 +115,10 @@ const router = createBrowserRouter([
           path: "",
           element: <Investment />
         }]
+      },
+      {
+        path: "/investments/investmentCompleted",
+        element: <InvestmentCompleted />
       },
       {
         path: "/ads",

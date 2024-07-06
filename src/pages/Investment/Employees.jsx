@@ -21,13 +21,13 @@ function Employees() {
   return (
     <div>
       {dialog && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 overflow-scroll">
           <div className="flex items-center justify-center w-full px-4">
             <div className="mx-auto p-8 bg-white rounded-lg shadow-md  py-1md:w-full  w-[90%]">
               <div className="flex justify-between mb-6 "></div>
               <form onSubmit={handleSubmit}>
                 {step === 1 && (
-                  <div className="w-full max-w-3xl">
+                  <div className="w-full xs:max-w-[90vw] md:max-w-[70vw] lg:max-w-[50vw] ">
                     <div className="text-center">
                       <h1 className="text-base md:text-2xl lg:text-[28px] font-semibold font-poppins text-gray-700">
                         Activate Investment
@@ -71,7 +71,7 @@ function Employees() {
                 )}
                 {step === 2 && (
                   <div className="w-full">
-                    <div className="max-w-lg mx-auto">
+                    <div className="xs:max-w-[70vw] sm:max-w-[50vw] lg:max-w-[33vw] mx-auto">
                       <div className="text-center">
                         <h2 className="text-base md:text-2xl lg:text-[28px] font-semibold font-poppins text-gray-700 mb-6">
                           Verify to continue
