@@ -18,13 +18,13 @@ export const Login = () => {
                         className='md:w-3/4 items-center justify-center flex flex-col space-y-8'>
                         <img src={IMAGES.logo}
                             alt='Colored Logo'
-                            className='md:h-24 h-16 md:min-w-max' />
+                            className='md:h-24 h-12 md:min-w-max' />
 
-                        <div className='flex flex-col md:w-full w-[90%]  items-center justify-center space-y-6'>
-                            <h1 className='text-[1.75rem] font-semibold text-gray-1 font-poppins text-center'>
+                        <div className='flex flex-col sm:w-full xs:w-[90%]  items-center justify-center space-y-6'>
+                            <h1 className='text-[1.75rem] font-semibold text-gray-1 font-poppins text-center min-w-max'>
                                 Sign in to continue
                             </h1>
-                            <div className=' flex flex-col md:w-full w-[90%] space-y-4 '>
+                            <div className=' flex flex-col sm:w-full xs:w-[90%] space-y-4 '>
                                 <Input
                                     label={"Email"}
                                     type={"text"}
