@@ -44,7 +44,7 @@ import ArrowDown, { ArrowRight } from "../../assets/svgs/ArrowRight"
 import blueBase from "../../assets/images/bluseBase.png"
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button";
-
+import mission from "../../assets/images/mission.png"
 
 function LandingPage() {
   const navigate = useNavigate();
@@ -190,54 +190,60 @@ function LandingPage() {
 
         {tabActive === "home" && (
           <>
-            <div className="firstcarpart relative mx-auto flex items-center justify-between">
-              <div className="relative textpart w-[35%] mx-auto ml-40">
-                <h1 className="text-[54px] font-bold font-inter text-gray-1 mx-auto">
-                  Your Winning Streak Starts Here
-                  <span>
-                    <img
-                      src={blueLine}
-                      alt=""
-                      className="absolute top-16 left-36"
-                    />
-                  </span>
-                </h1>
-                <p className="text-lg font-normal font-inter text-gray-2 py-7 w-[90%]">
-                  Betting at QuickBider is simple and accessible. With just $2
-                  per bid, you have multiple chances to participate and win.
-                </p>
-                <div className="flex items-center gap-6">
-                  <button className="bg-custom-blue w-[160px] py-[14px] px-[24px] rounded-xl text-base font-medium font-poppins text-white">
-                    Bid now
-                  </button>
-                  <button className="border border-custom-blue w-[160px] py-[14px] px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue">
-                    Invest
-                  </button>
-                </div>
-              </div>
-              <div className="relative carimage w-[50%] h-[90vh] flex items-center justify-start bg-[#f0f4fe] -z-10">
-                <img
-                  src={circle}
-                  alt=""
-                  className="absolute top-32 right-40"
-                />
-                <img src={blueBase} className="absolute top-[430px] object-cover" alt="" />
-                <img
-                  src={carImage}
-                  alt=""
-                  className=" absolute top-24 right-32 w-[699px] "
-                />
-                <img
-                  src={circle}
-                  alt=""
-                  className="absolute bottom-7 left-3"
-                />
-              </div>
-            </div>
+           
 
-            <div className="trending actions w-[80%] mx-auto relative">
+<div className="firstcarpart relative flex flex-col lg:flex-row items-center justify-between mx-auto p-4 lg:p-0">
+  <div className="relative textpart w-full lg:w-[35%] mx-auto lg:ml-40 text-center lg:text-left">
+    <h1 className="relative text-[32px] lg:text-[54px] font-bold font-inter text-gray-1 mx-auto">
+      Your Winning Streak Starts Here
+      <span className="block">
+        <img
+          src={blueLine}
+          alt=""
+          className="absolute top-16 lg:right-48 transform -translate-x-1/2 lg:translate-x-0 lg:inline-block hidden"
+        />
+      </span>
+    </h1>
+    <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-7 w-full lg:w-[90%] mx-auto">
+      Betting at QuickBider is simple and accessible. With just $2 per bid, you have multiple chances to participate and win.
+    </p>
+    <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-6">
+      <button className="bg-custom-blue w-full lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-white">
+        Bid now
+      </button>
+      <button className="border border-custom-blue w-full lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
+        Invest
+      </button>
+    </div>
+  </div>
+  <div className="relative carimage w-full lg:w-[50%] h-[60vh] lg:h-[90vh] flex items-center justify-start bg-[#f0f4fe] -z-10 mt-6 lg:mt-0">
+    <img
+      src={circle}
+      alt=""
+      className="absolute top-8 lg:top-32 right-1/4 lg:right-40 w-1/3 lg:w-auto lg:inline-block hidden"
+    />
+    <img
+      src={blueBase}
+      className="absolute top-[260px] lg:top-[430px] object-cover w-full lg:w-auto"
+      alt=""
+    />
+    <img
+      src={carImage}
+      alt=""
+      className="absolute top-24  lg:right-32 w-full lg:w-[699px]"
+    />
+    <img
+      src={circle}
+      alt=""
+      className="absolute bottom-2 left-1/4 lg:left-3 w-1/3 lg:w-auto lg:inline-block hidden"
+    />
+  </div>
+</div>
+
+
+            <div className="trending actions lg:w-[80%] mx-auto relative">
               <div className="text-center mt-24 text-gray-1">
-                <h1 className="text-[54px] font-bold font-inter text-gray-1">
+                <h1 className="lg:text-[54px] font-bold font-inter text-gray-1">
                   Trending auctions
                 </h1>
               </div>
@@ -245,13 +251,13 @@ function LandingPage() {
                 <img
                   src={circle}
                   alt=""
-                  className="absolute top-6 right-16"
+                  className="absolute top-6 right-16 lg:inline-block hidden"
                 />
                 <TrendingAuction />
                 <img
                   src={circle}
                   alt=""
-                  className="absolute bottom-6 left-12"
+                  className="absolute bottom-6 left-12 lg:inline-block hidden"
                 />
               </div>
               <div className="text-center py-6">
@@ -260,426 +266,310 @@ function LandingPage() {
                 </button>
               </div>
             </div>
-            <div className="blueReactangle w-[80%] mx-auto py-16">
-              <div className="bg-custom-blue rounded-xl px-[64px] py-[32px]">
-                <div className="flex items-center justify-between">
-                  <div className="flex flex-col items-center">
-                    <img src={manImage} alt="" />
-                    <h1 className="text-[36px] font-bold font-inter text-white">
-                      50k+
-                    </h1>
-                    <h1 className="text-lg font-medium font-inter text-white">
-                      Bidders
-                    </h1>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <img src={trophyImage} alt="" />
-                    <h1 className="text-[36px] font-bold font-inter text-white">
-                      2k+
-                    </h1>
-                    <h1 className="text-lg font-medium font-inter text-white">
-                      Winners
-                    </h1>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <img src={progressImage} alt="" />
-                    <h1 className="text-[36px] font-bold font-inter text-white">
-                      $7M+
-                    </h1>
-                    <h1 className="text-lg font-medium font-inter text-white">
-                      Investments
-                    </h1>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <img src={savemoneyImage} alt="" />
-                    <h1 className="text-[36px] font-bold font-inter text-white">
-                      21%
-                    </h1>
-                    <h1 className="text-lg font-medium font-inter text-white">
-                      Return
-                    </h1>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="recentWinners w-[80%] mx-auto">
-              <div className="text-center">
-                <h1 className="text-[54px] font-bold font-inter text-gray-1">
-                  Recent winners
-                </h1>
-              </div>
-              <div className="w-[95%] mx-auto py-10">
-                <RecentWinnersSection />
-                <div className="text-center py-12">
-                  <button className="border text-custom-blue border-custom-blue rounded-xl w-[160px] px-[24px] py-[14px] text-base font-medium font-poppins">
-                    View all
-                  </button>
-                </div>
-              </div>
-            </div>
+           
+
+<div className="blueRectangle w-[90%] lg:w-[80%] mx-auto py-10 lg:py-16">
+  <div className="bg-custom-blue rounded-xl px-8 lg:px-[64px] py-8 lg:py-[32px]">
+    <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-0">
+      <div className="flex flex-col items-center">
+        <img src={manImage} alt="" className="w-16 lg:w-auto" />
+        <h1 className="text-2xl lg:text-[36px] font-bold font-inter text-white mt-2 lg:mt-4">
+          50k+
+        </h1>
+        <h1 className="text-base lg:text-lg font-medium font-inter text-white mt-1 lg:mt-2">
+          Bidders
+        </h1>
+      </div>
+      <div className="flex flex-col items-center">
+        <img src={trophyImage} alt="" className="w-16 lg:w-auto" />
+        <h1 className="text-2xl lg:text-[36px] font-bold font-inter text-white mt-2 lg:mt-4">
+          2k+
+        </h1>
+        <h1 className="text-base lg:text-lg font-medium font-inter text-white mt-1 lg:mt-2">
+          Winners
+        </h1>
+      </div>
+      <div className="flex flex-col items-center">
+        <img src={progressImage} alt="" className="w-16 lg:w-auto" />
+        <h1 className="text-2xl lg:text-[36px] font-bold font-inter text-white mt-2 lg:mt-4">
+          $7M+
+        </h1>
+        <h1 className="text-base lg:text-lg font-medium font-inter text-white mt-1 lg:mt-2">
+          Investments
+        </h1>
+      </div>
+      <div className="flex flex-col items-center">
+        <img src={savemoneyImage} alt="" className="w-16 lg:w-auto" />
+        <h1 className="text-2xl lg:text-[36px] font-bold font-inter text-white mt-2 lg:mt-4">
+          21%
+        </h1>
+        <h1 className="text-base lg:text-lg font-medium font-inter text-white mt-1 lg:mt-2">
+          Return
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+           
+
+<div className="recentWinners w-full lg:w-[80%] mx-auto p-4 lg:p-0">
+  <div className="text-center">
+    <h1 className="text-[32px] lg:text-[54px] font-bold font-inter text-gray-1">
+      Recent winners
+    </h1>
+  </div>
+  <div className="w-full lg:w-[90%] mx-auto py-6 lg:py-10">
+    <RecentWinnersSection />
+    </div>
+    <div className="text-center py-6 lg:py-12">
+      <button className="border text-custom-blue border-custom-blue rounded-xl w-[160px] px-[16px] lg:px-[24px] py-[12px] lg:py-[14px] text-sm lg:text-base font-medium font-poppins">
+        View all
+      </button>
+    </div>
+</div>
+
+
+
+           
+
             <div className="smartInvestment bg-[#E0E0E033] py-10">
-              <div className="flex items-center w-[80%] mx-auto">
-                <div className=" relative">
-                  <img src={moneyImage} alt="" />
-                  <img
-                    src={circle2}
-                    className="absolute top-0 left-14"
-                    alt=""
-                  />
-                  <img
-                    src={circle2}
-                    className="absolute bottom-0 right-14"
-                    alt=""
-                  />
-                </div>
-                <div className="w-[45%] mx-auto">
-                  <h1 className="relative text-[54px] font-bold font-inter text-gray-1">
-                    Smart Investments for Smart Returns
-                    <img
-                      src={blueline2}
-                      className=" absolute top-16 right-10"
-                      alt=""
-                    />
-                  </h1>
-                  <p className="text-lg font-normal font-inter text-gray-2 py-6 w-[90%]">
-                    Betting at QuickBider is simple and accessible. With just $2
-                    per bid, you have multiple chances to participate and win.
-                  </p>
-                  <button className="px-[24px] py-[14px] w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
-                    Invest now
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="upcominginvestments w-[80%] mx-auto h-[100vh] py-20">
-              <div className="text-center">
-                <h1 className=" text-[54px] font-bold font-inter text-gray-1">
-                  Upcoming Investments
+  <div className="flex flex-col lg:flex-row items-center w-[90%] lg:w-[80%] mx-auto">
+    <div className="relative mb-6 lg:mb-0 lg:mr-6">
+      <img src={moneyImage} alt="" className="w-full h-auto" />
+      <img
+        src={circle2}
+        className="absolute top-0 left-14 w-12 h-12 lg:w-16 lg:h-16"
+        alt=""
+      />
+      <img
+        src={circle2}
+        className="absolute bottom-0 right-14 w-12 h-12 lg:w-16 lg:h-16"
+        alt=""
+      />
+    </div>
+    <div className="w-full lg:w-[45%] mx-auto text-center lg:text-left">
+      <h1 className="relative lg:text-[54px] font-bold font-inter text-gray-1">
+        Smart Investments for Smart Returns
+        <img
+          src={blueline2}
+          className="absolute top-8 lg:top-16 right-4 lg:right-10 w-16 lg:w-auto md:inline-block hidden"
+          alt=""
+        />
+      </h1>
+      <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-6 w-full lg:w-[90%] mx-auto lg:mx-0">
+        Betting at QuickBider is simple and accessible. With just $2 per bid, you have multiple chances to participate and win.
+      </p>
+      <button className="px-6 py-3 lg:px-[24px] lg:py-[14px] w-[140px] lg:w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
+        Invest now
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+          
+
+<div className="upcominginvestments w-[90%] lg:w-[90%] mx-auto min-h-screen py-20">
+            <div className="text-center">
+                <h1 className="text-2xl lg:text-[54px] font-bold font-inter text-gray-1">
+                    Upcoming Investments
                 </h1>
-              </div>
-              <div className="">
+            </div>
+            <div className="">
                 <Project />
-                <div className="text-center">
-                  <button className="border text-custom-blue border-custom-blue rounded-xl w-[160px] px-[24px] py-[14px] text-base font-medium font-poppins hover:bg-custom-blue hover:text-white">
-                    View all
-                  </button>
+                <div className="text-center mt-10">
+                    <button className="border text-custom-blue border-custom-blue rounded-xl w-[160px] px-[24px] py-[14px] text-base font-medium font-poppins hover:bg-custom-blue hover:text-white">
+                        View all
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+          
+
+<div className="testimonials bg-[#d2eaff] py-10">
+  <div className="text-center mb-10">
+    <h1 className="text-2xl lg:text-[54px] font-bold font-inter text-gray-1">
+      What people say about us?
+    </h1>
+  </div>
+  <Swiper
+    cssMode={true}
+    loop={true}
+    spaceBetween={50}
+    pagination={{ clickable: true }}
+    mousewheel={true}
+    keyboard={true}
+    modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+    className="mySwiper"
+  >
+    {[0, 1, 2].map((slideIndex) => (
+      <SwiperSlide key={slideIndex}>
+        <div className="cards w-[90%] lg:w-[80%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
+          {Array(3)
+            .fill()
+            .map((_, i) => (
+              <div key={i} className="bg-white rounded-xl shadow-md p-7">
+                <div className="flex items-center gap-5">
+                  <div>
+                    <h1 className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></h1>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <div>
+                      <h1 className="text-xl font-semibold font-inter text-gray-1">
+                        Sandra T. Robinson
+                      </h1>
+                    </div>
+                    <div className="flex items-center">
+                      <img src={StarImage} className="inline" alt="" />
+                      <span className="text-lg font-medium font-Work-sans text-gray-1 px-2">
+                        5.0
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-base font-normal font-Work-sans text-gray-2 pt-5">
+                    And equal blame belongs to those who fail in their duty
+                    through weakness of will, which is the same as saying
+                    through shrinking from toil and pain.
+                  </p>
                 </div>
               </div>
-            </div>
-            <div className="testomonials h-[100vh] bg-[#d2eaff] py-10">
-              <div className="text-center ">
-                <h1 className="text-[54px] font-bold font-inter text-gray-1">
-                  What people say about us?
-                </h1>
-              </div>
-              <Swiper
-                cssMode={true}
-                // navigation={true}
-                loop={true}
-                spaceBetween={50}
-                pagination={{ clickable: true }}
-                mousewheel={true}
-                keyboard={true}
-                modules={[Navigation, Pagination, Mousewheel, Keyboard,]}
-                className="mySwiper"
-              >
-                <SwiperSlide>
-                  <div className="cards w-[80%] mx-auto grid grid-cols-3 gap-6 py-10">
-                    {Array(3)
-                      .fill()
-                      .map((_, i) => {
-                        return (
-                          <>
-                            <div className="bg-white rounded-xl shadow-md p-7">
-                              <div className="flex items-center gap-5">
-                                <div>
-                                  <h1 className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></h1>
-                                </div>
-                                <div className="flex flex-col gap-1">
-                                  <div>
-                                    <h1 className="text-xl font-semibold font-inter text-gray-1">
-                                      Sandra T. Robinson
-                                    </h1>
-                                  </div>
-                                  <div>
-                                    <img
-                                      src={StarImage}
-                                      className="inline"
-                                      alt=""
-                                    />
-                                    <span className="text-lg font-medium font-Work-sons text-gray-1 px-2">
-                                      5.0
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div>
-                                <p className="text-base font-normal font-Work-sans text-gray-2 pt-5">
-                                  And equal blame belongs to those who fail in their
-                                  duty through weakness of will, which is the same
-                                  as saying through shrinking from toil and pain.
-                                </p>
-                              </div>
-                            </div>
-                          </>
-                        );
-                      })}
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="cards w-[80%] mx-auto grid grid-cols-3 gap-6 py-10">
-                    {Array(3)
-                      .fill()
-                      .map((_, i) => {
-                        return (
-                          <>
-                            <div className="bg-white rounded-xl shadow-md p-7">
-                              <div className="flex items-center gap-5">
-                                <div>
-                                  <h1 className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></h1>
-                                </div>
-                                <div className="flex flex-col gap-1">
-                                  <div>
-                                    <h1 className="text-xl font-semibold font-inter text-gray-1">
-                                      Sandra T. Robinson
-                                    </h1>
-                                  </div>
-                                  <div>
-                                    <img
-                                      src={StarImage}
-                                      className="inline"
-                                      alt=""
-                                    />
-                                    <span className="text-lg font-medium font-Work-sons text-gray-1 px-2">
-                                      5.0
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div>
-                                <p className="text-base font-normal font-Work-sans text-gray-2 pt-5">
-                                  And equal blame belongs to those who fail in their
-                                  duty through weakness of will, which is the same
-                                  as saying through shrinking from toil and pain.
-                                </p>
-                              </div>
-                            </div>
-                          </>
-                        );
-                      })}
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="cards w-[80%] mx-auto grid grid-cols-3 gap-6 py-10">
-                    {Array(3)
-                      .fill()
-                      .map((_, i) => {
-                        return (
-                          <>
-                            <div className="bg-white rounded-xl shadow-md p-7">
-                              <div className="flex items-center gap-5">
-                                <div>
-                                  <h1 className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></h1>
-                                </div>
-                                <div className="flex flex-col gap-1">
-                                  <div>
-                                    <h1 className="text-xl font-semibold font-inter text-gray-1">
-                                      Sandra T. Robinson
-                                    </h1>
-                                  </div>
-                                  <div>
-                                    <img
-                                      src={StarImage}
-                                      className="inline"
-                                      alt=""
-                                    />
-                                    <span className="text-lg font-medium font-Work-sons text-gray-1 px-2">
-                                      5.0
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div>
-                                <p className="text-base font-normal font-Work-sans text-gray-2 pt-5">
-                                  And equal blame belongs to those who fail in their
-                                  duty through weakness of will, which is the same
-                                  as saying through shrinking from toil and pain.
-                                </p>
-                              </div>
-                            </div>
-                          </>
-                        );
-                      })}
-                  </div>
-                </SwiperSlide>
-              </Swiper>
-              {/* <div className="cards w-[80%] mx-auto grid grid-cols-3 gap-6 py-10">
-                {Array(3)
-                  .fill()
-                  .map((_, i) => {
-                    return (
-                      <>
-                        <div className="bg-white rounded-xl shadow-md p-7">
-                          <div className="flex items-center gap-5">
-                            <div>
-                              <h1 className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></h1>
-                            </div>
-                            <div className="flex flex-col gap-1">
-                              <div>
-                                <h1 className="text-xl font-semibold font-inter text-gray-1">
-                                  Sandra T. Robinson
-                                </h1>
-                              </div>
-                              <div>
-                                <img
-                                  src={StarImage}
-                                  className="inline"
-                                  alt=""
-                                />
-                                <span className="text-lg font-medium font-Work-sons text-gray-1 px-2">
-                                  5.0
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <div>
-                            <p className="text-base font-normal font-Work-sans text-gray-2 pt-5">
-                              And equal blame belongs to those who fail in their
-                              duty through weakness of will, which is the same
-                              as saying through shrinking from toil and pain.
-                            </p>
-                          </div>
-                        </div>
-                      </>
-                    );
-                  })}
-              </div> */}
-              {/* <div className="flex items-center justify-center gap-8">
-                {Array(4)
-                  .fill()
-                  .map((_, i) => {
-                    return (
-                      <>
-                        <img src={graycircle} alt="" />
-                      </>
-                    );
-                  })}
-              </div> */}
-              <div className="text-center py-20">
-                <button className="border text-custom-blue border-custom-blue rounded-xl w-[160px] px-[24px] py-[14px] text-base font-medium font-poppins hover:bg-custom-blue hover:text-white">
-                  View all
-                </button>
-              </div>
+            ))}
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+  <div className="text-center py-10">
+    <button className="border text-custom-blue border-custom-blue rounded-xl w-[160px] px-[24px] py-[14px] text-base font-medium font-poppins hover:bg-custom-blue hover:text-white">
+      View all
+    </button>
+  </div>
+</div>
 
 
 
 
-
-            </div>
-            <div className="newsLatter h-[80vh] py-20">
-              <div className="bg-custom-blue rounded-3xl w-[80%] mx-auto py-10">
-                <div className="w-[50%] text-center mx-auto">
-                  <h1 className=" text-white text-[40px] font-bold font-inter text-center">
+            <div className="newsLatter h-auto lg:h-[80vh] flex items-center justify-center py-10">
+              <div className="bg-custom-blue rounded-3xl w-[90%] lg:w-[80%] mx-auto p-10">
+                <div className="w-[90%] lg:w-[50%] text-center mx-auto">
+                  <h1 className=" text-white md:text-[40px] font-bold font-inter text-center">
                     Subscribe to Our Newsletter For Weekly Article Update.
                   </h1>
                 </div>
-                <div className=" text-center py-10 flex items-center justify-center gap-5">
-                  <label
-                    htmlFor=""
-                    className=" border border-white relative w-[468px] h-[61px] rounded-full flex items-center px-16 text-base font-normal text-[#ffffff4b]"
-                  >
-                    Enter your e-mail address
-                    <img src={mail} className=" absolute left-0 px-5" alt="" />
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter your e-mail address"
-                    className="hidden bg-white opacity-40 border-2 border-white outline-none rounded-full w-[468px] h-[61px]"
-                  />
-                  <button className=" w-[174px] h-[61px] rounded-full text-lg font-semibold font-inter text-custom-blue bg-white">
-                    Subscribe
-                  </button>
-                </div>
+                <div className="text-center py-6 lg:py-10 flex flex-col lg:flex-row items-center justify-center gap-5">
+      <label
+        htmlFor=""
+        className="relative w-full lg:w-[468px] h-[48px] lg:h-[61px] rounded-full flex items-center px-5 lg:px-16 text-base font-normal text-[#ffffff4b] border border-white"
+      >
+        <img src={mail} className="absolute left-4 lg:left-5" alt="" />
+        Enter your e-mail address
+      </label>
+      <input
+        type="text"
+        placeholder="Enter your e-mail address"
+        className="hidden bg-white opacity-40 border-2 border-white outline-none rounded-full w-full lg:w-[468px] h-[48px] lg:h-[61px] px-5 lg:px-16"
+      />
+      <button className="w-[174px] h-[48px] lg:h-[61px] rounded-full text-base lg:text-lg font-semibold font-inter text-custom-blue bg-white">
+        Subscribe
+      </button>
+    </div>
                 <div></div>
               </div>
             </div>
+
+
+
+
+
+
             <div className="banner">
               <img src={banner} className=" w-[100vw]" alt="" />
             </div>
-            <div className="footer py-10 bg-[#e0e0e0]">
-              <div className="w-[80vw] mx-auto">
-                <div className="flex justify-between">
-                  <div className="first w-[35%]">
-                    <div>
-                      <img src={quickBidLogo} alt="" />
-                    </div>
-                    <div>
-                      <p className="text-lg font-normal font-Work-sans text-gray-1 py-10">
-                        But who has any right to find fault with a man who
-                        chooses to enjoy a pleasure that has no annoying
-                        consequences
-                      </p>
-                    </div>
-                    <div className="flex gap-4">
-                      <div>
-                        <img src={facebook} alt="" />
-                      </div>
-                      <div>
-                        <img src={twitter} alt="" />
-                      </div>
-                      <div>
-                        <img src={tiktok} alt="" />
-                      </div>
-                      <div>
-                        <img src={youtube} alt="" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="second w-[15%]">
-                    <div>
-                      <h1 className="text-2xl font-semibold font-inter text-gray-1">
-                        Our Services
-                      </h1>
-                    </div>
-                    <div className="flex flex-col gap-5 pt-5">
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        Home
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        Bids
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        Investments
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        About us
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        Contact us
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="third w-[35%]">
-                    <div>
-                      <h1 className="text-2xl font-semibold font-inter text-gray-1">
-                        Contact
-                      </h1>
-                    </div>
-                    <div className="flex flex-col gap-5 pt-5">
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        +012-334-5864
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        info.alva@example.com
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        2048 Wexford Way Wings SC 287290
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          
+
+<div className="footer py-10 bg-[#e0e0e0]">
+  <div className="w-[90vw] lg:w-[80vw] mx-auto">
+    <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-0">
+      <div className="first w-full lg:w-[35%]">
+        <div>
+          <img src={quickBidLogo} alt="" />
+        </div>
+        <div>
+          <p className="text-base lg:text-lg font-normal font-Work-sans text-gray-1 py-5 lg:py-10">
+            But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences
+          </p>
+        </div>
+        <div className="flex gap-4">
+          <div>
+            <img src={facebook} alt="" />
+          </div>
+          <div>
+            <img src={twitter} alt="" />
+          </div>
+          <div>
+            <img src={tiktok} alt="" />
+          </div>
+          <div>
+            <img src={youtube} alt="" />
+          </div>
+        </div>
+      </div>
+      <div className="second w-full lg:w-[15%]">
+        <div>
+          <h1 className="text-xl lg:text-2xl font-semibold font-inter text-gray-1">
+            Our Services
+          </h1>
+        </div>
+        <div className="flex flex-col gap-3 lg:gap-5 pt-3 lg:pt-5">
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            Home
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            Bids
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            Investments
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            About us
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            Contact us
+          </h3>
+        </div>
+      </div>
+      <div className="third w-full lg:w-[35%]">
+        <div>
+          <h1 className="text-xl lg:text-2xl font-semibold font-inter text-gray-1">
+            Contact
+          </h1>
+        </div>
+        <div className="flex flex-col gap-3 lg:gap-5 pt-3 lg:pt-5">
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            +012-334-5864
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            info.alva@example.com
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            2048 Wexford Way Wings SC 287290
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
             <div className="companyName h-[100px] bg-[#4f4f4f] flex items-center justify-center">
               <div className="">
                 <h1 className="text-white font-medium text-sm font-Work-sans">
@@ -691,266 +581,268 @@ function LandingPage() {
         )}
         {tabActive === "about" && (
           <>
-            <div className="firstcarpart relative mx-auto flex items-center justify-between">
-              <div className="relative textpart w-[35%] mx-auto ml-40">
-                <h1 className="text-[54px] font-bold font-inter text-gray-1 mx-auto">
-                  Your Winning Streak Starts Here
-                  <span>
-                    <img
-                      src={blueLine}
-                      alt=""
-                      className="absolute top-16 left-36"
-                    />
-                  </span>
-                </h1>
-                <p className="text-lg font-normal font-inter text-gray-2 py-7 w-[90%]">
-                  Betting at QuickBider is simple and accessible. With just $2
-                  per bid, you have multiple chances to participate and win.
-                </p>
-                <div className="flex items-center gap-6">
-                  <button className="bg-custom-blue w-[160px] py-[14px] px-[24px] rounded-xl text-base font-medium font-poppins text-white">
-                    Bid now
-                  </button>
-                  <button className="border border-custom-blue w-[160px] py-[14px] px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue">
-                    Invest
-                  </button>
-                </div>
-              </div>
-              <div className=" carimage w-[50%] h-[90vh] flex items-center justify-start bg-[#f0f4fe] -z-10">
-                <img
-                  src={carImage}
-                  alt=""
-                  className=" absolute top-24 right-32 w-[699px]"
-                />
-                <img
-                  src={circle}
-                  alt=""
-                  className="absolute top-[88%] right-[46%]"
-                />
-              </div>
-            </div>
-            <div className="smartInvestment  py-10">
-              <div className="flex items-center w-[80%] mx-auto">
-                <div className=" relative">
-                  <img src={questionmanImage} alt="" />
-                  <img
-                    src={circle2}
-                    className="absolute top-0 left-14"
-                    alt=""
-                  />
-                  <img
-                    src={circle2}
-                    className="absolute bottom-0 right-14"
-                    alt=""
-                  />
-                </div>
-                <div className="w-[45%] mx-auto">
-                  <h1 className="relative text-[54px] font-bold font-inter text-gray-1">
-                    Who We Are
-                    <img
-                      src={bluelineofWeAre}
-                      className=" absolute top-16 left-32"
-                      alt=""
-                    />
-                  </h1>
-                  <p className="text-lg font-normal font-inter text-gray-2 py-6 w-[90%]">
-                    Founded by MR Corporation PVT LTD. QuickBider was created to
-                    revolutionize the way people engage with betting and
-                    investment opportunities. Our platform is built on the
-                    principles of transparency, fairness, and
-                    customer-centricity, ensuring that every user feels
-                    confident and valued.
-                  </p>
-                  <button className="px-[24px] py-[14px] w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
-                    Invest now
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="smartInvestment  py-10">
-              <div className="flex items-center w-[80%] mx-auto">
-                <div className="w-[45%] mx-auto">
-                  <h1 className="relative text-[54px] font-bold font-inter text-gray-1">
-                    Our Vision
-                    <img
-                      src={bluelineVision}
-                      className=" absolute top-16 left-32"
-                      alt=""
-                    />
-                  </h1>
-                  <p className="text-lg font-normal font-inter text-gray-2 py-6 w-[90%]">
-                    We envision a world where financial opportunities are
-                    accessible to everyone. By providing a platform that merges
-                    entertainment with financial growth, we aim to empower our
-                    users to achieve their dreams, whether that’s driving away
-                    in a brand new car or watching their investments grow
-                    exponentially.{" "}
-                  </p>
-                  <button className="px-[24px] py-[14px] w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
-                    Bid now
-                  </button>
-                </div>
-                <div className=" relative">
-                  <img src={questionmanImage} alt="" />
-                  <img
-                    src={circle2}
-                    className="absolute top-0 left-14"
-                    alt=""
-                  />
-                  <img
-                    src={circle2}
-                    className="absolute bottom-0 right-14"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="blueReactangle w-[80%] mx-auto py-16">
-              <div className="bg-custom-blue rounded-xl px-[64px] py-[32px]">
-                <div className="flex items-center justify-between">
-                  <div className="flex flex-col items-center">
-                    <img src={manImage} alt="" />
-                    <h1 className="text-[36px] font-bold font-inter text-white">
-                      50k+
-                    </h1>
-                    <h1 className="text-lg font-medium font-inter text-white">
-                      Bidders
-                    </h1>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <img src={trophyImage} alt="" />
-                    <h1 className="text-[36px] font-bold font-inter text-white">
-                      2k+
-                    </h1>
-                    <h1 className="text-lg font-medium font-inter text-white">
-                      Winners
-                    </h1>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <img src={progressImage} alt="" />
-                    <h1 className="text-[36px] font-bold font-inter text-white">
-                      $7M+
-                    </h1>
-                    <h1 className="text-lg font-medium font-inter text-white">
-                      Investments
-                    </h1>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <img src={savemoneyImage} alt="" />
-                    <h1 className="text-[36px] font-bold font-inter text-white">
-                      21%
-                    </h1>
-                    <h1 className="text-lg font-medium font-inter text-white">
-                      Return
-                    </h1>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="newsLatter h-[80vh] py-20">
-              <div className="bg-custom-blue rounded-3xl w-[80%] mx-auto py-10">
-                <div className="w-[50%] text-center mx-auto">
-                  <h1 className=" text-white text-[40px] font-bold font-inter text-center">
+            <div className="firstcarpart relative flex flex-col lg:flex-row items-center justify-between mx-auto p-4 lg:p-0">
+  <div className="relative textpart w-full lg:w-[35%] mx-auto lg:ml-40 text-center lg:text-left">
+    <h1 className="relative text-[32px] lg:text-[54px] font-bold font-inter text-gray-1 mx-auto">
+      Your Winning Streak Starts Here
+      <span className="block">
+        <img
+          src={blueLine}
+          alt=""
+          className="absolute top-16 lg:right-48 transform -translate-x-1/2 lg:translate-x-0 lg:inline-block hidden"
+        />
+      </span>
+    </h1>
+    <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-7 w-full lg:w-[90%] mx-auto">
+      Betting at QuickBider is simple and accessible. With just $2 per bid, you have multiple chances to participate and win.
+    </p>
+    <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-6">
+      <button className="bg-custom-blue w-full lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-white">
+        Bid now
+      </button>
+      <button className="border border-custom-blue w-full lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
+        Invest
+      </button>
+    </div>
+  </div>
+  <div className="relative carimage w-full lg:w-[50%] h-[60vh] lg:h-[90vh] flex items-center justify-start bg-[#f0f4fe] -z-10 mt-6 lg:mt-0">
+    <img
+      src={circle}
+      alt=""
+      className="absolute top-8 lg:top-32 right-1/4 lg:right-40 w-1/3 lg:w-auto lg:inline-block hidden"
+    />
+    <img
+      src={blueBase}
+      className="absolute top-[260px] lg:top-[430px] object-cover w-full lg:w-auto"
+      alt=""
+    />
+    <img
+      src={carImage}
+      alt=""
+      className="absolute top-24  lg:right-32 w-full lg:w-[699px]"
+    />
+    <img
+      src={circle}
+      alt=""
+      className="absolute bottom-2 left-1/4 lg:left-3 w-1/3 lg:w-auto lg:inline-block hidden"
+    />
+  </div>
+</div>
+<div className="smartInvestment bg-[#E0E0E033] py-10">
+  <div className="flex flex-col lg:flex-row items-center w-[90%] lg:w-[80%] mx-auto">
+    <div className="relative mb-6 lg:mb-0 lg:mr-6">
+      <img src={questionmanImage} alt="" className="w-full h-auto" />
+      <img
+        src={circle2}
+        className="absolute top-0 left-24 w-12 h-12 lg:w-16 lg:h-16"
+        alt=""
+      />
+      <img
+        src={circle2}
+        className="absolute bottom-0 right-24 w-12 h-12 lg:w-16 lg:h-16"
+        alt=""
+      />
+    </div>
+    <div className="w-full lg:w-[45%] mx-auto text-center lg:text-left">
+      <h1 className="relative lg:text-[54px] font-bold font-inter text-gray-1">
+      Who We Are
+        <img
+          src={bluelineofWeAre}
+          className="absolute top-8 lg:top-16 left-32  w-16 lg:w-auto lg:inline-block hidden"
+          alt=""
+        />
+      </h1>
+      <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-6 w-full lg:w-[90%] mx-auto lg:mx-0">
+      Founded by MR Corporation PVT LTD. QuickBider was created to revolutionize the way people engage with betting and investment opportunities. Our platform is built on the principles of transparency, fairness, and customer-centricity, ensuring that every user feels confident and valued.      </p>
+      <button className="px-6 py-3 lg:px-[24px] lg:py-[14px] w-[140px] lg:w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
+        Invest now
+      </button>
+    </div>
+  </div>
+</div>
+<div className="smartInvestment bg-[#E0E0E033] py-10">
+  <div className="flex flex-col lg:flex-row items-center w-[90%] lg:w-[80%] mx-auto">
+  <div className="w-full lg:w-[45%] mx-auto text-center lg:text-left">
+      <h1 className="relative lg:text-[54px] font-bold font-inter text-gray-1">
+      Our Vision
+        <img
+          src={bluelineofWeAre}
+          className="absolute top-8 lg:top-16 left-24  w-16 lg:w-auto lg:inline-block hidden"
+          alt=""
+        />
+      </h1>
+      <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-6 w-full lg:w-[90%] mx-auto lg:mx-0">
+      Founded by MR Corporation PVT LTD. QuickBider was created to revolutionize the way people engage with betting and investment opportunities. Our platform is built on the principles of transparency, fairness, and customer-centricity, ensuring that every user feels confident and valued.      </p>
+      <button className="px-6 py-3 lg:px-[24px] lg:py-[14px] w-[140px] lg:w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
+        Invest now
+      </button>
+    </div>
+    <div className="relative mb-6 lg:mb-0 lg:mr-6">
+      <img src={mission} alt="" className="w-full h-auto" />
+      <img
+        src={circle2}
+        className="absolute top-0 left-24 w-12 h-12 lg:w-16 lg:h-16 hidden"
+        alt=""
+      />
+      <img
+        src={circle2}
+        className="absolute bottom-0 right-24 w-12 h-12 lg:w-16 lg:h-16 hidden"
+        alt=""
+      />
+    </div>
+   
+  </div>
+</div>
+           
+          
+
+<div className="blueRectangle w-[90%] lg:w-[80%] mx-auto py-10 lg:py-16">
+  <div className="bg-custom-blue rounded-xl px-8 lg:px-[64px] py-8 lg:py-[32px]">
+    <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-0">
+      <div className="flex flex-col items-center">
+        <img src={manImage} alt="" className="w-16 lg:w-auto" />
+        <h1 className="text-2xl lg:text-[36px] font-bold font-inter text-white mt-2 lg:mt-4">
+          50k+
+        </h1>
+        <h1 className="text-base lg:text-lg font-medium font-inter text-white mt-1 lg:mt-2">
+          Bidders
+        </h1>
+      </div>
+      <div className="flex flex-col items-center">
+        <img src={trophyImage} alt="" className="w-16 lg:w-auto" />
+        <h1 className="text-2xl lg:text-[36px] font-bold font-inter text-white mt-2 lg:mt-4">
+          2k+
+        </h1>
+        <h1 className="text-base lg:text-lg font-medium font-inter text-white mt-1 lg:mt-2">
+          Winners
+        </h1>
+      </div>
+      <div className="flex flex-col items-center">
+        <img src={progressImage} alt="" className="w-16 lg:w-auto" />
+        <h1 className="text-2xl lg:text-[36px] font-bold font-inter text-white mt-2 lg:mt-4">
+          $7M+
+        </h1>
+        <h1 className="text-base lg:text-lg font-medium font-inter text-white mt-1 lg:mt-2">
+          Investments
+        </h1>
+      </div>
+      <div className="flex flex-col items-center">
+        <img src={savemoneyImage} alt="" className="w-16 lg:w-auto" />
+        <h1 className="text-2xl lg:text-[36px] font-bold font-inter text-white mt-2 lg:mt-4">
+          21%
+        </h1>
+        <h1 className="text-base lg:text-lg font-medium font-inter text-white mt-1 lg:mt-2">
+          Return
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="newsLatter h-auto lg:h-[80vh] flex items-center justify-center py-10">
+              <div className="bg-custom-blue rounded-3xl w-[90%] lg:w-[80%] mx-auto p-10">
+                <div className="w-[90%] lg:w-[50%] text-center mx-auto">
+                  <h1 className=" text-white md:text-[40px] font-bold font-inter text-center">
                     Subscribe to Our Newsletter For Weekly Article Update.
                   </h1>
                 </div>
-                <div className=" text-center py-10 flex items-center justify-center gap-5">
-                  <label
-                    htmlFor=""
-                    className=" border border-white relative w-[468px] h-[61px] rounded-full flex items-center px-16 text-base font-normal text-[#ffffff4b]"
-                  >
-                    Enter your e-mail address
-                    <img src={mail} className=" absolute left-0 px-5" alt="" />
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter your e-mail address"
-                    className="hidden bg-white opacity-40 border-2 border-white outline-none rounded-full w-[468px] h-[61px]"
-                  />
-                  <button className=" w-[174px] h-[61px] rounded-full text-lg font-semibold font-inter text-custom-blue bg-white">
-                    Subscribe
-                  </button>
-                </div>
+                <div className="text-center py-6 lg:py-10 flex flex-col lg:flex-row items-center justify-center gap-5">
+      <label
+        htmlFor=""
+        className="relative w-full lg:w-[468px] h-[48px] lg:h-[61px] rounded-full flex items-center px-5 lg:px-16 text-base font-normal text-[#ffffff4b] border border-white"
+      >
+        <img src={mail} className="absolute left-4 lg:left-5" alt="" />
+        Enter your e-mail address
+      </label>
+      <input
+        type="text"
+        placeholder="Enter your e-mail address"
+        className="hidden bg-white opacity-40 border-2 border-white outline-none rounded-full w-full lg:w-[468px] h-[48px] lg:h-[61px] px-5 lg:px-16"
+      />
+      <button className="w-[174px] h-[48px] lg:h-[61px] rounded-full text-base lg:text-lg font-semibold font-inter text-custom-blue bg-white">
+        Subscribe
+      </button>
+    </div>
                 <div></div>
               </div>
             </div>
+
+
             <div className="banner">
               <img src={banner} className=" w-[100vw]" alt="" />
             </div>
             <div className="footer py-10 bg-[#e0e0e0]">
-              <div className="w-[80vw] mx-auto">
-                <div className="flex justify-between">
-                  <div className="first w-[35%]">
-                    <div>
-                      <img src={quickBidLogo} alt="" />
-                    </div>
-                    <div>
-                      <p className="text-lg font-normal font-Work-sans text-gray-1 py-10">
-                        But who has any right to find fault with a man who
-                        chooses to enjoy a pleasure that has no annoying
-                        consequences
-                      </p>
-                    </div>
-                    <div className="flex gap-4">
-                      <div>
-                        <img src={facebook} alt="" />
-                      </div>
-                      <div>
-                        <img src={twitter} alt="" />
-                      </div>
-                      <div>
-                        <img src={tiktok} alt="" />
-                      </div>
-                      <div>
-                        <img src={youtube} alt="" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="second w-[15%]">
-                    <div>
-                      <h1 className="text-2xl font-semibold font-inter text-gray-1">
-                        Our Services
-                      </h1>
-                    </div>
-                    <div className="flex flex-col gap-5 pt-5">
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        Home
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        Bids
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        Investments
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        About us
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        Contact us
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="third w-[35%]">
-                    <div>
-                      <h1 className="text-2xl font-semibold font-inter text-gray-1">
-                        Contact
-                      </h1>
-                    </div>
-                    <div className="flex flex-col gap-5 pt-5">
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        +012-334-5864
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        info.alva@example.com
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        2048 Wexford Way Wings SC 287290
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+  <div className="w-[90vw] lg:w-[80vw] mx-auto">
+    <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-0">
+      <div className="first w-full lg:w-[35%]">
+        <div>
+          <img src={quickBidLogo} alt="" />
+        </div>
+        <div>
+          <p className="text-base lg:text-lg font-normal font-Work-sans text-gray-1 py-5 lg:py-10">
+            But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences
+          </p>
+        </div>
+        <div className="flex gap-4">
+          <div>
+            <img src={facebook} alt="" />
+          </div>
+          <div>
+            <img src={twitter} alt="" />
+          </div>
+          <div>
+            <img src={tiktok} alt="" />
+          </div>
+          <div>
+            <img src={youtube} alt="" />
+          </div>
+        </div>
+      </div>
+      <div className="second w-full lg:w-[15%]">
+        <div>
+          <h1 className="text-xl lg:text-2xl font-semibold font-inter text-gray-1">
+            Our Services
+          </h1>
+        </div>
+        <div className="flex flex-col gap-3 lg:gap-5 pt-3 lg:pt-5">
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            Home
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            Bids
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            Investments
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            About us
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            Contact us
+          </h3>
+        </div>
+      </div>
+      <div className="third w-full lg:w-[35%]">
+        <div>
+          <h1 className="text-xl lg:text-2xl font-semibold font-inter text-gray-1">
+            Contact
+          </h1>
+        </div>
+        <div className="flex flex-col gap-3 lg:gap-5 pt-3 lg:pt-5">
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            +012-334-5864
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            info.alva@example.com
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            2048 Wexford Way Wings SC 287290
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
             <div className="companyName h-[100px] bg-[#4f4f4f] flex items-center justify-center">
               <div className="">
                 <h1 className="text-white font-medium text-sm font-Work-sans">
@@ -962,138 +854,120 @@ function LandingPage() {
         )}
         {tabActive === "contact" && (
           <>
-            <div className=" relative blueAreaFirstPart ">
-              <img src={background} className=" absolute top-0 w-full -z-10" alt="" />
-              <div className="contactpart z-10 pt-40">
-                <div className="text-center">
-                  <h1 className="text-[56px] font-bold font-inter text-white">
-                    Contact Us
-                  </h1>
-                </div>
-                <div className="py-5">
-                  <p className="text-lg font-normal font-inter text-white w-[50%] mx-auto text-center ">
-                    We’re here to help! Whether you have questions about our
-                    betting rounds, investment opportunities, or need assistance
-                    with your account, our team is ready to assist you. Reach out
-                    to us through any of the following channels:
-                  </p>
-                </div>
-                <div className="w-[63%] mx-auto p-12 rounded-xl bg-white border ">
-                  <div className="text-center">
-                    <h1 className="text-[36px] font-bold font-inter text-gray-1">
-                      Send message
-                    </h1>
-                  </div>
-                  <div>
-                    <div className="flex justify-between ">
-                      <div className=" w-[400px]">
-                        <label
-                          htmlFor="yourname"
-                          className="text-base font-medium font-poppins to-gray-1 w-full inline-block px-1 py-1"
-                        >
-                          Your name
-                        </label>
-                        <input
-                          type="text"
-                          id="yourname"
-                          className="w-full h-[44px] rounded-xl border px-[16px] py-[12.5px] outline-none"
-                          placeholder="Type your name here"
-                        />
-                      </div>
-                      <div className=" w-[400px]">
-                        <label
-                          htmlFor="yourname"
-                          className="text-base font-medium font-poppins to-gray-1 w-full inline-block px-1 py-1"
-                        >
-                          Email
-                        </label>
-                        <input
-                          type="text"
-                          id="yourname"
-                          className="w-full h-[44px] rounded-xl border px-[16px] py-[12.5px] outline-none"
-                          placeholder="input your email in here"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="py-5">
-                        <label
-                          htmlFor="yourname"
-                          className="text-base font-medium font-poppins to-gray-1 w-full inline-block px-1 py-1"
-                        >
-                          Your message
-                        </label>
-                        <textarea
+           
 
-                          rows="7"
-                          type="text"
-                          id="yourname"
-                          className="w-full rounded-xl border px-[16px] py-[12.5px] outline-none"
-                          placeholder="Type your message here">
-                        </textarea>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <button className="w-[220px] h-[48px] rounded-xl text-base font-medium font-poppins bg-custom-blue text-white px-[24px] py-[14px]">
-                      Send message
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="iconspart w-[80%] mx-auto py-20 flex items-center justify-center gap-10">
-              <div className="card1 w-[28%] flex flex-col items-center justify-center text-center gap-4">
-                <div className="p-3 bg-[#f5f8fe] rounded-2xl">
-                  <img src={emailIcon} className="border-[3px] border-dashed border-gray-400" alt="" />
-                </div>
-                <div>
-                  <h1 className="text-2xl font-bold to-gray-1 font-hk-grotesk">Email us</h1>
-                </div>
-                <div>
-                  <p className=" text-base font-normal font-open-sans text-gray-2">
-                    Email us for general queries, including marketing and partnership opportunities.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-base font-bold font-open-sans text-custom-blue">
-                    info@quickbider.com
-                  </p>
-                </div>
-              </div>
-              <div className="card2 w-[28%] flex flex-col items-center justify-center text-center gap-4">
-                <div className="p-3 bg-[#f5f8fe] rounded-2xl">
-                  <img src={callIcon} className="border-[3px] border-dashed border-gray-400" alt="" />
-                </div>
-                <div>
-                  <h1 className="text-2xl font-bold to-gray-1 font-hk-grotesk">Call us</h1>
-                </div>
-                <div>
-                  <p className=" text-base font-normal font-open-sans text-gray-2">
-                    Call us to speak to a member of our team. We are always happy to help.                        </p>
-                </div>
-                <div>
-                  <p className="text-base font-bold font-open-sans text-custom-blue">
-                    +1 (646) 786-5060
-                  </p>
-                </div>
-              </div>
-              <div className="card3 w-[28%] flex flex-col items-center justify-center text-center gap-4">
-                <div className="p-3 bg-[#f5f8fe] rounded-2xl">
-                  <img src={supportIcon} className="border-[3px] border-dashed border-gray-400" alt="" />
-                </div>
-                <div>
-                  <h1 className="text-2xl font-bold to-gray-1 font-hk-grotesk">Support</h1>
-                </div>
-                <div>
-                  <p className=" text-base font-normal font-open-sans text-gray-2">
-                    Check out helpful resources, FAQs and developer tools.                        </p>
-                </div>
-                <div>
-                  <button className="w-[179px] h-[40px] rounded-xl p-4 bg-white border border-custom-blue text-custom-blue text-base font-bold font-open-sans flex items-center justify-between hover:text-white hover:bg-custom-blue">Support Center <ArrowRight /> </button>
-                </div>
-              </div>
-            </div>
+<div class="relative blueAreaFirstPart">
+  <img src={background} class="absolute top-0 w-full -z-10 h-full" alt=""/>
+  <div class="contactpart z-10 pt-40">
+    <div class="text-center">
+      <h1 class="text-[56px] font-bold font-inter text-white">
+        Contact Us
+      </h1>
+    </div>
+    <div class="py-5 px-5">
+      <p class="text-lg font-normal font-inter text-white w-full md:w-[50%] mx-auto text-center">
+        We’re here to help! Whether you have questions about our betting rounds,
+        investment opportunities, or need assistance with your account, our team is
+        ready to assist you. Reach out to us through any of the following channels:
+      </p>
+    </div>
+    <div class="w-full md:w-[63%] mx-auto p-6 md:p-12 rounded-xl bg-white border">
+      <div class="text-center">
+        <h1 class="text-[36px] font-bold font-inter text-gray-1">
+          Send message
+        </h1>
+      </div>
+      <div class="flex flex-col md:flex-row md:justify-between">
+        <div class="mb-4 md:mb-0 md:w-[48%]">
+          <label for="yourname" class="text-base font-medium font-poppins text-gray-1 mb-1">
+            Your name
+          </label>
+          <input type="text" id="yourname" class="w-full h-[44px] rounded-xl border px-4 py-2 outline-none" placeholder="Type your name here" />
+        </div>
+        <div class="md:w-[48%]">
+          <label for="email" class="text-base font-medium font-poppins text-gray-1 mb-1">
+            Email
+          </label>
+          <input type="text" id="email" class="w-full h-[44px] rounded-xl border px-4 py-2 outline-none" placeholder="Input your email here" />
+        </div>
+      </div>
+      <div class="py-4">
+        <label for="message" class="text-base font-medium font-poppins text-gray-1 mb-1">
+          Your message
+        </label>
+        <textarea id="message" rows="7" class="w-full rounded-xl border px-4 py-2 outline-none" placeholder="Type your message here"></textarea>
+      </div>
+      <div class="text-center">
+        <button class="w-[220px] h-[48px] rounded-xl text-base font-medium font-poppins bg-custom-blue text-white px-6 py-3">
+          Send message
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+           
+
+<div class="iconspart w-full md:w-[80%] mx-auto py-10 md:py-20 flex flex-wrap items-center justify-center gap-10">
+  <div class="card1 w-full md:w-[28%] flex flex-col items-center justify-center text-center gap-4">
+    <div class="p-3 bg-[#f5f8fe] rounded-2xl">
+      <img src={emailIcon} class="border-[3px] border-dashed border-gray-400" alt="" />
+    </div>
+    <div>
+      <h1 class="text-2xl font-bold text-gray-1 font-hk-grotesk">Email us</h1>
+    </div>
+    <div>
+      <p class="text-base font-normal text-gray-2 font-open-sans">
+        Email us for general queries, including marketing and partnership opportunities.
+      </p>
+    </div>
+    <div>
+      <p class="text-base font-bold text-custom-blue font-open-sans">
+        info@quickbider.com
+      </p>
+    </div>
+  </div>
+  <div class="card2 w-full md:w-[28%] flex flex-col items-center justify-center text-center gap-4">
+    <div class="p-3 bg-[#f5f8fe] rounded-2xl">
+      <img src={callIcon} class="border-[3px] border-dashed border-gray-400" alt="" />
+    </div>
+    <div>
+      <h1 class="text-2xl font-bold text-gray-1 font-hk-grotesk">Call us</h1>
+    </div>
+    <div>
+      <p class="text-base font-normal text-gray-2 font-open-sans">
+        Call us to speak to a member of our team. We are always happy to help.
+      </p>
+    </div>
+    <div>
+      <p class="text-base font-bold text-custom-blue font-open-sans">
+        +1 (646) 786-5060
+      </p>
+    </div>
+  </div>
+  <div class="card3 w-full md:w-[28%] flex flex-col items-center justify-center text-center gap-4">
+    <div class="p-3 bg-[#f5f8fe] rounded-2xl">
+      <img src={supportIcon} class="border-[3px] border-dashed border-gray-400" alt="" />
+    </div>
+    <div>
+      <h1 class="text-2xl font-bold text-gray-1 font-hk-grotesk">Support</h1>
+    </div>
+    <div>
+      <p class="text-base font-normal text-gray-2 font-open-sans">
+        Check out helpful resources, FAQs, and developer tools.
+      </p>
+    </div>
+    <div>
+      <button class="w-full md:w-[179px] h-[40px] rounded-xl p-4 bg-white border border-custom-blue text-custom-blue text-base font-bold font-open-sans flex items-center justify-between hover:text-white hover:bg-custom-blue">
+        Support Center <ArrowRight />
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
             <div className="WaveImage">
               <img src={baseImage} alt="" />
             </div>
@@ -1101,79 +975,77 @@ function LandingPage() {
               <img src={banner} className=" w-[100vw]" alt="" />
             </div>
             <div className="footer py-10 bg-[#e0e0e0]">
-              <div className="w-[80vw] mx-auto">
-                <div className="flex justify-between">
-                  <div className="first w-[35%]">
-                    <div>
-                      <img src={quickBidLogo} alt="" />
-                    </div>
-                    <div>
-                      <p className="text-lg font-normal font-Work-sans text-gray-1 py-10">
-                        But who has any right to find fault with a man who
-                        chooses to enjoy a pleasure that has no annoying
-                        consequences
-                      </p>
-                    </div>
-                    <div className="flex gap-4">
-                      <div>
-                        <img src={facebook} alt="" />
-                      </div>
-                      <div>
-                        <img src={twitter} alt="" />
-                      </div>
-                      <div>
-                        <img src={tiktok} alt="" />
-                      </div>
-                      <div>
-                        <img src={youtube} alt="" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="second w-[15%]">
-                    <div>
-                      <h1 className="text-2xl font-semibold font-inter text-gray-1">
-                        Our Services
-                      </h1>
-                    </div>
-                    <div className="flex flex-col gap-5 pt-5">
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        Home
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        Bids
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        Investments
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        About us
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        Contact us
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="third w-[35%]">
-                    <div>
-                      <h1 className="text-2xl font-semibold font-inter text-gray-1">
-                        Contact
-                      </h1>
-                    </div>
-                    <div className="flex flex-col gap-5 pt-5">
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        +012-334-5864
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        info.alva@example.com
-                      </h3>
-                      <h3 className="text-lg font-normal font-Work-sans">
-                        2048 Wexford Way Wings SC 287290
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+  <div className="w-[90vw] lg:w-[80vw] mx-auto">
+    <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-0">
+      <div className="first w-full lg:w-[35%]">
+        <div>
+          <img src={quickBidLogo} alt="" />
+        </div>
+        <div>
+          <p className="text-base lg:text-lg font-normal font-Work-sans text-gray-1 py-5 lg:py-10">
+            But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences
+          </p>
+        </div>
+        <div className="flex gap-4">
+          <div>
+            <img src={facebook} alt="" />
+          </div>
+          <div>
+            <img src={twitter} alt="" />
+          </div>
+          <div>
+            <img src={tiktok} alt="" />
+          </div>
+          <div>
+            <img src={youtube} alt="" />
+          </div>
+        </div>
+      </div>
+      <div className="second w-full lg:w-[15%]">
+        <div>
+          <h1 className="text-xl lg:text-2xl font-semibold font-inter text-gray-1">
+            Our Services
+          </h1>
+        </div>
+        <div className="flex flex-col gap-3 lg:gap-5 pt-3 lg:pt-5">
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            Home
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            Bids
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            Investments
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            About us
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            Contact us
+          </h3>
+        </div>
+      </div>
+      <div className="third w-full lg:w-[35%]">
+        <div>
+          <h1 className="text-xl lg:text-2xl font-semibold font-inter text-gray-1">
+            Contact
+          </h1>
+        </div>
+        <div className="flex flex-col gap-3 lg:gap-5 pt-3 lg:pt-5">
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            +012-334-5864
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            info.alva@example.com
+          </h3>
+          <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+            2048 Wexford Way Wings SC 287290
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
             <div className="companyName h-[100px] bg-[#4f4f4f] flex items-center justify-center">
               <div className="">
                 <h1 className="text-white font-medium text-sm font-Work-sans">

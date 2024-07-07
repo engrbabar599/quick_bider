@@ -39,11 +39,11 @@ function Project({hadding, padding, button}) {
   const [viewdetails , setviewdetails] = useState("view details")
   return (
     <>
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5 py-10 ">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5 py-10">
         {card.map((value, i) => {
           return (
             <>
-              <div key={i} className="border p-3 rounded-xl shadow-sm h-[300px]">
+              <div key={i} className="border p-3 rounded-xl shadow-sm ">
                 <div className="flex items-center gap-4">
                   <div className="icon" >
                     <p>
