@@ -38,7 +38,7 @@ import supportIcon from "../../assets/images/Icon_CS.png"
 import baseImage from "../../assets/images/Wave.png"
 import { ArrowRight } from "../../assets/svgs/ArrowRight"
 import blueBase from "../../assets/images/bluseBase.png"
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import mission from "../../assets/images/mission.png"
 
 function LandingPage() {
@@ -69,7 +69,7 @@ function LandingPage() {
 
         <div className="navbar shadow-md z-20">
           <div className="xl:w-[80vw] lg:w-[90vw] lg:px-0 px-5 mx-auto flex justify-between items-center h-[90px]">
-            <div className="logo">
+            <div className="logo cursor-pointer" onClick={() => handleClick("home")}>
               <img src={quickBidLogo} alt="" className="object-contain min-w-max" />
             </div>
             <div className="navitem flex  items-center lg:gap-20">
@@ -214,8 +214,6 @@ function LandingPage() {
 
         {tabActive === "home" && (
           <>
-
-
             <div className="firstcarpart relative flex flex-col lg:flex-row items-center justify-between mx-auto p-4 lg:p-0">
               <div className="relative textpart w-full xl:w-[35%] mx-auto xl:ml-40 lg:w-[50%] lg:ml-24 text-center lg:text-left">
                 <h1 className="relative text-[32px] lg:text-[54px] font-bold font-inter text-gray-1 mx-auto pt-5 md:pt-0">
@@ -442,7 +440,7 @@ function LandingPage() {
                           <div key={i} className="bg-white rounded-xl shadow-md p-7">
                             <div className="flex items-center gap-5">
                               <div>
-                                <h1 className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></h1>
+                                <div className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></div>
                               </div>
                               <div className="flex flex-col gap-1">
                                 <div>
@@ -557,19 +555,23 @@ function LandingPage() {
                       </h1>
                     </div>
                     <div className="flex flex-col gap-3 lg:gap-5 pt-3 lg:pt-5">
-                      <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("home")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Home
                       </h3>
-                      <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3
+                        onClick={() => bidsClick()}
+                        className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Bids
                       </h3>
-                      <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3
+                        onClick={() => investmentClick()}
+                        className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Investments
                       </h3>
-                      <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("about")} className="text-base lg:text-lg font-normal font-Work-sans">
                         About us
                       </h3>
-                      <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("home")} className="text-base lg:text-lg font-normal font-Work-sans">
                         Contact us
                       </h3>
                     </div>
@@ -837,19 +839,23 @@ function LandingPage() {
                       </h1>
                     </div>
                     <div className="flex flex-col gap-3 lg:gap-5 pt-3 lg:pt-5">
-                      <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("home")} className="text-base lg:text-lg font-normal font-Work-sans">
                         Home
                       </h3>
-                      <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3
+                        onClick={() => bidsClick()}
+                        className="text-base lg:text-lg font-normal font-Work-sans">
                         Bids
                       </h3>
-                      <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3
+                        onClick={() => investmentClick()}
+                        className="text-base lg:text-lg font-normal font-Work-sans">
                         Investments
                       </h3>
-                      <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("about")} className="text-base lg:text-lg font-normal font-Work-sans">
                         About us
                       </h3>
-                      <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("contact")} className="text-base lg:text-lg font-normal font-Work-sans">
                         Contact us
                       </h3>
                     </div>
@@ -1040,19 +1046,23 @@ function LandingPage() {
                       </h1>
                     </div>
                     <div className="flex flex-col gap-3 lg:gap-5 pt-3 lg:pt-5">
-                      <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("home")} className="text-base lg:text-lg font-normal font-Work-sans">
                         Home
                       </h3>
-                      <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3
+                        onClick={() => bidsClick()}
+                        className="text-base lg:text-lg font-normal font-Work-sans">
                         Bids
                       </h3>
-                      <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3
+                        onClick={() => investmentClick()}
+                        className="text-base lg:text-lg font-normal font-Work-sans">
                         Investments
                       </h3>
-                      <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("about")} className="text-base lg:text-lg font-normal font-Work-sans">
                         About us
                       </h3>
-                      <h3 className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("contact")} className="text-base lg:text-lg font-normal font-Work-sans">
                         Contact us
                       </h3>
                     </div>

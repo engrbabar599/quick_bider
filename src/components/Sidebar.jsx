@@ -1,9 +1,10 @@
 import React from 'react'
 import { AdsIcon, AuctionIcon, ClaimIcon, DashboardIcon, InvestmentsIcon, LogoutIcon, MyBidsIcon, SettingsIcon, SupportIcon, WalletIcon } from '../assets/svgs/SidebarSvg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import IMAGES from '../assets/IMAGES';
 
 export const Sidebar = () => {
+    const navigate = useNavigate()
 
     const sidebarData = [
         {
@@ -63,7 +64,7 @@ export const Sidebar = () => {
 
     return (
         <div className='xl:flex hidden flex-col w-full  justify-start border-r'>
-            <div className='p-6'>
+            <div className='p-6 cursor-pointer' onClick={() => navigate("/")} >
                 <img src={IMAGES.logo} alt="" className=' h-10 object-contain' />
             </div>
 

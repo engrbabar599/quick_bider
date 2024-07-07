@@ -31,11 +31,11 @@
 //                                 </div>
 //                             </div>
 //                             </div>
-                           
+
 //                         </div>
 
 
-                     
+
 
 //                             <div className='flex items-center justify-center space-y-1'>
 //                                 <div className='w-full px-5'>
@@ -45,11 +45,11 @@
 //                                     />
 //                                 </div>
 
-                               
+
 //                             </div>
 //                         </div>
 
-                    
+
 //                 ))}
 //             </div>
 
@@ -59,24 +59,24 @@
 
 
 import React from 'react';
-import IMAGES from '../../assets/IMAGES';
 import { TrophyIcon } from '../../assets/svgs/TrophyIcon';
 import { OutlineButton } from '../../components/OutlineButton';
 import womanImage from "../../assets/images/woman.png";
 
 export const RecentWinnersSection = () => {
     return (
+
         <div className='gap-8 grid lg:grid-cols-12'>
-            <div className='flex flex-col md:flex-row items-center justify-center gap-5 px-1 lg:col-span-12'>
+            <div className='flex flex-wrap justify-center gap-5 px-1 lg:col-span-12 w-full'>
                 {Array(4).fill().map((_, index) => (
-                    <div key={index}
-                        className='flex flex-col py-4 px-4 border bg-opacity-10 rounded-2xl gap-4 w-full'>
+                    <div key={index} className='flex flex-col py-4 px-4 border bg-opacity-10 rounded-2xl gap-4 w-full max-w-[250px]'>
                         <div className='space-x-2'>
-                            <div className=''>
+                            <div>
+                                {/* Assuming TrophyIcon is a component */}
                                 <TrophyIcon />
                             </div>
                             <div className='flex flex-col items-center gap-4'>
-                                <img src={womanImage} alt="" className='object-contain w-1/2  lg:w-full h-auto' />
+                                <img src={womanImage} alt="" className='object-contain w-1/2 lg:w-full h-auto' />
                                 <div className='flex flex-col items-center gap-4'>
                                     <p className='text-gray-1 text-lg lg:text-[36px] font-semibold font-inter'>
                                         Robert Fox
@@ -94,6 +94,7 @@ export const RecentWinnersSection = () => {
                         </div>
                         <div className='flex items-center justify-center space-y-1'>
                             <div className='w-full px-5'>
+                                {/* Assuming OutlineButton is a component */}
                                 <OutlineButton
                                     title={"Send reaction"}
                                     className={"!py-2.5 !px-4 w-full lg:w-[189px] !text-xs lg:!text-sm font-semibold font-poppins"}
@@ -104,5 +105,6 @@ export const RecentWinnersSection = () => {
                 ))}
             </div>
         </div>
+
     );
 }
