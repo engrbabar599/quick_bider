@@ -15,7 +15,7 @@ export const Navbar = () => {
 
                     {/* Mobile Logo */}
                     <Link to={""} className="flex xl:hidden items-center space-x-3 rtl:space-x-reverse">
-                        <img src={IMAGES?.updatedLogo} className="h-10" alt="Quick Bid Logo" />
+                        <img src={IMAGES?.logo} className="h-10" alt="Quick Bid Logo" />
                     </Link>
 
                     {/* Greeting (visible on medium and larger screens) */}

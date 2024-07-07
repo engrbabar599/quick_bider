@@ -9,16 +9,16 @@ export const Login = () => {
     return (
         <>
             <div className='bg-custom-blue relative z-50 min-h-screen h-fit md:p-12 p-6 flex justify-center items-center'>
-                <img src={IMAGES.logo} alt="" className="absolute right-0 top-0 h-[36rem] -rotate-8" />
+                <img src={IMAGES.backgroundLogo} alt="" className="absolute right-0 top-0 h-[36rem] -rotate-8" />
                 <img src={IMAGES.logoWithName} alt="" className="absolute left-0 bottom-10 h-60 -rotate-8 -z-50" />
 
                 <div
                     className='bg-white md:p-5 py-4 rounded-xl flex flex-col space-y-4 lg:w-3/5   xl:w-2/5 items-center justify-center z-50 w-full'>
                     <div
                         className='md:w-3/4 items-center justify-center flex flex-col space-y-8'>
-                        <img src={IMAGES.coloredLogoWithName}
+                        <img src={IMAGES.logo}
                             alt='Colored Logo'
-                            className='md:h-24 h-16 ' />
+                            className='md:h-24 h-16 md:min-w-max' />
 
                         <div className='flex flex-col md:w-full w-[90%]  items-center justify-center space-y-6'>
                             <h1 className='text-[1.75rem] font-semibold text-gray-1 font-poppins text-center'>

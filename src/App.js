@@ -50,13 +50,17 @@ export const Layout = () => {
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/login",
     element: <Login />,
   },
 
   {
     path: "/signup",
     element: <SignUp />,
+  },
+  {
+    path: "/",
+    element: <LandingPage />
   },
   {
     path: "/",
@@ -73,11 +77,12 @@ const router = createBrowserRouter([
             path: "results",
             element: <BidResult />,
           },
+          {
+            path: "bids",
+            element: <BidsDetailsPage />
+          },
+
         ]
-      },
-      {
-        path: "/dashboard/bids",
-        element: <BidsDetailsPage />
       },
       {
         path: "/auction",
@@ -96,28 +101,22 @@ const router = createBrowserRouter([
           },
         ]
       },
-      // {
-      //   path: "/mybids/bidDetails",
-      // },
-      // {
-      //   path: "/mybids/bidDetails",
-      //   element: <BidDetailsSection />
-      // },
-
       {
         path: "/investments",
-        children: [{
-          path: "beproject",
-          element: <InvestmentCompleted />
-        },
-        {
-          path: "",
-          element: <Investment />
-        }]
-      },
-      {
-        path: "/investments/investmentCompleted",
-        element: <InvestmentCompleted />
+        children: [
+          {
+            path: "",
+            element: <Investment />
+          },
+          {
+            path: "beproject",
+            element: <InvestmentCompleted />
+          },
+          {
+            path: "investmentCompleted",
+            element: <InvestmentCompleted />
+          },
+        ]
       },
       {
         path: "/ads",
@@ -141,14 +140,6 @@ const router = createBrowserRouter([
       },
     ]
   },
-  {
-    path: "landingpage",
-    element: <LandingPage />
-  },
-  // {
-  //   path: "bidResult",
-  //   element: <BidResult />
-  // }
 ]);
 
 

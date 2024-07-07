@@ -1,6 +1,6 @@
 
 const IMAGES = {
-    logo: require("./images/logo.png"),
+    backgroundLogo: require("./images/logo.png"),
     logoWithName: require("./images/logo-with-name.png"),
     coloredLogoWithName: require("./images/colored-logo-with-name.png"),
     googleLogo: require("./images/google-logo.png"),
@@ -13,7 +13,7 @@ const IMAGES = {
     mybids1: require("../assets/images/mybids-1.png"),
     reviewPic: require("../assets/images/reviewPic.png"),
     adPlaceholder: require("../assets/images/video-ad-placeholder.png"),
-    updatedLogo: require("../assets/images/quickbider logo png.png")
+    logo: require("../assets/images/quickbider logo png.png")
 }
 
 export default IMAGES

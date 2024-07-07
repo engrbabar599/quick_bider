@@ -6,7 +6,7 @@ import './swiper-custom.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Navigation, Pagination, Mousewheel, Keyboard} from 'swiper/modules';
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 import quickBidLogo from "../../assets/images/quickbider logo png 2.png";
 import carImage from "../../assets/images/white grey car sale promotion banner 1.png";
 import blueLine from "../../assets/images/blueline.png";
@@ -42,57 +42,63 @@ import baseImage from "../../assets/images/Wave.png"
 import arrowIcon from "../../assets/images/arrow.png"
 import ArrowDown, { ArrowRight } from "../../assets/svgs/ArrowRight"
 import blueBase from "../../assets/images/bluseBase.png"
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import { Button } from "../../components/Button";
+
+
 function LandingPage() {
+  const navigate = useNavigate();
   const [tabActive, setTabActive] = useState("home");
+  const [openDropdown, setOpenDropdown] = useState(false)
+
   const handleClick = (item) => {
     setTabActive(item);
   };
-  const navigate = useNavigate();
-  const bidsClick = () =>{
+
+  const bidsClick = () => {
     handleClick("bids")
-   navigate("/mybids")
+    navigate("/mybids")
   }
-  const investmentClick = () =>{
+  const investmentClick = () => {
     handleClick("investments");
     navigate("/investments")
   }
+
+
   return (
     <>
       <div className="landingpage">
+
         <div className="navbar shadow-md z-20">
-          <div className="w-[80vw] mx-auto flex justify-between items-center h-[100px]">
+          <div className="lg:w-[80vw] lg:px-0 px-5 mx-auto flex justify-between items-center h-[90px]">
             <div className="logo">
-              <img src={quickBidLogo} width={"224px"} height={"46px"} alt="" />
+              <img src={quickBidLogo} alt="" className="object-contain min-w-max" />
             </div>
-            <div className="navitem flex items-center gap-20">
-              <div className="">
+            <div className="navitem flex  items-center lg:gap-20">
+              <div className="hidden lg:block">
                 <ul className="text-lg font-medium font-Work-sans flex items-center gap-7">
                   <li
                     onClick={() => {
                       handleClick("home");
                     }}
-                    className={`cursor-pointer hover:text-custom-blue ${
-                      tabActive === "home" ? "text-custom-blue" : "text-gray-1"
-                    }`}
+                    className={`cursor-pointer hover:text-custom-blue ${tabActive === "home" ? "text-custom-blue" : "text-gray-1"
+                      }`}
                   >
                     Home
                   </li>
                   <li
                     onClick={bidsClick}
-                    className={`cursor-pointer hover:text-custom-blue ${
-                      tabActive === "bids" ? "text-custom-blue" : "text-gray-1"
-                    }`}
+                    className={`cursor-pointer hover:text-custom-blue ${tabActive === "bids" ? "text-custom-blue" : "text-gray-1"
+                      }`}
                   >
                     Bids
                   </li>
                   <li
                     onClick={investmentClick}
-                    className={`cursor-pointer hover:text-custom-blue ${
-                      tabActive === "investments"
-                        ? "text-custom-blue"
-                        : "text-gray-1"
-                    }`}
+                    className={`cursor-pointer hover:text-custom-blue ${tabActive === "investments"
+                      ? "text-custom-blue"
+                      : "text-gray-1"
+                      }`}
                   >
                     Investments
                   </li>
@@ -100,9 +106,8 @@ function LandingPage() {
                     onClick={() => {
                       handleClick("about");
                     }}
-                    className={`cursor-pointer hover:text-custom-blue ${
-                      tabActive === "about" ? "text-custom-blue" : "text-gray-1"
-                    }`}
+                    className={`cursor-pointer hover:text-custom-blue ${tabActive === "about" ? "text-custom-blue" : "text-gray-1"
+                      }`}
                   >
                     About Us
                   </li>
@@ -110,24 +115,79 @@ function LandingPage() {
                     onClick={() => {
                       handleClick("contact");
                     }}
-                    className={`cursor-pointer hover:text-custom-blue ${
-                      tabActive === "contact"
-                        ? "text-custom-blue"
-                        : "text-gray-1"
-                    }`}
+                    className={`cursor-pointer hover:text-custom-blue ${tabActive === "contact"
+                      ? "text-custom-blue"
+                      : "text-gray-1"
+                      }`}
                   >
                     Contact us
                   </li>
                 </ul>
               </div>
+
+              <div className="flex items-center lg:order-2 space-x-4 lg:space-x-0 rtl:space-x-reverse lg:hidden">
+
+                <button
+                  onClick={() => setOpenDropdown(!openDropdown)}
+                  data-collapse-toggle="navbar-language" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-custom-blue rounded-lg bg-white lg:hidden  focus:outline-none focus:ring-2 focus:ring-custom-blue border border-custom-blue hover:bg-custom-blue hover:bg-opacity-10">
+                  <span className="sr-only">Open main menu</span>
+                  <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                  </svg>
+                </button>
+              </div>
               <div className="">
-                <button className="px-[24px] py-[15.5px] bg-custom-blue rounded-xl text-lg font-medium font-Work-sans text-white w-[101px] h-[52px] flex  items-center justify-center">
+                <button
+                  onClick={() => navigate("/login")}
+                  className="px-[24px] py-[15.5px] bg-custom-blue rounded-xl text-lg font-medium font-Work-sans text-white w-[101px] h-[52px]   items-center justify-center hidden lg:flex hover:bg-blue-500 hover:scale-105 ease-in-out transform duration-300">
                   Log in
                 </button>
               </div>
+
+              <div className={` absolute top-[4.5rem] pb-10 left-0 bg-white z-50 items-center justify-between w-full ${openDropdown ? "  max-h-96 opacity-100 " : " max-h-0 opacity-0 "} xl:w-auto xl:order-1 z-50  ease-in-out duration-300 transition-all`} id="navbar-language">
+                <div className="flex flex-col font-medium p-4 xl:p-0 mt-4 border border-gray-5 rounded-lg  xl:space-x-8 rtl:space-x-reverse xl:flex-row xl:mt-0 xl:border-0 xl:bg-white xl:w-full space-y-8">
+
+                  {/* <div className="w-full"> */}
+                  {/* </div> */}
+                  <ul className="space-y-4">
+                    <li>
+                      <NavLink>
+                        Home
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink>
+                        Bids
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink>
+                        Investments
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink>
+                        About Us
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink>
+                        Contact Us
+                      </NavLink>
+                    </li>
+                  </ul>
+                  <button
+                    onClick={() => navigate("/login")}
+                    className="px-[24px] py-[15.5px] bg-custom-blue rounded-xl text-lg font-medium font-Work-sans text-white  h-[52px]   items-center justify-center flex hover:bg-blue-500 hover:scale-105 ease-in-out transform duration-300 w-full">
+                    Log in
+                  </button>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
+
         {tabActive === "home" && (
           <>
             <div className="firstcarpart relative mx-auto flex items-center justify-between">
@@ -156,12 +216,12 @@ function LandingPage() {
                 </div>
               </div>
               <div className="relative carimage w-[50%] h-[90vh] flex items-center justify-start bg-[#f0f4fe] -z-10">
-              <img
+                <img
                   src={circle}
                   alt=""
                   className="absolute top-32 right-40"
-                /> 
-              <img src={blueBase} className="absolute top-[430px] object-cover" alt="" />
+                />
+                <img src={blueBase} className="absolute top-[430px] object-cover" alt="" />
                 <img
                   src={carImage}
                   alt=""
@@ -174,7 +234,7 @@ function LandingPage() {
                 />
               </div>
             </div>
-            
+
             <div className="trending actions w-[80%] mx-auto relative">
               <div className="text-center mt-24 text-gray-1">
                 <h1 className="text-[54px] font-bold font-inter text-gray-1">
@@ -182,17 +242,17 @@ function LandingPage() {
                 </h1>
               </div>
               <div>
-              <img
+                <img
                   src={circle}
                   alt=""
                   className="absolute top-6 right-16"
-                /> 
+                />
                 <TrendingAuction />
                 <img
                   src={circle}
                   alt=""
                   className="absolute bottom-6 left-12"
-                /> 
+                />
               </div>
               <div className="text-center py-6">
                 <button className="border text-custom-blue border-custom-blue rounded-xl w-[160px] px-[24px] py-[14px] text-base font-medium font-poppins">
@@ -307,152 +367,152 @@ function LandingPage() {
               </div>
             </div>
             <div className="testomonials h-[100vh] bg-[#d2eaff] py-10">
-            <div className="text-center ">
+              <div className="text-center ">
                 <h1 className="text-[54px] font-bold font-inter text-gray-1">
                   What people say about us?
                 </h1>
               </div>
-            <Swiper
-        cssMode={true}
-        // navigation={true}
-        loop={true}
-        spaceBetween={50}
-        pagination={{clickable:true}}
-        mousewheel={true}
-        keyboard={true}
-        modules={[Navigation, Pagination, Mousewheel, Keyboard,]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-        <div className="cards w-[80%] mx-auto grid grid-cols-3 gap-6 py-10">
-                {Array(3)
-                  .fill()
-                  .map((_, i) => {
-                    return (
-                      <>
-                        <div className="bg-white rounded-xl shadow-md p-7">
-                          <div className="flex items-center gap-5">
-                            <div>
-                              <h1 className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></h1>
-                            </div>
-                            <div className="flex flex-col gap-1">
-                              <div>
-                                <h1 className="text-xl font-semibold font-inter text-gray-1">
-                                  Sandra T. Robinson
-                                </h1>
+              <Swiper
+                cssMode={true}
+                // navigation={true}
+                loop={true}
+                spaceBetween={50}
+                pagination={{ clickable: true }}
+                mousewheel={true}
+                keyboard={true}
+                modules={[Navigation, Pagination, Mousewheel, Keyboard,]}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <div className="cards w-[80%] mx-auto grid grid-cols-3 gap-6 py-10">
+                    {Array(3)
+                      .fill()
+                      .map((_, i) => {
+                        return (
+                          <>
+                            <div className="bg-white rounded-xl shadow-md p-7">
+                              <div className="flex items-center gap-5">
+                                <div>
+                                  <h1 className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></h1>
+                                </div>
+                                <div className="flex flex-col gap-1">
+                                  <div>
+                                    <h1 className="text-xl font-semibold font-inter text-gray-1">
+                                      Sandra T. Robinson
+                                    </h1>
+                                  </div>
+                                  <div>
+                                    <img
+                                      src={StarImage}
+                                      className="inline"
+                                      alt=""
+                                    />
+                                    <span className="text-lg font-medium font-Work-sons text-gray-1 px-2">
+                                      5.0
+                                    </span>
+                                  </div>
+                                </div>
                               </div>
                               <div>
-                                <img
-                                  src={StarImage}
-                                  className="inline"
-                                  alt=""
-                                />
-                                <span className="text-lg font-medium font-Work-sons text-gray-1 px-2">
-                                  5.0
-                                </span>
+                                <p className="text-base font-normal font-Work-sans text-gray-2 pt-5">
+                                  And equal blame belongs to those who fail in their
+                                  duty through weakness of will, which is the same
+                                  as saying through shrinking from toil and pain.
+                                </p>
                               </div>
                             </div>
-                          </div>
-                          <div>
-                            <p className="text-base font-normal font-Work-sans text-gray-2 pt-5">
-                              And equal blame belongs to those who fail in their
-                              duty through weakness of will, which is the same
-                              as saying through shrinking from toil and pain.
-                            </p>
-                          </div>
-                        </div>
-                      </>
-                    );
-                  })}
-              </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="cards w-[80%] mx-auto grid grid-cols-3 gap-6 py-10">
-                {Array(3)
-                  .fill()
-                  .map((_, i) => {
-                    return (
-                      <>
-                        <div className="bg-white rounded-xl shadow-md p-7">
-                          <div className="flex items-center gap-5">
-                            <div>
-                              <h1 className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></h1>
-                            </div>
-                            <div className="flex flex-col gap-1">
-                              <div>
-                                <h1 className="text-xl font-semibold font-inter text-gray-1">
-                                  Sandra T. Robinson
-                                </h1>
-                              </div>
-                              <div>
-                                <img
-                                  src={StarImage}
-                                  className="inline"
-                                  alt=""
-                                />
-                                <span className="text-lg font-medium font-Work-sons text-gray-1 px-2">
-                                  5.0
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <div>
-                            <p className="text-base font-normal font-Work-sans text-gray-2 pt-5">
-                              And equal blame belongs to those who fail in their
-                              duty through weakness of will, which is the same
-                              as saying through shrinking from toil and pain.
-                            </p>
-                          </div>
-                        </div>
-                      </>
-                    );
-                  })}
-              </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="cards w-[80%] mx-auto grid grid-cols-3 gap-6 py-10">
-                {Array(3)
-                  .fill()
-                  .map((_, i) => {
-                    return (
-                      <>
-                        <div className="bg-white rounded-xl shadow-md p-7">
-                          <div className="flex items-center gap-5">
-                            <div>
-                              <h1 className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></h1>
-                            </div>
-                            <div className="flex flex-col gap-1">
-                              <div>
-                                <h1 className="text-xl font-semibold font-inter text-gray-1">
-                                  Sandra T. Robinson
-                                </h1>
+                          </>
+                        );
+                      })}
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="cards w-[80%] mx-auto grid grid-cols-3 gap-6 py-10">
+                    {Array(3)
+                      .fill()
+                      .map((_, i) => {
+                        return (
+                          <>
+                            <div className="bg-white rounded-xl shadow-md p-7">
+                              <div className="flex items-center gap-5">
+                                <div>
+                                  <h1 className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></h1>
+                                </div>
+                                <div className="flex flex-col gap-1">
+                                  <div>
+                                    <h1 className="text-xl font-semibold font-inter text-gray-1">
+                                      Sandra T. Robinson
+                                    </h1>
+                                  </div>
+                                  <div>
+                                    <img
+                                      src={StarImage}
+                                      className="inline"
+                                      alt=""
+                                    />
+                                    <span className="text-lg font-medium font-Work-sons text-gray-1 px-2">
+                                      5.0
+                                    </span>
+                                  </div>
+                                </div>
                               </div>
                               <div>
-                                <img
-                                  src={StarImage}
-                                  className="inline"
-                                  alt=""
-                                />
-                                <span className="text-lg font-medium font-Work-sons text-gray-1 px-2">
-                                  5.0
-                                </span>
+                                <p className="text-base font-normal font-Work-sans text-gray-2 pt-5">
+                                  And equal blame belongs to those who fail in their
+                                  duty through weakness of will, which is the same
+                                  as saying through shrinking from toil and pain.
+                                </p>
                               </div>
                             </div>
-                          </div>
-                          <div>
-                            <p className="text-base font-normal font-Work-sans text-gray-2 pt-5">
-                              And equal blame belongs to those who fail in their
-                              duty through weakness of will, which is the same
-                              as saying through shrinking from toil and pain.
-                            </p>
-                          </div>
-                        </div>
-                      </>
-                    );
-                  })}
-              </div>
-        </SwiperSlide>
-        </Swiper>
+                          </>
+                        );
+                      })}
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="cards w-[80%] mx-auto grid grid-cols-3 gap-6 py-10">
+                    {Array(3)
+                      .fill()
+                      .map((_, i) => {
+                        return (
+                          <>
+                            <div className="bg-white rounded-xl shadow-md p-7">
+                              <div className="flex items-center gap-5">
+                                <div>
+                                  <h1 className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></h1>
+                                </div>
+                                <div className="flex flex-col gap-1">
+                                  <div>
+                                    <h1 className="text-xl font-semibold font-inter text-gray-1">
+                                      Sandra T. Robinson
+                                    </h1>
+                                  </div>
+                                  <div>
+                                    <img
+                                      src={StarImage}
+                                      className="inline"
+                                      alt=""
+                                    />
+                                    <span className="text-lg font-medium font-Work-sons text-gray-1 px-2">
+                                      5.0
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div>
+                                <p className="text-base font-normal font-Work-sans text-gray-2 pt-5">
+                                  And equal blame belongs to those who fail in their
+                                  duty through weakness of will, which is the same
+                                  as saying through shrinking from toil and pain.
+                                </p>
+                              </div>
+                            </div>
+                          </>
+                        );
+                      })}
+                  </div>
+                </SwiperSlide>
+              </Swiper>
               {/* <div className="cards w-[80%] mx-auto grid grid-cols-3 gap-6 py-10">
                 {Array(3)
                   .fill()
@@ -511,9 +571,9 @@ function LandingPage() {
                 </button>
               </div>
 
-             
-       
-      
+
+
+
 
             </div>
             <div className="newsLatter h-[80vh] py-20">
@@ -903,139 +963,139 @@ function LandingPage() {
         {tabActive === "contact" && (
           <>
             <div className=" relative blueAreaFirstPart ">
-                <img src={background} className=" absolute top-0 w-full -z-10" alt="" />
+              <img src={background} className=" absolute top-0 w-full -z-10" alt="" />
               <div className="contactpart z-10 pt-40">
-              <div className="text-center">
-                <h1 className="text-[56px] font-bold font-inter text-white">
-                  Contact Us
-                </h1>
-              </div>
-              <div className="py-5">
-                <p className="text-lg font-normal font-inter text-white w-[50%] mx-auto text-center ">
-                  We’re here to help! Whether you have questions about our
-                  betting rounds, investment opportunities, or need assistance
-                  with your account, our team is ready to assist you. Reach out
-                  to us through any of the following channels:
-                </p>
-              </div>
-              <div className="w-[63%] mx-auto p-12 rounded-xl bg-white border ">
                 <div className="text-center">
-                  <h1 className="text-[36px] font-bold font-inter text-gray-1">
-                    Send message
+                  <h1 className="text-[56px] font-bold font-inter text-white">
+                    Contact Us
                   </h1>
                 </div>
-                <div>
-                  <div className="flex justify-between ">
-                    <div className=" w-[400px]">
-                      <label
-                        htmlFor="yourname"
-                        className="text-base font-medium font-poppins to-gray-1 w-full inline-block px-1 py-1"
-                      >
-                        Your name
-                      </label>
-                      <input
-                        type="text"
-                        id="yourname"
-                        className="w-full h-[44px] rounded-xl border px-[16px] py-[12.5px] outline-none"
-                        placeholder="Type your name here"
-                      />
-                    </div>
-                    <div className=" w-[400px]">
-                      <label
-                        htmlFor="yourname"
-                        className="text-base font-medium font-poppins to-gray-1 w-full inline-block px-1 py-1"
-                      >
-                        Email
-                      </label>
-                      <input
-                        type="text"
-                        id="yourname"
-                        className="w-full h-[44px] rounded-xl border px-[16px] py-[12.5px] outline-none"
-                        placeholder="input your email in here"
-                      />
-                    </div>
+                <div className="py-5">
+                  <p className="text-lg font-normal font-inter text-white w-[50%] mx-auto text-center ">
+                    We’re here to help! Whether you have questions about our
+                    betting rounds, investment opportunities, or need assistance
+                    with your account, our team is ready to assist you. Reach out
+                    to us through any of the following channels:
+                  </p>
+                </div>
+                <div className="w-[63%] mx-auto p-12 rounded-xl bg-white border ">
+                  <div className="text-center">
+                    <h1 className="text-[36px] font-bold font-inter text-gray-1">
+                      Send message
+                    </h1>
                   </div>
                   <div>
-                  <div className="py-5">
-                      <label
-                        htmlFor="yourname"
-                        className="text-base font-medium font-poppins to-gray-1 w-full inline-block px-1 py-1"
-                      >
-                        Your message
-                      </label>
-                      <textarea
-                      
-                     rows="7"
-                        type="text"        
-                        id="yourname"
-                        className="w-full rounded-xl border px-[16px] py-[12.5px] outline-none"
-                        placeholder="Type your message here">
+                    <div className="flex justify-between ">
+                      <div className=" w-[400px]">
+                        <label
+                          htmlFor="yourname"
+                          className="text-base font-medium font-poppins to-gray-1 w-full inline-block px-1 py-1"
+                        >
+                          Your name
+                        </label>
+                        <input
+                          type="text"
+                          id="yourname"
+                          className="w-full h-[44px] rounded-xl border px-[16px] py-[12.5px] outline-none"
+                          placeholder="Type your name here"
+                        />
+                      </div>
+                      <div className=" w-[400px]">
+                        <label
+                          htmlFor="yourname"
+                          className="text-base font-medium font-poppins to-gray-1 w-full inline-block px-1 py-1"
+                        >
+                          Email
+                        </label>
+                        <input
+                          type="text"
+                          id="yourname"
+                          className="w-full h-[44px] rounded-xl border px-[16px] py-[12.5px] outline-none"
+                          placeholder="input your email in here"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="py-5">
+                        <label
+                          htmlFor="yourname"
+                          className="text-base font-medium font-poppins to-gray-1 w-full inline-block px-1 py-1"
+                        >
+                          Your message
+                        </label>
+                        <textarea
+
+                          rows="7"
+                          type="text"
+                          id="yourname"
+                          className="w-full rounded-xl border px-[16px] py-[12.5px] outline-none"
+                          placeholder="Type your message here">
                         </textarea>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="text-center">
+                  <div className="text-center">
                     <button className="w-[220px] h-[48px] rounded-xl text-base font-medium font-poppins bg-custom-blue text-white px-[24px] py-[14px]">
-                    Send message
+                      Send message
                     </button>
+                  </div>
                 </div>
               </div>
-              </div>
-              </div>
-              <div className="iconspart w-[80%] mx-auto py-20 flex items-center justify-center gap-10">
-                <div className="card1 w-[28%] flex flex-col items-center justify-center text-center gap-4">
-                    <div className="p-3 bg-[#f5f8fe] rounded-2xl">
-                        <img src={emailIcon} className="border-[3px] border-dashed border-gray-400" alt="" />
-                    </div>
-                    <div>
-                    <h1 className="text-2xl font-bold to-gray-1 font-hk-grotesk">Email us</h1>
-                    </div>
-                    <div>
-                        <p className=" text-base font-normal font-open-sans text-gray-2">
-                        Email us for general queries, including marketing and partnership opportunities.
-                        </p>
-                    </div>
-                    <div>
-                        <p className="text-base font-bold font-open-sans text-custom-blue">
-                        info@quickbider.com
-                        </p>
-                    </div>
+            </div>
+            <div className="iconspart w-[80%] mx-auto py-20 flex items-center justify-center gap-10">
+              <div className="card1 w-[28%] flex flex-col items-center justify-center text-center gap-4">
+                <div className="p-3 bg-[#f5f8fe] rounded-2xl">
+                  <img src={emailIcon} className="border-[3px] border-dashed border-gray-400" alt="" />
                 </div>
-                <div className="card2 w-[28%] flex flex-col items-center justify-center text-center gap-4">
-                    <div className="p-3 bg-[#f5f8fe] rounded-2xl">
-                        <img src={callIcon} className="border-[3px] border-dashed border-gray-400" alt="" />
-                    </div>
-                    <div>
-                    <h1 className="text-2xl font-bold to-gray-1 font-hk-grotesk">Call us</h1>
-                    </div>
-                    <div>
-                        <p className=" text-base font-normal font-open-sans text-gray-2">
-                        Call us to speak to a member of our team. We are always happy to help.                        </p>
-                    </div>
-                    <div>
-                        <p className="text-base font-bold font-open-sans text-custom-blue">
-                        +1 (646) 786-5060
-                        </p>
-                    </div>
+                <div>
+                  <h1 className="text-2xl font-bold to-gray-1 font-hk-grotesk">Email us</h1>
                 </div>
-                <div className="card3 w-[28%] flex flex-col items-center justify-center text-center gap-4">
-                    <div className="p-3 bg-[#f5f8fe] rounded-2xl">
-                        <img src={supportIcon} className="border-[3px] border-dashed border-gray-400" alt="" />
-                    </div>
-                    <div>
-                    <h1 className="text-2xl font-bold to-gray-1 font-hk-grotesk">Support</h1>
-                    </div>
-                    <div>
-                        <p className=" text-base font-normal font-open-sans text-gray-2">
-                        Check out helpful resources, FAQs and developer tools.                        </p>
-                    </div>
-                    <div>
-                        <button className="w-[179px] h-[40px] rounded-xl p-4 bg-white border border-custom-blue text-custom-blue text-base font-bold font-open-sans flex items-center justify-between hover:text-white hover:bg-custom-blue">Support Center <ArrowRight/> </button>
-                    </div>
+                <div>
+                  <p className=" text-base font-normal font-open-sans text-gray-2">
+                    Email us for general queries, including marketing and partnership opportunities.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-base font-bold font-open-sans text-custom-blue">
+                    info@quickbider.com
+                  </p>
                 </div>
               </div>
+              <div className="card2 w-[28%] flex flex-col items-center justify-center text-center gap-4">
+                <div className="p-3 bg-[#f5f8fe] rounded-2xl">
+                  <img src={callIcon} className="border-[3px] border-dashed border-gray-400" alt="" />
+                </div>
+                <div>
+                  <h1 className="text-2xl font-bold to-gray-1 font-hk-grotesk">Call us</h1>
+                </div>
+                <div>
+                  <p className=" text-base font-normal font-open-sans text-gray-2">
+                    Call us to speak to a member of our team. We are always happy to help.                        </p>
+                </div>
+                <div>
+                  <p className="text-base font-bold font-open-sans text-custom-blue">
+                    +1 (646) 786-5060
+                  </p>
+                </div>
+              </div>
+              <div className="card3 w-[28%] flex flex-col items-center justify-center text-center gap-4">
+                <div className="p-3 bg-[#f5f8fe] rounded-2xl">
+                  <img src={supportIcon} className="border-[3px] border-dashed border-gray-400" alt="" />
+                </div>
+                <div>
+                  <h1 className="text-2xl font-bold to-gray-1 font-hk-grotesk">Support</h1>
+                </div>
+                <div>
+                  <p className=" text-base font-normal font-open-sans text-gray-2">
+                    Check out helpful resources, FAQs and developer tools.                        </p>
+                </div>
+                <div>
+                  <button className="w-[179px] h-[40px] rounded-xl p-4 bg-white border border-custom-blue text-custom-blue text-base font-bold font-open-sans flex items-center justify-between hover:text-white hover:bg-custom-blue">Support Center <ArrowRight /> </button>
+                </div>
+              </div>
+            </div>
             <div className="WaveImage">
-                <img src={baseImage} alt="" />
+              <img src={baseImage} alt="" />
             </div>
             <div className="banner">
               <img src={banner} className=" w-[100vw]" alt="" />
@@ -1123,6 +1183,10 @@ function LandingPage() {
             </div>
           </>
         )}
+
+
+
+
       </div>
     </>
   );

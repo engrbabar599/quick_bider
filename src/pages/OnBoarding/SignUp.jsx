@@ -1,20 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 import IMAGES from '../../assets/IMAGES'
 
 export const SignUp = () => {
+    const navigate = useNavigate()
     return (
         <div className='bg-custom-blue relative z-50 min-h-fit md:p-12 p-6 flex justify-center items-center'>
-            <img src={IMAGES.logo} alt="" className="absolute right-0 top-0 h-[36rem] -rotate-8" />
+            <img src={IMAGES.backgroundLogo} alt="" className="absolute right-0 top-0 h-[36rem] -rotate-8" />
             <img src={IMAGES.logoWithName} alt="" className="absolute left-0 bottom-10 h-60 -rotate-8 -z-50" />
 
             <div
                 className='bg-white p-5 rounded-xl flex flex-col space-y-4 xl:w-2/5 lg:w-3/5   items-center justify-center z-50 w-full'>
                 <div
                     className='md:w-3/4 items-center justify-center flex flex-col space-y-4'>
-                    <img src={IMAGES.coloredLogoWithName}
+                    <img src={IMAGES.logo}
                         alt='Colored Logo'
                         className='md:h-16 h-12 ' />
 
@@ -65,7 +66,7 @@ export const SignUp = () => {
                         </div>
                         <Button
                             title={"Sign up"}
-                        // onClick={}
+                            onClick={() => navigate("/dashboard")}
                         />
 
 
@@ -98,7 +99,7 @@ export const SignUp = () => {
 
                         <div className='text-center font-poppins font-normal flex flex-col md:flex-row space-x-1 text-gray-4 text-base'>
                             <p>Already have an account?</p>
-                            <Link to="/" className='text-custom-blue hover:text-blue-500 '>
+                            <Link to="/login" className='text-custom-blue hover:text-blue-500 '>
                                 Sign in
                             </Link>
                         </div>

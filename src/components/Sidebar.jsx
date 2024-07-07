@@ -26,7 +26,7 @@ export const Sidebar = () => {
             icon: InvestmentsIcon,
             navigate: "/investments"
         },
-       
+
 
         {
             name: "Ads",
@@ -64,7 +64,7 @@ export const Sidebar = () => {
     return (
         <div className='xl:flex hidden flex-col w-full  justify-start border-r'>
             <div className='p-6'>
-                <img src={IMAGES.updatedLogo} alt="" className=' h-10 object-contain' />
+                <img src={IMAGES.logo} alt="" className=' h-10 object-contain' />
             </div>
 
             <div className='flex flex-col  space-y-4'>
