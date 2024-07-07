@@ -218,7 +218,7 @@ function LandingPage() {
 
             <div className="firstcarpart relative flex flex-col lg:flex-row items-center justify-between mx-auto p-4 lg:p-0">
               <div className="relative textpart w-full xl:w-[35%] mx-auto xl:ml-40 lg:w-[50%] lg:ml-24 text-center lg:text-left">
-                <h1 className="relative text-[32px] lg:text-[54px] font-bold font-inter text-gray-1 mx-auto">
+                <h1 className="relative text-[32px] lg:text-[54px] font-bold font-inter text-gray-1 mx-auto pt-5 md:pt-0">
                   Your Winning Streak Starts Here
                   <span className="block">
                     <img
@@ -228,14 +228,14 @@ function LandingPage() {
                     />
                   </span>
                 </h1>
-                <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-7 w-full lg:w-[90%] mx-auto">
+                <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-7 w-[70%] mx-auto lg:mx-0 lg:w-[90%]">
                   Betting at QuickBider is simple and accessible. With just $2 per bid, you have multiple chances to participate and win.
                 </p>
                 <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-6">
-                  <button className="bg-custom-blue w-full lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-white">
+                  <button className="bg-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-white">
                     Bid now
                   </button>
-                  <button className="border border-custom-blue w-full lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
+                  <button className="border border-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
                     Invest
                   </button>
                 </div>
@@ -266,7 +266,7 @@ function LandingPage() {
 
 
             <div className="trending actions lg:w-[80%] mx-auto relative">
-              <div className="text-center mt-24 text-gray-1">
+              <div className="text-center mt-8 lg:mt-24 text-gray-1">
                 <h1 className="lg:text-[54px] font-bold font-inter text-gray-1">
                   Trending auctions
                 </h1>
@@ -340,7 +340,7 @@ function LandingPage() {
 
 
 
-            <div className="recentWinners w-full lg:w-[80%] mx-auto p-4 lg:p-0">
+            <div className="recentWinners w-full lg:w-[90%] mx-auto p-4 lg:p-0">
               <div className="text-center">
                 <h1 className="text-[32px] lg:text-[54px] font-bold font-inter text-gray-1">
                   Recent winners
@@ -350,7 +350,7 @@ function LandingPage() {
                 <RecentWinnersSection />
               </div>
               <div className="text-center py-6 lg:py-12">
-                <button className="border text-custom-blue border-custom-blue rounded-xl w-[160px] px-[16px] lg:px-[24px] py-[12px] lg:py-[14px] text-sm lg:text-base font-medium font-poppins">
+                <button className="border text-custom-blue border-custom-blue rounded-xl w-[160px] px-[16px] lg:px-[24px] py-[12px] lg:py-[14px] text-xs lg:text-base font-medium font-poppins">
                   View all
                 </button>
               </div>
@@ -617,18 +617,18 @@ function LandingPage() {
                     <img
                       src={blueLine}
                       alt=""
-                      className="absolute top-16 lg:right-48 transform -translate-x-1/2 lg:translate-x-0 lg:inline-block hidden"
+                      className="absolute top-16 lg:right-76 transform -translate-x-1/2 lg:translate-x-0 lg:inline-block hidden"
                     />
                   </span>
                 </h1>
-                <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-7 w-full lg:w-[90%] text-left mx-auto">
+                <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-7 w-[90%] lg:text-left mx-auto lg:mx-0">
                   Welcome to QuickBider, where we combine the thrill of betting with the wisdom of smart investments. Our mission is to offer our users an unparalleled experience, whether they're looking to win big or grow their wealth.
                 </p>
                 <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-6">
-                  <button className="bg-custom-blue w-full lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-white">
+                  <button className="bg-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-white">
                     Bid now
                   </button>
-                  <button className="border border-custom-blue w-full lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
+                  <button className="border border-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
                     Invest
                   </button>
                 </div>
@@ -705,7 +705,7 @@ function LandingPage() {
                     Invest now
                   </button>
                 </div>
-                <div className="relative mb-6 lg:mb-0 lg:mr-6">
+                <div className="relative my-6 lg:mb-0 lg:mr-6">
                   <img src={mission} alt="" className="w-full h-auto" />
                   <img
                     src={circle2}

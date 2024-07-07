@@ -76,7 +76,7 @@ export const RecentWinnersSection = () => {
                                 <TrophyIcon />
                             </div>
                             <div className='flex flex-col items-center gap-4'>
-                                <img src={womanImage} alt="" className='object-contain w-full h-auto' />
+                                <img src={womanImage} alt="" className='object-contain w-1/2  lg:w-full h-auto' />
                                 <div className='flex flex-col items-center gap-4'>
                                     <p className='text-gray-1 text-lg lg:text-[36px] font-semibold font-inter'>
                                         Robert Fox
