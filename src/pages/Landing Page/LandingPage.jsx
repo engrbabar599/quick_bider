@@ -216,15 +216,9 @@ function LandingPage() {
           <>
             <div className="firstcarpart relative flex flex-col lg:flex-row items-center justify-between mx-auto p-4 lg:p-0">
               <div className="relative textpart w-full xl:w-[35%] mx-auto xl:ml-40 lg:w-[50%] lg:ml-24 text-center lg:text-left">
-                <h1 className="relative text-[32px] lg:text-[54px] font-bold font-inter text-gray-1 mx-auto pt-5 md:pt-0">
-                  Your Winning Streak Starts Here
-                  <span className="block">
-                    <img
-                      src={blueLine}
-                      alt=""
-                      className="absolute top-16 lg:right-48  transform -translate-x-1/2 lg:translate-x-0 lg:inline-block hidden"
-                    />
-                  </span>
+                <h1 className="text-[32px] lg:text-[54px] font-bold font-inter text-gray-1 mx-auto pt-5 md:pt-0">
+                  Your <span className="text-[32px] lg:text-[54px] font-bold font-inter text-gray-1 relative">Winning <img src={blueLine} alt="" className=" absolute top-10 lg:top-16 right-0" /></span> Streak Starts Here
+                  
                 </h1>
                 <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-7 w-[70%] mx-auto lg:mx-0 lg:w-[90%]">
                   Betting at QuickBider is simple and accessible. With just $2 per bid, you have multiple chances to participate and win.
@@ -238,12 +232,13 @@ function LandingPage() {
                   </button>
                 </div>
               </div>
-              <div className="relative carimage w-full lg:w-[50%] h-[60vh] lg:h-[90vh] lg:flex items-center justify-start bg-[#f0f4fe] -z-10 mt-6 lg:mt-0 hidden ">
+              {/* <div className="relative carimage w-full lg:w-[50%] h-[60vh] lg:h-[90vh] lg:flex items-center justify-start bg-[#f0f4fe] -z-10 mt-6 lg:mt-0 hidden ">
                 <img
                   src={circle}
                   alt=""
                   className="absolute top-8 lg:top-32 right-1/4 lg:right-40 w-1/3 lg:w-auto lg:inline-block hidden"
                 />
+                <div>
                 <img
                   src={blueBase}
                   className="absolute top-[260px] lg:top-[430px] object-cover w-full lg:w-auto"
@@ -254,12 +249,41 @@ function LandingPage() {
                   alt=""
                   className="absolute top-24 xl:right-32 lg:right-0 w-full lg:w-[699px]"
                 />
+                </div>
                 <img
                   src={circle}
                   alt=""
                   className="absolute bottom-2 left-1/4 lg:left-3 w-1/3 lg:w-auto lg:inline-block hidden"
                 />
-              </div>
+              </div> */}
+
+<div className="relative w-full lg:w-[50%] h-[60vh] lg:h-[90vh] flex items-center justify-start bg-[#f0f4fe] mt-6 lg:mt-0 hidden lg:block">
+  <img
+    src={circle}
+    alt="Circle"
+    className="absolute top-8 lg:top-32 right-1/4 lg:right-40 w-1/3 lg:w-auto"
+  />
+  <div className="relative w-full h-full flex items-center justify-center">
+    <img
+      src={blueBase}
+      alt="Blue Base"
+      className="absolute top-[30%] lg:top-[40%] xl:top-[70%] 2xl:top-[55%] xl:right-[15%] w-full lg:w-auto object-cover"
+    />
+    <img
+      src={carImage}
+      alt="Car"
+      className="absolute top-24 2xl:top-24 xl:top-24 xl:right-32 lg:right-0 w-[500px] xl:w-[699px]"
+    />
+  </div>
+  <img
+    src={circle}
+    alt="Circle"
+    className="absolute bottom-2 left-1/4 lg:left-3 w-1/3 lg:w-auto"
+  />
+</div>
+
+
+
             </div>
 
 
@@ -374,13 +398,9 @@ function LandingPage() {
                   />
                 </div>
                 <div className="w-full lg:w-[45%] mx-auto text-center lg:text-left">
-                  <h1 className="relative lg:text-[54px] font-bold font-inter text-gray-1">
-                    Smart Investments for Smart Returns
-                    <img
-                      src={blueline2}
-                      className="absolute top-8 lg:top-16 right-4 lg:right-10 w-16 lg:w-auto md:inline-block hidden"
-                      alt=""
-                    />
+                  <h1 className=" lg:text-[54px] font-bold font-inter text-gray-1">
+                    Smart <span className="lg:text-[54px] font-bold font-inter text-gray-1 relative">Investments <img src={blueline2} className=" absolute left-5 top-5 lg:top-14" alt="" /></span>  for Smart Returns
+                   
                   </h1>
                   <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-6 w-full lg:w-[90%] mx-auto lg:mx-0">
                     Betting at QuickBider is simple and accessible. With just $2 per bid, you have multiple chances to participate and win.
@@ -568,10 +588,10 @@ function LandingPage() {
                         className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Investments
                       </h3>
-                      <h3 onClick={() => handleClick("about")} className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("about")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         About us
                       </h3>
-                      <h3 onClick={() => handleClick("home")} className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("home")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Contact us
                       </h3>
                     </div>
@@ -839,23 +859,23 @@ function LandingPage() {
                       </h1>
                     </div>
                     <div className="flex flex-col gap-3 lg:gap-5 pt-3 lg:pt-5">
-                      <h3 onClick={() => handleClick("home")} className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("home")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Home
                       </h3>
                       <h3
                         onClick={() => bidsClick()}
-                        className="text-base lg:text-lg font-normal font-Work-sans">
+                        className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Bids
                       </h3>
                       <h3
                         onClick={() => investmentClick()}
-                        className="text-base lg:text-lg font-normal font-Work-sans">
+                        className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Investments
                       </h3>
-                      <h3 onClick={() => handleClick("about")} className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("about")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         About us
                       </h3>
-                      <h3 onClick={() => handleClick("contact")} className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("contact")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Contact us
                       </h3>
                     </div>
@@ -1046,23 +1066,23 @@ function LandingPage() {
                       </h1>
                     </div>
                     <div className="flex flex-col gap-3 lg:gap-5 pt-3 lg:pt-5">
-                      <h3 onClick={() => handleClick("home")} className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("home")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Home
                       </h3>
                       <h3
                         onClick={() => bidsClick()}
-                        className="text-base lg:text-lg font-normal font-Work-sans">
+                        className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Bids
                       </h3>
                       <h3
                         onClick={() => investmentClick()}
-                        className="text-base lg:text-lg font-normal font-Work-sans">
+                        className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Investments
                       </h3>
-                      <h3 onClick={() => handleClick("about")} className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("about")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer  ">
                         About us
                       </h3>
-                      <h3 onClick={() => handleClick("contact")} className="text-base lg:text-lg font-normal font-Work-sans">
+                      <h3 onClick={() => handleClick("contact")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Contact us
                       </h3>
                     </div>

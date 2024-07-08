@@ -4,6 +4,7 @@ import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import gallery from "../../assets/images/gallery.png";
 import photo from "../../assets/images/photo.png";
+import crossicon from "../../assets/images/crossIcon.png"
 
 function ClaimNow({ onClose }) {
   const handleSubmit = (e) => {
@@ -13,13 +14,17 @@ function ClaimNow({ onClose }) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="flex items-center justify-center">
-        <div className="mx-auto p-8 bg-white rounded-lg shadow-md xs:py-7 md:py-2 w-[90%] md:w-full" >
+        <div className=" relative mx-auto p-8 bg-white rounded-lg shadow-md xs:py-7 md:py-2 w-[90%] md:w-full" >
+          <div>
+            <img onClick={onClose} src={crossicon} className="bg-gray-300 rounded-full absolute right-2 cursor-pointer w-10" alt="" />
+          </div>
           <div className="flex justify-between md:mb-6"></div>
           <form onSubmit={handleSubmit}>
             <div className="xs:w-[80vw] md:w-[50vw] lg:w-[30vw]">
               <h2 className="lg:text-[28px] xs:text-base text-xl font-semibold mb-4 text-center">
                 Claim now
               </h2>
+
               <div className="mb-4">
                 <label htmlFor="full-name" className="text-sm font-medium text-gray-700">Full name</label>
                 <Input

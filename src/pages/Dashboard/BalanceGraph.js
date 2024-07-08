@@ -3,6 +3,8 @@ import { Button } from '../../components/Button'
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend } from 'chart.js';
 
+import { useState } from 'react';
+import Employees from '../Wallet/Employees';
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend);
 const data = {
     labels: ['12', '13', '14', '15', '16', '17'],
@@ -76,6 +78,19 @@ const options = {
 
 
 export const BalanceGraph = ({hidden}) => {
+
+    const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+  const [show, setShow] = useState(false);
+
+  const toggleShow = () => {
+    setShow(!show);
+  };
+
+
     return (
         <div className=' border rounded-xl p-4 border-gray-5 flex flex-col shadow-sm space-y-8 w-full xs:mt-4 lg:mt-0'>
             <div className='flex flex-row justify-between items-center font-heading !text-lg'>
@@ -95,9 +110,11 @@ export const BalanceGraph = ({hidden}) => {
 
                 <div className='w-full'>
                     <Button
+                     onClick={toggleVisibility}
                         className={"!text-sm"}
                         title={"Add money"}
                     />
+                    {isVisible && <Employees/>}
                 </div>
 
             </div>

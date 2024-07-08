@@ -85,7 +85,11 @@ function Project({ hadding, padding, button }) {
                 <div className="w-[60%] mx-auto flex items-center justify-center pt-3 rounded-xl">
 
                   <Button
-                    onClick={(button === viewdetails) ? () => { navigate("/investments/investmentCompleted") } : () => { navigate("/investments/BEProject") }}
+                    onClick={(button === viewdetails)
+                      ? 
+                      ()=>{navigate("/investments/investmentcompleted")}
+                      : 
+                      () => { navigate("/investments/beproject")}}
                     title={`${(button === viewdetails) ? 'view details' : 'Invest'}`}
                     className={" text-sm font-medium"}
                   />

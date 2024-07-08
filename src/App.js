@@ -24,6 +24,7 @@ import { AdsPage } from "./pages/Ads";
 import BidResult from "./pages/My Bids/BidResult";
 import InvestmentCompleted from "./pages/Investment/InvestmentCompleted";
 import LandingPage from "./pages/Landing Page/LandingPage";
+import BEProject from "./pages/Investment/BEProject";
 
 export const Layout = () => {
   const { pathname } = useLocation()
@@ -108,7 +109,7 @@ const router = createBrowserRouter([
           },
           {
             path: "beproject",
-            element: <InvestmentCompleted />
+            element: <BEProject/>
           },
           {
             path: "investmentCompleted",

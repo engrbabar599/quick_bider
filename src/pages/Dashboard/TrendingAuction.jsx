@@ -22,9 +22,11 @@ export const TrendingAuction = () => {
                     <div
                         onClick={() => { navigate("/dashboard/bids") }}
                         className=' bg-white border shadow-sm  rounded-xl group lg:hover:scale-105 duration-300 transform ease-in cursor-pointer'>
-                        <div className='space-y-4 p-4'>
+                        <div className='space-y-4 p-4 relative'>
                             <img src={IMAGES?.mustang} alt="" className='object-contain !rounded-lg ' />
-
+                            <div>
+                                <h1 className='text-xs font-semibold font-poppins text-gray-1 bg-[#eae9ed] absolute rounded-xl px-2 h-[36px] flex items-center justify-center top-5 right-5'>2h : 4m : 32s</h1>
+                            </div>
                             <div className='font-poppins font-semibold text-base'>
                                 <div className='flex flex-col'>
                                     <p className='text-gray-1'>Ford Mustang
