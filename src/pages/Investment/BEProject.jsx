@@ -106,22 +106,22 @@ function BEProject() {
             <div className="border rounded-xl p-5 my-6 shadow-sm md:w-[90%]">
               <div className="flex justify-between">
                 <div className="upfirst flex items-center gap-1">
-                  <h1 className="xs:text-xs md:text-base font-normal font-poppins text-gray-4">Date:</h1>
-                  <h1 className="xs:text-xs md:text-base font-semibold font-poppins text-gray-1">25/06/2024</h1>
+                  <h1 className="text-xs md:text-base font-normal font-poppins text-gray-4">Date:</h1>
+                  <h1 className="text-xs md:text-base font-semibold font-poppins text-gray-1">25/06/2024</h1>
                 </div>
                 <div className="upsecond flex gap-1">
-                  <h1 className="xs:text-xs md:text-base font-normal font-poppins text-gray-4">Minimum investment:</h1>
-                  <h1 className="xs:text-xs md:text-base font-semibold font-poppins text-custom-blue">4</h1>
+                  <h1 className="text-xs md:text-base font-normal font-poppins text-gray-4">Minimum investment:</h1>
+                  <h1 className="text-xs md:text-base font-semibold font-poppins text-custom-blue">4</h1>
                 </div>
               </div>
               <div className="downside flex justify-between items-center">
                 <div className="dwnfirst flex items-center gap-1">
-                  <h1 className="xs:text-xs md:text-base font-normal font-poppins text-gray-4">Time:</h1>
-                  <h1 className="xs:text-xs md:text-base font-semibold font-poppins text-gray-1">9:00 PM</h1>
+                  <h1 className="text-xs md:text-base font-normal font-poppins text-gray-4">Time:</h1>
+                  <h1 className="text-xs md:text-base font-semibold font-poppins text-gray-1">9:00 PM</h1>
                 </div>
                 <div className="dwnsecond flex items-center gap-1">
-                  <h1 className="xs:text-xs md:text-base font-normal font-poppins text-gray-4">Return on investment:</h1>
-                  <h1 className="xs:text-xs md:text-base font-semibold font-poppins text-custom-blue">$5</h1>
+                  <h1 className="text-xs md:text-base font-normal font-poppins text-gray-4">Return on investment:</h1>
+                  <h1 className="text-xs md:text-base font-semibold font-poppins text-custom-blue">$5</h1>
                 </div>
               </div>
             </div>

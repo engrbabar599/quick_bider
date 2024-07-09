@@ -8,7 +8,7 @@ export const Login = () => {
     const navigate = useNavigate()
     return (
         <>
-            <div className='bg-custom-blue relative z-50 min-h-screen h-fit flex justify-center items-center'>
+            <div className='bg-custom-blue relative z-50 min-h-screen h-fit flex justify-center items-center px-1'>
                 <img src={IMAGES.backgroundLogo} alt="" className="absolute right-0 top-0 h-[36rem] -rotate-8" />
                 <img src={IMAGES.logoWithName} alt="" className="absolute left-0 bottom-10 h-60 -rotate-8 -z-50" />
 
@@ -20,7 +20,7 @@ export const Login = () => {
                             alt='Colored Logo'
                             className='md:h-24 h-12 md:min-w-max' />
 
-                        <div className='flex flex-col sm:w-full xs:w-[90%]  items-center justify-center space-y-6'>
+                        <div className='flex flex-col sm:w-full xs:w-[90%]  items-center justify-center space-y-6 px-3'>
                             <h1 className='text-[1.75rem] font-semibold text-gray-1 font-poppins text-center min-w-max'>
                                 Sign in to continue
                             </h1>

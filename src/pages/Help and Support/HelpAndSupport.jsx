@@ -11,28 +11,29 @@ function HelpAndSupport() {
         </div>
         <div className=" rounded md:p-4 py-4 md:grid gap-6 md:grid-cols-3 flex flex-col ">
           <form className="md:col-span-2 shadow-lg p-4 border rounded-lg">
-            <div className="grid gap-4 md:grid-cols-2 ">
-              <div>
+            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pt-3">
+              <div className="w-full">
                 <Input
                   label={"Full name"}
                   placeholder={"Full name"}
+                  
                 />
               </div>
-              <div>
+              <div className="w-full">
                 <Input
                   label={"Last name"}
                   placeholder={"Last name"}
                 />
               </div>
             </div>
-            <div className="grid gap-4 md:grid-cols-2 mt-4">
-              <div>
+            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pt-3">
+              <div className="w-full">
                 <Input
                   label={"Phone number"}
                   placeholder={"+1"}
                 />
               </div>
-              <div>
+              <div className="w-full">
                 <Input
                   label={"Email ID"}
                   placeholder={"Email id"}
