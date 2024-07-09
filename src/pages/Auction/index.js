@@ -1,8 +1,9 @@
 import React from 'react'
 import { Button } from '../../components/Button'
 import IMAGES from '../../assets/IMAGES'
-
+import { Navigate, useNavigate } from 'react-router-dom'
 export const AuctionPage = () => {
+    const navigate = useNavigate()
     return (
         <div className='flex flex-col gap-6'>
             <div className="flex flex-row justify-between items-center font-poppins">
@@ -14,6 +15,7 @@ export const AuctionPage = () => {
                 {Array(8).fill().map((_, index) => (
                     <div
                         // onClick={() => { setOpenBidsInfo(true) }}
+                        onClick={() => { navigate("/dashboard/bids") }}
                         className=' bg-white border shadow-sm  rounded-xl group lg:hover:scale-105 duration-300 transform ease-in cursor-pointer'>
                         <div className='space-y-4 p-4'>
                             <img src={IMAGES?.mustang} alt="" className='object-contain !rounded-lg w-56 ' />

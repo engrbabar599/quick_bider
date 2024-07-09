@@ -227,7 +227,7 @@ function LandingPage() {
                   <button className="bg-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-white">
                     Bid now
                   </button>
-                  <button className="border border-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
+                  <button onClick={()=>{navigate("/investments/beproject")}} className="border border-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
                     Invest
                   </button>
                 </div>
@@ -405,7 +405,7 @@ function LandingPage() {
                   <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-6 w-full lg:w-[90%] mx-auto lg:mx-0">
                     Betting at QuickBider is simple and accessible. With just $2 per bid, you have multiple chances to participate and win.
                   </p>
-                  <button className="px-6 py-3 lg:px-[24px] lg:py-[14px] w-[140px] lg:w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
+                  <button onClick={()=>{navigate("/investments/beproject")}}  className="px-6 py-3 lg:px-[24px] lg:py-[14px] w-[140px] lg:w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
                     Invest now
                   </button>
                 </div>
@@ -650,7 +650,7 @@ function LandingPage() {
                   <button className="bg-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-white">
                     Bid now
                   </button>
-                  <button className="border border-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
+                  <button onClick={()=>{navigate("/investments/beproject")}}  className="border border-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
                     Invest
                   </button>
                 </div>
@@ -704,7 +704,7 @@ function LandingPage() {
                   </h1>
                   <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-6 w-full lg:w-[90%] mx-auto lg:mx-0">
                     Founded by MR Corporation PVT LTD. QuickBider was created to revolutionize the way people engage with betting and investment opportunities. Our platform is built on the principles of transparency, fairness, and customer-centricity, ensuring that every user feels confident and valued.      </p>
-                  <button className="px-6 py-3 lg:px-[24px] lg:py-[14px] w-[140px] lg:w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
+                  <button onClick={()=>{navigate("/investments/beproject")}}  className="px-6 py-3 lg:px-[24px] lg:py-[14px] w-[140px] lg:w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
                     Invest now
                   </button>
                 </div>
@@ -723,7 +723,7 @@ function LandingPage() {
                   </h1>
                   <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-6 w-full lg:w-[90%] mx-auto lg:mx-0">
                     Founded by MR Corporation PVT LTD. QuickBider was created to revolutionize the way people engage with betting and investment opportunities. Our platform is built on the principles of transparency, fairness, and customer-centricity, ensuring that every user feels confident and valued.      </p>
-                  <button className="px-6 py-3 lg:px-[24px] lg:py-[14px] w-[140px] lg:w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
+                  <button onClick={()=>{navigate("/investments/beproject")}}  className="px-6 py-3 lg:px-[24px] lg:py-[14px] w-[140px] lg:w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
                     Invest now
                   </button>
                 </div>
