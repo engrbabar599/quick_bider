@@ -218,7 +218,7 @@ function LandingPage() {
               <div className="relative textpart w-full xl:w-[35%] mx-auto xl:ml-40 lg:w-[50%] lg:ml-24 text-center lg:text-left">
                 <h1 className="text-[32px] lg:text-[54px] font-bold font-inter text-gray-1 mx-auto pt-5 md:pt-0">
                   Your <span className="text-[32px] lg:text-[54px] font-bold font-inter text-gray-1 relative">Winning <img src={blueLine} alt="" className=" absolute top-10 lg:top-16 right-0" /></span> Streak Starts Here
-                  
+
                 </h1>
                 <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-7 w-[70%] mx-auto lg:mx-0 lg:w-[90%]">
                   Betting at QuickBider is simple and accessible. With just $2 per bid, you have multiple chances to participate and win.
@@ -227,7 +227,7 @@ function LandingPage() {
                   <button className="bg-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-white">
                     Bid now
                   </button>
-                  <button onClick={()=>{navigate("/investments/beproject")}} className="border border-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
+                  <button onClick={() => { navigate("/investments/beproject") }} className="border border-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
                     Invest
                   </button>
                 </div>
@@ -257,30 +257,30 @@ function LandingPage() {
                 />
               </div> */}
 
-<div className="relative w-full lg:w-[50%] h-[60vh] lg:h-[90vh] flex items-center justify-start bg-[#f0f4fe] mt-6 lg:mt-0 hidden lg:block">
-  <img
-    src={circle}
-    alt="Circle"
-    className="absolute top-8 lg:top-32 right-1/4 lg:right-40 w-1/3 lg:w-auto"
-  />
-  <div className="relative w-full h-full flex items-center justify-center">
-    <img
-      src={blueBase}
-      alt="Blue Base"
-      className="absolute top-[30%] lg:top-[40%] xl:top-[70%] 2xl:top-[55%] xl:right-[15%] w-full lg:w-auto object-cover"
-    />
-    <img
-      src={carImage}
-      alt="Car"
-      className="absolute top-24 2xl:top-24 xl:top-24 xl:right-32 lg:right-0 w-[500px] xl:w-[699px]"
-    />
-  </div>
-  <img
-    src={circle}
-    alt="Circle"
-    className="absolute bottom-2 left-1/4 lg:left-3 w-1/3 lg:w-auto"
-  />
-</div>
+              <div className="relative w-full lg:w-[50%] h-[60vh] lg:h-[90vh]  items-center justify-start bg-[#f0f4fe] mt-6 lg:mt-0 hidden lg:flex">
+                <img
+                  src={circle}
+                  alt="Circle"
+                  className="absolute top-8 lg:top-32 right-1/4 lg:right-40 w-1/3 lg:w-auto"
+                />
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <img
+                    src={blueBase}
+                    alt="Blue Base"
+                    className="absolute top-[30%] lg:top-[40%] xl:top-[70%] 2xl:top-[55%] xl:right-[15%] w-full lg:w-auto object-cover"
+                  />
+                  <img
+                    src={carImage}
+                    alt="Car"
+                    className="absolute top-24 2xl:top-24 xl:top-24 xl:right-32 lg:right-0 w-[500px] xl:w-[699px]"
+                  />
+                </div>
+                <img
+                  src={circle}
+                  alt="Circle"
+                  className="absolute bottom-2 left-1/4 lg:left-3 w-1/3 lg:w-auto"
+                />
+              </div>
 
 
 
@@ -400,12 +400,12 @@ function LandingPage() {
                 <div className="w-full lg:w-[45%] mx-auto text-center lg:text-left">
                   <h1 className=" lg:text-[54px] font-bold font-inter text-gray-1">
                     Smart <span className="lg:text-[54px] font-bold font-inter text-gray-1 relative">Investments <img src={blueline2} className=" absolute left-5 top-5 lg:top-14" alt="" /></span>  for Smart Returns
-                   
+
                   </h1>
                   <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-6 w-full lg:w-[90%] mx-auto lg:mx-0">
                     Betting at QuickBider is simple and accessible. With just $2 per bid, you have multiple chances to participate and win.
                   </p>
-                  <button onClick={()=>{navigate("/investments/beproject")}}  className="px-6 py-3 lg:px-[24px] lg:py-[14px] w-[140px] lg:w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
+                  <button onClick={() => { navigate("/investments/beproject") }} className="px-6 py-3 lg:px-[24px] lg:py-[14px] w-[140px] lg:w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
                     Invest now
                   </button>
                 </div>
@@ -650,7 +650,7 @@ function LandingPage() {
                   <button className="bg-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-white">
                     Bid now
                   </button>
-                  <button onClick={()=>{navigate("/investments/beproject")}}  className="border border-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
+                  <button onClick={() => { navigate("/investments/beproject") }} className="border border-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
                     Invest
                   </button>
                 </div>
@@ -704,7 +704,7 @@ function LandingPage() {
                   </h1>
                   <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-6 w-full lg:w-[90%] mx-auto lg:mx-0">
                     Founded by MR Corporation PVT LTD. QuickBider was created to revolutionize the way people engage with betting and investment opportunities. Our platform is built on the principles of transparency, fairness, and customer-centricity, ensuring that every user feels confident and valued.      </p>
-                  <button onClick={()=>{navigate("/investments/beproject")}}  className="px-6 py-3 lg:px-[24px] lg:py-[14px] w-[140px] lg:w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
+                  <button onClick={() => { navigate("/investments/beproject") }} className="px-6 py-3 lg:px-[24px] lg:py-[14px] w-[140px] lg:w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
                     Invest now
                   </button>
                 </div>
@@ -723,7 +723,7 @@ function LandingPage() {
                   </h1>
                   <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-6 w-full lg:w-[90%] mx-auto lg:mx-0">
                     Founded by MR Corporation PVT LTD. QuickBider was created to revolutionize the way people engage with betting and investment opportunities. Our platform is built on the principles of transparency, fairness, and customer-centricity, ensuring that every user feels confident and valued.      </p>
-                  <button onClick={()=>{navigate("/investments/beproject")}}  className="px-6 py-3 lg:px-[24px] lg:py-[14px] w-[140px] lg:w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
+                  <button onClick={() => { navigate("/investments/beproject") }} className="px-6 py-3 lg:px-[24px] lg:py-[14px] w-[140px] lg:w-[160px] bg-custom-blue text-base font-medium font-poppins rounded-xl text-white">
                     Invest now
                   </button>
                 </div>
