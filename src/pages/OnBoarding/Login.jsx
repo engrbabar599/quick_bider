@@ -20,7 +20,7 @@ export const Login = () => {
                             alt='Colored Logo'
                             className='md:h-24 h-12 md:min-w-max' />
 
-                        <div className='flex flex-col sm:w-full xs:w-[90%]  items-center justify-center space-y-6 px-3'>
+                        <form className='flex flex-col sm:w-full xs:w-[90%]  items-center justify-center space-y-6 px-3'>
                             <h1 className='text-[1.75rem] font-semibold text-gray-1 font-poppins text-center min-w-max'>
                                 Sign in to continue
                             </h1>
@@ -86,7 +86,7 @@ export const Login = () => {
 
 
 
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

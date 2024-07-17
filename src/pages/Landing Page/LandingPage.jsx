@@ -40,8 +40,15 @@ import { ArrowRight } from "../../assets/svgs/ArrowRight"
 import blueBase from "../../assets/images/bluseBase.png"
 import { useNavigate } from "react-router-dom";
 import mission from "../../assets/images/mission.png"
+import ReactGA from "react-ga4"
 
 function LandingPage() {
+
+  ReactGA.send({
+    hitType: "pageview",
+    page: "/",
+    title: "Landing"
+  })
   const navigate = useNavigate();
   const [tabActive, setTabActive] = useState("home");
   const [openDropdown, setOpenDropdown] = useState(false)
@@ -644,7 +651,7 @@ function LandingPage() {
                   </span>
                 </h1>
                 <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-7 w-[90%] lg:text-left mx-auto lg:mx-0">
-                  Welcome to QuickBider, where we combine the thrill of betting with the wisdom of smart investments. Our mission is to offer our users an unparalleled experience, whether they're looking to win big or grow their wealth.
+                  Welcome to QUICK BIDER, where we revolutionized the traditional auction scene since our inception in 2020. Born from a desire to integrate excitement with opportunity, our platform has redefined the auction process, making it more dynamic and accessible to everyone. From our humble beginnings with a small but dedicated team, we quickly escalated into a reputable platform, hosting thousands of auctions and attracting participants from across the globe. As we continue to grow, our commitment to innovation remains strong, evidenced by the continuous enhancements to our platform and services.
                 </p>
                 <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-6">
                   <button className="bg-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-white">

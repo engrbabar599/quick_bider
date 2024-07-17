@@ -25,9 +25,17 @@ import BidResult from "./pages/My Bids/BidResult";
 import InvestmentCompleted from "./pages/Investment/InvestmentCompleted";
 import LandingPage from "./pages/Landing Page/LandingPage";
 import BEProject from "./pages/Investment/BEProject";
+import ReactGA from 'react-ga4';
 
 export const Layout = () => {
+  ReactGA.initialize('G-76HVWTY453');
   const { pathname } = useLocation()
+
+  useEffect(() => {
+    console.log(window.location.pathname)
+    console.log("Inside Effect")
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+  }, [window.location.pathname]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -109,7 +117,7 @@ const router = createBrowserRouter([
           },
           {
             path: "beproject",
-            element: <BEProject/>
+            element: <BEProject />
           },
           {
             path: "investmentCompleted",
