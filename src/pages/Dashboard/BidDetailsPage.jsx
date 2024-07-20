@@ -8,7 +8,7 @@ import vectorImage from "../../assets/images/Vector.png";
 import starImage from "../../assets/images/star.png";
 import filledstar from "../../assets/images/filledstars.png"
 import { useState } from 'react'
-
+import { Navigate } from 'react-router-dom'
 export const BidsDetailsPage = () => {
 
     const review = [
@@ -179,7 +179,7 @@ export const BidsDetailsPage = () => {
                 <div className='flex flex-col gap-8' >
                     <div className='flex flex-row justify-between items-center font-poppins font-semibold '>
                         <p className='text-gray-1 lg:text-xl text-base'>Leaderboard</p>
-                        <button className='text-custom-blue text-sm hover:text-blue-500 hover:scale-105'>View all</button>
+                        <button onClick={()=>{navigate("/dashboard/results")}} className='text-custom-blue text-sm hover:text-blue-500 hover:scale-105'>View all</button>
                     </div>
 
 
@@ -200,6 +200,7 @@ export const BidsDetailsPage = () => {
                         </div>
                         <div className='lg:w-1/4'>
                             <OutlineButton
+                            onClick={()=>{navigate("/dashboard/results")}}
                                 className={"!text-sm"}
                                 title={"View all"}
                             />

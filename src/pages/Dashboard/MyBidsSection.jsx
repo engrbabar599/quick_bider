@@ -1,9 +1,10 @@
 import React from 'react'
 import { OutlineButton } from '../../components/OutlineButton'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import IMAGES from '../../assets/IMAGES'
-
+import { Navigate } from 'react-router-dom'
 export const MyBidsSection = () => {
+    const navigate = useNavigate();
     return (
         <div className='lg:col-span-3 flex flex-col lg:gap-8 gap-5'>
 
@@ -13,7 +14,7 @@ export const MyBidsSection = () => {
                     <span className='text-custom-blue lg:text-base font-normal'>(3 active)</span>
                 </div>
 
-                <button className='text-custom-blue hover:scale-105 hover:text-blue-500 text-sm '>
+                <button onClick={()=>{navigate("/mybids")}} className='text-custom-blue hover:scale-105 hover:text-blue-500 text-sm '>
                     View all
                 </button>
 
@@ -43,6 +44,7 @@ export const MyBidsSection = () => {
                         </div>
                         <div>
                             <OutlineButton
+                            onClick={()=>{navigate("/mybids/bidDetails")}}
                                 className={"!text-sm"}
                                 title={"View Details"}
                             // onClick={}
@@ -55,7 +57,7 @@ export const MyBidsSection = () => {
                     </p>
 
 
-                    <div className='flex flex-wrap p-4 bg-custom-gray rounded-2xl lg:gap-4 divide-x w-full items-center justify-center gap-y-5 '>
+                    <div className='flex flex-wrap lg:flex-nowrap p-4 bg-custom-gray rounded-2xl lg:gap-4 divide-x w-full items-center justify-center gap-y-5 '>
                         <div className='flex flex-col items-center justify-between gap-3 lg:w-1/3 w-2/4'>
                             <h5 className='text-custom-blue text-xl font-semibold'>
                                 $500.00

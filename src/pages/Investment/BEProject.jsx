@@ -5,8 +5,17 @@ import { useState } from "react";
 import { Button } from "../../components/Button";
 import { OutlineButton } from "../../components/OutlineButton";
 import { navigate, useNavigate } from "react-router-dom";
+import filledstar from "../../assets/images/filledstars.png"
 
 function BEProject() {
+
+  const [activeReview, setActiveReview] = useState("review")
+
+  const handleClick = (item) =>{
+    setActiveReview(item)
+  }
+
+
   const review = [
     {
       name: "jones",
@@ -216,7 +225,7 @@ function BEProject() {
           </div>
         </div>
         <div className="rightpart col-span-12 md:col-span-5 pt-6">
-          <div className="">
+          {/* <div className="">
             <div className="flex justify-between items-center gap-4">
               <div className="">
                 <h1 className="md:text-2xl font-poppins text-gray-1 font-semibold min-w-max">All Reviews</h1>
@@ -269,7 +278,107 @@ function BEProject() {
                 </div>
               );
             })}
-          </div>
+          </div> */}
+           <div className="">
+                <div className=" flex justify-between items-center gap-4">
+                  <div className="">
+                    <h1 className="text-2xl font-poppins text-gray-1 font-semibold min-w-max">All Reviews</h1>
+                  </div>
+                  <div className="w-full border-b-2"></div>
+                  <div className="text-custom-blue min-w-max">
+                    <button className="text-base font-semibold font-poppins hover:scale-105 hover:text-blue-500">View all</button>
+                  </div>
+                </div>
+                <div className="flex gap-4 pt-4 items-center">
+                  <div>
+                    <button
+                    onClick={()=>{handleClick("review")}}
+                      title={"All reviews"}
+                      className={`px-5 py-3 text-sm font-semibold font-poppins rounded-xl ${(activeReview === "review")? "text-white bg-custom-blue" : " text-custom-blue border-custom-blue border bg-white"} `}
+                    >
+                      All review
+                      </button>
+                  </div>
+                  <div>
+                    <button
+                    onClick={()=>{handleClick("writeReview")}}
+                      className={` px-5 py-3 text-sm font-semibold font-poppins rounded-xl ${(activeReview === "writeReview")? "text-white bg-custom-blue" : " text-custom-blue border-custom-blue border bg-white"}`}
+                      title={"Write a review"}
+                    >
+                      Write a review
+                    </button>
+                  </div>
+                </div>
+                {activeReview === "review" && (
+                  <>
+                  {review.map((value, i) => {
+                    return (
+                      <>
+                        <div className="border p-3 rounded-xl shadow my-4">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-4">
+                              <div className="icon">
+                                <p>
+                                  <img src={vectorImage} alt="" />
+                                </p>
+                              </div>
+                              <div>
+                                <h1 className="text-xl font-semibold font-poppins">
+                                  Jonas Sousa
+                                </h1>
+                                <p className="opacity-65 text-base font-normal font-poppins">Investor</p>
+                              </div>
+                            </div>
+                            <div>
+                              <img src={starImage} alt="" />
+                            </div>
+                          </div>
+                          <div className="pt-4">
+                            <p className=" text-sm font-normal font-poppins text-gray-4">
+                              I didn't know the first thing about investing. This
+                              book helped me understand some basic topics. It even
+                              taught me who to be careful with when taking advice
+                              about investing, wink wink youtube gurus. I
+                              recommend this book to anyone trying to understand
+                              the stock market before investing.
+                            </p>
+                          </div>
+                        </div>
+                      </>
+                    );
+                  })}
+                  </>
+                )}
+                {activeReview === "writeReview" && (
+                  <>
+                <div className="writeAreview">
+                  <div className="py-5">
+                    <h1 className=" text-lg font-normal font-poppins text-[#000000]">
+                    How much do you like us?
+                    </h1>
+                  </div>
+                  <div className="pb-5">
+                    <img src={filledstar} alt="" />
+                  </div>
+                  <div>
+                    <label htmlFor="review" className="text-base font-medium font-poppins text-gray-1">Write a review</label>
+                    <textarea name="" id="review" className=" w-full outline-none border rounded-xl p-3 mt-2" rows={5}></textarea>
+                  </div>
+                  <div className="text-center p-4">
+                  <button
+                      className={` px-5 py-3 text-sm font-semibold font-inter rounded-xl ${(activeReview === "writeReview")? "text-white bg-custom-blue" : " text-custom-blue border-custom-blue border bg-white"}`}
+                      title={"Write a review"}
+                    >
+                      Submit review
+                    </button>
+                  </div>
+                </div>
+                  </>
+                )}
+              </div>
+
+
+
         </div>
       </div>
     </div>

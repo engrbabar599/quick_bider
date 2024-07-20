@@ -11,7 +11,7 @@ export const TrendingAuction = () => {
                 <h3 className='text-gray-1  lg:text-xl text-base'>
                     Trending Auctions
                 </h3>
-                <button className='text-custom-blue lg:text-base text-sm hover:text-blue-500 cursor-pointer hover:scale-105'>
+                <button onClick={()=>{navigate("/auction")}} className='text-custom-blue lg:text-base text-sm hover:text-blue-500 cursor-pointer hover:scale-105'>
                     View all
                 </button>
             </div>

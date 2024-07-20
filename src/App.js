@@ -25,6 +25,7 @@ import BidResult from "./pages/My Bids/BidResult";
 import InvestmentCompleted from "./pages/Investment/InvestmentCompleted";
 import LandingPage from "./pages/Landing Page/LandingPage";
 import BEProject from "./pages/Investment/BEProject";
+import ReactionsPopUp from "./pages/Dashboard/ReactionsPopUp";
 
 export const Layout = () => {
   const { pathname } = useLocation()
@@ -48,6 +49,7 @@ export const Layout = () => {
 }
 
 const router = createBrowserRouter([
+ 
   {
     path: "/login",
     element: <Login />,
@@ -79,6 +81,10 @@ const router = createBrowserRouter([
           {
             path: "bids",
             element: <BidsDetailsPage />
+          },
+          {
+            path: "reaction",
+            element: <ReactionsPopUp/>
           },
 
         ]

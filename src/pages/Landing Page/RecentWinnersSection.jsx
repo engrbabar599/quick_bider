@@ -62,8 +62,19 @@ import React from 'react';
 import { TrophyIcon } from '../../assets/svgs/TrophyIcon';
 import { OutlineButton } from '../../components/OutlineButton';
 import womanImage from "../../assets/images/woman.png";
-
+import { useState } from 'react';
+import ReactionsPopUp from '../Dashboard/ReactionsPopUp';
 export const RecentWinnersSection = () => {
+    const [showPopup, setShowPopup] = useState(false);
+
+  const handleShowPopup = () => {
+    setShowPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
     return (
 
         <div className='gap-8 grid lg:grid-cols-12'>
@@ -96,9 +107,11 @@ export const RecentWinnersSection = () => {
                             <div className='w-full px-5'>
                                 {/* Assuming OutlineButton is a component */}
                                 <OutlineButton
+                                    onClick={handleShowPopup} 
                                     title={"Send reaction"}
                                     className={"!py-2.5 !px-4 w-full lg:w-[189px] !text-xs lg:!text-sm font-semibold font-poppins"}
                                 />
+                                 {showPopup && <ReactionsPopUp  onClose={handleClosePopup}  />}
                             </div>
                         </div>
                     </div>

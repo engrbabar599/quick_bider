@@ -4,8 +4,30 @@ import { TrophyIcon } from '../../assets/svgs/TrophyIcon'
 import { OutlineButton } from '../../components/OutlineButton'
 import { StarIcon } from '../../assets/svgs/StarIcon'
 import { useNavigate } from 'react-router-dom'
+import ReactionsPopUp from "./ReactionsPopUp";
+import { useState } from 'react'
 
 export const RecentWinnersSection = () => {
+
+    const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+
+  const closeDialog = () => {
+    setIsVisible(false);
+  };
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleShowPopup = () => {
+    setShowPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
     const navigate = useNavigate()
     return (
         <div className='flex flex-col w-full gap-8 lg:col-span-4'>
@@ -15,7 +37,7 @@ export const RecentWinnersSection = () => {
                 </h3>
                 <div className='border-[#F5F5F5] border-2 w-full'></div>
                 <button
-                    onClick={() => navigate("results")}
+                    onClick={() => navigate("/dashboard/results")}
                     className='text-custom-blue text-sm min-w-max hover:text-blue-500 hover:scale-105'>
                     All winners
                 </button>
@@ -59,12 +81,14 @@ export const RecentWinnersSection = () => {
 
                             </div>
 
-                            <div className='flex flex-col items-center justify-center space-y-1'>
-                                <div>
+                            <div  className='flex flex-col items-center justify-center space-y-1'>
+                                <div >
                                     <OutlineButton
+                                       onClick={handleShowPopup} 
                                         title={"Send reaction"}
                                         className={" !text-sm !py-2.5 !px-4"}
                                     />
+                                      {showPopup && <ReactionsPopUp  onClose={handleClosePopup}  />}
                                 </div>
 
                                 <div className='flex flex-row space-x-1'>

@@ -40,7 +40,7 @@ import { ArrowRight } from "../../assets/svgs/ArrowRight"
 import blueBase from "../../assets/images/bluseBase.png"
 import { useNavigate } from "react-router-dom";
 import mission from "../../assets/images/mission.png"
-
+import { Navigate } from "react-router-dom";
 function LandingPage() {
   const navigate = useNavigate();
   const [tabActive, setTabActive] = useState("home");
@@ -62,6 +62,12 @@ function LandingPage() {
     navigate("/investments")
   }
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
 
   return (
     <>
@@ -215,7 +221,7 @@ function LandingPage() {
         {tabActive === "home" && (
           <>
             <div className="firstcarpart relative flex flex-col lg:flex-row items-center justify-between mx-auto p-4 lg:p-0">
-              <div className="relative textpart w-full xl:w-[35%] mx-auto xl:ml-40 lg:w-[50%] lg:ml-24 text-center lg:text-left">
+              <div className="relative textpart w-full xl:w-[40%] mx-auto xl:ml-40 lg:w-[50%] lg:ml-24 text-center lg:text-left">
                 <h1 className="text-[32px] lg:text-[54px] font-bold font-inter text-gray-1 mx-auto pt-5 md:pt-0">
                   Your <span className="text-[32px] lg:text-[54px] font-bold font-inter text-gray-1 relative">Winning <img src={blueLine} alt="" className=" absolute top-10 lg:top-16 right-0" /></span> Streak Starts Here
                   
@@ -224,10 +230,10 @@ function LandingPage() {
                   Betting at QuickBider is simple and accessible. With just $2 per bid, you have multiple chances to participate and win.
                 </p>
                 <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-6">
-                  <button className="bg-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-white">
+                  <button onClick={() => { navigate("/dashboard/bids") }} className="bg-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-white">
                     Bid now
                   </button>
-                  <button onClick={()=>{navigate("/investments/beproject")}} className="border border-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
+                  <button onClick={()=>{navigate("/investments/beproject")}} className="border border-custom-blue hover:bg-custom-blue hover:text-white w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
                     Invest
                   </button>
                 </div>
@@ -257,11 +263,11 @@ function LandingPage() {
                 />
               </div> */}
 
-<div className="relative w-full lg:w-[50%] h-[60vh] lg:h-[90vh] flex items-center justify-start bg-[#f0f4fe] mt-6 lg:mt-0 hidden lg:block">
+<div className="relative w-full lg:w-[50%] h-[60vh] lg:h-[90vh] lg:flex items-center justify-start bg-[#f0f4fe] mt-6 lg:mt-0 hidden ">
   <img
     src={circle}
     alt="Circle"
-    className="absolute top-8 lg:top-32 right-1/4 lg:right-40 w-1/3 lg:w-auto"
+    className="hidden 2xl:block absolute top-8 lg:top-32 right-1/4 lg:right-40 w-1/3 lg:w-auto"
   />
   <div className="relative w-full h-full flex items-center justify-center">
     <img
@@ -272,7 +278,7 @@ function LandingPage() {
     <img
       src={carImage}
       alt="Car"
-      className="absolute top-24 2xl:top-24 xl:top-24 xl:right-32 lg:right-0 w-[500px] xl:w-[699px]"
+      className="absolute top-24 2xl:top-28 2xl:right-28 xl:top-16 xl:right-16 lg:right-0 w-[500px] xl:w-[699px]"
     />
   </div>
   <img
@@ -307,7 +313,7 @@ function LandingPage() {
                 />
               </div>
               <div className="text-center py-6">
-                <button className="border text-custom-blue border-custom-blue rounded-xl w-[160px] px-[24px] py-[14px] text-base font-medium font-poppins">
+                <button  onClick={() => { navigate("/dashboard/bids") }} className="border text-custom-blue border-custom-blue rounded-xl w-[160px] px-[24px] py-[14px] text-base font-medium font-poppins">
                   View all
                 </button>
               </div>
@@ -372,7 +378,7 @@ function LandingPage() {
                 <RecentWinnersSection />
               </div>
               <div className="text-center py-6 lg:py-12">
-                <button className="border text-custom-blue border-custom-blue rounded-xl w-[160px] px-[16px] lg:px-[24px] py-[12px] lg:py-[14px] text-xs lg:text-base font-medium font-poppins">
+                <button   onClick={() => navigate("/dashboard/results")} className="border text-custom-blue hover:bg-custom-blue hover:text-white border-custom-blue rounded-xl w-[160px] px-[16px] lg:px-[24px] py-[12px] lg:py-[14px] text-xs lg:text-base font-medium font-poppins">
                   View all
                 </button>
               </div>
@@ -383,7 +389,7 @@ function LandingPage() {
 
 
             <div className="smartInvestment bg-[#E0E0E033] py-10">
-              <div className="flex flex-col lg:flex-row items-center w-[90%] lg:w-[80%] mx-auto">
+              <div className="flex flex-col lg:flex-row gap-10 items-center w-[90%] lg:w-[80%] mx-auto">
                 <div className="relative mb-6 lg:mb-0 lg:mr-6">
                   <img src={moneyImage} alt="" className="w-full h-auto" />
                   <img
@@ -397,7 +403,7 @@ function LandingPage() {
                     alt=""
                   />
                 </div>
-                <div className="w-full lg:w-[45%] mx-auto text-center lg:text-left">
+                <div className="w-full lg:w-[50%] mx-auto text-center lg:text-left">
                   <h1 className=" lg:text-[54px] font-bold font-inter text-gray-1">
                     Smart <span className="lg:text-[54px] font-bold font-inter text-gray-1 relative">Investments <img src={blueline2} className=" absolute left-5 top-5 lg:top-14" alt="" /></span>  for Smart Returns
                    
@@ -425,7 +431,7 @@ function LandingPage() {
               <div className="">
                 <Project />
                 <div className="text-center mt-10">
-                  <button className="border text-custom-blue border-custom-blue rounded-xl w-[160px] px-[24px] py-[14px] text-base font-medium font-poppins hover:bg-custom-blue hover:text-white">
+                  <button onClick={()=>{navigate("/investments")}} className="border text-custom-blue border-custom-blue rounded-xl w-[160px] px-[24px] py-[14px] text-base font-medium font-poppins hover:bg-custom-blue hover:text-white">
                     View all
                   </button>
                 </div>
@@ -501,7 +507,7 @@ function LandingPage() {
 
             <div className="newsLatter h-auto lg:h-[80vh] flex items-center justify-center py-10">
               <div className="bg-custom-blue rounded-3xl w-[90%] lg:w-[80%] mx-auto p-10">
-                <div className="w-[90%] lg:w-[50%] text-center mx-auto">
+                <div className="w-[90%] lg:w-[60%] 2xl:w-[30%] text-center mx-auto">
                   <h1 className=" text-white md:text-[40px] font-bold font-inter text-center">
                     Subscribe to Our Newsletter For Weekly Article Update.
                   </h1>
@@ -588,7 +594,7 @@ function LandingPage() {
                         className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Investments
                       </h3>
-                      <h3 onClick={() => handleClick("about")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
+                      <h3  onClick={() => handleClick("about")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         About us
                       </h3>
                       <h3 onClick={() => handleClick("home")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
