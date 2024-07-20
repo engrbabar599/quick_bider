@@ -192,7 +192,7 @@ export const BidDetailsSection = () => {
                     <div className='flex flex-row justify-between items-center font-poppins font-semibold '>
                         <p className='text-gray-1 lg:text-xl text-base'>Leaderboard</p>
                         <button
-                            // onClick={() => navigate("results")}
+                            onClick={() => navigate("/dashboard/results")}
                             className='text-custom-blue text-sm hover:text-blue-500 hover:scale-105'>View all</button>
                     </div>
 
@@ -214,6 +214,7 @@ export const BidDetailsSection = () => {
                         </div>
                         <div className='lg:w-1/4'>
                             <OutlineButton
+                            onClick={() => navigate("/dashboard/results")}
                                 className={"!text-sm"}
                                 title={"View all"}
                             />

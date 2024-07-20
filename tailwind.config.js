@@ -11,6 +11,7 @@ module.exports = {
         "dm-sans": ["DM Sans"],
         "Work-sans": ["Work Sans"],
         "hk-grotesk": ["Hanken Grotesk"],
+        "roboto": ["Roboto"]
       },
       colors: {
         "custom-red": "#F43A3A",
