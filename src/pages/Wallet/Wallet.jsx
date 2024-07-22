@@ -101,7 +101,7 @@ const Wallet = () => {
           Wallet
         </h2>
         <div className="bg-white shadow rounded-xl border px-5 py-6 md:py-12">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center flex-wrap">
             <div>
               <p className="xs:text-2xl md:text-[64px] xs:font-semibold text-gray-1 font-poppins">
                 $12500.00
@@ -110,7 +110,7 @@ const Wallet = () => {
                 Current Balance
               </p>
             </div>
-            <div className="flex flex-col md:flex-row gap-3">
+            <div className="flex flex-col gap-3">
               <div>
                 <button
                   onClick={toggleVisibility}

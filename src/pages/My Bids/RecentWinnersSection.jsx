@@ -140,9 +140,11 @@ export const RecentWinnersSection = () => {
                         <div className='flex flex-col items-center justify-center space-y-1'>
                             <div>
                                 <OutlineButton
+                                     onClick={handleShowPopup} 
                                     title={"Send reaction"}
                                     className={" !text-sm !py-2.5 !px-4"}
                                 />
+                                {showPopup && <ReactionsPopUp  onClose={handleClosePopup}  />}
                             </div>
 
                             <div className='flex flex-row space-x-1'>

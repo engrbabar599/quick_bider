@@ -20,7 +20,7 @@ function ClaimNow({ onClose }) {
           </div>
           <div className="flex justify-between md:mb-6"></div>
           <form onSubmit={handleSubmit}>
-            <div className="xs:w-[80vw] md:w-[50vw] lg:w-[30vw]">
+            <div className=" md:w-[50vw] lg:w-[30vw]">
               <h2 className="lg:text-[28px] xs:text-base text-xl font-semibold mb-4 text-center">
                 Claim now
               </h2>
@@ -30,6 +30,7 @@ function ClaimNow({ onClose }) {
                 <Input
                   id="full-name"
                   placeholder="Type full name"
+                  
                 />
               </div>
               <div className="mb-4">
