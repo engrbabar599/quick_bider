@@ -165,7 +165,7 @@ function BEProject() {
               </div>
               <div className="w-full border-b-2"></div>
               <div className="text-custom-blue min-w-max">
-                <button className="font-semibold hover:scale-105 hover:text-blue-500 font-poppins xs:text-xs md:text-base">View all</button>
+                <button onClick={() => { navigate("/investments/allinvesters") }} className="font-semibold hover:scale-105 hover:text-blue-500 font-poppins xs:text-xs md:text-base">View all</button>
               </div>
             </div>
             <div className="pt-5">
@@ -286,7 +286,7 @@ function BEProject() {
               </div>
               <div className="w-full border-b-2"></div>
               <div className="text-custom-blue min-w-max">
-                <button className="text-base font-semibold font-poppins hover:scale-105 hover:text-blue-500">View all</button>
+                <button onClick={() => { navigate("/investments/allreviews") }} className="text-base font-semibold font-poppins hover:scale-105 hover:text-blue-500">View all</button>
               </div>
             </div>
             <div className="flex gap-4 pt-4 items-center">

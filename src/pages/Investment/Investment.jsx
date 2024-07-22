@@ -7,6 +7,7 @@ import { useState } from "react";
 import filledstar from "../../assets/images/filledstars.png"
 import Employees from "./Employees";
 import { Line } from "react-chartjs-2";
+import { Navigate, useNavigate } from "react-router-dom";
 // import CardSection from "./CardSection";
 import { BalanceGraph } from "../Dashboard/BalanceGraph"
 import {
@@ -173,6 +174,8 @@ const Investment = () => {
   const handleClick = (item) =>{
     setActiveReview(item)
   }
+
+  const navigate = useNavigate()
   return (
     <>
       <div className="md:p-5">
@@ -279,7 +282,7 @@ const Investment = () => {
                   </div>
                   <div className=" w-full border-b-2"></div>
                   <div className="text-custom-blue min-w-max">
-                    <button className=" font-semibold hover:scale-105 hover:text-blue-500 font-poppins text-base">View all</button>
+                    <button onClick={()=>{navigate("/investments/allinvesters")}} className=" font-semibold hover:scale-105 hover:text-blue-500 font-poppins text-base">View all</button>
                   </div>
                 </div>
                 <div className="pt-5">
@@ -314,7 +317,7 @@ const Investment = () => {
                   </div>
                   <div className="w-full border-b-2"></div>
                   <div className="text-custom-blue min-w-max">
-                    <button className="text-base font-semibold font-poppins hover:scale-105 hover:text-blue-500">View all</button>
+                    <button onClick={()=>{navigate("/investments/allreviews")}} className="text-base font-semibold font-poppins hover:scale-105 hover:text-blue-500">View all</button>
                   </div>
                 </div>
                 <div className="flex gap-4 pt-4 items-center">

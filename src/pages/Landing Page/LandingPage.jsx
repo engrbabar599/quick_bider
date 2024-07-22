@@ -76,6 +76,18 @@ function LandingPage() {
     });
   }
 
+  const handleabout = () => {
+    handleClick("about")
+    handleScrollToTop()
+  }
+  const handlehome = () => {
+    handleClick("home")
+    handleScrollToTop()
+  }
+  const handlecontact = () => {
+    handleClick("contact")
+    handleScrollToTop()
+  }
   return (
     <>
       <div className="landingpage">
@@ -299,7 +311,6 @@ function LandingPage() {
 
             </div>
 
-
             <div className="trending actions lg:w-[80%] mx-auto relative">
               <div className="text-center mt-8 lg:mt-24 text-gray-1">
                 <h1 className="lg:text-[54px] font-bold font-inter text-gray-1">
@@ -325,7 +336,6 @@ function LandingPage() {
                 </button>
               </div>
             </div>
-
 
             <div className="blueRectangle w-[90%] lg:w-[80%] mx-auto py-10 lg:py-16">
               <div className="bg-custom-blue rounded-xl px-8 lg:px-[64px] py-8 lg:py-[32px]">
@@ -370,11 +380,6 @@ function LandingPage() {
               </div>
             </div>
 
-
-
-
-
-
             <div className="recentWinners w-full lg:w-[90%] mx-auto p-4 lg:p-0">
               <div className="text-center">
                 <h1 className="text-[32px] lg:text-[54px] font-bold font-inter text-gray-1">
@@ -391,22 +396,18 @@ function LandingPage() {
               </div>
             </div>
 
-
-
-
-
             <div className="smartInvestment bg-[#E0E0E033] py-10">
               <div className="flex flex-col lg:flex-row gap-10 items-center w-[90%] lg:w-[80%] mx-auto">
                 <div className="relative mb-6 lg:mb-0 lg:mr-6">
                   <img src={moneyImage} alt="" className="w-full h-auto" />
                   <img
                     src={circle2}
-                    className="absolute top-0 left-14 w-12 h-12 lg:w-16 lg:h-16"
+                    className="absolute top-0 left-24 w-12 h-12 lg:w-16 lg:h-16"
                     alt=""
                   />
                   <img
                     src={circle2}
-                    className="absolute bottom-0 right-14 w-12 h-12 lg:w-16 lg:h-16"
+                    className="absolute bottom-0 right-24 w-12 h-12 lg:w-16 lg:h-16"
                     alt=""
                   />
                 </div>
@@ -425,10 +426,6 @@ function LandingPage() {
               </div>
             </div>
 
-
-
-
-
             <div className="upcominginvestments w-[90%] lg:w-[90%] mx-auto min-h-screen py-20">
               <div className="text-center">
                 <h1 className="text-2xl lg:text-[54px] font-bold font-inter text-gray-1">
@@ -444,9 +441,6 @@ function LandingPage() {
                 </div>
               </div>
             </div>
-
-
-
 
             <div className="testimonials bg-[#d2eaff] py-10">
               <div className="text-center mb-10">
@@ -509,9 +503,6 @@ function LandingPage() {
               </div>
             </div>
 
-
-
-
             <div className="newsLatter h-auto lg:h-[80vh] flex items-center justify-center py-10">
               <div className="bg-custom-blue rounded-3xl w-[90%] lg:w-[80%] mx-auto p-10">
                 <div className="w-[90%] lg:w-[60%] 2xl:w-[30%] text-center mx-auto">
@@ -544,15 +535,9 @@ function LandingPage() {
               </div>
             </div>
 
-
-
-
-
-
             <div className="banner">
               <img src={banner} className=" w-[100vw]" alt="" />
             </div>
-
 
             <div className="footer py-10 bg-[#e0e0e0]">
               <div className="w-[90vw] lg:w-[80vw] mx-auto">
@@ -588,7 +573,7 @@ function LandingPage() {
                       </h1>
                     </div>
                     <div className="flex flex-col gap-3 lg:gap-5 pt-3 lg:pt-5">
-                      <h3 onClick={() => handleClick("home")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
+                      <h3 onClick={handlehome} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Home
                       </h3>
                       <h3
@@ -601,10 +586,10 @@ function LandingPage() {
                         className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Investments
                       </h3>
-                      <h3 onClick={() => handleClick("about")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
+                      <h3 onClick={handleabout} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         About us
                       </h3>
-                      <h3 onClick={() => handleClick("home")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
+                      <h3 onClick={handlecontact} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Contact us
                       </h3>
                     </div>
@@ -660,7 +645,7 @@ function LandingPage() {
                   Welcome to QUICK BIDER, where we revolutionized the traditional auction scene since our inception in 2020. Born from a desire to integrate excitement with opportunity, our platform has redefined the auction process, making it more dynamic and accessible to everyone. From our humble beginnings with a small but dedicated team, we quickly escalated into a reputable platform, hosting thousands of auctions and attracting participants from across the globe. As we continue to grow, our commitment to innovation remains strong, evidenced by the continuous enhancements to our platform and services.
                 </p>
                 <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-6">
-                  <button className="bg-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-white">
+                  <button onClick={() => { navigate("/dashboard/bids") }} className="bg-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-white">
                     Bid now
                   </button>
                   <button onClick={() => { navigate("/investments/beproject") }} className="border border-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
@@ -676,7 +661,7 @@ function LandingPage() {
                 />
                 <img
                   src={blueBase}
-                  className="absolute top-[260px] lg:top-[430px] object-cover w-full lg:w-auto"
+                  className="absolute top-[260px] right-40 lg:top-[430px] object-cover w-full lg:w-auto hidden xl:block"
                   alt=""
                 />
                 <img
@@ -872,7 +857,7 @@ function LandingPage() {
                       </h1>
                     </div>
                     <div className="flex flex-col gap-3 lg:gap-5 pt-3 lg:pt-5">
-                      <h3 onClick={() => handleClick("home")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
+                      <h3 onClick={handlehome} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Home
                       </h3>
                       <h3
@@ -885,10 +870,10 @@ function LandingPage() {
                         className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Investments
                       </h3>
-                      <h3 onClick={() => handleClick("about")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
+                      <h3 onClick={handleabout} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         About us
                       </h3>
-                      <h3 onClick={() => handleClick("contact")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
+                      <h3 onClick={handlecontact} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Contact us
                       </h3>
                     </div>
@@ -1079,7 +1064,7 @@ function LandingPage() {
                       </h1>
                     </div>
                     <div className="flex flex-col gap-3 lg:gap-5 pt-3 lg:pt-5">
-                      <h3 onClick={() => handleClick("home")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
+                      <h3 onClick={handlehome} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Home
                       </h3>
                       <h3
@@ -1092,10 +1077,10 @@ function LandingPage() {
                         className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Investments
                       </h3>
-                      <h3 onClick={() => handleClick("about")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer  ">
+                      <h3 onClick={handleabout} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer  ">
                         About us
                       </h3>
-                      <h3 onClick={() => handleClick("contact")} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
+                      <h3 onClick={handlecontact} className="text-base lg:text-lg font-normal font-Work-sans cursor-pointer">
                         Contact us
                       </h3>
                     </div>

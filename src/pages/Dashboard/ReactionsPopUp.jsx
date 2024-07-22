@@ -40,28 +40,28 @@ export default function ReactionsPopUp({ onClose }) {
                     </div>
                     <div className="pt-9 px-5">
                       <div className="flex items-center justify-center flex-wrap gap-6">
-                        <div className="bg-[#e2ebff] rounded-full">
-                          <h1 onClick={()=>{handleColor('green1')}} className={` cursor-pointer text-sm font-normal font-roboto text-gray-1 px-[15px] py-[7px] ${(popupColor === 'green1')? "bg-sky-400 rounded-full" : "bg-[#e2ebff] rounded-full"}`}>
+                        <div className="bg-[#e2ebff] cursor-pointer rounded-full">
+                          <h1 onClick={()=>{handleColor('green1')}} className={` cur text-sm font-normal font-roboto text-gray-1 px-[15px] py-[7px] ${(popupColor === 'green1')? "bg-sky-400 rounded-full" : "bg-[#e2ebff] rounded-full"}`}>
                             Wow! that’s great
                           </h1>{" "}
                         </div>
-                        <div className="bg-[#e2ebff] rounded-full">
-                          <h1  onClick={()=>{handleColor('green2')}} className={` cursor-pointer text-sm font-normal font-roboto text-gray-1 px-[15px] py-[7px] ${(popupColor === 'green2')? "bg-sky-400 rounded-full" : "bg-[#e2ebff] rounded-full"}`}>
+                        <div className="bg-[#e2ebff] cursor-pointer rounded-full">
+                          <h1  onClick={()=>{handleColor('green2')}} className={` cur text-sm font-normal font-roboto text-gray-1 px-[15px] py-[7px] ${(popupColor === 'green2')? "bg-sky-400 rounded-full" : "bg-[#e2ebff] rounded-full"}`}>
                           Awesome
                           </h1>{" "}
                         </div>
-                        <div className="bg-[#e2ebff] rounded-full">
-                          <h1  onClick={()=>{handleColor('green3')}} className={` cursor-pointer text-sm font-normal font-roboto text-gray-1 px-[15px] py-[7px] ${(popupColor === 'green3')? "bg-sky-400 rounded-full" : "bg-[#e2ebff] rounded-full"}`}>
+                        <div className="bg-[#e2ebff] cursor-pointer rounded-full">
+                          <h1  onClick={()=>{handleColor('green3')}} className={` cur text-sm font-normal font-roboto text-gray-1 px-[15px] py-[7px] ${(popupColor === 'green3')? "bg-sky-400 rounded-full" : "bg-[#e2ebff] rounded-full"}`}>
                           Wow
                           </h1>{" "}
                         </div>
-                        <div className="bg-[#e2ebff] rounded-full">
-                          <h1  onClick={()=>{handleColor('green4')}} className={` cursor-pointer text-sm font-normal font-roboto text-gray-1 px-[15px] py-[7px] ${(popupColor === 'green4')? "bg-sky-400 rounded-full" : "bg-[#e2ebff] rounded-full"}`}>
+                        <div className="bg-[#e2ebff] cursor-pointer rounded-full">
+                          <h1  onClick={()=>{handleColor('green4')}} className={` cur text-sm font-normal font-roboto text-gray-1 px-[15px] py-[7px] ${(popupColor === 'green4')? "bg-sky-400 rounded-full" : "bg-[#e2ebff] rounded-full"}`}>
                           Wonderful
                           </h1>{" "}
                         </div>
-                        <div className="bg-[#e2ebff] rounded-full">
-                          <h1  onClick={()=>{handleColor('green5')}} className={` cursor-pointer text-sm font-normal font-roboto text-gray-1 px-[15px] py-[7px] ${(popupColor === 'green5')? "bg-sky-400 rounded-full" : "bg-[#e2ebff] rounded-full"}`}>
+                        <div className="bg-[#e2ebff] cursor-pointer rounded-full">
+                          <h1  onClick={()=>{handleColor('green5')}} className={` cur text-sm font-normal font-roboto text-gray-1 px-[15px] py-[7px] ${(popupColor === 'green5')? "bg-sky-400 rounded-full" : "bg-[#e2ebff] rounded-full"}`}>
                           Amazing
                           </h1>{" "}
                         </div>
@@ -74,7 +74,7 @@ export default function ReactionsPopUp({ onClose }) {
                         onClick={nextStep}
                         className="w-full py-3 bg-custom-blue text-sm text-white font-semibold font-inter rounded-xl"
                       >
-                       Send
+                       Send reaction
                       </button>
                     </div>
                   </div>
@@ -89,18 +89,18 @@ export default function ReactionsPopUp({ onClose }) {
                     </div>
                     <div className="w-3/4 mx-auto">
                       <h1 className="text-base font-medium font-poppins text-gray-700 mb-2">
-                        Investments activated successfully!
+                        Reaction submited successfully!
                       </h1>
-                      <p className="text-sm font-normal font-poppins text-gray-400">
+                      {/* <p className="text-sm font-normal font-poppins text-gray-400">
                         You can now invest on our portal for easy returns.
-                      </p>
+                      </p> */}
                     </div>
                     <div className="flex items-center justify-center py-2">
                       <button
                         onClick={onClose}
                         className="bg-custom-blue w-48 px-4 rounded-xl py-3 text-white text-sm font-semibold font-poppins"
                       >
-                        Invest now
+                        close
                       </button>
                     </div>
                   </div>

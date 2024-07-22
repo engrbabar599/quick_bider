@@ -26,6 +26,8 @@ import InvestmentCompleted from "./pages/Investment/InvestmentCompleted";
 import LandingPage from "./pages/Landing Page/LandingPage";
 import BEProject from "./pages/Investment/BEProject";
 import ReactionsPopUp from "./pages/Dashboard/ReactionsPopUp";
+import Allreviews from "./pages/Investment/Allreviews";
+import Allinvesters from "./pages/Investment/Allinvesters";
 import ReactGA from 'react-ga4';
 
 export const Layout = () => {
@@ -128,6 +130,14 @@ const router = createBrowserRouter([
           {
             path: "investmentCompleted",
             element: <InvestmentCompleted />
+          },
+          {
+            path: "allreviews",
+            element: <Allreviews />
+          },
+          {
+            path: "allinvesters",
+            element: <Allinvesters />
           },
         ]
       },
