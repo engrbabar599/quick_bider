@@ -3,9 +3,11 @@ import IMAGES from '../../assets/IMAGES'
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { Link, useNavigate } from 'react-router-dom'
+import { useLoginContext } from '../../Context/LoginContext'
 
 export const Login = () => {
     const navigate = useNavigate()
+    const { setIsLoggedIn } = useLoginContext()
     return (
         <>
             <div className='bg-custom-blue relative z-50 min-h-screen h-fit flex justify-center items-center px-1'>
@@ -45,7 +47,10 @@ export const Login = () => {
                             </div>
                             <Button
                                 title={"Sign In"}
-                                onClick={() => navigate("/dashboard")}
+                                onClick={() => {
+                                    setIsLoggedIn(true)
+                                    navigate("/dashboard")
+                                }}
                             />
 
 
@@ -82,8 +87,6 @@ export const Login = () => {
                                 <Link to="/signup"
                                     className='text-custom-blue hover:text-blue-500'>Sign up now</Link>
                             </div>
-
-
 
 
                         </form>

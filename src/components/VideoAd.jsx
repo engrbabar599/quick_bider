@@ -1,16 +1,24 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactModal from 'react-modal'
 import IMAGES from '../assets/IMAGES'
 import { Button } from './Button'
 
-export const VideoAd = () => {
+export const VideoAd = ({ open, setOpen }) => {
     useEffect(() => {
         setTimeout(() => {
             // setIsOpen(false)
         }, 1000)
     })
+    // const [open, isOpen] = useState(true)
+    // useEffect(() => {
+    //     const rootElement = document.getElementById("root")
+    //     rootElement.appendChild.classList = "overflow-hidden"
+    // })
+
     return (
         <ReactModal
+            shouldCloseOnOverlayClick={true}
+            onRequestClose={() => setOpen(false)}
             style={{
                 content: {
                     width: window.innerWidth >= 768 ? "60%" : "",
@@ -18,7 +26,7 @@ export const VideoAd = () => {
                     borderRadius: "16px"
                 }
             }}
-            isOpen={false}
+            isOpen={open}
 
         >
             <div className='bg-white rounded-xl flex flex-col gap-4 w-full h-full items-center'>

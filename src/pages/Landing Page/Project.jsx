@@ -2,17 +2,10 @@ import React from "react";
 import vectorImage from "../../assets/images/Vector.png"
 import { useState } from "react";
 import { Button } from "../../components/Button";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useLoginContext } from "../../Context/LoginContext";
 
-function Project({hadding, padding, button}) {
-  const navigate = useNavigate()
-  // const [isVisible, setIsVisible] = useState(false);
-
-  // const toggleVisibility = () => {
-  //   setIsVisible(!isVisible);
-  // };
-
-
+function Project({ hadding, padding, button }) {
   const card = [
     {
       pname: "Project 21",
@@ -36,7 +29,11 @@ function Project({hadding, padding, button}) {
     },
   ];
 
-  const [viewdetails , setviewdetails] = useState("view details")
+  const [viewdetails, setviewdetails] = useState("view details")
+  const navigate = useNavigate()
+
+  const { isLoggedIn } = useLoginContext()
+
   return (
     <>
       <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5 py-10">
@@ -79,12 +76,17 @@ function Project({hadding, padding, button}) {
                   </div>
                 </div>
                 <div className="w-[60%] mx-auto flex items-center justify-center py-5 rounded-xl">
-                
-                  <Button
-                  onClick={ (button === viewdetails)? ()=>{navigate("/investments/investmentCompleted")} : ()=>{navigate("/investments/BEProject")}}
-                    title={`${(button === viewdetails)? 'view details' : 'Invest'}`}
-                    className={" text-sm font-medium"}
-                  />
+
+                  <NavLink
+                    to={isLoggedIn ? "/investments/BEProject" : "/login"}
+                  // onClick={(button === viewdetails) ? () => { navigate("/investments/investmentCompleted") } : () => { navigate("/investments/BEProject") }}
+                  // title={`${(button === viewdetails) ? 'view details' : 'Invest'}`}
+                  // className={" text-sm font-medium"}
+                  >
+                    <Button
+                      title={"View details"}
+                    />
+                  </NavLink>
                   {/* {isVisible && <BEProject/>} */}
                 </div>
               </div>

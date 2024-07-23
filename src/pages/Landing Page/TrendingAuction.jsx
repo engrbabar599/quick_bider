@@ -1,16 +1,19 @@
 import React from 'react'
 import { Button } from '../../components/Button'
 import IMAGES from '../../assets/IMAGES'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useLoginContext } from '../../Context/LoginContext'
 
 export const TrendingAuction = () => {
     const navigate = useNavigate()
+    const { isLoggedIn } = useLoginContext()
     return (
         <div className='lg:col-span-2 space-y-4 py-10 w-[90%] mx-auto'>
             <div className='flex  lg:flex-row flex-col gap-12 items-center px-7 lg:px-0 '>
                 {Array(3).fill().map((_, index) => (
-                    <div
-                        onClick={() => { navigate("/dashboard/bids") }}
+                    <NavLink
+                        to={isLoggedIn ? "/dashboard/bids" : "/login"}
+                        key={index}
                         className=' bg-white shadow-[0px_0px_5px_1px_rgba(0,0,0,0.1)]  rounded-xl group lg:hover:scale-105 duration-300 transform ease-in cursor-pointer'>
                         <div className='space-y-4 p-4'>
                             <img src={IMAGES?.mustang} alt="" className='object-contain !rounded-lg ' />
@@ -48,7 +51,7 @@ export const TrendingAuction = () => {
                         </div>
 
 
-                    </div>
+                    </NavLink>
                 ))}
             </div>
         </div>

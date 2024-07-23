@@ -20,9 +20,9 @@ export const Dashboard = () => {
                 <>
                     <div className='grid lg:grid-cols-3  gap-8 w-full'>
 
-                        {/* First Column with thr ad and Bids */}
+                        {/* First Column with the ad and Bids */}
                         <div className='flex flex-col gap-8 lg:col-span-2 items-center justify-center relative'>
-                            <img src={IMAGES?.mainAd} alt="" className='lg:col-span-2' />
+                            <img src={IMAGES?.mainAd} alt="" className='lg:col-span-2 ' />
                             <div>
                                 <h1 className='text-lg font-normal font-poppins text-gray-1 bg-white absolute top-0 right-0 rounded-bl-xl px-4'>Advertisement</h1>
                             </div>
@@ -34,10 +34,10 @@ export const Dashboard = () => {
                         <div className='flex flex-col gap-8 w-full justify-between items-center'>
                             <BalanceGraph />
                             <div className=' relative'>
-                            <img src={IMAGES?.sipAd} alt="" className='object-contain hidden lg:block' />
-                            <div>
-                                <h1 className='text-lg font-normal font-poppins text-gray-1 bg-white absolute top-0 right-0 rounded-bl-xl px-4'>Advertisement</h1>
-                            </div>
+                                <img src={IMAGES?.sipAd} alt="" className='object-contain hidden lg:block' />
+                                <div>
+                                    <h1 className='text-lg font-normal font-poppins text-gray-1 bg-white absolute top-0 right-0 rounded-bl-xl px-4'>Advertisement</h1>
+                                </div>
                             </div>
                         </div>
                     </div>

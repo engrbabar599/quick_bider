@@ -29,6 +29,8 @@ import ReactionsPopUp from "./pages/Dashboard/ReactionsPopUp";
 import Allreviews from "./pages/Investment/Allreviews";
 import Allinvesters from "./pages/Investment/Allinvesters";
 import ReactGA from 'react-ga4';
+import { AboutUsPage } from "./pages/AboutUs";
+import { ContactUsPage } from "./pages/ContactUs";
 
 export const Layout = () => {
   ReactGA.initialize('G-76HVWTY453');
@@ -59,12 +61,10 @@ export const Layout = () => {
 }
 
 const router = createBrowserRouter([
-
   {
     path: "/login",
     element: <Login />,
   },
-
   {
     path: "/signup",
     element: <SignUp />,
@@ -73,6 +73,15 @@ const router = createBrowserRouter([
     path: "/",
     element: <LandingPage />
   },
+  {
+    path: "/about",
+    element: <AboutUsPage />
+  },
+  {
+    path: "/contact",
+    element: <ContactUsPage />
+  },
+
   {
     path: "/",
     element: <Layout />,
