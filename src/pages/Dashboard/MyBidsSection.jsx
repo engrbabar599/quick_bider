@@ -20,7 +20,7 @@ export const MyBidsSection = () => {
 
             </div>
 
-            <div className='bg-white border rounded-2xl shadow-sm lg:p-8 p-4'>
+            <div className='bg-white border rounded-2xl shadow-sm  p-5'>
                 <div className='flex flex-col gap-5 font-poppins'>
 
                     <div className='hidden lg:flex gap-4  flex-row items-center '>
@@ -33,7 +33,7 @@ export const MyBidsSection = () => {
                     <img src={IMAGES?.mybids1} alt="" className='object-contain lg:hidden ' />
 
 
-                    <div className='flex flex-row justify-between items-center font-poppins '>
+                    <div className='flex flex-wrap gap-3 flex-row justify-between items-center font-poppins '>
                         <div className='flex flex-col gap-2 lg:text-xl text-base'>
                             <h5 className='text-gray-1 font-semibold '>
                                 Investment audi

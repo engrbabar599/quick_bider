@@ -1,20 +1,42 @@
 import React from "react";
-import { useState } from "react";
+import { useState , useEffect, useRef  } from "react";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import gallery from "../../assets/images/gallery.png";
 import photo from "../../assets/images/photo.png";
 import crossicon from "../../assets/images/crossIcon.png"
 
-function ClaimNow({ onClose }) {
+function ClaimNow({show, onClose }) {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
+
+  const popupRef = useRef();
+
+  const handleClickOutside = (event) => {
+    if (popupRef.current && !popupRef.current.contains(event.target)) {
+      onClose();
+    }
+  };
+
+  useEffect(() => {
+    if (show) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [show]);
+
+  if (!show) return null
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="flex items-center justify-center">
-        <div className=" relative mx-auto p-8 bg-white rounded-lg shadow-md xs:py-7 md:py-2 w-[90%] md:w-full" >
+        <div ref={popupRef} className=" relative mx-auto p-8 bg-white rounded-lg shadow-md xs:py-7 md:py-2 w-[90%] md:w-full" >
           <div>
             <img onClick={onClose} src={crossicon} className="bg-gray-300 rounded-full absolute right-2 cursor-pointer w-10" alt="" />
           </div>

@@ -1,8 +1,8 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import square from "../../assets/images/square.png";
 
-function Employees() {
+function Employees({show, onClose}) {
   const [step, setStep] = useState(1);
 
   const nextStep = () => {
@@ -18,12 +18,35 @@ function Employees() {
     setDialog(false);
   }
 
+
+  const popupRef = useRef();
+
+  const handleClickOutside = (event) => {
+    if (popupRef.current && !popupRef.current.contains(event.target)) {
+      onClose();
+    }
+  };
+
+  useEffect(() => {
+    if (show) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [show]);
+
+  if (!show) return null
+
   return (
     <div>
       {dialog && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 overflow-scroll">
           <div className="flex items-center justify-center w-full px-4">
-            <div className="mx-auto p-8 bg-white rounded-lg shadow-md  py-1 ">
+            <div ref={popupRef} className="  mx-auto p-8 bg-white rounded-lg shadow-md  py-1 ">
               <div className="flex justify-between mb-6 "></div>
               <form onSubmit={handleSubmit}>
                 {step === 1 && (
@@ -53,7 +76,8 @@ function Employees() {
                       </ul>
                     </div>
                     <div className="flex items-center gap-3 pt-5">
-                      <img src={square} alt="" className="w-5 h-5" />
+                      {/* <img src={square} alt="" className="w-5 h-5" /> */}
+                      <input type="checkbox" className=" w-5 h-5" />
                       <span className="text-xs lg:text-sm font-normal font-poppins text-gray-400">
                         I have read and agree to the Terms of Service
                       </span>
@@ -124,7 +148,7 @@ function Employees() {
                     </div>
                     <div className="flex items-center justify-center py-2">
                       <button
-                        onClick={handleClick}
+                     onClick={onClose}
                         className="bg-custom-blue w-48 px-4 rounded-xl py-3 text-white text-sm font-semibold font-poppins"
                       >
                         Invest now

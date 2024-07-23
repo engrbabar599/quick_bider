@@ -53,8 +53,8 @@ export const SignUp = () => {
                                         id=""
                                         className=' !border-2 border-custom-blue rounded-md appearance-none
                                         checked:bg-custom-blue hover:scale-105 hover:cursor-pointer
-                                        w-6 h-6 outline-none  checked:bg-no-repeat checked:bg-center' />
-                                    <div className='font-poppins text-sm text-gray-4 font-normal flex flex-col md:flex-row space-x-2 '>
+                                        w-5 h-5 outline-none  checked:bg-no-repeat checked:bg-center' />
+                                    <div className='font-poppins text-xs lg:text-sm text-gray-4 font-normal flex flex-col md:flex-row space-x-2 '>
                                         <div className='w-full flex flex-row flex-wrap md:space-x-1' >
                                             <p>I have read and agree to the</p>
                                             <Link className="text-custom-blue underline">Terms of Service</Link>

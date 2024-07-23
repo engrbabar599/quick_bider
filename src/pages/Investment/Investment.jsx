@@ -175,7 +175,26 @@ const Investment = () => {
     setActiveReview(item)
   }
 
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleShowPopup = () => {
+    setShowPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
+  const [rating, setRating] = useState(0);
+    
+  const handleStarClick = (index) => {
+    setRating(index + 1);
+  }
+
   const navigate = useNavigate()
+
+
   return (
     <>
       <div className="md:p-5">
@@ -233,7 +252,7 @@ const Investment = () => {
 
                   <div >
                     <Button
-                      onClick={toggleVisibility}
+                         onClick={handleShowPopup}
                       className={"!min-w-max px-4 py-3 text-sm font-poppins font-normal rounded-xl"}
                       title={"Activate now"}
                     />
@@ -243,7 +262,7 @@ const Investment = () => {
                     >
                       Activate now
                     </button> */}
-                    {isVisible && <Employees />}
+                    {showPopup && <Employees   show={showPopup} onClose={handleClosePopup}  />}
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
@@ -389,7 +408,29 @@ const Investment = () => {
                     </h1>
                   </div>
                   <div className="pb-5">
-                    <img src={filledstar} alt="" />
+                    {/* <img src={filledstar} alt="" /> */}
+                    <div className="flex space-x-1">
+      {[...Array(5)].map((_, index) => (
+        <svg
+          key={index}
+          onClick={() => handleStarClick(index)}
+          xmlns="http://www.w3.org/2000/svg"
+          fill={index < rating ? "yellow" : "none"}
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          className={`h-5 w-5 cursor-pointer ${
+            index < rating ? 'text-yellow-400' : 'text-gray-400'
+          }`}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M12 17.27l6.18 3.73-1.64-7.03L21 9.24l-7.19-.61L12 2 10.19 8.63 3 9.24l5.46 4.73-1.64 7.03z"
+          />
+        </svg>
+      ))}
+      </div>
                   </div>
                   <div>
                     <label htmlFor="review" className="text-base font-medium font-poppins text-gray-1">Write a review</label>

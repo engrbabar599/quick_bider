@@ -9,6 +9,7 @@ import starImage from "../../assets/images/star.png";
 import filledstar from "../../assets/images/filledstars.png"
 import { useState } from 'react'
 import { Navigate } from 'react-router-dom'
+import VideoAdPopup from './VideoAdPopup'
 export const BidsDetailsPage = () => {
 
     const review = [
@@ -37,6 +38,24 @@ export const BidsDetailsPage = () => {
     setActiveReview(item)
   }
     const navigate = useNavigate()
+
+  
+      const [rating, setRating] = useState(0);
+    
+      const handleStarClick = (index) => {
+        setRating(index + 1);
+      }
+
+      const [showPopup, setShowPopup] = useState(false);
+
+      const handleShowPopup = () => {
+        setShowPopup(true);
+      };
+    
+      const handleClosePopup = () => {
+        setShowPopup(false);
+      };
+
     return (
         <div className='xl:grid xl:grid-cols-5 flex flex-col gap-8 '>
 
@@ -153,13 +172,14 @@ export const BidsDetailsPage = () => {
 
                     <div className='flex flex-col gap-5 lg:w-1/4 w-2/4 items-center'>
                         <Button
+                        onClick={handleShowPopup}
                             title={"Bid now"}
                         />
-
                         <div className='flex flex-row font-poppins text-base space-x-1'>
                             <p className='text-gray-4'>Wallet:</p>
                             <p className='text-custom-blue'>$1200</p>
                         </div>
+                        {showPopup && <VideoAdPopup show={showPopup} onClose={handleClosePopup} />}
                     </div>
 
                     <button className='underline text-custom-blue cursor-pointer text-base underline-offset-2 font-poppins hover:scale-105 ease-in duration-150'>
@@ -346,6 +366,7 @@ export const BidsDetailsPage = () => {
                             </div>
                             <div>
                               <img src={starImage} alt="" />
+                             
                             </div>
                           </div>
                           <div className="pt-4">
@@ -373,7 +394,29 @@ export const BidsDetailsPage = () => {
                     </h1>
                   </div>
                   <div className="pb-5">
-                    <img src={filledstar} alt="" />
+                    {/* <img src={filledstar} alt="" /> */}
+                    <div className="flex space-x-1">
+      {[...Array(5)].map((_, index) => (
+        <svg
+          key={index}
+          onClick={() => handleStarClick(index)}
+          xmlns="http://www.w3.org/2000/svg"
+          fill={index < rating ? "yellow" : "none"}
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          className={`h-5 w-5 cursor-pointer ${
+            index < rating ? 'text-yellow-400' : 'text-gray-400'
+          }`}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M12 17.27l6.18 3.73-1.64-7.03L21 9.24l-7.19-.61L12 2 10.19 8.63 3 9.24l5.46 4.73-1.64 7.03z"
+          />
+        </svg>
+      ))}
+      </div>
                   </div>
                   <div>
                     <label htmlFor="review" className="text-base font-medium font-poppins text-gray-1">Write a review</label>

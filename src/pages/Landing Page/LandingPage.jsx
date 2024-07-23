@@ -332,7 +332,7 @@ function LandingPage() {
 
             <div className="blueRectangle w-[90%] lg:w-[80%] mx-auto py-10 lg:py-16">
               <div className="bg-custom-blue rounded-xl px-8 lg:px-[64px] py-8 lg:py-[32px]">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-0">
+                <div className="flex flex-wrap  items-center justify-center lg:justify-between gap-10 lg:gap-0">
                   <div className="flex flex-col items-center">
                     <img src={manImage} alt="" className="w-16 lg:w-auto" />
                     <h1 className="text-2xl lg:text-[36px] font-bold font-inter text-white mt-2 lg:mt-4">
@@ -458,7 +458,7 @@ function LandingPage() {
                         .fill()
                         .map((_, i) => (
                           <div key={i} className="bg-white rounded-xl shadow-md p-7">
-                            <div className="flex items-center gap-5">
+                            <div className="flex flex-wrap items-center gap-5">
                               <div>
                                 <div className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></div>
                               </div>
@@ -909,7 +909,7 @@ function LandingPage() {
               <img src={background} class="absolute top-0 w-full -z-10 h-full" alt="" />
               <div class="contactpart z-10 md:pt-40 pt-10">
                 <div class="text-center">
-                  <h1 class="text-[56px] font-bold font-inter text-white">
+                  <h1 class=" text-[35px] lg:text-[56px] font-bold font-inter text-white">
                     Contact Us
                   </h1>
                 </div>
@@ -920,9 +920,9 @@ function LandingPage() {
                     ready to assist you. Reach out to us through any of the following channels:
                   </p>
                 </div>
-                <div class="w-full md:w-[63%] mx-auto p-6 md:p-12 rounded-xl bg-white border">
+                <div class=" w-full md:w-[63%] mx-auto p-6 md:p-12 rounded-xl bg-white border">
                   <div class="text-center">
-                    <h1 class="text-[36px] font-bold font-inter text-gray-1">
+                    <h1 class="text-2xl lg:text-[36px] font-bold font-inter text-gray-1">
                       Send message
                     </h1>
                   </div>
@@ -958,7 +958,7 @@ function LandingPage() {
 
 
 
-            <div class="iconspart w-full md:w-[80%] mx-auto py-10 md:py-20 flex flex-wrap items-center justify-center gap-10">
+            <div class="iconspart w-full md:w-[80%] mx-auto px-5 lg:px-0 py-10 md:py-20 flex flex-wrap items-center justify-center gap-10">
               <div class="card1 w-full md:w-[28%] flex flex-col items-center justify-center text-center gap-4">
                 <div class="p-3 bg-[#f5f8fe] rounded-2xl">
                   <img src={emailIcon} class="border-[3px] border-dashed border-gray-400" alt="" />

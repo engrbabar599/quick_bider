@@ -33,14 +33,14 @@ function Claim() {
     },
   ];
 
-  const [isVisible, setIsVisible] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
-  const showDialog = () => {
-    setIsVisible(true);
+  const handleShowPopup = () => {
+    setShowPopup(true);
   };
 
-  const closeDialog = () => {
-    setIsVisible(false);
+  const handleClosePopup = () => {
+    setShowPopup(false);
   };
 
   return (
@@ -87,7 +87,7 @@ function Claim() {
                           :
 
                           <Button
-                            onClick={showDialog}
+                            onClick={handleShowPopup}
                             className={"px-5 py-2.5 rounded-xl text-sm font-semibold font-poppins"}
                             title={"Claim now"}
                           />
@@ -104,7 +104,7 @@ function Claim() {
           </div>
 
         </div>
-        {isVisible && <ClaimNow onClose={() => setIsVisible(false)} />}
+        {showPopup && <ClaimNow show={showPopup} onClose={handleClosePopup} />}
       </div>
     </>
   );

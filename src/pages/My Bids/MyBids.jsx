@@ -144,7 +144,7 @@ function MyBids() {
                     <h1 className="pt-4 text-xs md:text-sm font-normal font-poppins text-gray-400">ROI</h1>
                   </div>
                 </div>
-                <div className="flex justify-center items-center gap-5 p-5 hidden lg:flex">
+                <div className="lg:flex justify-center items-center gap-5 p-5 hidden">
                   <div className="border rounded-xl px-2 py-3 w-[112px] flex flex-col items-center">
                     <img src={stars} alt="Stars" />
                     <h1 className="pt-1 md:text-xl font-semibold font-poppins text-gray-700">320</h1>
@@ -190,7 +190,7 @@ function MyBids() {
                   </div>
                   <div className="text-center block md:hidden">
                     <button
-                      onClick={() => navigate("/mybids/bidDetails")}
+                    onClick={()=>{navigate("/dashboard/results")}}
                       className="py-2 px-3 md:px-4 md:py-2 border border-blue-500 rounded-xl text-blue-500 text-xs md:text-sm font-semibold font-poppins hover:bg-blue-500 hover:text-white">
                       View details
                     </button>
@@ -238,7 +238,7 @@ function MyBids() {
                     <h1 className="pt-4 text-xs md:text-sm font-normal font-poppins text-gray-400">ROI</h1>
                   </div>
                 </div>
-                <div className="flex justify-center items-center gap-5 p-5 hidden lg:flex">
+                <div className="lg:flex justify-center items-center gap-5 p-5 hidden">
                   <div className="border rounded-xl px-2 py-3 w-[112px] flex flex-col items-center">
                     <img src={stars} alt="Stars" />
                     <h1 className="pt-1 md:text-xl font-semibold font-poppins text-gray-700">320</h1>
@@ -256,7 +256,7 @@ function MyBids() {
                   </div>
                 </div>
                 <div className="text-center pt-6 hidden md:block">
-                  <button onClick={() => navigate("/mybids/bidDetails")} className="w-[127px] min-w-max px-5 py-2 border rounded-xl text-blue-500 hover:bg-blue-500 hover:text-white text-sm font-semibold font-poppins border-blue-500">
+                  <button onClick={()=>{navigate("/dashboard/results")}} className="w-[127px] min-w-max px-5 py-2 border rounded-xl text-blue-500 hover:bg-blue-500 hover:text-white text-sm font-semibold font-poppins border-blue-500">
                     View details
                   </button>
                 </div>
