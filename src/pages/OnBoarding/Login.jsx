@@ -69,7 +69,9 @@ export const Login = () => {
                                         />
                                     </button>
 
-                                    <button className="h-11 w-11 border border-gray-5 rounded-full flex items-center justify-center">
+                                    <button
+                                        onClick={() => { }}
+                                        className="h-11 w-11 border border-gray-5 rounded-full flex items-center justify-center">
                                         <img
                                             src={IMAGES?.appleLogo} // Replace with your actual image source
                                             alt="Apple Logo"
