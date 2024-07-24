@@ -144,7 +144,7 @@ function MyBids() {
                       <h1 className="pt-4 text-xs md:text-sm font-normal font-poppins text-gray-400">ROI</h1>
                     </div>
                   </div>
-                  <div className="flex justify-center items-center gap-5 p-5 hidden lg:flex">
+                  <div className=" justify-center items-center gap-5 p-5 hidden lg:flex">
                     <div className="border rounded-xl px-2 py-3 w-[112px] flex flex-col items-center">
                       <img src={stars} alt="Stars" />
                       <h1 className="pt-1 md:text-xl font-semibold font-poppins text-gray-700">320</h1>

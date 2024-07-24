@@ -8,8 +8,8 @@ export const TrendingAuction = () => {
     const [timer, setTimer] = useState()
 
     return (
-        <div className='lg:col-span-2 space-y-4'>
-            <div className='flex flex-row justify-between font-poppins font-semibold min-w-max'>
+        <div className=' space-y-4'>
+            <div className='flex flex-row justify-between font-poppins font-semibold'>
                 <h3 className='text-gray-1  lg:text-xl text-base'>
                     Trending Auctions
                 </h3>
@@ -19,7 +19,7 @@ export const TrendingAuction = () => {
             </div>
 
 
-            <div className='flex  lg:flex-row flex-col gap-4 items-center px-7 lg:px-0 '>
+            <div className='flex md:flex-row flex-col gap-4 items-center px-7 lg:px-0 '>
                 {Array(3).fill().map((_, index) => (
                     <div
                         key={index}
@@ -30,12 +30,12 @@ export const TrendingAuction = () => {
                             <div>
                                 <h1 className='text-xs font-semibold font-poppins text-gray-1 bg-[#eae9ed] absolute rounded-xl px-2 h-[36px] flex items-center justify-center top-5 right-5'>2h : 4m : 32s</h1>
                             </div>
-                            <div className='font-poppins font-semibold text-base'>
+                            <div className='font-poppins font-semibold text-sm lg:text-base'>
                                 <div className='flex flex-col'>
                                     <p className='text-gray-1'>Ford Mustang
-                                        <span className='text-gray-4 text-sm font-normal'>(2017 Model)</span>
+                                        <span className='text-gray-4 text-xs lg:text-sm font-normal'>(2017 Model)</span>
                                     </p>
-                                    <p className='font-poppins font-medium text-sm'>250 <span className='font-normal text-gray-4'>Member</span> </p>
+                                    <p className='font-poppins font-medium text-xs lg:text-sm'>250 <span className='font-normal text-gray-4'>Member</span> </p>
                                 </div>
                             </div>
 
@@ -47,14 +47,14 @@ export const TrendingAuction = () => {
                             <div className='flex flex-row w-full justify-between  p-2'>
                                 <div className='font-poppins text-gray-4 font-normal'>
                                     <p className='text-xs'>Bid Amount</p>
-                                    <p className='font-semibold text-sm text-gray-1'>$5.00
+                                    <p className='font-semibold text-xs lg:text-sm text-gray-1'>$5.00
                                         <span className='text-gray-4 font-normal text-xs'>(4 Rounds)</span>
                                     </p>
                                 </div>
                                 <div>
 
                                     <Button
-                                        className={"!p-2 bg-white !text-custom-blue group-hover:bg-custom-blue group-hover:!text-white border border-custom-blue !text-sm"}
+                                        className={"!p-2 bg-white !text-custom-blue group-hover:bg-custom-blue group-hover:!text-white border border-custom-blue text-xs lg:!text-sm"}
                                         title={"Place a Bid"}
                                     />
                                 </div>

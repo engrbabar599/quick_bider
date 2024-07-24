@@ -176,7 +176,7 @@ function LandingPage() {
 
           <div className="blueRectangle w-[90%] lg:w-[80%] mx-auto py-10 lg:py-16">
             <div className="bg-custom-blue rounded-xl px-8 lg:px-[64px] py-8 lg:py-[32px]">
-              <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-0">
+              <div className="flex flex-wrap  items-center justify-center lg:justify-between gap-10 lg:gap-0">
                 <div className="flex flex-col items-center">
                   <img src={manImage} alt="" className="w-16 lg:w-auto" />
                   <h1 className="text-2xl lg:text-[36px] font-bold font-inter text-white mt-2 lg:mt-4">
@@ -311,7 +311,7 @@ function LandingPage() {
                       .fill()
                       .map((_, i) => (
                         <div key={i} className="bg-white rounded-xl shadow-md p-7">
-                          <div className="flex items-center gap-5">
+                          <div className="flex flex-wrap items-center gap-5">
                             <div>
                               <div className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></div>
                             </div>

@@ -8,8 +8,8 @@ import vectorImage from "../../assets/images/Vector.png";
 import starImage from "../../assets/images/star.png";
 import filledstar from "../../assets/images/filledstars.png"
 import { useState } from 'react'
-import { VideoAd } from '../../components/VideoAd'
-
+import { Navigate } from 'react-router-dom'
+import VideoAdPopup from './VideoAdPopup'
 
 export const BidsDetailsPage = () => {
 
@@ -41,8 +41,23 @@ export const BidsDetailsPage = () => {
   const handleClick = (item) => {
     setActiveReview(item)
   }
-
   const navigate = useNavigate()
+
+
+  const handleStarClick = (index) => {
+    setRating(index + 1);
+  }
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleShowPopup = () => {
+    setShowPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <div className='xl:grid xl:grid-cols-5 flex flex-col gap-8 '>
 
@@ -167,16 +182,16 @@ export const BidsDetailsPage = () => {
           </div>
 
 
-          <div className={`${bidRound > 4 ? "hidden" : "flex"} flex-col gap-5 lg:w-1/4 w-2/4 items-center`}>
+          <div className='flex flex-col gap-5 lg:w-1/4 w-2/4 items-center'>
             <Button
-              onClick={() => { setBidRound(prev => prev + 1) }}
+              onClick={handleShowPopup}
               title={"Bid now"}
             />
-
             <div className='flex flex-row font-poppins text-base space-x-1'>
               <p className='text-gray-4'>Wallet:</p>
               <p className='text-custom-blue'>$1200</p>
             </div>
+            {showPopup && <VideoAdPopup show={showPopup} onClose={handleClosePopup} />}
           </div>
 
           <button className='underline text-custom-blue cursor-pointer text-base underline-offset-2 font-poppins hover:scale-105 ease-in duration-150'>
@@ -313,75 +328,98 @@ export const BidsDetailsPage = () => {
                 </button>
               </div>
             </div>
-            {activeReview === "review" ?
-              review.map((value, i) => {
-                return (
-                  <>
-                    <div className="border p-3 rounded-xl shadow my-4">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                          <div className="icon">
-                            <p>
-                              <img src={vectorImage} alt="" />
-                            </p>
+            {activeReview === "review" && (
+              <>
+                {review.map((value, i) => {
+                  return (
+                    <>
+                      <div className="border p-3 rounded-xl shadow my-4">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-4">
+                            <div className="icon">
+                              <p>
+                                <img src={vectorImage} alt="" />
+                              </p>
+                            </div>
+                            <div>
+                              <h1 className="text-xl font-semibold font-poppins">
+                                Jonas Sousa
+                              </h1>
+                              <p className="opacity-65 text-base font-normal font-poppins">Investor</p>
+                            </div>
                           </div>
                           <div>
-                            <h1 className="text-xl font-semibold font-poppins">
-                              Jonas Sousa
-                            </h1>
-                            <p className="opacity-65 text-base font-normal font-poppins">Investor</p>
+                            <img src={starImage} alt="" />
+
                           </div>
                         </div>
-                        <div>
-                          <img src={starImage} alt="" />
+                        <div className="pt-4">
+                          <p className=" text-sm font-normal font-poppins text-gray-4">
+                            I didn't know the first thing about investing. This
+                            book helped me understand some basic topics. It even
+                            taught me who to be careful with when taking advice
+                            about investing, wink wink youtube gurus. I
+                            recommend this book to anyone trying to understand
+                            the stock market before investing.
+                          </p>
                         </div>
                       </div>
-                      <div className="pt-4">
-                        <p className=" text-sm font-normal font-poppins text-gray-4">
-                          I didn't know the first thing about investing. This
-                          book helped me understand some basic topics. It even
-                          taught me who to be careful with when taking advice
-                          about investing, wink wink youtube gurus. I
-                          recommend this book to anyone trying to understand
-                          the stock market before investing.
-                        </p>
-                      </div>
-                    </div>
-                  </>
-                );
-              })
-              :
-              <>
-                <div className="writeAreview">
-                  <div className="py-5">
-                    <h1 className=" text-lg font-normal font-poppins text-[#000000]">
-                      How much do you like us?
-                    </h1>
-                  </div>
-                  <div className="pb-5">
-                    <img src={filledstar} alt="" />
-                  </div>
-                  <div>
-                    <label htmlFor="review" className="text-base font-medium font-poppins text-gray-1">Write a review</label>
-                    <textarea name="" id="review" className=" resize-none focus:ring-1 ring-custom-blue w-full outline-none border rounded-xl p-3 mt-2" rows={5}></textarea>
-                  </div>
-                  <div className="text-center p-4">
-                    <button
-                      className={` px-5 py-3 text-sm font-semibold font-inter rounded-xl ${(activeReview === "writeReview") ? "text-white bg-custom-blue" : " text-custom-blue border-custom-blue border bg-white"}`}
-                      title={"Write a review"}
-                    >
-                      Submit review
-                    </button>
+                    </>
+                  );
+                })}
+              </>
+            )}
+            {activeReview === "writeReview" &&
+              <div className="writeAreview">
+                <div className="py-5">
+                  <h1 className=" text-lg font-normal font-poppins text-[#000000]">
+                    How much do you like us?
+                  </h1>
+                </div>
+                <div className="pb-5">
+                  {/* <img src={filledstar} alt="" /> */}
+                  <div className="flex space-x-1">
+                    {[...Array(5)].map((_, index) => (
+                      <svg
+                        key={index}
+                        onClick={() => handleStarClick(index)}
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill={index < rating ? "yellow" : "none"}
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        className={`h-5 w-5 cursor-pointer ${index < rating ? 'text-yellow-400' : 'text-gray-400'
+                          }`}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M12 17.27l6.18 3.73-1.64-7.03L21 9.24l-7.19-.61L12 2 10.19 8.63 3 9.24l5.46 4.73-1.64 7.03z"
+                        />
+                      </svg>
+                    ))}
                   </div>
                 </div>
-              </>
+                <div>
+                  <label htmlFor="review" className="text-base font-medium font-poppins text-gray-1">Write a review</label>
+                  <textarea name="" id="review" className=" resize-none focus:ring-1 ring-custom-blue w-full outline-none border rounded-xl p-3 mt-2" rows={5}></textarea>
+                </div>
+                <div className="text-center p-4">
+                  <button
+                    className={` px-5 py-3 text-sm font-semibold font-inter rounded-xl ${(activeReview === "writeReview") ? "text-white bg-custom-blue" : " text-custom-blue border-custom-blue border bg-white"}`}
+                    title={"Write a review"}
+                  >
+                    Submit review
+                  </button>
+                </div>
+              </div>
             }
           </div>
 
         </div>
       </div>
 
-      <VideoAd open={isAdOpen} setOpen={setIsAdOpen} />
+      {/* <VideoAd open={isAdOpen} setOpen={setIsAdOpen} /> */}
     </div >
   )
 }

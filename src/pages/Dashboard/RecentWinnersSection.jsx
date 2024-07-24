@@ -66,7 +66,7 @@ export const RecentWinnersSection = () => {
                         </div>
 
 
-                        <div className=' flex flex-row space-x-3 justify-between xl:w-auto w-full items-center'>
+                        <div className=' flex gap-4 flex-wrap flex-row space-x-3 justify-between xl:w-auto w-full items-center'>
 
                             <div className='flex flex-col items-start justify-center'>
                                 <div className='flex items-center space-x-1 font-poppins lg:text-sm text-xs'>
@@ -81,7 +81,7 @@ export const RecentWinnersSection = () => {
 
                             </div>
 
-                            <div  className='flex flex-col items-center justify-center space-y-1'>
+                            <div  className='flex flex-col items-start xl:items-center justify-center space-y-1'>
                                 <div >
                                     <OutlineButton
                                        onClick={handleShowPopup} 

@@ -408,9 +408,9 @@ function BEProjectDialog() {
                   <div className="flex items-center justify-center py-2">
                     <h1 className="text-green-500 font-semibold">$500</h1>
                   </div>
-                  <div className="w-[60%] mx-auto">
+                  <div className="w-[90%] mx-auto">
                     <h1 className="text-center font-semibold">
-                      Added to wallet successfully!
+                    Investment successful!
                     </h1>
                   </div>
                   <div className="flex justify-center items-center py-2">

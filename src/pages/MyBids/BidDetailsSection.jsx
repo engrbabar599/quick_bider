@@ -128,8 +128,8 @@ export const BidDetailsSection = () => {
                             title={"Bid now"}
                         /> */}
 
-                        <button className='px-4 py-3 bg-custom-blue text-white rounded-xl text-center text-sm font-medium font-poppins w-[190px]'>Bid now</button>
-                        <div className='flex flex-row font-poppins text-base space-x-1'>
+                        <button className=' hidden px-4 py-3 bg-custom-blue text-white rounded-xl text-center text-sm font-medium font-poppins w-[190px]'>Bid now</button>
+                        <div className='flex flex-row hidden font-poppins text-base space-x-1'>
                             <p className='text-gray-4'>Wallet:</p>
                             <p className='text-custom-blue'>$1200</p>
                         </div>

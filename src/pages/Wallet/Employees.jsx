@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React from "react";
+import { useState , useRef, useEffect } from "react";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 
-function Employees() {
+function Employees({show, onClose}) {
+
   const [step, setStep] = useState(1);
 
   const nextStep = () => {
@@ -20,12 +21,35 @@ function Employees() {
   }
 
   useEffect(() => {}, []);
+
+  const popupRef = useRef();
+
+  const handleClickOutside = (event) => {
+    if (popupRef.current && !popupRef.current.contains(event.target)) {
+      onClose();
+    }
+  };
+
+  useEffect(() => {
+    if (show) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [show]);
+
+  if (!show) return null
+
   return (
     <div>
       {dialog && (
         <div className=" fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ">
           <div className=" flex items-center justify-center h-[100vh]  md:w-[30vw] w-[90%]">
-            <div className=" mx-auto p-8 bg-white rounded-lg shadow-md  w-full py-7 ">
+            <div ref={popupRef} className=" mx-auto p-8 bg-white rounded-lg shadow-md  w-full py-7 ">
               <div className="flex justify-between "></div>
               <form onSubmit={handleSubmit}>
                 {step === 1 && (
@@ -108,7 +132,7 @@ function Employees() {
                         <Button
                           className={"md:w-2/5 "}
                           title={"Close"}
-                          onClick={handleClick}
+                          onClick={onClose}
                         />
                       </div>
                     </div>

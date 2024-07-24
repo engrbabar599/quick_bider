@@ -16,7 +16,7 @@ export const TrendingAuction = () => {
                         key={index}
                         className=' bg-white shadow-[0px_0px_5px_1px_rgba(0,0,0,0.1)]  rounded-xl group lg:hover:scale-105 duration-300 transform ease-in cursor-pointer'>
                         <div className='space-y-4 p-4'>
-                            <img src={IMAGES?.mustang} alt="" className='object-contain !rounded-lg ' />
+                            <img src={IMAGES?.mustang} alt="" className='object-contain !rounded-lg lg:w-full sm:w-1/2 w-full mx-auto' />
 
                             <div className='font-poppins font-semibold text-base'>
                                 <div className='flex flex-col'>
