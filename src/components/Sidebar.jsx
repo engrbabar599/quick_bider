@@ -1,64 +1,99 @@
-import React from 'react'
-import { AdsIcon, AuctionIcon, ClaimIcon, DashboardIcon, InvestmentsIcon, LogoutIcon, MyBidsIcon, SettingsIcon, SupportIcon, WalletIcon } from '../assets/svgs/SidebarSvg';
-import { NavLink, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react'
+import { NavLink, redirect, useNavigate } from 'react-router-dom';
 import IMAGES from '../assets/IMAGES';
+import { useLoginContext } from '../context/LoginContext';
+import Svgs from 'assets/svgs';
+import { useQueryClient } from '@tanstack/react-query';
 
-export const Sidebar = () => {
+export const Sidebar = ({ activeSidebar }) => {
     const navigate = useNavigate()
+    const queryClient = useQueryClient()
+    const { setIsLoggedIn } = useLoginContext()
+    const defaultRoute = localStorage?.getItem('activeTab') || "/dashboard"
+
+    // Use useEffect to handle navigation based on the default route
+    useEffect(() => {
+        if (window.location.pathname === '/') {
+            navigate(defaultRoute);
+        }
+    }, [defaultRoute, navigate]);
+
+    // const handleChangeRoute = (route) => {
+    //     localStorage.setItem("activeTab", route)
+    //     navigate(route)
+    // }
 
     const sidebarData = [
         {
             name: "Dashboard",
-            icon: DashboardIcon,
-            navigate: "/dashboard"
+            icon: <Svgs.DashboardIcon />,
+            navigate: "/dashboard",
+            active: activeSidebar === "Dashboard"
         },
         {
             name: "Auction",
-            icon: AuctionIcon,
-            navigate: "/auction"
+            icon: <Svgs.AuctionIcon />,
+            navigate: "/auction",
+            active: activeSidebar === "Auction"
         },
         {
             name: "My Bids",
-            icon: MyBidsIcon,
-            navigate: "/mybids"
+            icon: <Svgs.MyBidsIcon />,
+            navigate: "/my-bids",
+            active: activeSidebar === "My Bids"
+
         },
         {
             name: "Investments",
-            icon: InvestmentsIcon,
-            navigate: "/investments"
+            icon: <Svgs.InvestmentsIcon />,
+            navigate: "/investments",
+            active: activeSidebar === "Investments"
+
         },
-
-
         {
             name: "Ads",
-            icon: AdsIcon,
-            navigate: "/ads"
+            icon: <Svgs.AdsIcon />,
+            navigate: "/ads",
+            active: activeSidebar === "Ads"
         },
         {
             name: "Claim",
-            icon: ClaimIcon,
-            navigate: "/claim"
-        },
+            icon: <Svgs.ClaimIcon />,
+            navigate: "/claim",
+            active: activeSidebar === "Claim"
 
+        },
         {
             name: "Wallet",
-            icon: WalletIcon,
-            navigate: "/wallet"
+            icon: <Svgs.WalletIcon />,
+            navigate: "/wallet",
+            active: activeSidebar === "Wallet"
+
         },
         {
             name: "Help & Support",
-            icon: SupportIcon,
-            navigate: "/helpAndSupport"
+            icon: <Svgs.SupportIcon />,
+            navigate: "/help-support",
+            active: activeSidebar === "Help & Support"
         },
         {
             name: "Settings",
-            icon: SettingsIcon,
-            navigate: "/settings"
+            icon: <Svgs.SettingsIcon />,
+            navigate: "/settings",
+            active: activeSidebar === "Settings"
         },
         {
             name: "Logout",
-            icon: LogoutIcon,
-            navigate: "/"
+            icon: <Svgs.LogoutIcon />,
+            // navigate: "/",
+            onClick: () => {
+                console.log("Logging out")
+                localStorage.removeItem("token")
+                setIsLoggedIn(false)
+                navigate("/")
+                queryClient.removeQueries()
+
+            }
         },
     ]
 
@@ -69,29 +104,25 @@ export const Sidebar = () => {
             </div>
 
             <div className='flex flex-col  space-y-4'>
-                {sidebarData?.map((data, index) => {
-                    const IconComponent = data.icon;
-                    return (
-                        <NavLink
-                            to={data?.navigate}
-                            className={({ isActive }) => `w-full flex lg:flex-row flex-col items-center lg:justify-start justify-center space-x-4 py-4 px-6 hover:bg-custom-blue hover:bg-opacity-10 outline-none ${isActive ? "bg-custom-blue bg-opacity-10" : " bg-white"}`}>
-                            {({ isActive }) => (
-                                <>
-                                    <IconComponent color={isActive ? "#6F9CFF" : "#828282"} />
-                                    <p
-                                        className={`${isActive ? "text-custom-blue" : "text-gray-4"} font-poppins font-semibold xl:text-lg text-base`}>
-                                        {data?.name}
-                                    </p>
-                                </>
+                {sidebarData?.map((data, index) => (
+                    <NavLink
+                        key={index}
+                        to={data?.navigate}
+                        onClick={data?.onClick}
+                        className={`w-full flex lg:flex-row flex-col items-center lg:justify-start justify-center space-x-4 py-4 px-6 hover:bg-custom-blue hover:bg-opacity-10 outline-none 
+                            ${data?.active ? "active-link " : " bg-white text-[#828282] "}`
+                        }>
 
-                            )}
-                        </NavLink>
-                    )
-                })}
+                        <p>{data?.icon}</p>
+
+                        <p className={`${data?.active ? "text-custom-blue" : "text-gray-4"} font-poppins font-semibold xl:text-lg text-base`}>
+                            {data?.name}
+                        </p>
+                    </NavLink>
+                )
+                )}
 
             </div>
-
-
-        </div>
+        </div >
     )
 }

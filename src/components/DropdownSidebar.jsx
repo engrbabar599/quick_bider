@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import { AdsIcon, AuctionIcon, ClaimIcon, DashboardIcon, InvestmentsIcon, LogoutIcon, MyBidsIcon, SettingsIcon, SupportIcon, WalletIcon } from '../assets/svgs/SidebarSvg';
+import Svgs from 'assets/svgs';
 
 export const DropdownSidebar = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -9,52 +9,52 @@ export const DropdownSidebar = () => {
     const dropdownData = [
         {
             name: "Dashboard",
-            icon: <DashboardIcon />,
+            icon: <Svgs.DashboardIcon />,
             navigate: "/dashboard"
         },
         {
             name: "Auction",
-            icon: <AuctionIcon />,
+            icon: <Svgs.AuctionIcon />,
             navigate: "/auction"
         },
         {
             name: "My Bids",
-            icon: <MyBidsIcon />,
-            navigate: "/mybids"
+            icon: <Svgs.MyBidsIcon />,
+            navigate: "/my-bids"
         },
         {
             name: "Investments",
-            icon: <InvestmentsIcon />,
+            icon: <Svgs.InvestmentsIcon />,
             navigate: "/investments"
         },
         {
             name: "Ads",
-            icon: <AdsIcon />,
+            icon: <Svgs.AdsIcon />,
             navigate: "/ads"
         },
         {
             name: "Claim",
-            icon: <ClaimIcon />,
+            icon: <Svgs.ClaimIcon />,
             navigate: "/claim"
         },
         {
             name: "Wallet",
-            icon: <WalletIcon />,
+            icon: <Svgs.WalletIcon />,
             navigate: "/wallet"
         },
         {
             name: "Help & Support",
-            icon: <SupportIcon />,
-            navigate: "/helpAndSupport"
+            icon: <Svgs.SupportIcon />,
+            navigate: "/help-support"
         },
         {
             name: "Settings",
-            icon: <SettingsIcon />,
+            icon: <Svgs.SettingsIcon />,
             navigate: "/settings"
         },
         {
             name: "Logout",
-            icon: <LogoutIcon />,
+            icon: <Svgs.LogoutIcon />,
             navigate: "/"
         },
 
@@ -71,7 +71,7 @@ export const DropdownSidebar = () => {
                     {dropdownData?.filter(item => location.pathname.includes(item.navigate))[0].name}
                 </div>
                 <svg className="w-2.5 h-2.5 ms-3 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
                 </svg>
             </button>
 
@@ -79,7 +79,7 @@ export const DropdownSidebar = () => {
             <div id="dropdown" className={`z-10 ${isOpen ? " " : " hidden "} bg-white divide-y divide-gray-100 rounded-lg shadow w-full absolute`}>
                 <ul className="py-2 text-base text-gray-4 space-y-2 " aria-labelledby="dropdownDefaultButton">
                     {dropdownData?.map((item, index) => (
-                        <li>
+                        <li key={index}>
                             <NavLink
                                 onClick={() => setIsOpen(false)}
                                 to={item?.navigate}

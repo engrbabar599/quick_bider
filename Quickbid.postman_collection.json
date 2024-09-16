@@ -1,0 +1,602 @@
+{
+	"info": {
+		"_postman_id": "a64676c9-d834-4cb6-8412-1988334767f7",
+		"name": "Quickbid",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30616203"
+	},
+	"item": [
+		{
+			"name": "User_managment",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "verify_email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "email",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "manpreetkaur@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "device_id",
+									"value": "23456780",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "234567",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/v1/api/verify_number/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"api",
+								"verify_number",
+								""
+							],
+							"query": [
+								{
+									"key": "device_id",
+									"value": "23456780",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "manpreetkaur@gmail.com",
+									"disabled": true
+								},
+								{
+									"key": "code",
+									"value": "23456",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bank_detail",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/v1/api/bank_detail/"
+					},
+					"response": []
+				},
+				{
+					"name": "bank_detail",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "account_no",
+									"value": "9876543234",
+									"type": "text"
+								},
+								{
+									"key": "ifsc_code",
+									"value": "GH6578",
+									"type": "text"
+								},
+								{
+									"key": "bank_name",
+									"value": "canara bank",
+									"type": "text"
+								},
+								{
+									"key": "name_on_account",
+									"value": "suhwinder kaur",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/v1/api/bank_detail/"
+					},
+					"response": []
+				},
+				{
+					"name": "bank_detail",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:8000/v1/api/bank_detail/4/"
+					},
+					"response": []
+				},
+				{
+					"name": "testimonial",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/v1/api/testimonial/"
+					},
+					"response": []
+				},
+				{
+					"name": "testimonial",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "investment_project",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "nano",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "tata",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "9876543",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mm@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "dxcvh 4400",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/manpreet/Pictures/Screenshots/Screenshot from 2024-07-22 14-51-35.png"
+								},
+								{
+									"key": "video",
+									"type": "file",
+									"src": "/home/manpreet/Pictures/Screenshots/Screenshot from 2024-07-22 14-51-35.png"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/v1/api/testimonial/"
+					},
+					"response": []
+				},
+				{
+					"name": "testimonial",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:8000/v1/api/testimonial/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "testimonial_reaction",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/v1/api/testimonial_reaction/"
+					},
+					"response": []
+				},
+				{
+					"name": "testimonial_reaction",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "testimonial",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "reaction_type",
+									"value": "emoji",
+									"description": "emoji / text are types",
+									"type": "text"
+								},
+								{
+									"key": "emoji_type",
+									"value": "like",
+									"description": "like,love,haha,wow,sad,angry are types",
+									"type": "text"
+								},
+								{
+									"key": "comment_text",
+									"value": "",
+									"description": "if reaction type is text",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/v1/api/testimonial_reaction/"
+					},
+					"response": []
+				},
+				{
+					"name": "testimonial_reaction",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:8000/v1/api/testimonial_reaction/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "user_profile",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/v1/api/user_profile/"
+					},
+					"response": []
+				},
+				{
+					"name": "user_profile",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "234567898",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "province",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "display_pic",
+									"type": "file",
+									"src": "/home/manpreet/Pictures/Screenshots/Screenshot from 2024-07-22 14-51-35.png"
+								},
+								{
+									"key": "address",
+									"value": "#123 karnal",
+									"type": "text"
+								},
+								{
+									"key": "zipcode",
+									"value": "132001",
+									"type": "text"
+								},
+								{
+									"key": "send_notification_email",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "send_notification_phone",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "enable_sound",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "phone_number_verified",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/v1/api/user_profile/"
+					},
+					"response": []
+				},
+				{
+					"name": "user_profile",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:8000/v1/api/user_profile/7/"
+					},
+					"response": []
+				},
+				{
+					"name": "wallet",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/v1/api/wallet/"
+					},
+					"response": []
+				},
+				{
+					"name": "wallet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://127.0.0.1:8000/v1/api/wallet/"
+					},
+					"response": []
+				},
+				{
+					"name": "wallet",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:8000/v1/api/wallet/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "recent_transaction",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/v1/api/recent_transaction/"
+					},
+					"response": []
+				},
+				{
+					"name": "recent_transaction",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "store",
+									"value": "apple",
+									"type": "text"
+								},
+								{
+									"key": "transaction_behaviour",
+									"value": "add",
+									"description": "add/remove",
+									"type": "text"
+								},
+								{
+									"key": "transaction_status",
+									"value": "accepted",
+									"description": "accepted/rejected/pending",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/v1/api/recent_transaction/"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+								"key": "Authorization",
+								"in": "header"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:8000/v1/api/recent_transaction/1/"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

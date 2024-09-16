@@ -1,60 +1,162 @@
 import React, { useEffect, useState } from 'react'
-import ReactModal from 'react-modal'
-import IMAGES from '../assets/IMAGES'
 import { Button } from './Button'
+import Popup from './Popup'
+import Svgs from 'assets/svgs'
 
-export const VideoAd = ({ open, setOpen }) => {
-    useEffect(() => {
-        setTimeout(() => {
-            // setIsOpen(false)
-        }, 1000)
+export const VideoAd = ({ open, setOpen, closeModal }) => {
+    const [time, setTime] = useState({
+        minutes: 4,
+        seconds: 0
     })
-    // const [open, isOpen] = useState(true)
-    // useEffect(() => {
-    //     const rootElement = document.getElementById("root")
-    //     rootElement.appendChild.classList = "overflow-hidden"
-    // })
+
+    const [openClosePopup, setOpenClosePopup] = useState(false)
+    const [closeTimer, setCloseTimer] = useState({ minutes: 0, seconds: 30 })
+
+
+    useEffect(() => {
+        const timerId = setInterval(() => {
+            setTime(prev => {
+                const { minutes, seconds } = prev;
+
+                if (minutes === 0 && seconds === 0) {
+                    clearInterval(timerId);
+                    closeModal();
+                    setOpen(false)
+                    return prev;
+                }
+
+                if (seconds > 0) {
+                    return { ...prev, seconds: seconds - 1 };
+                }
+
+                if (minutes > 0 && seconds === 0) {
+                    return { minutes: minutes - 1, seconds: 59 };
+                }
+
+                return prev;
+            });
+
+            setCloseTimer(prevTime => {
+                const { minutes, seconds } = prevTime
+
+                if (minutes === 0 && seconds === 0) {
+                    // closeModal()
+                    setOpenClosePopup(false)
+                    return prevTime
+                }
+
+                if (seconds > 0) {
+                    return { ...prevTime, seconds: seconds - 1 }
+                }
+                if (minutes > 0) {
+                    return { minutes: minutes - 1, seconds: 59 }
+                }
+                return prevTime
+            })
+
+
+        }, 1000);
+        return () => {
+            setTime({ minutes: 4, seconds: 59 })
+            setCloseTimer({ minutes: 0, seconds: 30 })
+            clearInterval(timerId)
+        };
+    }, [open])
+
+    useEffect(() => {
+        const rootElement = document.getElementById("root")
+        if (rootElement && (open || openClosePopup)) {
+            rootElement.classList.add("overflow-hidden")
+            rootElement.classList.add("h-[100vh]")
+        }
+        else {
+            rootElement.classList.remove("overflow-hidden")
+            rootElement.classList.remove("h-[100vh]")
+        }
+
+        return (() => {
+            rootElement.classList.remove("overflow-hidden")
+            rootElement.classList.remove("h-[100vh]")
+
+        })
+    })
+
+
+    const handleCloseVideoAd = () => {
+        if (closeTimer.minutes === 0 && closeTimer.seconds === 0) {
+            setOpenClosePopup(false)
+            closeModal()
+        }
+        else {
+            setOpenClosePopup(true)
+        }
+    }
+
 
     return (
-        <ReactModal
-            shouldCloseOnOverlayClick={true}
-            onRequestClose={() => setOpen(false)}
-            style={{
-                content: {
-                    width: window.innerWidth >= 768 ? "60%" : "",
-                    margin: "auto",
-                    borderRadius: "16px"
-                }
-            }}
-            isOpen={open}
-
-        >
-            <div className='bg-white rounded-xl flex flex-col gap-4 w-full h-full items-center'>
-                <div className='flex flex-row gap-2 font-poppins text-base'>
-                    <p className='text-gray-4 font-normal'>Time left -</p>
-                    <p className='text-gray-1 font-semibold'> 5:00 min</p>
-                </div>
-                <div className='h-full md:px-8 relative cursor-pointer'>
-                    <img src={IMAGES.adPlaceholder} alt="" className='h-full' />
-                    <div className='absolute inset-0 flex justify-center items-center'>
-                        <div className='bg-white bg-opacity-60 h-36 w-36  rounded-full flex items-center justify-center'>
-                            <svg width="47" height="56" viewBox="0 0 47 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M46.6553 27.9113L0.669865 55.4822L0.669865 0.340509L46.6553 27.9113Z" fill="#6F9CFF" />
-                            </svg>
-                        </div>
+        <>
+            <Popup
+                closeModal={closeModal}
+                open={open}
+                customPadding={"py-[24px]"}
+                customWidth={"w-[90vw] lg:w-[70vw] md:w-[80vw]"}
+            >
+                <div className=' flex flex-col gap-4 items-center relative h-full'>
+                    <div className='flex flex-row gap-2 font-poppins text-base'>
+                        <p className='text-gray-4 font-normal'>Time left -</p>
+                        <p className='text-gray-1 font-semibold'>{time.minutes}:{time.seconds < 10 ? "0" + time.seconds : time.seconds} min</p>
                     </div>
+                    <button onClick={closeModal} className='absolute right-4 -top-5 '>
+                        <Svgs.MinimizeIcon />
 
+                    </button>
 
+                    <div className='h-full md:px-8 px-[20px] relative cursor-pointer w-full'>
+                        <video
+                            loop
+                            autoPlay
+                            src="https://www.w3schools.com/html/mov_bbb.mp4"
+                            controls
+                            className='h-full max-sm:min-h-svh w-full object-cover rounded-xl outline-none '>
+                            Your browser does not support the video tag.
+                        </video>
 
+                    </div>
+                    <div className='md:w-1/5'>
+                        <Button
+                            className=""
+                            title="Close"
+                            onClick={handleCloseVideoAd}
+                        />
+                    </div>
                 </div>
-                <div className='md:w-1/5'>
 
+            </Popup >
+
+
+
+            <Popup
+                open={openClosePopup}
+                closeModal={() => setOpenClosePopup(false)}
+                customWidth={"lg:w-[25vw] xl:w-[20vw] 2xl:w-[15vw] w-[80vw] xs:w-[70vw] md:w-[40vw]"}
+                customPadding={"px-[32px] py-[20px]"}
+            >
+                <div className='bg-white rounded-xl flex flex-col gap-5  items-center justify-center'>
+                    <div className='flex flex-col items-center justify-center gap-8'>
+                        <Svgs.FilledRightIcon />
+                        <p className='text-gray-1 font-poppins font-semibold text-3xl'>
+                            {closeTimer.minutes}:{closeTimer.seconds < 10 ? "0" + closeTimer.seconds : closeTimer.seconds} min
+                        </p>
+                    </div>
                     <Button
-                        className={""}
-                        title={"Close"} />
+                        onClick={() => setOpenClosePopup(false)}
+                        title={"Close"}
+                    />
                 </div>
+            </Popup >
 
-            </div>
-        </ReactModal >
+
+        </>
+
     )
 }

@@ -1,14 +1,15 @@
 import axios from "axios";
 
-export const axiosInstance = axios.create({ baseURL: "http://api.quickbider.com/v1/api/" })
+export const axiosInstance = axios.create({ baseURL: "https://api.quickbider.com/v1/api/" })
 
 axiosInstance.interceptors.request.use((config) => {
     try {
-        if (config.url.includes("/register")) {
-            const token = localStorage.getItem("token")
-            if (token) {
-                config.headers.Authorization = "token " + token
-            }
+        if (config.url.includes("/register") || config.url.includes("/verify_email")) {
+            return config;
+        }
+        const token = localStorage.getItem("token")
+        if (token) {
+            config.headers.Authorization = "token " + token
         }
         return config
     }

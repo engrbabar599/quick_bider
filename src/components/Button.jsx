@@ -1,10 +1,12 @@
 import React from 'react'
 
-export const Button = ({ title, onClick, className }) => {
+export const Button = ({ title, onClick, className, customPadding, customTheme, customWidth, type, disabled }) => {
     return (
         <button
+            disabled={disabled}
+            type={type}
             onClick={onClick}
-            className={`bg-custom-blue text-white rounded-lg p-3 w-full font-poppins text-base font-medium active:bg-blue-600 hover:bg-blue-500 outline-none hover:shadow-sm hover:shadow-custom-blue ${className}`}>
+            className={`${customTheme ? customTheme : 'btn'} ${customPadding ? customPadding : " p-3 "} ${customWidth ? customWidth : "w-full"} ${className} ease-in-out duration-300`}>
             {title}
         </button>
     )

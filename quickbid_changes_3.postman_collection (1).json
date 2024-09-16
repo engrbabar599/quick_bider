@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "12c4e538-5251-4e6f-9898-959a5344fb43",
+		"name": "quickbid_changes_2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30616203"
+	},
+	"item": [
+		{
+			"name": "investment_project",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/v1/api/`investment_project`/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"`investment_project`",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "investment_project",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "token 449d98020cc54876a6d89763ec1a7b5664bd613a",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "funding",
+							"type": "text"
+						},
+						{
+							"key": "display_pic",
+							"type": "file",
+							"src": "/home/manpreet/Pictures/Screenshots/Screenshot from 2024-07-23 00-07-14.png"
+						},
+						{
+							"key": "detail",
+							"value": "sample sample",
+							"type": "text"
+						},
+						{
+							"key": "start_date_time",
+							"value": "2024-07-20T08:54:12Z",
+							"type": "text"
+						},
+						{
+							"key": "end_date_time",
+							"value": "2024-07-20T08:54:12Z",
+							"type": "text"
+						},
+						{
+							"key": "min_amount",
+							"value": "456",
+							"type": "text"
+						},
+						{
+							"key": "max_allowed_investors",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "target_amount",
+							"value": "4000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/v1/api/investment_project/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"investment_project",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user_profile",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "token 449d98020cc54876a6d89763ec1a7b5664bd613a",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "active_investment",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/v1/api/user_profile/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"user_profile",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Investors",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "token 449d98020cc54876a6d89763ec1a7b5664bd613a",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/v1/api/all_investors/?investment_project=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"all_investors",
+						""
+					],
+					"query": [
+						{
+							"key": "investment_project",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

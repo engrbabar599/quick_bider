@@ -1,0 +1,444 @@
+{
+	"info": {
+		"_postman_id": "18ce65cb-8c5a-48a7-a4c9-847473b53aaf",
+		"name": "quickbid changes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30616203"
+	},
+	"item": [
+		{
+			"name": "user_profile",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "token 7b88ba2c0d4846ae905ea6f12a35685217da756a",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/v1/api/user_profile/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"user_profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recent_winner",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "token 7b88ba2c0d4846ae905ea6f12a35685217da756a",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/v1/api/recent_winner/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"recent_winner",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wallet",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "token 7b88ba2c0d4846ae905ea6f12a35685217da756a",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/v1/api/wallet/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"wallet",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bank_detail",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "bank_detail",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "token 7b88ba2c0d4846ae905ea6f12a35685217da756a",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "account_no",
+							"value": "3456789",
+							"type": "text"
+						},
+						{
+							"key": "ifsc_code",
+							"value": "fDFGH",
+							"type": "text"
+						},
+						{
+							"key": "bank_name",
+							"value": "cannra bank",
+							"type": "text"
+						},
+						{
+							"key": "name_on_account",
+							"value": "manpreet kaur",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/v1/api/bank_detail/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"bank_detail",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "claim_now",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "token 7b88ba2c0d4846ae905ea6f12a35685217da756a",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/v1/api/claim_now/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"claim_now",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "card_detail",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "token 7b88ba2c0d4846ae905ea6f12a35685217da756a",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/v1/api/card_detail/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"card_detail",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send_enquiry",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "token 7b88ba2c0d4846ae905ea6f12a35685217da756a",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/v1/api/send_enquiry/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"send_enquiry",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bid_participant",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "token 7b88ba2c0d4846ae905ea6f12a35685217da756a",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/v1/api/bid_participant/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"bid_participant",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user_investment",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "token 7b88ba2c0d4846ae905ea6f12a35685217da756a",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/v1/api/user_investment/?is_active=False",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"user_investment",
+						""
+					],
+					"query": [
+						{
+							"key": "is_active",
+							"value": "False"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

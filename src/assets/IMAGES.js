@@ -14,6 +14,7 @@ const IMAGES = {
     reviewPic: require("../assets/images/reviewPic.png"),
     adPlaceholder: require("../assets/images/video-ad-placeholder.png"),
     logo: require("../assets/images/quickbider logo png.png")
+
 }
 
 export default IMAGES

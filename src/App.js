@@ -1,177 +1,70 @@
 import {
   createBrowserRouter,
-  Outlet,
+  Navigate,
   RouterProvider,
-  useLocation,
 } from "react-router-dom";
-import { Login } from './pages/OnBoarding/Login';
-import Setting from "./pages/Account Settings/Setting";
-import HelpAndSupport from "./pages/Help and Support/HelpAndSupport";
-import Wallet from "./pages/Wallet/Wallet";
-import Claim from "./pages/Claim/Claim";
-import Investment from "./pages/Investment/Investment";
-import { SignUp } from "./pages/OnBoarding/SignUp";
-import { Dashboard } from "./pages/Dashboard/Dashboard";
-import { Sidebar } from "./components/Sidebar";
-import { Navbar } from "./components/Navbar";
-import { DropdownSidebar } from "./components/DropdownSidebar";
-import { AuctionPage } from "./pages/Auction";
-import MyBids from "./pages/My Bids/MyBids";
-import { BidsDetailsPage } from "./pages/Dashboard/BidDetailsPage";
-import { useEffect } from "react";
-import { BidDetailsSection } from "./pages/MyBids/BidDetailsSection";
-import { AdsPage } from "./pages/Ads";
-import BidResult from "./pages/My Bids/BidResult";
-import InvestmentCompleted from "./pages/Investment/InvestmentCompleted";
-import LandingPage from "./pages/Landing Page/LandingPage";
-import BEProject from "./pages/Investment/BEProject";
-import ReactionsPopUp from "./pages/Dashboard/ReactionsPopUp";
-import Allreviews from "./pages/Investment/Allreviews";
-import Allinvesters from "./pages/Investment/Allinvesters";
-import ReactGA from 'react-ga4';
-import { AboutUsPage } from "./pages/AboutUs";
-import { ContactUsPage } from "./pages/ContactUs";
+import { Login } from 'pages/Auth/Login/index';
+import { SignUp } from "pages/Auth/Signup/index";
 
-export const Layout = () => {
-  ReactGA.initialize('G-76HVWTY453');
-  const { pathname } = useLocation()
-
-  useEffect(() => {
-    console.log(window.location.pathname)
-    console.log("Inside Effect")
-    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
-  }, [window.location.pathname]);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return (
-    <div className='xl:grid xl:grid-cols-6 w-full flex'>
-      <Sidebar />
-      <div className='w-full xl:col-span-5 xl:px-4 xl:py-6 p-4 gap-2 flex flex-col '>
-        <Navbar />
-        <DropdownSidebar />
-        <main className="w-full xl:p-4 "> {/* Adjust padding as necessary */}
-          <Outlet />
-        </main>
-      </div>
-    </div>
-  )
-}
+import LandingPage from "pages/LandingPages/Home";
+import { AboutUsPage } from "pages/LandingPages/AboutUs";
+import { ContactUsPage } from "pages/LandingPages/ContactUs";
+import { RequireAuth } from "components/Auth/RequireAuth";
+import { Dashboard } from "pages/DashboardPages/Dashboard/index";
+import HelpAndSupport from "pages/DashboardPages/Help and Support";
+import Wallet from "pages/DashboardPages/Wallet/index";
+import Claim from "pages/DashboardPages/Claim/Claim";
+import Investment from "pages/DashboardPages/Investment";
+import { AuctionPage } from "pages/DashboardPages/Auction";
+import MyBids from "pages/DashboardPages/My Bids";
+import { BidsDetailsPage } from "pages/DashboardPages/Dashboard/BidDetailsPage";
+import { BidDetailsSection } from "pages/DashboardPages/My Bids/Elements/BidDetailsSection";
+import { AdsPage } from "pages/DashboardPages/Ads";
+import BidResult from "pages/DashboardPages/My Bids/Elements/BidResult";
+import ProjectDetails from "pages/DashboardPages/Investment/ProjectDetails";
+import Allreviews from "pages/DashboardPages/Investment/Allreviews";
+import Setting from "pages/DashboardPages/Settings/index";
+import PortfolioPage from "pages/DashboardPages/Investment/Portfolio";
+import AllInvestors from "pages/DashboardPages/Investment/AllInvesters";
+import CompletedInvestmentPage from "pages/DashboardPages/Investment/CompletedInvestmentPage";
 
 const router = createBrowserRouter([
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/signup",
-    element: <SignUp />,
-  },
+  { path: "/", element: <LandingPage /> },
+  { path: "/login", element: <Login /> },
+  { path: "/signup", element: <SignUp /> },
+  { path: "/about", element: <AboutUsPage /> },
+  { path: "/contact", element: <ContactUsPage /> },
   {
     path: "/",
-    element: <LandingPage />
-  },
-  {
-    path: "/about",
-    element: <AboutUsPage />
-  },
-  {
-    path: "/contact",
-    element: <ContactUsPage />
-  },
-
-  {
-    path: "/",
-    element: <Layout />,
+    element: <RequireAuth />,
     children: [
-      {
-        path: "/dashboard",
-        children: [
-          {
-            path: "",
-            element: <Dashboard />,
-          },
-          {
-            path: "results",
-            element: <BidResult />,
-          },
-          {
-            path: "bids",
-            element: <BidsDetailsPage />
-          },
-          {
-            path: "reaction",
-            element: <ReactionsPopUp />
-          },
+      { path: "/auction", element: <AuctionPage /> },
+      { path: "/dashboard", element: <Dashboard /> },
+      { path: "/dashboard/results", element: <BidResult /> },
+      { path: "/dashboard/bids", element: <BidsDetailsPage /> },
 
-        ]
-      },
-      {
-        path: "/auction",
-        element: <AuctionPage />
-      },
-      {
-        path: "/mybids",
-        children: [
-          {
-            path: "",
-            element: <MyBids />
-          },
-          {
-            path: "bidDetails",
-            element: <BidDetailsSection />
-          },
-        ]
-      },
-      {
-        path: "/investments",
-        children: [
-          {
-            path: "",
-            element: <Investment />
-          },
-          {
-            path: "beproject",
-            element: <BEProject />
-          },
-          {
-            path: "investmentCompleted",
-            element: <InvestmentCompleted />
-          },
-          {
-            path: "allreviews",
-            element: <Allreviews />
-          },
-          {
-            path: "allinvesters",
-            element: <Allinvesters />
-          },
-        ]
-      },
-      {
-        path: "/ads",
-        element: <AdsPage />
-      },
-      {
-        path: "/wallet",
-        element: <Wallet />
-      },
-      {
-        path: "/helpAndSupport",
-        element: <HelpAndSupport />
-      },
-      {
-        path: "/settings",
-        element: <Setting />
-      },
-      {
-        path: "/claim",
-        element: <Claim />
-      },
+      { path: "/my-bids", element: <MyBids /> },
+      { path: "/my-bids/bid-details", element: <BidDetailsSection /> },
+
+      { path: "/investments", element: <Investment /> },
+      { path: "/portfolio", element: <PortfolioPage /> },
+      { path: "/investments/project-details", element: <ProjectDetails /> },
+      { path: "/investments/investment-completed", element: <CompletedInvestmentPage /> },
+      { path: "/investments/all-reviews", element: <Allreviews /> },
+      { path: "/investments/all-investors", element: <AllInvestors /> },
+
+      { path: "/ads", element: <AdsPage /> },
+      { path: "/claim", element: <Claim /> },
+      { path: "/wallet", element: <Wallet /> },
+      { path: "/help-support", element: <HelpAndSupport /> },
+      { path: "/settings", element: <Setting /> },
     ]
   },
+
+  {
+    path: "/*",
+    element: <Navigate to="/" replace={true} />,
+  }
 ]);
 
 

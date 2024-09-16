@@ -1,0 +1,303 @@
+import React from "react";
+import { useState } from "react";
+import { Form, Link, NavLink, useNavigate } from "react-router-dom";
+
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Button } from "components/Button";
+import { useGetInvestmentProject, useGetUserReview } from "api/AuctionManagement";
+import { useGetProjectStat } from "api/AppUtils";
+import { DashboardLayout } from "components/Layout";
+import { BalanceSection } from "components/Elements/BalanceSection";
+import ReviewSection from "components/Elements/ReviewSection";
+import { useGetAllInvestors, useGetUserProfile, useUpdateUserProfile } from "api/UserManagement";
+import ActivateInvestmentPopup from "./Elements/Popups/ActivateInvestmentPopup";
+import OtpVerificationPopup from "./Elements/Popups/OtpVerificationPopup";
+import SuccessPopup from "components/Popups/SuccessPopup";
+import InvestmentProjectCard from "./Elements/InvestmentProjectCard";
+import { formatDate } from "utils/utility-functions";
+import { InvestmentSkeleton } from "components/Skeleton/InvestmentSkeleton";
+import UpcomingInvestmentSection from "./Elements/UpcomingInvestmentSection";
+import Skeleton from "react-loading-skeleton";
+import { toast } from "react-toastify";
+import { useQueryClient } from "@tanstack/react-query";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+const Investment = () => {
+  const [showActivateInvestmentPopup, setShowActivateInvestmentPopup] = useState(false)
+  const [showOtpPopup, setShowOtpPopup] = useState(false)
+  const [showActivatedSuccessfullyPopup, setShowActivatedSuccessfullyPopup] = useState(false)
+  const [isInvestmentActive, setIsInvestmentActive] = useState(false)
+
+  const navigate = useNavigate()
+  const queryClient = useQueryClient()
+
+  const { data: projectStat, isLoading: isLoadingProjectStat } = useGetProjectStat()
+  const { data: userReviews, isLoading: isLoadingUserReviews } = useGetUserReview()
+  const { data: userProfile } = useGetUserProfile()
+  const { data: allInvestors, isLoading: isLoadingAllInvestors } = useGetAllInvestors()
+  const { data: projects, isLoading: isLoadingProjects } = useGetInvestmentProject()
+  const { mutate: handleActivateInvestment, isPending } = useUpdateUserProfile({
+    onError: () => {
+      toast.error("Something went wrong")
+    },
+    onSuccess: () => {
+      setShowOtpPopup(false)
+      setShowActivatedSuccessfullyPopup(true)
+      queryClient.invalidateQueries({ queryKey: ["useGetUserProfile"] })
+    }
+  })
+
+
+
+
+
+  return (
+    <DashboardLayout activeSidebar={"Investments"}>
+      <section>
+        <h1 className=" hidden md:flex text-2xl font-medium text-gray-1">
+          Investments
+        </h1>
+        <div className="flex md:justify-start justify-center gap-4 py-4">
+          <NavLink
+            to={"/investments"}
+            className={({ isActive }) => (
+              `md:px-5 md:py-3 px-[10px] py-[7px] md:font-semibold font-medium text-sm rounded-xl font-poppins ${isActive ? 'bg-custom-blue text-white' :
+                'text-gray-2  border border-gray-2'}`)}>
+            Investments
+          </NavLink>
+          <NavLink
+            to={"/portfolio"}
+            className={({ isActive }) => (
+              `md:px-5 md:py-3 px-[10px] py-[7px] md:font-semibold font-medium text-sm rounded-xl font-poppins ${isActive ? 'bg-custom-blue text-white' :
+                'text-gray-2  border border-gray-2'}`)}>
+            My portfolio
+          </NavLink>
+        </div>
+      </section>
+
+      <section className="space-y-4">
+        <div className="lg:grid lg:grid-cols-12 space-x-6 space-y-6 ">
+          {userProfile?.active_investment ?
+            <div className="flex flex-col justify-between lg:col-span-8 gap-5">
+              <div className="flex flex-row flex-wrap items-center justify-center gap-2.5   ">
+                {isLoadingProjects ?
+                  Array(3).fill()?.map((_, index) => (
+                    <InvestmentSkeleton key={index} hideInvestment={"md:max-xl:last:hidden"} />
+                  ))
+                  :
+                  projects?.results?.slice(0, 3)?.map((data) => (
+                    <InvestmentProjectCard data={data} hideInvestment={"md:max-xl:last:hidden"} />
+                  ))}
+
+              </div>
+              <div className="flex items-center justify-center ">
+                <Button
+                  customTheme={"btn-outline"}
+                  customWidth={"min-w-max"}
+                  title={"View all"}
+                >
+                  View all
+                </Button>
+              </div>
+
+            </div>
+            :
+            <section className="bg-white p-6 rounded-lg shadow-sm border lg:col-span-8">
+              <h2 className="md:text-xl font-medium mb-4 text-wrap font-poppins xs:text-center md:text-start">
+                Empower Your Financial Future with Our Investment Portal
+              </h2>
+              <p className="text-gray-600 mb-4 xs:text-xs md:text-sm font-normal text-wrap xs:text-center md:text-start">
+                Welcome to a new era of investment management. Our advanced Investment Portal is designed to empower you with the tools and insights needed to maximize your financial growth. Experience unparalleled control over your portfolio and make strategic decisions that drive success.
+              </p>
+              <div className="bg-custom-blue bg-opacity-10 px-4 py-6 border rounded-xl mb-4 flex  lg:flex-row flex-col justify-between items-center gap-4">
+                <div className="items-center flex">
+                  <span className="xs:text-center md:text-start md:text-xl font-medium text-gray-2 ">
+                    {isInvestmentActive ? "Invest now to gain returns " :
+                      "Unlock the Potential of Your Investments, activate investment services."
+                    }
+                  </span>
+                </div>
+
+                <div >
+                  <Button
+                    disabled={isInvestmentActive}
+                    onClick={() => setShowActivateInvestmentPopup(true)}
+                    className={"!min-w-max px-4 py-3 text-sm font-poppins font-normal rounded-xl"}
+                    title={
+                      isInvestmentActive ? "Activated" : "Activate now"
+                    }
+                  />
+                </div>
+              </div>
+
+
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                <div className="bg-white p-4 rounded-lg shadow-md">
+                  <p className=" text-sm font-normal text-gray-2">Total investment</p>
+                  <h3 className="text-2xl font-semibold">${projectStat?.total_investment} </h3>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-md">
+                  <p className=" text-sm font-normal text-gray-2">ROI</p>
+                  <h3 className="text-2xl font-semibold text-green-500">{projectStat?.avg_return}%</h3>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-md">
+                  <p className=" text-sm font-normal text-gray-2">Total projects</p>
+                  <h3 className="text-2xl font-semibold">224</h3>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-md">
+                  <p className=" text-sm font-normal text-gray-2">Total investors</p>
+                  <h3 className="text-2xl font-semibold">11K</h3>
+                </div>
+              </div>
+            </section>
+          }
+
+
+          <section className="col-span-4">
+            <BalanceSection />
+          </section>
+        </div>
+
+        <>
+          <UpcomingInvestmentSection />
+        </>
+
+        <div className="grid lg:grid-cols-2 gap-5 pt-5">
+
+          <section className="">
+            <div className=" flex justify-between items-center gap-4">
+              <div className=" min-w-max">
+                <h1 className="text-2xl font-semibold font-poppins text-gray-1">All Investers</h1>
+              </div>
+              <div className=" w-full border-b-2"></div>
+              <div className="text-custom-blue min-w-max">
+                <button onClick={() => { navigate("/investments/all-investors") }} className=" font-semibold hover:scale-105 hover:text-blue-500 font-poppins text-base">View all</button>
+              </div>
+            </div>
+
+            <div className="pt-5">
+              <div className="p-[28px] border rounded-[16px] ">
+
+                <table className="table-fixed w-full space-y-20 ">
+                  <thead className=" w-full   text-[#1E1E1E] ">
+                    <tr className=" border-b border-gray-5 text-base">
+                      <th className=" pb-2 text-left font-poppins font-medium">
+                        Name
+                      </th>
+                      <th className=" pb-2 text-left  font-poppins font-medium">
+                        Time
+                      </th>
+                      <th className="pb-2 text-left w-1/5  font-poppins font-medium ">
+                        Investment
+                      </th>
+                    </tr>
+                  </thead>
+
+
+                  <tr className="h-[16px]"></tr>
+                  <tbody>
+                    {isLoadingAllInvestors ?
+                      Array(8).fill(null)?.map((_, index) => (
+                        <tr key={index} className="border-b border-gray-5">
+                          <td className="py-2">
+                            <Skeleton width={100} />
+                          </td>
+                          <td className="py-2">
+                            <Skeleton width={100} />
+                          </td>
+                          <td className="py-2">
+                            <Skeleton width={75} />
+                          </td>
+                        </tr>
+                      ))
+                      :
+                      allInvestors?.slice(0, 8)?.map((data, index) => (
+                        <tr key={index} className="border-b border-gray-5 ">
+                          <td className="py-2 font-open-sans text-[#686868] text-base underline underline-offset-1 decoration-[#686868] decoration-1 ">
+                            {data?.username} Alim Khan
+                          </td>
+                          <td className="py-2 font-poppins font-light text-[#1E1E1E] text-base uppercase">
+                            {formatDate(data?.completed_date_time, {
+                              hour: "2-digit",
+                              minute: '2-digit',
+                              second: '2-digit',
+                              hour12: '2-digit'
+                            })}
+                          </td>
+                          <td className="py-2 font-poppins font-light text-[#1E1E1E] text-base uppercase  w-1/5">
+                            ${data?.invested_amount}
+                          </td>
+                        </tr>
+                      ))}
+
+                  </tbody>
+                </table>
+              </div>
+
+
+
+            </div>
+          </section>
+
+          <section>
+            <ReviewSection
+              hideSwitch={true}
+              reviewData={userReviews?.results}
+              isLoadingReviewData={isLoadingUserReviews}
+              reviewType={"investment"}
+            />
+
+          </section>
+        </div>
+      </section>
+
+
+      <ActivateInvestmentPopup
+        showModal={showActivateInvestmentPopup}
+        closeModal={() => setShowActivateInvestmentPopup(false)}
+        onSubmit={() => {
+          setShowActivateInvestmentPopup(false)
+          setShowOtpPopup(true)
+        }}
+      />
+      <OtpVerificationPopup
+        showModal={showOtpPopup}
+        closeModal={() => setShowOtpPopup(false)}
+        onSubmit={() => {
+          const formData = new FormData()
+          formData.append("active_investment", true)
+          formData.append("id", userProfile?.id)
+          handleActivateInvestment(formData)
+        }}
+      />
+      <SuccessPopup
+        open={showActivatedSuccessfullyPopup}
+        closeModal={() => setShowActivatedSuccessfullyPopup(false)}
+        successText={"Investments activated successfully!"}
+        secondaryText={"You can now invest on our portal for easy returns."}
+        onButtonClick={() => { navigate("/portfolio") }}
+        buttonText={"Invest now"}
+      />
+    </DashboardLayout>
+  );
+};
+
+export default Investment;

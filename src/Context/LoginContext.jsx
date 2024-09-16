@@ -4,7 +4,7 @@ import { useEffect, createContext, useState, useContext } from "react"
 const LoginContext = createContext()
 
 export const LoginContextProvider = ({ children }) => {
-    const [isloggedIn, setIsLoggedIn] = useState(false)
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     useEffect(() => {
         const token = localStorage.getItem("token")
@@ -17,7 +17,7 @@ export const LoginContextProvider = ({ children }) => {
     }, [])
 
     return (
-        <LoginContext.Provider value={{ isloggedIn, setIsLoggedIn }}>
+        <LoginContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
             {children}
         </LoginContext.Provider>
     )
