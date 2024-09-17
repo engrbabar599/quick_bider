@@ -12,24 +12,24 @@ export const SignUp = () => {
     const { isRegisteringUser, registerSchema, registerUser } = useSignupHelper()
 
     return (
-        <div className='bg-custom-blue relative z-50 min-h-fit md:p-12 p-6 flex justify-center items-center'>
+        <div className='bg-custom-blue relative z-50 min-h-fit md:p-12 p-1 max-sm:py-16 flex justify-center items-center'>
             <img src={IMAGES.backgroundLogo} alt="" className="absolute right-0 top-0 h-[36rem] -rotate-8" />
             <img src={IMAGES.logoWithName} alt="" className="absolute left-0 bottom-10 h-60 -rotate-8 -z-50" />
 
             <div
-                className='bg-white lg:p-5 p-2.5 rounded-xl flex flex-col space-y-4 xl:w-2/5 lg:w-3/5   items-center justify-center z-50 w-full'>
+                className='bg-white lg:p-5 p-2.5 rounded-xl flex flex-col space-y-4 xl:w-2/5 lg:w-3/5   items-center justify-center z-50  w-[90vw] md:w-[60vw]'>
                 <div
                     className='md:w-3/4 items-center justify-center flex flex-col space-y-4'>
                     <Link to={"/"} className='min-w-max'>
                         <img src={IMAGES.logo}
                             alt='Colored Logo'
-                            className='md:h-16 h-12 ' />
+                            className='lg:h-16 h-12 ' />
                     </Link>
 
                     <div className='flex flex-col md:w-full w-[95%]  items-center justify-center space-y-8'>
 
                         <div className=' flex flex-col w-full space-y-4 '>
-                            <h1 className='text-[1.75rem]  font-semibold text-gray-1 font-poppins text-center'>
+                            <h1 className='text-[1.75rem]  font-semibold text-gray-1 font-poppins text-center '>
                                 Sign up to continue
                             </h1>
                         </div>

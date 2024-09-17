@@ -14,7 +14,7 @@ import blueBase from "assets/images/bluseBase.png"
 import { NavLink, useNavigate } from "react-router-dom";
 import mission from "assets/images/mission.png"
 import { LandingPageLayout } from "components/LandingPagesLayout";
-import { useLoginContext } from "context/LoginContext";
+import { useLoginContext } from "sdfsdjfgdsjfs/LoginContext";
 import { useGetProjectStat } from "api/AppUtils";
 
 export const AboutUsPage = () => {
@@ -113,6 +113,19 @@ export const AboutUsPage = () => {
                 </div>
                 <div className="smartInvestment bg-[#E0E0E033] py-10">
                     <div className="flex flex-col lg:flex-row items-center w-[90%] lg:w-[80%] mx-auto">
+                        <div className="relative my-6 lg:mb-0 lg:mr-6">
+                            <img src={mission} alt="" className="w-full h-auto" />
+                            <img
+                                src={circle2}
+                                className="absolute top-0 left-24 w-12 h-12 lg:w-16 lg:h-16 hidden"
+                                alt=""
+                            />
+                            <img
+                                src={circle2}
+                                className="absolute bottom-0 right-24 w-12 h-12 lg:w-16 lg:h-16 hidden"
+                                alt=""
+                            />
+                        </div>
                         <div className="w-full lg:w-[45%] mx-auto text-center lg:text-left">
                             <h1 className="relative lg:text-[54px] font-bold font-inter text-gray-1">
                                 Our Vision
@@ -130,19 +143,7 @@ export const AboutUsPage = () => {
                                 Invest now
                             </NavLink>
                         </div>
-                        <div className="relative my-6 lg:mb-0 lg:mr-6">
-                            <img src={mission} alt="" className="w-full h-auto" />
-                            <img
-                                src={circle2}
-                                className="absolute top-0 left-24 w-12 h-12 lg:w-16 lg:h-16 hidden"
-                                alt=""
-                            />
-                            <img
-                                src={circle2}
-                                className="absolute bottom-0 right-24 w-12 h-12 lg:w-16 lg:h-16 hidden"
-                                alt=""
-                            />
-                        </div>
+
 
                     </div>
                 </div>

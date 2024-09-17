@@ -6,13 +6,14 @@ import { Link } from 'react-router-dom'
 import { Formik } from 'formik'
 import Spinner from 'components/Spinner'
 import { useLoginHelper } from './helper'
+import Svgs from 'assets/svgs'
 
 export const Login = () => {
     const { isPending, loginSchema, siginUser } = useLoginHelper()
 
     return (
         <>
-            <div className='bg-custom-blue relative z-50 min-h-screen h-fit flex justify-center items-center px-1'>
+            <div className='bg-custom-blue max-sm:py-16 relative z-50 min-h-screen h-fit flex justify-center items-center px-1'>
                 <img
                     src={IMAGES.backgroundLogo}
                     alt=""
@@ -23,14 +24,15 @@ export const Login = () => {
                     className="absolute left-0 bottom-10 h-60 -rotate-8 -z-50" />
 
                 <div
-                    className='bg-white md:p-5 py-4 rounded-xl flex flex-col space-y-4 lg:w-3/5 xl:w-2/5 items-center justify-center z-50 w-full'>
+                    className='bg-white md:p-5 py-4 rounded-xl flex flex-col w-[95vw] xs:w-[85vw] space-y-4  md:w-[60vw]
+                    lg:w-3/5 xl:w-2/5 items-center justify-center z-50 '>
                     <div
-                        className='md:w-3/4 items-center justify-center flex flex-col space-y-8'>
-                        <Link to={"/"} className=' min-w-max'>
+                        className='lg:w-3/4 w-full items-center justify-center flex flex-col   space-y-8'>
+                        <Link to={"/"} className=' min-w-max outline-none'>
                             <img
                                 src={IMAGES.logo}
                                 alt='Colored Logo'
-                                className='md:h-24 h-12 md:min-w-max' />
+                                className='lg:h-24 h-12 md:min-w-max' />
                         </Link>
                         <div
                             className='flex flex-col sm:w-full xs:w-[90%]  items-center justify-center space-y-6 px-3'>
@@ -63,7 +65,7 @@ export const Login = () => {
                                         <div className=' flex flex-col sm:w-full space-y-4 '>
                                             <div>
                                                 <Input
-                                                    error={errors.email && touched.email}
+                                                    error={(errors.email && touched.password) && errors.email}
                                                     value={values.email}
                                                     onChange={(e) => {
                                                         setErrors({ ...errors, email: "" })
@@ -75,16 +77,11 @@ export const Login = () => {
                                                     placeholder={"Input your email in here"}
                                                     smallPlaceholder={"Input your email"}
                                                 />
-                                                {errors.email && touched.password &&
-                                                    <span className='text-sm text-red-500 font-poppins'>
-                                                        Enter a email
-                                                    </span>
-                                                }
                                             </div>
                                             <div className='flex flex-col w-full justify-center space-y-2'>
                                                 <div>
                                                     <Input
-                                                        error={errors.password && touched.password}
+                                                        error={(errors.password && touched.password) ? errors?.password : ""}
                                                         value={values.password}
                                                         onChange={(e) => {
                                                             setErrors({ ...errors, password: "" })
@@ -96,18 +93,15 @@ export const Login = () => {
                                                         placeholder={"Input your password in here"}
                                                         smallPlaceholder={"Input your password"}
                                                     />
-                                                    {errors.password && touched.password &&
-                                                        <span className='text-sm text-red-500 font-poppins'>
-                                                            {errors.password}
-                                                        </span>
-                                                    }
                                                 </div>
 
-
-                                                <button
-                                                    className='text-right font-poppins text-gray-2 text-base font-normal hover:text-black'>
-                                                    Forgot password?
-                                                </button>
+                                                <div className='flex w-full justify-end items-end'>
+                                                    <button
+                                                        type='button'
+                                                        className='text-right font-poppins text-gray-2 text-base font-normal hover:text-black outline-none'>
+                                                        Forgot password?
+                                                    </button>
+                                                </div>
                                             </div>
 
                                         </div>
@@ -130,22 +124,14 @@ export const Login = () => {
                                     Sign up with
                                 </p>
                                 <div className=' flex space-x-4 flex-row'>
-                                    <button className="h-11 w-11 border border-gray-5 rounded-full flex items-center justify-center">
-                                        <img
-                                            src={IMAGES?.googleLogo} // Replace with your actual image source
-                                            alt="Google Logo"
-                                            className="h-6 w-6"
-                                        />
+                                    <button className="h-11 w-11 border border-gray-5 rounded-full flex items-center justify-center outline-none">
+                                        <Svgs.GoogleIcon />
                                     </button>
 
                                     <button
                                         onClick={() => { }}
-                                        className="h-11 w-11 border border-gray-5 rounded-full flex items-center justify-center">
-                                        <img
-                                            src={IMAGES?.appleLogo} // Replace with your actual image source
-                                            alt="Apple Logo"
-                                            className="h-6 w-6"
-                                        />
+                                        className="h-11 w-11 border border-gray-5 rounded-full flex items-center outline-none justify-center">
+                                        <Svgs.AppleIcon />
                                     </button>
 
                                 </div>

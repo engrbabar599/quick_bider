@@ -24,7 +24,7 @@ import mail from "assets/images/mail.png";
 import blueBase from "assets/images/bluseBase.png"
 import { NavLink, useNavigate } from "react-router-dom";
 import { LandingPageLayout } from "../../../components/LandingPagesLayout";
-import { useLoginContext } from "../../../context/LoginContext";
+import { useLoginContext } from "../../../sdfsdjfgdsjfs/LoginContext";
 import { OutlineButton } from "../../../components/OutlineButton";
 import { useGetProjectStat } from "../../../api/AppUtils";
 import { useGetUserReview } from "../../../api/AuctionManagement";
@@ -266,9 +266,9 @@ function LandingPage() {
             </div>
           </div>
 
-          <div className="testimonials bg-[#d2eaff] py-10">
+          <div className="testimonials bg-[#d2eaff] py-10 ">
             <div className="text-center mb-10">
-              <h1 className="text-2xl lg:text-[54px] font-bold font-inter text-gray-1">
+              <h1 className="text-2xl lg:text-[54px] font-bold font-inter text-gray-1 px-4">
                 What people say about us?
               </h1>
             </div>

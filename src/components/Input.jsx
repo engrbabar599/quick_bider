@@ -52,9 +52,6 @@ export const Input = ({
                             type='button'
                             className='outline-none'
                             onClick={() => {
-                                setTimeout(() => {
-                                    setTogglePasswordInput(false)
-                                }, 500)
                                 setTogglePasswordInput(!tooglePasswordInput)
                             }}>
                             <Svgs.EyeIcon />
@@ -81,13 +78,12 @@ export const Input = ({
                     />
                 }
 
-                {error &&
-                    <span className='text-xs text-custom-red '>
-                        {error}
-                    </span>
-                }
-
             </div>
+            {error &&
+                <span className='text-xs text-custom-red '>
+                    {error}
+                </span>
+            }
         </>
 
     )

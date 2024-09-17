@@ -83,13 +83,13 @@ export const ContactUsPage = () => {
                                 touched,
                                 setErrors
                             }) => (
-                                <form onSubmit={handleSubmit} className="w-full md:w-[63%] mx-auto p-6 md:p-12 rounded-xl bg-white border">
+                                <form onSubmit={handleSubmit} className=" md:w-[63%] mx-auto p-4 md:p-12 rounded-xl bg-white border w-[90vw]">
                                     <div className="text-center">
                                         <h1 className="text-[36px] font-bold font-inter text-gray-1">
                                             Send message
                                         </h1>
                                     </div>
-                                    <div className="flex flex-col md:flex-row md:justify-between gap-8 py-4">
+                                    <div className="flex flex-col lg:flex-row md:justify-between gap-8 py-4">
                                         <div className="w-full">
                                             <Input
                                                 value={values?.name}
@@ -161,10 +161,12 @@ export const ContactUsPage = () => {
 
 
 
-                <div className="iconspart w-full md:w-[80%] mx-auto py-10 md:py-20 flex flex-wrap items-center justify-center gap-10">
+                <div className="iconspart w-full md:w-[80%] mx-auto py-10 md:py-20 flex flex-wrap items-center justify-center gap-10 px-4">
                     <div className="card1 w-full md:w-[28%] flex flex-col items-center justify-center text-center gap-4">
-                        <div className="p-3 bg-[#f5f8fe] rounded-2xl">
-                            <img src={emailIcon} className="border-[3px] border-dashed border-gray-400" alt="" />
+                        <div className="p-3 bg-custom-blue bg-opacity-10 rounded-2xl">
+                            <div className=" border border-gray-400 border-dashed">
+                                <Svgs.ContactEmailIcon />
+                            </div>
                         </div>
                         <div>
                             <h1 className="text-2xl font-bold text-gray-1 font-hk-grotesk">Email us</h1>
@@ -182,7 +184,9 @@ export const ContactUsPage = () => {
                     </div>
                     <div className="card2 w-full md:w-[28%] flex flex-col items-center justify-center text-center gap-4">
                         <div className="p-3 bg-[#f5f8fe] rounded-2xl">
-                            <img src={callIcon} className="border-[3px] border-dashed border-gray-400" alt="" />
+                            <div className=" border border-gray-400 border-dashed">
+                                <Svgs.ContactPhoneIcon />
+                            </div>
                         </div>
                         <div>
                             <h1 className="text-2xl font-bold text-gray-1 font-hk-grotesk">Call us</h1>
@@ -202,7 +206,9 @@ export const ContactUsPage = () => {
                     </div>
                     <div className="card3 w-full md:w-[28%] flex flex-col items-center justify-center text-center gap-4">
                         <div className="p-3 bg-[#f5f8fe] rounded-2xl">
-                            <img src={supportIcon} className="border-[3px] border-dashed border-gray-400" alt="" />
+                            <div className=" border border-gray-400 border-dashed">
+                                <Svgs.ContactSupportIcon />
+                            </div>
                         </div>
                         <div>
                             <h1 className="text-2xl font-bold text-gray-1 font-hk-grotesk">Support</h1>
@@ -213,8 +219,11 @@ export const ContactUsPage = () => {
                             </p>
                         </div>
                         <div>
-                            <button className="w-full md:w-[179px] h-[40px] rounded-xl p-4 bg-white border border-custom-blue text-custom-blue text-base font-bold font-open-sans flex items-center justify-between hover:text-white hover:bg-custom-blue">
-                                Support Center <Svgs.ArrowRight />
+                            <button className="w-full md:w-[179px] h-[40px] rounded-lg   p-4 bg-white border-2 border-custom-blue text-custom-blue text-base font-bold font-open-sans flex items-center justify-between hover:text-white hover:bg-custom-blue space-x-2">
+                                <p>
+                                    Support Center
+                                </p>
+                                <Svgs.ArrowRight />
                             </button>
                         </div>
                     </div>
