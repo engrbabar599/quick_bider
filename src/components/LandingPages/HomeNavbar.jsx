@@ -3,7 +3,7 @@ import quickBidLogo from "../../assets/images/quickbider logo png 2.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { OutlineButton } from "../OutlineButton";
 import { Button } from "../Button";
-import { useLoginContext } from "../../sdfsdjfgdsjfs/LoginContext";
+import { useLoginContext } from "../../context/LoginContext";
 import { useGetUserProfile } from "api/UserManagement";
 
 

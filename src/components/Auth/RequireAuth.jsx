@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLoginContext } from '../../sdfsdjfgdsjfs/LoginContext'
+import { useLoginContext } from '../../context/LoginContext'
 import { Navigate, Outlet } from 'react-router-dom'
 
 export const RequireAuth = () => {
