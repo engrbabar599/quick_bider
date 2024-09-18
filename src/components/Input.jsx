@@ -54,7 +54,10 @@ export const Input = ({
                             onClick={() => {
                                 setTogglePasswordInput(!tooglePasswordInput)
                             }}>
-                            <Svgs.EyeIcon />
+                            {tooglePasswordInput ?
+                                <Svgs.PasswordShowIcon />
+                                : <Svgs.EyeIcon />
+                            }
                         </button>
                     </div>
                     :
