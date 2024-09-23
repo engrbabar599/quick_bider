@@ -60,7 +60,7 @@ function Withdraw({ show, onClose }) {
     <div>
       {dialog && (
         <div className=" fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ">
-          <div className=" flex items-center justify-center h-[100vh]  lg:w-[30%] sm:w-[50%]">
+          <div className=" flex items-center justify-center h-[100vh] xl:w-[30%] lg:w-[40%] sm:w-[50%]">
             <div ref={popupRef}
               className=" mx-auto p-12 bg-white rounded-lg shadow-md  md:w-full py-7 w-[90%]">
               <div className="flex justify-between "></div>

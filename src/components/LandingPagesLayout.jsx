@@ -15,6 +15,7 @@ import baseImage from "../assets/images/Wave.png"
 import { OutlineButton } from "./OutlineButton";
 import { Button } from "./Button";
 import { HomeNavbar } from "./LandingPages/HomeNavbar";
+import Svgs from "assets/svgs";
 
 
 export const LandingPageLayout = ({ children }) => {
@@ -35,14 +36,11 @@ export const LandingPageLayout = ({ children }) => {
             <HomeNavbar />
             {children}
 
-            <div className="WaveImage" >
-                <img src={baseImage} alt="" />
-            </div>
             <div className="banner cursor-pointer">
                 <img src={banner} className=" w-[100vw]" alt="" />
             </div>
             <div className="footer py-10 bg-[#e0e0e0]">
-                <div className="w-[90vw] lg:w-[80vw] mx-auto">
+                <div className="w-[90vw] lg:w-[85vw] mx-auto">
                     <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-0">
                         <div className="first w-full lg:w-[35%]">
                             <div>
@@ -55,16 +53,16 @@ export const LandingPageLayout = ({ children }) => {
                             </div>
                             <div className="flex gap-4">
                                 <div className="cursor-pointer">
-                                    <img src={facebook} alt="" />
+                                    <Svgs.FacebookIcon />
                                 </div>
                                 <div className="cursor-pointer">
-                                    <img src={twitter} alt="" />
+                                    <Svgs.TwitterIcon />
                                 </div>
                                 <div className="cursor-pointer">
-                                    <img src={tiktok} alt="" />
+                                    <Svgs.TiktokIcon />
                                 </div>
                                 <div className="cursor-pointer">
-                                    <img src={youtube} alt="" />
+                                    <Svgs.YoutubeIcon />
                                 </div>
                             </div>
                         </div>

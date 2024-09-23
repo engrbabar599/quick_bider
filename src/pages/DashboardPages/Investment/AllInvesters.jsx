@@ -4,6 +4,7 @@ import { useGetInvestmentProject, useGetUserInvestment } from '../../../api/Auct
 import { DashboardLayout } from 'components/Layout';
 import { useGetAllInvestors } from 'api/UserManagement';
 import Svgs from 'assets/svgs';
+import { formatDate } from 'utils/utility-functions';
 
 function AllInvestors() {
   const navigate = useNavigate()
@@ -38,8 +39,15 @@ function AllInvestors() {
                     key={i}
                     className="grid grid-cols-3 pt-4 border-b text-[#1E1E1E]"
                   >
-                    <div><h1 className=" font-normal text-[#686868] font-open-sans text-base underline">{value.name}</h1></div>
-                    <div><p className="text-base font-light">10:20:40 AM</p></div>
+                    <div><h1 className=" font-normal text-[#686868] font-open-sans text-base underline">{value.first_name} {value?.last_name}</h1></div>
+                    <div><p className="text-base font-light">
+                      {formatDate(value?.completed_date_time, {
+                        hour: "2-digit",
+                        minute: '2-digit',
+                        second: '2-digit',
+                        hour12: '2-digit'
+                      })}
+                    </p></div>
                     <div><p className="text-base font-light text-center">$**</p></div>
                   </div>
                 </>

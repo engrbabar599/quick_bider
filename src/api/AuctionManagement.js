@@ -195,11 +195,11 @@ export const useDeleteInvestmentProject = ({ onError, onSuccess }) => (
 )
 
 // Gets the user investment not working as of now
-export const useGetUserInvestment = ({ is_active = true }) => (
+export const useGetUserInvestment = ({ is_active = "True" }) => (
     useQuery({
-        queryKey: ["useGetUserInvestment"],
-        queryFn: async () => {
-            const response = await handleAPIRequest(axiosInstance.get, `user_investment/?is_active=${is_active}`)
+        queryKey: ["useGetUserInvestment", is_active],
+        queryFn: async ({ queryKey }) => {
+            const response = await handleAPIRequest(axiosInstance.get, `user_investment/?is_active=${queryKey[1]}`)
             return response
         },
         staleTime: Infinity
@@ -228,15 +228,16 @@ export const useDeleteUserInvestment = ({ onError, onSuccess }) => (
     })
 )
 
-export const useGetUserReview = (type, id) => (
+export const useGetUserReview = (type, investmentId, auctionId) => (
     useQuery({
-        queryKey: ["useGetUserReview", type, id],
+        queryKey: ["useGetUserReview", type, investmentId, auctionId],
         queryFn: async ({ queryKey }) => {
-            const [_, type, id] = queryKey;
+            const [_, type, investmentId, auctionId] = queryKey;
             let queryParams = [];
 
-            if (type) queryParams.push(`type=${type}`);
-            if (id) queryParams.push(`id=${id}`);
+            if (type) queryParams.push(`filter_by=${type}`);
+            if (investmentId) queryParams.push(`investment_project=${investmentId}`);
+            if (auctionId) queryParams.push(`auction=${auctionId}`);
 
             const queryString = queryParams.length > 0 ? `?${queryParams.join("&")}` : "";
 

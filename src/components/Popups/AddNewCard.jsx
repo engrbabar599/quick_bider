@@ -13,7 +13,8 @@ import Popup from "components/Popup";
 
 function AddNewCard({ show, onClose, cardDetailsToEdit }) {
   const popupRef = useRef();
-  const isEditable = cardDetailsToEdit ? true : false
+  const isEditable = Object.entries(cardDetailsToEdit).length > 0 ? true : false
+  console.log(cardDetailsToEdit)
   const [dialog, setDialog] = useState(true);
   const [openSuccessModal, setOpenSuccessModal] = useState(false)
   const queryClient = useQueryClient()
@@ -89,8 +90,8 @@ function AddNewCard({ show, onClose, cardDetailsToEdit }) {
       <Popup
         closeModal={onClose}
         open={dialog}
-        customPadding={"p-[48px] "}
-        customWidth={"w-[80vw] lg:w-[30vw] xl:w-[30vw]"}
+        customPadding={"md:p-[48px] p-[28px] "}
+        customWidth={"w-[85vw] md:w-[60vw] lg:w-[40vw] xl:w-[30vw]"}
       >
 
         <Formik
@@ -111,8 +112,7 @@ function AddNewCard({ show, onClose, cardDetailsToEdit }) {
             handleChange,
             errors,
             setErrors,
-            handleSubmit
-
+            handleSubmit,
           }) => (
             <form onSubmit={handleSubmit}>
               <>
@@ -137,24 +137,29 @@ function AddNewCard({ show, onClose, cardDetailsToEdit }) {
                       onChange={(e) => handleInputChange(e, errors, setErrors, handleChange)}
                     />
                   </div>
-                  <div className=" items-start  gap-4 mb-4 grid grid-cols-2 ">
-                    <Input
-                      label={"Expiry date"}
-                      value={values.expiry_date}
-                      error={errors.expiry_date}
-                      name={"expiry_date"}
-                      placeholder={"00/00"}
-                      onChange={(e) => handleInputChange(e, errors, setErrors, handleChange)}
-                    />
-                    <Input
-                      type={'number'}
-                      label={"CVV"}
-                      value={values.cvv}
-                      error={errors.cvv}
-                      name={"cvv"}
-                      placeholder={"XXX"}
-                      onChange={(e) => handleInputChange(e, errors, setErrors, handleChange)}
-                    />
+                  <div className=" items-start gap-4 mb-4 grid grid-cols-1 xs:grid-cols-2 ">
+                    <div>
+                      <Input
+                        label={"Expiry date"}
+                        value={values.expiry_date}
+                        error={errors.expiry_date}
+                        name={"expiry_date"}
+                        placeholder={"00/00"}
+                        onChange={(e) => handleInputChange(e, errors, setErrors, handleChange)}
+                      />
+                    </div>
+                    <div>
+                      <Input
+                        type={'number'}
+                        label={"CVV"}
+                        value={values.cvv}
+                        error={errors.cvv}
+                        name={"cvv"}
+                        placeholder={"XXX"}
+                        onChange={(e) => handleInputChange(e, errors, setErrors, handleChange)}
+                      />
+                    </div>
+
                   </div>
                   <div className="mb-4">
                     <Input

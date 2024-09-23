@@ -47,12 +47,12 @@ export const ContactUsPage = () => {
                     <img src={background} className="absolute top-0 w-full -z-10 h-full" alt="" />
                     <div className="contactpart z-10 md:pt-40 pt-10">
                         <div className="text-center">
-                            <h1 className="text-[56px] font-bold font-inter text-white">
+                            <h1 className="md:text-[56px] text-4xl font-bold font-inter text-white">
                                 Contact Us
                             </h1>
                         </div>
                         <div className="pt-5 pb-12 px-5">
-                            <p className="text-base font-normal font-inter text-white w-full md:w-[50%] mx-auto text-center">
+                            <p className="md:text-base font-normal font-inter text-white w-full md:w-[50%] mx-auto text-center text-sm">
                                 We’re here to help! Whether you have questions about our betting rounds,
                                 investment opportunities, or need assistance with your account, our team is
                                 ready to assist you. Reach out to us through any of the following channels:
@@ -83,9 +83,9 @@ export const ContactUsPage = () => {
                                 touched,
                                 setErrors
                             }) => (
-                                <form onSubmit={handleSubmit} className=" md:w-[63%] mx-auto p-4 md:p-12 rounded-xl bg-white border w-[90vw]">
+                                <form onSubmit={handleSubmit} className=" md:w-[73%] mx-auto py-8 px-4 md:p-12 rounded-xl bg-white border w-[90vw]">
                                     <div className="text-center">
-                                        <h1 className="text-[36px] font-bold font-inter text-gray-1">
+                                        <h1 className="md:text-[36px] text-xl font-bold font-inter text-gray-1">
                                             Send message
                                         </h1>
                                     </div>
@@ -161,7 +161,7 @@ export const ContactUsPage = () => {
 
 
 
-                <div className="iconspart w-full md:w-[80%] mx-auto py-10 md:py-20 flex flex-wrap items-center justify-center gap-10 px-4">
+                <div className="iconspart w-full xl:w-[80%] mx-auto py-10 md:py-20 flex flex-wrap items-center justify-center gap-10 px-4">
                     <div className="card1 w-full md:w-[28%] flex flex-col items-center justify-center text-center gap-4">
                         <div className="p-3 bg-custom-blue bg-opacity-10 rounded-2xl">
                             <div className=" border border-gray-400 border-dashed">

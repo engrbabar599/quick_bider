@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button } from './Button'
 import Popup from './Popup'
 import Svgs from 'assets/svgs'
+import ReactModal from 'react-modal'
 
 export const VideoAd = ({ open, setOpen, closeModal }) => {
     const [time, setTime] = useState({
@@ -10,7 +11,7 @@ export const VideoAd = ({ open, setOpen, closeModal }) => {
     })
 
     const [openClosePopup, setOpenClosePopup] = useState(false)
-    const [closeTimer, setCloseTimer] = useState({ minutes: 0, seconds: 30 })
+    // const [closeTimer, setCloseTimer] = useState({ minutes: 0, seconds: 30 })
 
 
     useEffect(() => {
@@ -36,29 +37,29 @@ export const VideoAd = ({ open, setOpen, closeModal }) => {
                 return prev;
             });
 
-            setCloseTimer(prevTime => {
-                const { minutes, seconds } = prevTime
+            // setCloseTimer(prevTime => {
+            //     const { minutes, seconds } = prevTime
 
-                if (minutes === 0 && seconds === 0) {
-                    // closeModal()
-                    setOpenClosePopup(false)
-                    return prevTime
-                }
+            //     if (minutes === 0 && seconds === 0) {
+            //         // closeModal()
+            //         setOpenClosePopup(false)
+            //         return prevTime
+            //     }
 
-                if (seconds > 0) {
-                    return { ...prevTime, seconds: seconds - 1 }
-                }
-                if (minutes > 0) {
-                    return { minutes: minutes - 1, seconds: 59 }
-                }
-                return prevTime
-            })
+            //     if (seconds > 0) {
+            //         return { ...prevTime, seconds: seconds - 1 }
+            //     }
+            //     if (minutes > 0) {
+            //         return { minutes: minutes - 1, seconds: 59 }
+            //     }
+            //     return prevTime
+            // })
 
 
         }, 1000);
         return () => {
             setTime({ minutes: 4, seconds: 59 })
-            setCloseTimer({ minutes: 0, seconds: 30 })
+            // setCloseTimer({ minutes: 0, seconds: 30 })
             clearInterval(timerId)
         };
     }, [open])
@@ -83,8 +84,8 @@ export const VideoAd = ({ open, setOpen, closeModal }) => {
 
 
     const handleCloseVideoAd = () => {
-        if (closeTimer.minutes === 0 && closeTimer.seconds === 0) {
-            setOpenClosePopup(false)
+        if (time.minutes == 0 && time.seconds == 0) {
+            setOpenClosePopup(true)
             closeModal()
         }
         else {
@@ -92,24 +93,32 @@ export const VideoAd = ({ open, setOpen, closeModal }) => {
         }
     }
 
+    useEffect(() => {
+        if (open) {
+            if (time?.minutes < 4) {
+                setOpenClosePopup(true)
+            }
+        }
+    }, [time])
 
     return (
         <>
-            <Popup
-                closeModal={closeModal}
-                open={open}
-                customPadding={"py-[24px]"}
-                customWidth={"w-[90vw] lg:w-[70vw] md:w-[80vw]"}
+            <ReactModal
+                isOpen={open}
+                shouldCloseOnOverlayClick={false}
+                onRequestClose={closeModal}
+                overlayClassName="flex items-center justify-center h-screen w-screen absolute inset-0 bg-gray-500 bg-opacity-75 "
+                className={`w-[90vw] lg:w-[70vw] md:w-[80vw] py-[24px] bg-white max-h-[90vh] rounded-xl outline-none overflow-y-auto`}
+
             >
                 <div className=' flex flex-col gap-4 items-center relative h-full'>
                     <div className='flex flex-row gap-2 font-poppins text-base'>
                         <p className='text-gray-4 font-normal'>Time left -</p>
                         <p className='text-gray-1 font-semibold'>{time.minutes}:{time.seconds < 10 ? "0" + time.seconds : time.seconds} min</p>
                     </div>
-                    <button onClick={closeModal} className='absolute right-4 -top-5 '>
+                    {/* <button onClick={closeModal} className='absolute right-4 -top-5 '>
                         <Svgs.MinimizeIcon />
-
-                    </button>
+                    </button> */}
 
                     <div className='h-full md:px-8 px-[20px] relative cursor-pointer w-full'>
                         <video
@@ -130,8 +139,7 @@ export const VideoAd = ({ open, setOpen, closeModal }) => {
                         />
                     </div>
                 </div>
-
-            </Popup >
+            </ReactModal >
 
 
 
@@ -145,11 +153,13 @@ export const VideoAd = ({ open, setOpen, closeModal }) => {
                     <div className='flex flex-col items-center justify-center gap-8'>
                         <Svgs.FilledRightIcon />
                         <p className='text-gray-1 font-poppins font-semibold text-3xl'>
-                            {closeTimer.minutes}:{closeTimer.seconds < 10 ? "0" + closeTimer.seconds : closeTimer.seconds} min
+                            {time.minutes}:{time.seconds < 10 ? "0" + time.seconds : time.seconds} min
                         </p>
                     </div>
                     <Button
-                        onClick={() => setOpenClosePopup(false)}
+                        disabled={time?.minutes < 1}
+                        className={`${time?.minutes < 1 ? "cursor-not-allowed" : ''}`}
+                        onClick={() => { time?.minutes < 5 && setOpenClosePopup(false) }}
                         title={"Close"}
                     />
                 </div>

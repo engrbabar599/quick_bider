@@ -3,7 +3,7 @@ import { useAddUserReview, useGetUserReview } from 'api/AuctionManagement'
 import Svgs from 'assets/svgs'
 import { Button } from 'components/Button'
 import Spinner from 'components/Spinner'
-import React, { act, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Skeleton from 'react-loading-skeleton'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -17,11 +17,11 @@ function ReviewSection({
     const navigate = useNavigate()
     const queryClient = useQueryClient()
     const [activeSection, setActiveSection] = useState("View")
-
+    console.log(id)
     const [newData, setNewData] = useState({
         text: "",
         rating: 0,
-        [reviewType == "investment" ? "investment_project" : "auction"]: id
+        [reviewType == "investment_project" ? "investment_project" : "auction"]: id,
     })
     const [reviewErrors, setReviewErrors] = useState({})
 
@@ -88,7 +88,6 @@ function ReviewSection({
                     </button>
                 </div>
             }
-
             {activeSection === "View" && (
                 <div className='flex flex-col py-8 gap-8'>
 
@@ -115,11 +114,11 @@ function ReviewSection({
                         reviewData?.results?.length == 0 ?
                             <div className='flex items-center justify-center h-[40vh] '>
                                 <p className='text-gray-1 text-xl  font-semibold'>
-                                    No Review Yet!
+                                    No Reviews Yet!
                                 </p>
                             </div>
                             :
-                            reviewData?.results?.map((value, i) => (
+                            reviewData?.results?.slice(0, 2)?.map((value, i) => (
                                 <>
                                     <div
                                         key={i}
@@ -138,15 +137,14 @@ function ReviewSection({
                                                     <div
                                                         className='h-[32px] w-[32px]
                                             md:h-[49px] md:w-[49px] rounded-full bg-custom-blue text-white  text-xs md:text-base text-center flex items-center justify-center '>
-                                                        {/* {value?.user?.first_name[0]}
-                                                        {value?.user?.last_name[0]} */}
-                                                        AB
+                                                        {value?.user?.first_name[0]}
+                                                        {value?.user?.last_name[0]}
                                                     </div>
                                                 }
 
                                                 <div>
-                                                    <h1 className="md:text-xl text-base font-semibold font-poppins capitalize text-[#414042]">
-                                                        {value?.name}Jonas
+                                                    <h1 className="md:text-xl text-base font-semibold font-poppins capitalize text-[#414042] whitespace-nowrap  max-w-[200px] overflow-hidden truncate">
+                                                        {value?.user?.first_name} {value?.user?.last_name}
                                                     </h1>
                                                     <p className=" text-sm  md:text-base font-normal font-poppins text-[#7A7A7A]">
                                                         {value?.investment_project != null ? "Investor" : "Bidder"}

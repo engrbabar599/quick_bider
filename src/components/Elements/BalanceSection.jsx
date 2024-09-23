@@ -7,6 +7,7 @@ import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement
 import { useGetWallet } from 'api/UserManagement';
 import AddMoneyPopup from 'components/Popups/AddMoneyPopup';
 import AddNewCard from 'components/Popups/AddNewCard';
+import Dropdown from 'components/Dropdown';
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend);
 
@@ -80,6 +81,7 @@ const options = {
 
 export const BalanceSection = ({ hidden }) => {
     const [showPopup, setShowPopup] = useState(false);
+    const [filterData, setFilterData] = useState('7')
     const [openAddCardPopup, setOpenNewCardPopup] = useState(false)
 
 
@@ -103,23 +105,26 @@ export const BalanceSection = ({ hidden }) => {
                     </span>
                 </p>
             </div>
-            <div className='flex gap-3 flex-col items-center justify-between md:flex-row  lg:space-y-0 lg:space-x-4 w-full'>
-                <select className='w-1/2 lg:w-full border outline-none border-[#E6E6E6] rounded-xl font-base-2 px-2 py-3'>
-                    <option value="">Last 7 days</option>
-                    <option value="">Last 30 days</option>
-                    <option value="">Last 60 days</option>
-                </select>
+            <div className='gap-3 grid grid-cols-2 items-center justify-center w-full'>
+                <Dropdown
+                    value={filterData}
+                    onChange={(value) => setFilterData(value)}
+                    options={[
+                        { label: "Last 7 days", value: '7' },
+                        { label: "Last 30 days", value: '30' },
+                        { label: "Last 60 days", value: '60' }
+                    ]}
+                />
 
-                <div className='w-1/2 lg:w-full '>
-                    <Button
-                        onClick={handleShowPopup}
-                        className="!text-sm"
-                        title="Add money"
-                    />
-                </div>
+                <Button
+                    customPadding={""}
+                    onClick={handleShowPopup}
+                    className="!text-sm"
+                    title="Add money"
+                />
             </div>
 
-            <div className='flex justify-center items-center  max-w-full'>
+            <div className='flex justify-center items-center min-h-fit   min-w-full  '>
                 <Line data={data} options={options} />
             </div>
 

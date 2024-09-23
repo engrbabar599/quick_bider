@@ -325,8 +325,8 @@ export const useGetUserClaims = () => (
 export const useGetAllInvestors = (investmentId = "") => (
     useQuery({
         queryKey: ["useGetAllInvestors", investmentId],
-        queryFn: async () => {
-            const response = await handleAPIRequest(axiosInstance.get, `all_investors/?investment_project=${investmentId}`)
+        queryFn: async ({ queryKey }) => {
+            const response = await handleAPIRequest(axiosInstance.get, `all_investors/?investment_project=${queryKey[1]}`)
             return response?.results
         },
         staleTime: Infinity

@@ -5,6 +5,7 @@ import { DashboardLayout } from "components/Layout";
 import { Formik } from "formik";
 import { useSupportHelper } from "./helper";
 import Spinner from "components/Spinner";
+import Svgs from "assets/svgs";
 
 function HelpAndSupport() {
 
@@ -14,7 +15,7 @@ function HelpAndSupport() {
     <DashboardLayout activeSidebar={"Help & Support"}>
       <div className="  ">
         <h2 className="md:text-2xl font-poppins font-medium">Send enquiry</h2>
-        <div className=" rounded  py-4 md:grid gap-6 md:grid-cols-3 flex flex-col ">
+        <div className=" rounded  py-4 lg:grid gap-6 lg:grid-cols-3 flex flex-col ">
 
           <Formik
             innerRef={formikRef}
@@ -168,8 +169,8 @@ function HelpAndSupport() {
           <div className="space-y-4">
             <div className="border p-4 rounded-md flex items-center shadow gap-5 cursor-pointer">
               <div>
-                <p className="w-[50px] h-[50px] bg-[#c3d2f254] flex justify-center items-center rounded-full">
-                  <span className="material-icons text-custom-blue">email</span>
+                <p className="w-[50px] h-[50px]  bg-custom-blue bg-opacity-10 flex justify-center items-center rounded-full">
+                  <Svgs.HelpScreenEmailIcon />
                 </p>
               </div>
               <div>
@@ -179,8 +180,8 @@ function HelpAndSupport() {
             </div>
             <div className="border rounded-md shadow p-4 flex items-center gap-5 cursor-pointer">
               <div>
-                <p className="w-[50px] h-[50px] bg-[#c3d2f254] flex justify-center items-center rounded-full">
-                  <span className="material-icons text-custom-blue">phone</span>
+                <p className="w-[50px] h-[50px]  bg-custom-blue bg-opacity-10 flex justify-center items-center rounded-full">
+                  <Svgs.HelpScreenPhoneIcon />
                 </p>
               </div>
               <div>
@@ -190,8 +191,8 @@ function HelpAndSupport() {
             </div>
             <div className="border p-4 rounded-md shadow flex items-center gap-5 cursor-pointer">
               <div>
-                <p className="w-[50px] h-[50px] bg-[#c3d2f254] flex justify-center items-center rounded-full">
-                  <span className="material-icons text-custom-blue">chat</span>
+                <p className="w-[50px] h-[50px] bg-custom-blue bg-opacity-10 flex justify-center items-center rounded-full">
+                  <Svgs.HelpScreenChatIcon />
                 </p>
               </div>
               <div>

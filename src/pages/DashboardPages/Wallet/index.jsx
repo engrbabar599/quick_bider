@@ -80,13 +80,13 @@ const Wallet = () => {
           <h2 className="text-base md:text-2xl font-medium font-poppins text-gray-1 mb-4">
             Wallet
           </h2>
-          <div className="bg-white shadow rounded-xl border px-5 py-6 md:py-12">
+          <div className="bg-white shadow rounded-xl border p-[15px] lg:px-5 lg:py-6 md:py-12">
             <div className="flex justify-between items-center flex-wrap">
               <div>
-                <p className="xs:text-2xl md:text-[64px] xs:font-semibold text-gray-1 font-poppins">
+                <p className="text-2xl md:text-[64px] xs:font-semibold text-gray-1 font-poppins">
                   ${walletData?.balance ? walletData?.balance : 0}
                 </p>
-                <p className="text-gray-1 text-[20px] xs:text-sm font-noraml font-poppins md:py-8 xs:py-3">
+                <p className="text-gray-1 lg:text-[20px] text-sm font-noraml font-poppins md:py-8 xs:py-3">
                   Current Balance
                 </p>
               </div>
@@ -115,7 +115,9 @@ const Wallet = () => {
                 </div>
               </div>
             </div>
-            <Line data={data} options={options} />
+            <div className="py-5">
+              <Line data={data} options={options} />
+            </div>
           </div>
           <div>
             <div className="py-6">
@@ -148,7 +150,8 @@ const Wallet = () => {
                               </h1>
                             </div>
                           </div>
-                          <div className="flex flex-row gap-2 justify-center">
+                          <div className="flex flex-row gap-2 justify-center max-md:items-center max-md:w-full
+                          ">
                             <button
                               disabled={isDeleting}
                               onClick={() => {

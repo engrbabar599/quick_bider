@@ -4,11 +4,13 @@ import { useNavigate } from 'react-router-dom'
 import { useGetAuction } from 'api/AuctionManagement'
 import { DashboardAuctionSkeleton } from 'components/Skeleton/DashboardAuctionSkeleton'
 import { CountDownTimer } from 'components/Elements/CountDownTimer'
+import IMAGES from 'assets/IMAGES'
+import AuctionCard from 'components/Elements/AuctionCard'
 
 
 export const TrendingAuction = () => {
     const navigate = useNavigate()
-    const { data: auctionData, isLoading: isLoadingAuction } = useGetAuction({ page: 1 })
+    const { data: auctionData, isLoading: isLoadingAuction } = useGetAuction({ page: 0 })
 
     const [time, setTime] = useState({
         hours: 2,
@@ -51,60 +53,20 @@ export const TrendingAuction = () => {
             </div>
 
 
-            <div className='flex md:flex-row flex-col gap-4 items-center px-7 lg:px-0 '>
+            <div className='flex md:flex-row flex-col gap-4  items-center px-4 lg:px-0  justify-center '>
                 {isLoadingAuction ?
                     Array(3).fill().map((_, index) => (
-                        <DashboardAuctionSkeleton key={index} />
+                        <DashboardAuctionSkeleton key={index} className={index == 2 ? 'lg:max-xl:hidden' : ""} />
                     ))
                     :
-                    auctionData?.results?.map((data, index) => (
-                        <div
-                            key={index}
-                            onClick={() => { navigate(`/dashboard/bids`, { state: { auctionDetails: data } }) }}
-                            className=' bg-white border shadow-sm  rounded-xl group lg:hover:scale-105 duration-300 transform ease-in cursor-pointer'>
-                            <div className='space-y-4 p-4 relative'>
-                                <img src={data?.thumbnail_image} alt="" className=' w-[225px] h-[152px] object-contain !rounded-lg bg-gray-200 ' />
-                                <div className=''>
-
-                                    <CountDownTimer timeStamp={data?.bid_date_time} />
-
-                                </div>
-                                <div className='font-poppins font-semibold text-sm lg:text-base'>
-                                    <div className='flex flex-col'>
-                                        <p className='text-gray-1'>{data?.title}
-                                            {/* <span className='text-gray-4 text-xs lg:text-sm font-normal'>(2017 Model)</span> */}
-                                        </p>
-                                        <p className='font-poppins font-medium text-xs lg:text-sm'>{data?.participants?.length} <span className='font-normal text-gray-4'>Member</span> </p>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                            <div className='flex flex-row justify-around items-center group-hover:bg-custom-blue group-hover:bg-opacity-10 '>
-
-                                <div className='flex flex-row w-full justify-between  p-2'>
-                                    <div className='font-poppins text-gray-4 font-normal'>
-                                        <p className='text-xs'>Bid Amount</p>
-                                        <p className='font-semibold text-xs lg:text-sm text-gray-1'>${data?.bid_amount}
-                                            <span className='text-gray-4 font-normal text-xs'>({data?.bidding_round} Rounds)</span>
-                                        </p>
-                                    </div>
-                                    <div>
-
-                                        <button
-                                            className={"p-2 bg-white !text-custom-blue group-hover:bg-custom-blue group-hover:!text-white border border-custom-blue text-xs lg:text-sm rounded-xl outline-none"}
-                                        >
-                                            Place a Bid
-                                        </button>
-                                    </div>
-
-                                </div>
-                            </div>
-
-
+                    auctionData?.results?.length == 0 ?
+                        <div className='w-full  h-full flex-1 flex min-h-[300px] items-center justify-center text-lg lg:text-xl font-poppins font-medium text-center'>
+                            No Auction available at this time
                         </div>
-                    ))}
+                        :
+                        auctionData?.results?.slice(0, 3)?.map((data, index) => (
+                            <AuctionCard data={data} key={index} />
+                        ))}
             </div>
 
         </div>

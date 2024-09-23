@@ -7,7 +7,7 @@ function Spinner({ width, height, isVisible, color }) {
             visible={isVisible}
             height={height ? height : "25"}
             width={width ? width : "30"}
-            color={color ? color : "white"}
+            color={color ? color == "custom-blue" ? "#6F9CFF" : color : "white"}
             secondaryColor=''
             ariaLabel="oval-loading"
             wrapperStyle={{}}

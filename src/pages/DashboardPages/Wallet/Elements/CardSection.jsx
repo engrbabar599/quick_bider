@@ -67,7 +67,7 @@ const CardSection = () => {
 
           <div
             ref={sliderRef}
-            className="flex flex-row overflow-x-auto snap-x  scroll-smooth gap-4 w-full"
+            className="flex flex-row overflow-x-auto snap-x  overflow-y-hidden scroll-smooth gap-4 w-full"
             onScroll={handleScroll}
           >
 
@@ -75,13 +75,13 @@ const CardSection = () => {
               cardDetails?.map((data, index) => (
                 <div
                   key={index}
-                  className="flex flex-col justify-between items-center min-w-[320px] snap-start"
+                  className="flex flex-col justify-between items-center w-full h-full lg:max-xl:min-w-[280px] snap-start"
                 >
-                  <div className="p-4 flex flex-col justify-between relative bg-gradient-to-b from-[#94A0F3] via-[#6074F6] to-[#475FF5] shadow-[rgba(73,97,245,1)]  text-white rounded-xl w-full  lg:h-[30vh]">
+                  <div className="p-4 flex flex-col justify-between relative bg-gradient-to-b from-[#94A0F3] via-[#6074F6] to-[#475FF5] shadow-[rgba(73,97,245,1)]  text-white rounded-xl w-full  lg:h-[30vh] h-[35vh]">
                     <img src={cardBar} alt="" className="absolute top-0 right-0 " />
                     <img src={cardDetailsCorner} alt="" className="absolute top-0 right-0" />
                     <div className="flex justify-between items-center">
-                      <p className="z-0 xs:text-base md:text-lg font-medium font-poppins">
+                      <p className="z-0 xs:text-base xl:text-lg font-medium font-poppins">
                         Universal Card
                       </p>
                       <button
@@ -89,18 +89,18 @@ const CardSection = () => {
                           setCardDetailsToEdit(data)
                           handleShowPopup()
                         }}
-                        className="z-10 bg-white bg-opacity-60 text-black px-4 py-1 w-[64px] rounded-lg md:text-lg xs:text-base font-normal font-poppins">
+                        className="z-10 bg-white bg-opacity-60 text-black px-4 py-1 w-[64px] rounded-lg xl:text-lg text-base font-normal font-poppins">
                         Edit
                       </button>
                     </div>
                     <div>
-                      <p className="md:text-2xl xs:text-lg font-dm-sans font-bold">
+                      <p className="xl:text-2xl text-lg font-dm-sans font-bold">
                         {data?.card_number.replace(/(.{4})/g, '$1 ').trim()}
                       </p>
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-7 font-dm-sans">
-                        <p className="xs:text-[10px] md:text-xs font-bold font-dm-sans">
+                        <p className="text-[10px] text-xs font-bold font-dm-sans">
                           {data?.name_no_card}
                         </p>
                         <p className="xs:text-[10px] md:text-xs font-bold font-dm-sans">
@@ -115,7 +115,7 @@ const CardSection = () => {
                 </div>
               ))
               :
-              <div className="p-4 flex flex-col justify-between relative bg-gradient-to-b from-[#94A0F3] via-[#6074F6] to-[#475FF5] shadow-[rgba(73,97,245,1)]  text-white rounded-xl w-full  lg:h-[30vh] min-h-[200px]">
+              <div className="p-4 flex flex-col justify-between relative bg-gradient-to-b from-[#94A0F3] via-[#6074F6] to-[#475FF5] shadow-[rgba(73,97,245,1)]  text-white rounded-xl w-full  lg:h-[30vh] min-h-[200px] md:min-h-[300px] lg:min-h-[200px]">
                 <img src={cardBar} alt="" className="absolute top-0 right-0 " />
                 <img src={cardDetailsCorner} alt="" className="absolute top-0 right-0" />
                 <div className="flex justify-center h-full items-center">
@@ -138,12 +138,12 @@ const CardSection = () => {
           </div>
         </div>
 
-        <div className=" flex flex-col gap-3 ">
+        <div className=" flex flex-col md:gap-3 ">
           <h3
             className="xs:text-xs md:text-base font-medium font-poppins  text-[#B8B8B8] py-2 ">
             Total Balance
           </h3>
-          <p className="xs:text-xl md:text-[40px] font-semibold font-poppins text-gray-1 ">
+          <p className="text-xl md:text-[40px] font-semibold font-poppins text-gray-1 ">
             ${walletData?.balance ? walletData?.balance : 0}
           </p>
         </div>

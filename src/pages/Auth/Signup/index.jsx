@@ -12,7 +12,7 @@ export const SignUp = () => {
     const { isRegisteringUser, registerSchema, registerUser } = useSignupHelper()
 
     return (
-        <div className='bg-custom-blue relative z-50 min-h-fit md:p-12 p-1 max-sm:py-16 flex justify-center items-center'>
+        <div className='bg-custom-blue relative z-50 min-h-screen md:p-12 p-1 max-sm:py-16 flex justify-center items-center'>
             <img src={IMAGES.backgroundLogo} alt="" className="absolute right-0 top-0 h-[36rem] -rotate-8" />
             <img src={IMAGES.logoWithName} alt="" className="absolute left-0 bottom-10 h-60 -rotate-8 -z-50" />
 
@@ -168,7 +168,7 @@ export const SignUp = () => {
                                                     type="checkbox"
                                                     name="termsConditions"
                                                     id=""
-                                                    className='!border-2 border-custom-blue rounded-md appearance-none checked:bg-custom-blue hover:scale-105 hover:cursor-pointer md:w-5 w-6 h-5 outline-none min-w-max checked:bg-no-repeat checked:bg-center'
+                                                    className='!border-2 border-custom-blue rounded-md appearance-none checked:bg-custom-blue hover:scale-105 hover:cursor-pointer md:w-5 w-6 max-w-5 max-[375px]:w-6 h-5 outline-none min-w-max checked:bg-no-repeat checked:bg-center'
                                                 />
                                                 <div className='font-poppins text-xs lg:text-sm text-gray-4 font-normal flex flex-col space-y-1'>
                                                     <span className='flex flex-wrap'>

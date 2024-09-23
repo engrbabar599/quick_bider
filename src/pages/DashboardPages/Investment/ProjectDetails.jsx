@@ -26,8 +26,7 @@ function ProjectDetails() {
   const { data: walletDetails } = useGetWallet()
   const { data: projectDetails, isLoading } = useGetSingleInvestmentProject(projectId)
   const { data: userData } = useGetUserProfile()
-  console.log(isLoading)
-  console.log(projectDetails)
+  const [errors, setErrors] = useState("")
   const [investmentData, setInvestmentData] = useState({
     investment_project: projectId,
     currency: projectDetails?.currency,
@@ -58,10 +57,20 @@ function ProjectDetails() {
     }
   })
 
+  const invest = () => {
+    console.log(investedData)
+    if (investmentData?.invested_amount.length < 0 || investmentData?.invested_amount < Number(projectDetails?.min_amount)) {
+      setInvestmentError(() => {
+        return investmentData?.invested_amount?.length < 0 ? "Required" : investmentData?.invested_amount < Number(projectDetails?.min_amount) ? `$${projectDetails?.min_amount} is the minimum investment amount` : ""
+      })
+      return
+    }
+    handleInvestment(investmentData)
+  }
+
   return (
     <DashboardLayout activeSidebar={"Investments"}>
 
-      {console.log(isLoading)}
       {isLoading ?
         <div className="flex items-center justify-center flex-1 min-h-[80vh]">
           <Spinner color={"#6F9CFF"} height={75} width={75} />
@@ -75,7 +84,7 @@ function ProjectDetails() {
             second={projectDetails?.name}
           />
 
-          <div className=" grid grid-cols-12 gap-5">
+          <div className=" grid grid-cols-12 gap-5 pt-5">
 
             <div className="leftpart  col-span-12 lg:col-span-7">
               <div className="border p-[15px] lg:p-5 rounded-xl shadow-sm">
@@ -144,21 +153,21 @@ function ProjectDetails() {
                   </div>
                 </div>
 
-                <div className="pt-5 flex flex-col md:flex-row items-center justify-center gap-4 ">
-                  <Input
-                    type={"number"}
-                    parentClass={'w-full'}
-                    className="w-full"
-                    placeholder={"Enter amount to invest"}
-                    value={investmentData?.invested_amount != 0 ? investmentData?.invested_amount : ""}
-                    onChange={(e) => {
-                      setInvestmentError("")
-                      setInvestmentData({ ...investmentData, invested_amount: Number(e.target.value) })
-                    }}
-                    error={investmentError}
-
-
-                  />
+                <div className="pt-5 flex flex-col md:flex-row items-start justify-center gap-4 ">
+                  <div className="w-full">
+                    <Input
+                      type={"number"}
+                      parentClass={'w-full'}
+                      className="w-full"
+                      placeholder={"Enter amount to invest"}
+                      value={investmentData?.invested_amount != 0 ? investmentData?.invested_amount : ""}
+                      onChange={(e) => {
+                        setInvestmentError("")
+                        setInvestmentData({ ...investmentData, invested_amount: Number(e.target.value) })
+                      }}
+                      error={investmentError}
+                    />
+                  </div>
 
                   <div>
                     <Button
@@ -167,12 +176,13 @@ function ProjectDetails() {
                         :
                         "Invest Now"}
                       onClick={() => {
-                        if (!investmentData?.invested_amount || investmentData?.invested_amount == 0) {
-                          setInvestmentError("Enter a amount")
-                        }
-                        else {
-                          handleInvestment(investmentData)
-                        }
+                        invest()
+                        // if (!investmentData?.invested_amount || investmentData?.invested_amount == 0) {
+                        //   setInvestmentError("Enter a amount")
+                        // }
+                        // else {
+                        //   handleInvestment(investmentData)
+                        // }
                       }}
                       className={"min-w-max"}
                       customPadding={"px-[34px] py-[12px]"}
@@ -302,7 +312,7 @@ function ProjectDetails() {
 
               <ReviewSection
                 hideSwitch={!projectDetails?.investors?.some(investor => investor?.id == userData?.id)}
-                type={"investment"}
+                reviewType={"investment_project"}
                 id={projectId}
 
               />

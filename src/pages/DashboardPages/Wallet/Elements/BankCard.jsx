@@ -13,8 +13,7 @@ import { toast } from "react-toastify";
 function BankCard({ show, onClose, bankDetailsToEdit }) {
   const [dialog, setDialog] = useState(true);
   const popupRef = useRef();
-
-  const isEditable = bankDetailsToEdit ? true : false
+  const isEditable = Object.entries(bankDetailsToEdit).length > 0 ? true : false
   const queryClient = useQueryClient()
 
   const [newBankData, setBankData] = useState({

@@ -1,12 +1,12 @@
 import React from 'react'
 import Skeleton from 'react-loading-skeleton'
 
-export const DashboardAuctionSkeleton = () => {
+export const DashboardAuctionSkeleton = ({ className }) => {
     return (
         <div
-            className=' bg-white border shadow-sm  rounded-xl cursor-pointer'>
+            className={`${className} bg-white border shadow-sm  rounded-xl  h-full md:w-[250px] w-[250px] xs:w-[300px] lg:w-[250px] `}>
             <div className='space-y-4 p-4 relative'>
-                <Skeleton width={225} height={152} />
+                <Skeleton className='w-full min-h-[100px] h-[150px] xs:h-[180px] md:h-[120px] lg:h-[140px] ' />
                 <div className=''>
                 </div>
                 <div className='font-poppins font-semibold text-sm lg:text-base'>

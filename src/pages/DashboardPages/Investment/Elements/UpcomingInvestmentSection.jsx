@@ -3,8 +3,9 @@ import { Button } from "components/Button";
 import { useGetInvestmentProject } from "api/AuctionManagement";
 import InvestmentProjectCard from "./InvestmentProjectCard";
 import { InvestmentSkeleton } from "components/Skeleton/InvestmentSkeleton";
+import InvestmentCard from "components/Elements/InvestmentCard";
 
-function UpcomingInvestmentSection({ hadding, padding }) {
+function UpcomingInvestmentSection({ hadding, padding, activeInvestmentRef }) {
   const { data: investmentProjects, isLoading: isLoadingInvestments } = useGetInvestmentProject()
 
   return (
@@ -12,7 +13,7 @@ function UpcomingInvestmentSection({ hadding, padding }) {
       <section
         className={`py-5 ${padding}`}>
         <h1
-          className={`xs:text-center md:text-start text-2xl font-medium text-gray-1 font-poppins ${hadding}`}>
+          className={`text-center md:text-start text-2xl font-medium text-gray-1 font-poppins ${hadding}`}>
           Upcoming projects
         </h1>
       </section>
@@ -25,10 +26,20 @@ function UpcomingInvestmentSection({ hadding, padding }) {
                 <InvestmentSkeleton key={index} />
               ))
               :
-              investmentProjects?.results?.map((data, index) =>
-                index < 3 &&
+              investmentProjects?.results?.slice(0, 4)?.map((data, index) =>
                 <>
-                  <InvestmentProjectCard data={data} />
+                  {console.log(data)}
+                  <InvestmentCard
+                    buttonTitle={"Invest"}
+                    display_pic={data?.display_pic}
+                    min_amount={data?.min_amount}
+                    createdBy={data?.createdBy}
+                    investors={data?.investors}
+                    id={data?.id}
+                    name={data?.name}
+                    key={index}
+                    start_date_time={data?.start_date_time}
+                  />
                 </>
               )
             }

@@ -40,7 +40,7 @@ function AddMoneyPopup({ show, onClose }) {
         open={openAddMoneyPopup}
         closeModal={onClose}
         customPadding={"p-[48px] "}
-        customWidth={"w-[80vw] lg:w-[30vw] xl:w-[30vw]"}
+        customWidth={"w-[85vw] md:w-[60vw] lg:w-[40vw] xl:w-[30vw]"}
       >
         <Formik
           initialValues={{

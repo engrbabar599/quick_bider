@@ -128,7 +128,8 @@ function Setting() {
                     <div>
 
                       <label htmlFor="uploadProfile">
-                        <OutlineButton
+                        <Button
+                          customTheme={'btn-outline'}
                           onClick={() => {
                             if (fileInputRef.current) {
                               fileInputRef.current.click(); // Trigger click on the hidden file input

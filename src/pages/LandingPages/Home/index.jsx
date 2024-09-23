@@ -43,33 +43,41 @@ function LandingPage() {
       <LandingPageLayout>
         <>
           <div className="firstcarpart relative flex flex-col lg:flex-row items-center justify-between mx-auto p-4 lg:p-0">
-            <div className="relative textpart w-full xl:w-[40%] mx-auto xl:ml-40 lg:w-[50%] lg:ml-24 text-center lg:text-left">
+            <div className="relative textpart w-full xl:w-[40%] mx-auto xl:ml-40 lg:w-[50%] lg:ml-16 text-center lg:text-left ">
               <h1 className="text-[32px] lg:text-[54px] font-bold font-inter text-gray-1 mx-auto pt-5 md:pt-0">
                 Your <span className="text-[32px] lg:text-[54px] font-bold font-inter text-gray-1 relative">Winning <img src={blueLine} alt="" className=" absolute top-10 lg:top-16 right-0" /></span> Streak Starts Here
 
               </h1>
-              <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-7 w-[70%] mx-auto lg:mx-0 lg:w-[90%]">
+              <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-7 w-[80%] mx-auto lg:mx-0 lg:w-[90%]">
                 Betting at QuickBider is simple and accessible. With just $2 per bid, you have multiple chances to participate and win.
               </p>
-              <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-6">
-                <button
-                  onClick={() => {
-                    // isLoggedIn ?
-                    navigate("/my-bids")
-                    // : navigate("/login")
-                  }}
-                  className="bg-custom-blue w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-white">
-                  Bid now
-                </button>
-                <button onClick={() => {
-                  // isLoggedIn ?
-                  navigate("/investments/project-details")
-                  // :
-                  // navigate("/login")
-                }}
-                  className="border border-custom-blue hover:bg-custom-blue hover:text-white w-1/2 lg:w-[160px] py-3 lg:py-[14px] px-6 lg:px-[24px] rounded-xl text-base font-medium font-poppins text-custom-blue mt-2 lg:mt-0">
-                  Invest
-                </button>
+              <div className="flex flex-col md:flex-row max-lg:justify-center  items-center gap-3 lg:gap-6">
+                <>
+                  <Button
+                    customWidth={"w-[150px]"}
+                    title={'Bid now'}
+                    customPadding={'py-3 lg:py-[14px] px-6 lg:px-[24px]'}
+                    onClick={() => {
+                      isLoggedIn ?
+                        navigate("/my-bids")
+                        : navigate("/login")
+                    }}
+                  />
+                </>
+                <>
+                  <Button
+                    customWidth={"w-[150px]"}
+                    title={'Invest'}
+                    customPadding={' py-3 lg:py-[14px] px-6 lg:px-[24px]'}
+                    customTheme={'btn-outline'}
+                    onClick={() => {
+                      isLoggedIn ?
+                        navigate("/investments/project-details")
+                        :
+                        navigate("/login")
+                    }}
+                  />
+                </>
               </div>
             </div>
 
@@ -88,7 +96,7 @@ function LandingPage() {
                 <img
                   src={carImage}
                   alt="Car"
-                  className="absolute top-24 2xl:top-28 2xl:right-28 xl:top-16 xl:right-16 lg:right-0 w-[500px] xl:w-[699px]"
+                  className="absolute top-24 2xl:top-28 2xl:right-28 xl:top-16 xl:right-16 lg:right-0 w-[500px] xl:w-[699px] 2xl:w-[40vw]"
                 />
               </div>
               <img
@@ -102,9 +110,9 @@ function LandingPage() {
 
           </div>
 
-          <div className="trending actions lg:w-[80%] mx-auto relative">
+          <section className="trending actions lg:w-[80%] mx-auto relative">
             <div className="text-center mt-8 lg:mt-24 text-gray-1">
-              <h1 className="lg:text-[54px] font-bold font-inter text-gray-1">
+              <h1 className="lg:text-[54px] text-[32px]  font-bold font-inter text-gray-1">
                 Trending auctions
               </h1>
             </div>
@@ -124,9 +132,9 @@ function LandingPage() {
             <div className="text-center py-6">
               <NavLink
                 to={
-                  // isLoggedIn ? 
-                  "/dashboard/bids"
-                  //:  "/login"
+                  isLoggedIn ?
+                    "/auction"
+                    : "/login"
                 }
               >
                 <OutlineButton
@@ -134,15 +142,15 @@ function LandingPage() {
                   title={"View all"} />
               </NavLink>
             </div>
-          </div>
+          </section>
 
-          <div className="blueRectangle w-[90%] lg:w-[80%] mx-auto py-10 lg:py-16">
+          <section className=" w-[90%] xl:w-[80%] mx-auto py-10 lg:py-16">
             <div className="bg-custom-blue rounded-xl px-8 lg:px-[64px] py-8 lg:py-[32px]">
-              <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-0">
-                <div className="flex flex-col items-center">
-                  <img src={manImage} alt="" className="w-16 lg:w-auto" />
+              <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 items-center justify-between gap-10 lg:gap-0">
+
+                <div className="flex flex-col items-center ">
+                  <Svgs.BiddersIcon />
                   <h1 className="text-2xl lg:text-[36px] font-bold font-inter text-white mt-2 lg:mt-4">
-                    {/* 50k+ */}
                     {projectStat?.total_bidders}
                   </h1>
                   <h1 className="text-base lg:text-lg font-medium font-inter text-white mt-1 lg:mt-2">
@@ -150,29 +158,25 @@ function LandingPage() {
                   </h1>
                 </div>
                 <div className="flex flex-col items-center">
-                  <img src={trophyImage} alt="" className="w-16 lg:w-auto" />
+                  <Svgs.WinnersIcon />
                   <h1 className="text-2xl lg:text-[36px] font-bold font-inter text-white mt-2 lg:mt-4">
-                    {/* 2k+ */}
                     {projectStat?.total_winners}
-
                   </h1>
                   <h1 className="text-base lg:text-lg font-medium font-inter text-white mt-1 lg:mt-2">
                     Winners
                   </h1>
                 </div>
                 <div className="flex flex-col items-center">
-                  <img src={progressImage} alt="" className="w-16 lg:w-auto" />
+                  <Svgs.InvestmentIcon />
                   <h1 className="text-2xl lg:text-[36px] font-bold font-inter text-white mt-2 lg:mt-4">
-                    {/* $7M+ */}
                     {projectStat?.total_investment}
-
                   </h1>
                   <h1 className="text-base lg:text-lg font-medium font-inter text-white mt-1 lg:mt-2">
                     Investments
                   </h1>
                 </div>
                 <div className="flex flex-col items-center">
-                  <img src={savemoneyImage} alt="" className="w-16 lg:w-auto" />
+                  <Svgs.ReturnIcon />
                   <h1 className="text-2xl lg:text-[36px] font-bold font-inter text-white mt-2 lg:mt-4">
                     {projectStat?.avg_return}%
                   </h1>
@@ -182,8 +186,10 @@ function LandingPage() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="recentWinners w-full lg:w-[90%] mx-auto p-4 lg:p-0">
+          </section>
+
+
+          <section className="recentWinners w-full  xl:w-[80%] mx-auto p-4 lg:p-0">
             <div className="text-center">
               <h1 className="text-[32px] lg:text-[54px] font-bold font-inter text-gray-1">
                 Recent winners
@@ -192,159 +198,142 @@ function LandingPage() {
             <div className="w-full lg:w-[90%] mx-auto py-6 lg:py-10">
               <RecentWinnersSection />
             </div>
-            <div className="text-center py-6 lg:py-12">
-              <NavLink
-                to={
-                  // isLoggedIn ? 
-                  "/dashboard/results"
-                  //  : "/login"
-                }>
-                <OutlineButton title={"View all"}
-                  className={"!w-[160px] !px-[16px] !lg:px-[24px] !py-[12px] !lg:py-[14px] !text-xs !lg:text-base !font-medium"}
-                />
-              </NavLink>
-            </div>
-          </div>
 
-          <div className="smartInvestment bg-[#E0E0E033] py-10">
-            <div className="flex flex-col lg:flex-row gap-10 items-center w-[90%] lg:w-[80%] mx-auto">
+
+          </section>
+
+          <section className="smartInvestment bg-[#E0E0E033] py-10">
+            <div className="flex flex-col lg:flex-row gap-10 items-center w-[90%] xl:w-[80%] mx-auto">
               <div className="relative mb-6 lg:mb-0 lg:mr-6">
-                <img src={moneyImage} alt="" className="w-full h-auto" />
-                <img
-                  src={circle2}
-                  className="absolute top-0 left-24 w-12 h-12 lg:w-16 lg:h-16"
-                  alt=""
-                />
-                <img
-                  src={circle2}
-                  className="absolute bottom-0 right-24 w-12 h-12 lg:w-16 lg:h-16"
-                  alt=""
-                />
+                <img src={'smart-investment.png'} alt="" className="w-full max-w-[450px] h-auto md:max-lg:max-h-[450px]" />
               </div>
               <div className="w-full lg:w-[50%] mx-auto text-center lg:text-left">
                 <h1 className=" lg:text-[54px] font-bold font-inter text-gray-1">
                   Smart <span className="lg:text-[54px] font-bold font-inter text-gray-1 relative">Investments <img src={blueline2} className=" absolute left-5 top-5 lg:top-14" alt="" /></span>  for Smart Returns
 
                 </h1>
-                <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-6 w-full lg:w-[90%] mx-auto lg:mx-0">
+                <p className="text-base lg:text-lg font-normal font-inter text-gray-2 py-4 lg:py-6 w-full lg:w-[85%] mx-auto lg:mx-0">
                   Betting at QuickBider is simple and accessible. With just $2 per bid, you have multiple chances to participate and win.
                 </p>
                 <NavLink
                   to={
-                    // isLoggedIn ?
-                    "/investments"
-                    // : "/login"
+                    isLoggedIn ?
+                      "/investments"
+                      : "/login"
                   }>
                   <Button title={"Invest now"}
-                    className={"!px-6 !py-3 !lg:px-[24px] !lg:py-[14px] !w-[140px] !lg:w-[160px]"} />
+                    customPadding={"px-6 !py-3 !lg:px-[24px] !lg:py-[14px]"}
+                    customWidth={' !w-[140px] !lg:w-[160px]'}
+                  />
                 </NavLink>
               </div>
             </div>
-          </div>
+          </section>
 
-          <div className="upcominginvestments w-[90%] lg:w-[90%] mx-auto min-h-screen py-20">
+          <section className="upcominginvestments w-[90%]  xl:w-[80%]  mx-auto  py-20">
             <div className="text-center">
-              <h1 className="text-2xl lg:text-[54px] font-bold font-inter text-gray-1">
+              <h1 className="text-[32px] lg:text-[54px] font-bold font-inter text-gray-1">
                 Upcoming Investments
               </h1>
             </div>
             <div className="">
               <Project />
-              <div className="text-center mt-10">
-                <NavLink
-                  to={
-                    // isLoggedIn ?
-                    "/investments"
-                    // : "/login"
-                  }>
-                  <OutlineButton
-                    title={"View all"}
-                    className={"!w-[160px] !px-[24px] !py-[14px]"}
-                  />
-                </NavLink>
-              </div>
-            </div>
-          </div>
 
-          <div className="testimonials bg-[#d2eaff] py-10 ">
-            <div className="text-center mb-10">
-              <h1 className="text-2xl lg:text-[54px] font-bold font-inter text-gray-1 px-4">
+            </div>
+          </section>
+
+          <section className="testimonials bg-gradient-to-r from-[#D1EAFF] to-[#F2F8FD] py-16 ">
+            <div className="text-center mb-8">
+              <h1 className="text-[32px] lg:text-[54px] font-bold font-inter text-gray-1 px-4">
                 What people say about us?
               </h1>
             </div>
 
-            <Swiper
-              cssMode={true}
-              loop={true}
-              spaceBetween={50}
-              pagination={{ clickable: true }}
-              mousewheel={true}
-              keyboard={true}
-              modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-              className=" flex flex-row"
-            >
+            {userReview?.results?.length < 0 ?
+              <>
+                <Swiper
+                  cssMode={true}
+                  loop={true}
+                  spaceBetween={50}
+                  pagination={{ clickable: true }}
+                  mousewheel={true}
+                  keyboard={true}
+                  modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                  className=" flex flex-row "
+                >
 
-              <SwiperSlide>
-                <div className="cards w-[90%] lg:w-[80%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
-                  {userReview?.results?.map((data, index) => (
-                    <div key={index} className="bg-white rounded-xl shadow-md p-7">
-                      <div className="flex items-center gap-5">
-                        <div>
-                          <div className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></div>
-                        </div>
-                        <div className="flex flex-col gap-1">
-                          <div>
-                            <h1 className="text-xl font-semibold font-inter text-gray-1">
-                              {data?.user?.name}
-                            </h1>
-                          </div>
-                          <div className="flex items-center">
-                            <div className="flex flex-row gap-2">
-                              {Array(5).fill().map((_, index) => (
-                                <Svgs.ReviewStarIcon color={index < data?.rating ? "#F5A200" : "#C2C2C2"} key={index} />
-                              ))}
+                  <SwiperSlide>
+                    <div className="cards w-[90%] lg:w-[80%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
+                      {userReview?.results?.map((data, index) => (
+                        <div key={index} className="bg-white rounded-xl shadow-md p-7">
+                          <div className="flex items-center gap-5">
+                            <div>
+                              <div className="w-[64px] h-[64px] rounded-full bg-[#cecece]"></div>
                             </div>
-                            <span className="text-lg font-medium font-Work-sans text-gray-1 px-2">
-                              {data?.rating}
-                            </span>
+                            <div className="flex flex-col gap-1">
+                              <div>
+                                <h1 className="text-xl font-semibold font-inter text-gray-1">
+                                  {data?.user?.name}dfalijk
+                                </h1>
+                              </div>
+                              <div className="flex items-center">
+                                <div className="flex flex-row gap-2">
+                                  {Array(5).fill().map((_, index) => (
+                                    <Svgs.StarIcon color={index < data?.rating ? "#F5A200" : "#C2C2C2"} key={index} />
+                                  ))}
+                                </div>
+                                <span className="text-lg font-medium font-Work-sans text-gray-1 px-2">
+                                  {data?.rating}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p className="text-base font-normal font-Work-sans text-gray-2 pt-5">
+                              {data?.text}
+                            </p>
                           </div>
                         </div>
-                      </div>
-                      <div>
-                        <p className="text-base font-normal font-Work-sans text-gray-2 pt-5">
-                          {data?.text}
-                        </p>
-                      </div>
+                      ))}
                     </div>
-                  ))}
+                  </SwiperSlide>
+
+                </Swiper>
+                <div className="text-center pt-8 flex items-center justify-center">
+                  <Button
+                    customTheme={'btn-outline'}
+                    customWidth={'w-[160px] '}
+                    customPadding={'px-[24px] py-[14px]'}
+                    className="!bg-transparent"
+                    title={"View all"} />
                 </div>
-              </SwiperSlide>
-            </Swiper>
+              </>
+
+              :
+              <div className="flex items-center justify-center w-full min-h-[150px] md:text-2xl font-poppins font-medium text-xl ">
+                No reviews available yet
+              </div>
+            }
 
 
-            <div className="text-center py-10 flex items-center justify-center">
 
-              <OutlineButton className=" !w-[160px] !px-[24px] !py-[14px] "
-                title={"View all"}>
-              </OutlineButton>
-            </div>
-          </div>
+          </section>
 
-          <div className="newsLatter h-auto lg:h-[80vh] flex items-center justify-center py-10">
-            <div className="bg-custom-blue rounded-3xl w-[90%] lg:w-[80%] mx-auto p-10">
+          <section className="newsLatter h-auto lg:h-[80vh] flex items-center justify-center py-10">
+            <div className="bg-custom-blue rounded-3xl w-[90%] lg:w-[85%] mx-auto p-10">
               <div className="w-[90%] lg:w-[70%] text-center mx-auto">
-                <h1 className=" text-white md:text-[40px] font-bold font-inter text-center">
+                <h1 className=" text-white md:text-[24px] lg:text-[40px] font-bold font-inter text-center">
                   Subscribe to Our Newsletter For Weekly Article Update.
                 </h1>
               </div>
               <div className="text-center py-6 lg:py-10 flex flex-col lg:flex-row items-center justify-center gap-5">
                 <label
                   htmlFor=""
-                  className=" bg-white bg-opacity-30 relative w-full lg:w-[468px] h-[48px] lg:h-[61px] rounded-full flex items-center px-5 lg:px-16 text-base font-normal text-[#ffffff4b] border border-white"
+                  className=" bg-white bg-opacity-30 relative w-full lg:w-[468px] h-[48px] lg:h-[61px] rounded-full flex items-center px-5 lg:px-16 text-base font-normal text-[#ffffff4b] border border-white justify-center  "
                 >
-                  <div className="flex flex-row w-full gap-2">
-                    <img src={mail} className=" " alt="" />
-                    <input type="text" className="bg-transparent outline-none w-full text-[#FFFFFF] placeholder:text-[#FFFFFF] placeholder:opacity-50"
+                  <div className="flex flex-row w-full gap-2 items-center  ">
+                    <Svgs.EmailIcon />
+                    <input type="text" className="bg-transparent outline-none w-full text-[#FFFFFF] placeholder:text-[#FFFFFF] placeholder:opacity-50 text-center"
                       placeholder="Enter your e-mail address" />
 
                   </div>
@@ -357,7 +346,7 @@ function LandingPage() {
 
               </div>
             </div>
-          </div>
+          </section>
 
         </>
       </LandingPageLayout >

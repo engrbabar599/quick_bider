@@ -1,19 +1,15 @@
+import { useGetUserProfile } from 'api/UserManagement'
 import { Button } from 'components/Button'
 import Divider from 'components/Divider'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import { formatDate } from 'utils/utility-functions'
 
-function InvestmentProjectCard({ data, hideInvestment }) {
+function InvestmentProjectCard({ data, hideInvestment, aciveInvestmentButtonRef }) {
     const navigate = useNavigate()
+    const { data: userProfile } = useGetUserProfile()
 
-    const formatDate = (timeStamp) => {
-        const date = new Date(timeStamp)
-        return new Intl.DateTimeFormat("en-GB", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric"
-        }).format(date)
-    }
 
     return (
         <div key={data?.id} className={`border p-3 rounded-xl shadow-sm w-[245px] ${hideInvestment}`}>
@@ -23,7 +19,8 @@ function InvestmentProjectCard({ data, hideInvestment }) {
                         <img src={data?.display_pic} alt="" className="w-[40px] h-[40px] rounded-full" />
                         :
                         <div className="h-[40px] w-[40px] bg-gray-4 flex items-center justify-center text-white rounded-full capitalize">
-                            {data?.name[0]}
+                            {/* {data?.name[0] || "das"} */}
+                            {"asgdj"}
                         </div>
                     }
                 </div>
@@ -78,11 +75,18 @@ function InvestmentProjectCard({ data, hideInvestment }) {
 
                 <Button
                     onClick={() => {
-                        if (data?.status == 'completed' || true) {
-                            navigate(`/investments/investment-completed?id=${data?.id}`)
+                        if (userProfile?.active_investment) {
+
+                            if (data?.status == 'completed') {
+                                navigate(`/investments/investment-completed?id=${data?.id}`)
+                            }
+                            else {
+                                navigate(`/investments/project-details?id=${data?.id}`)
+                            }
                         }
                         else {
-                            navigate(`/investments/project-details?id=${data?.id}`)
+                            aciveInvestmentButtonRef?.current?.focus()
+                            toast.error("Activate Investment first")
                         }
                     }}
                     title={data?.status == 'completed' ? "View details" : "Invest"}

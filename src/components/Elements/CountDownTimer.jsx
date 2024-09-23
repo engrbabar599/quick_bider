@@ -37,11 +37,11 @@ export const CountDownTimer = ({ timeStamp }) => {
 
     return (
         <>
-            {time?.hours == 0 && time?.minutes == 0 && time?.seconds == 0 ?
-                <h1 className='text-xs font-semibold font-poppins text-gray-1 bg-white absolute rounded-xl px-2 h-[36px] w-[100px] flex items-center justify-center top-5 right-5 text-center min-w-max'>
-                    Auction Over
-                </h1>
-                :
+            {time?.hours != 0 && time?.minutes != 0 && time?.seconds != 0 &&
+                // <h1 className='text-xs font-semibold font-poppins text-gray-1 bg-white absolute rounded-xl px-2 h-[36px] w-[100px] flex items-center justify-center top-5 right-5 text-center min-w-max'>
+                //     Auction Over
+                // </h1>
+                // :
                 <h1 className='text-xs font-semibold font-poppins text-gray-1 bg-white absolute rounded-xl px-2 h-[36px] w-[100px] flex items-center justify-center top-5 right-5 text-center min-w-max'>{time.hours}h : {time.minutes}m : {time.seconds}s</h1>
             }
         </>

@@ -145,12 +145,22 @@ export const HomeNavbar = () => {
                                     </NavLink>
                                 </li>
 
-                                <li>
-                                    {false ?
-                                        <OutlineButton
-                                            customPadding={"px-6 py-4"}
-                                            onClick={() => handleLogout()}
-                                            title="Log out" />
+                                <li className=" items-center justify-center w-full flex">
+                                    {isLoggedIn ?
+                                        userData?.display_pic
+                                            ?
+                                            <img
+                                                src={userData?.display_pic}
+                                                alt="Profile Pic"
+                                                className='aspect-square 
+                                            h-[48px] w-[48px] bg-white border rounded-full object-cover' />
+                                            :
+                                            <Link to={"/settings"}
+                                                className='h-[48px] w-[48px] rounded-full bg-custom-blue text-white text-xl text-center flex items-center justify-center bg-opacity-90'>
+                                                {userData?.first_name[0]}
+                                                {userData?.last_name[0]}
+
+                                            </Link>
                                         :
                                         <Button
                                             onClick={() => {
