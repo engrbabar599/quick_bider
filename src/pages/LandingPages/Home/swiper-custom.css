@@ -1,0 +1,8 @@
+/* src/swiper-custom.css */
+.swiper-pagination-bullet {
+  @apply p-1 bg-gray-400 opacity-75 transition-opacity duration-300;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-blue-500 opacity-100 border outline outline-1 outline-custom-blue outline-offset-2;
+}

@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "0bdccc81-798a-45cc-9e59-7d9361b03ca9",
+		"name": "sigin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30616203"
+	},
+	"item": [
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "mk@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8080/v1/api/signin/"
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "kaurm88@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "hello1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "device_id",
+							"value": "23456780",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "mannu1",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "k",
+							"type": "text"
+						}
+					]
+				},
+				"url": "https://api.quickbider.com/v1/api/register/"
+			},
+			"response": []
+		}
+	]
+}

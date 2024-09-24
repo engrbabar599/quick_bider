@@ -1,0 +1,2457 @@
+{
+  "info": {
+    "_postman_id": "a64676c9-d834-4cb6-8412-1988334767f7",
+    "name": "Quickbid",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30616203"
+  },
+  "item": [
+    {
+      "name": "User_managment",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "kaurm88@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "hello1",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "123",
+                  "type": "text"
+                },
+                {
+                  "key": "device_id",
+                  "value": "23456780",
+                  "type": "text"
+                },
+                {
+                  "key": "first_name",
+                  "value": "mannu1",
+                  "type": "text"
+                },
+                {
+                  "key": "last_name",
+                  "value": "k",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api.quickbider.com/v1/api/register/",
+              "protocol": "https",
+              "host": ["api", "quickbider", "com"],
+              "path": ["v1", "api", "register", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "verify_email",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "email",
+                "value": "",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "manpreetkaur@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "device_id",
+                  "value": "23456780",
+                  "type": "text"
+                },
+                {
+                  "key": "code",
+                  "value": "234567",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/verify_number/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "verify_number", ""],
+              "query": [
+                {
+                  "key": "device_id",
+                  "value": "23456780",
+                  "disabled": true
+                },
+                {
+                  "key": "email",
+                  "value": "manpreetkaur@gmail.com",
+                  "disabled": true
+                },
+                {
+                  "key": "code",
+                  "value": "23456",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "bank_detail",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/bank_detail/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "bank_detail", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "bank_detail",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "account_no",
+                  "value": "9876543234",
+                  "type": "text"
+                },
+                {
+                  "key": "ifsc_code",
+                  "value": "GH6578",
+                  "type": "text"
+                },
+                {
+                  "key": "bank_name",
+                  "value": "canara bank",
+                  "type": "text"
+                },
+                {
+                  "key": "name_on_account",
+                  "value": "suhwinder kaur",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/bank_detail/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "bank_detail", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "bank_detail",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/bank_detail/4/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "bank_detail", "4", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "testimonial",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/testimonial/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "testimonial", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "testimonial",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "investment_project",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "first_name",
+                  "value": "nano",
+                  "type": "text"
+                },
+                {
+                  "key": "last_name",
+                  "value": "tata",
+                  "type": "text"
+                },
+                {
+                  "key": "phone",
+                  "value": "9876543",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "mm@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "address",
+                  "value": "dxcvh 4400",
+                  "type": "text"
+                },
+                {
+                  "key": "status",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/home/manpreet/Pictures/Screenshots/Screenshot from 2024-07-22 14-51-35.png"
+                },
+                {
+                  "key": "video",
+                  "type": "file",
+                  "src": "/home/manpreet/Pictures/Screenshots/Screenshot from 2024-07-22 14-51-35.png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/testimonial/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "testimonial", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "testimonial",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/testimonial/1/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "testimonial", "1", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "testimonial_reaction",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/testimonial_reaction/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "testimonial_reaction", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "testimonial_reaction",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user",
+                  "value": "3",
+                  "type": "text"
+                },
+                {
+                  "key": "testimonial",
+                  "value": "3",
+                  "type": "text"
+                },
+                {
+                  "key": "reaction_type",
+                  "value": "emoji",
+                  "description": "emoji / text are types",
+                  "type": "text"
+                },
+                {
+                  "key": "emoji_type",
+                  "value": "like",
+                  "description": "like,love,haha,wow,sad,angry are types",
+                  "type": "text"
+                },
+                {
+                  "key": "comment_text",
+                  "value": "",
+                  "description": "if reaction type is text",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/testimonial_reaction/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "testimonial_reaction", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "testimonial_reaction",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/testimonial_reaction/1/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "testimonial_reaction", "1", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user_profile",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/user_profile/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "user_profile", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user_profile",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user",
+                  "value": "6",
+                  "type": "text"
+                },
+                {
+                  "key": "phone_number",
+                  "value": "234567898",
+                  "type": "text"
+                },
+                {
+                  "key": "city",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "province",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "display_pic",
+                  "type": "file",
+                  "src": "/home/manpreet/Pictures/Screenshots/Screenshot from 2024-07-22 14-51-35.png"
+                },
+                {
+                  "key": "address",
+                  "value": "#123 karnal",
+                  "type": "text"
+                },
+                {
+                  "key": "zipcode",
+                  "value": "132001",
+                  "type": "text"
+                },
+                {
+                  "key": "send_notification_email",
+                  "value": "false",
+                  "type": "text"
+                },
+                {
+                  "key": "send_notification_phone",
+                  "value": "false",
+                  "type": "text"
+                },
+                {
+                  "key": "enable_sound",
+                  "value": "false",
+                  "type": "text"
+                },
+                {
+                  "key": "phone_number_verified",
+                  "value": "false",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/user_profile/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "user_profile", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user_profile",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/user_profile/7/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "user_profile", "7", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "wallet",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/wallet/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "wallet", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "wallet",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/wallet/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "wallet", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "wallet",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/wallet/1/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "wallet", "1", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "recent_transaction",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/recent_transaction/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "recent_transaction", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "recent_transaction",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "store",
+                  "value": "apple",
+                  "type": "text"
+                },
+                {
+                  "key": "transaction_behaviour",
+                  "value": "add",
+                  "description": "add/remove",
+                  "type": "text"
+                },
+                {
+                  "key": "transaction_status",
+                  "value": "accepted",
+                  "description": "accepted/rejected/pending",
+                  "type": "text"
+                },
+                {
+                  "key": "amount",
+                  "value": "200",
+                  "type": "text"
+                },
+                {
+                  "key": "",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/recent_transaction/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "recent_transaction", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "recent_transaction",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/recent_transaction/1/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "recent_transaction", "1", ""]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "auction_management",
+      "item": [
+        {
+          "name": "auction",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token 07a1a1e00adab43d2f941ff6460c808908b16b77",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.quickbider.com/v1/api/auction/",
+              "protocol": "https",
+              "host": ["api", "quickbider", "com"],
+              "path": ["v1", "api", "auction", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "auction",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token 07a1a1e00adab43d2f941ff6460c808908b16b77",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "bike auction",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "sample secription",
+                  "type": "text"
+                },
+                {
+                  "key": "bid_date_time",
+                  "value": "2024-07-23T05:57:05Z",
+                  "type": "text"
+                },
+                {
+                  "key": "roi",
+                  "value": "13",
+                  "type": "text"
+                },
+                {
+                  "key": "bidding_amount",
+                  "value": "300",
+                  "type": "text"
+                },
+                {
+                  "key": "auction_minutes",
+                  "value": "30",
+                  "type": "text"
+                },
+                {
+                  "key": "bid_currency",
+                  "value": "cad",
+                  "type": "text"
+                },
+                {
+                  "key": "bid_score",
+                  "value": "120",
+                  "type": "text"
+                },
+                {
+                  "key": "is_trending",
+                  "value": "true",
+                  "description": "boolean",
+                  "type": "text"
+                },
+                {
+                  "key": "participants",
+                  "value": "6",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api.quickbider.com/v1/api/auction/",
+              "protocol": "https",
+              "host": ["api", "quickbider", "com"],
+              "path": ["v1", "api", "auction", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "auction",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/auction/1/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "auction", "1", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "auction_participant",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/auction_participant/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "auction_participant", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "auction_participant",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "auction",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "bid_start_date_time",
+                  "value": "2024-07-23T06:32:21Z",
+                  "type": "text"
+                },
+                {
+                  "key": "bid_end_date_time",
+                  "value": "2024-07-23T06:32:24Z",
+                  "type": "text"
+                },
+                {
+                  "key": "is_winner",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "winning_date_time",
+                  "value": "2024-07-23T06:32:35Z",
+                  "type": "text"
+                },
+                {
+                  "key": "user_rank",
+                  "value": "12",
+                  "type": "text"
+                },
+                {
+                  "key": "is_consolation",
+                  "value": "false",
+                  "type": "text"
+                },
+                {
+                  "key": "total_reaction",
+                  "value": "12",
+                  "type": "text"
+                },
+                {
+                  "key": "is_claimed",
+                  "value": "false",
+                  "type": "text"
+                },
+                {
+                  "key": "is_transacted",
+                  "value": "false",
+                  "type": "text"
+                },
+                {
+                  "key": "claim_date_time",
+                  "value": "2024-07-23T06:32:35Z",
+                  "type": "text"
+                },
+                {
+                  "key": "transacted_date_time",
+                  "value": "2024-07-23T06:32:35Z",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/auction_participant/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "auction_participant", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "auction_participant",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/auction_participant/1/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "auction_participant", "1", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "auction_bid",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/auction_bid/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "auction_bid", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "auction_bid",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "auction",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "paticipants",
+                  "value": "7",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/auction_bid/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "auction_bid", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "auction_bid",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/auction_bid/7/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "auction_bid", "7", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "bid_participant",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "bid_participant",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "auction",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "auction_bid",
+                  "value": "5",
+                  "type": "text"
+                },
+                {
+                  "key": "auction_participant",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "user_score",
+                  "value": "10",
+                  "type": "text"
+                },
+                {
+                  "key": "user_rank",
+                  "value": "120",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/bid_participant/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "bid_participant", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "bid_participant",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/bid_participant/1/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "bid_participant", "1", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "investment_project",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/`investment_project`/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "`investment_project`", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "investment_project",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "mr-gifts",
+                  "type": "text"
+                },
+                {
+                  "key": "display_pic",
+                  "type": "file",
+                  "src": "/home/manpreet/Pictures/Screenshots/Screenshot from 2024-07-23 00-07-14.png"
+                },
+                {
+                  "key": "detail",
+                  "value": "sample sample",
+                  "type": "text"
+                },
+                {
+                  "key": "start_date_time",
+                  "value": "2024-07-20T08:54:12Z",
+                  "type": "text"
+                },
+                {
+                  "key": "end_date_time",
+                  "value": "2024-07-20T08:54:12Z",
+                  "type": "text"
+                },
+                {
+                  "key": "min_amount",
+                  "value": "456",
+                  "type": "text"
+                },
+                {
+                  "key": "currency",
+                  "value": "cad",
+                  "type": "text"
+                },
+                {
+                  "key": "roi",
+                  "value": "4",
+                  "description": "rate of intrest",
+                  "type": "text"
+                },
+                {
+                  "key": "max_allowed_investors",
+                  "value": "12",
+                  "type": "text"
+                },
+                {
+                  "key": "investors",
+                  "value": "5",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/`investment_project`/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "`investment_project`", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "investment_project",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/`investment_project`/1/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "`investment_project`", "1", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user_investment",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/user_investment/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "user_investment", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user_investment",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "currency",
+                  "value": "cad",
+                  "type": "text"
+                },
+                {
+                  "key": "investment_project",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "roi",
+                  "value": "3",
+                  "type": "text"
+                },
+                {
+                  "key": "return_amount",
+                  "value": "600",
+                  "type": "text"
+                },
+                {
+                  "key": "is_completed",
+                  "value": "false",
+                  "description": "boolean",
+                  "type": "text"
+                },
+                {
+                  "key": "verified_user",
+                  "value": "false",
+                  "description": "boolean",
+                  "type": "text"
+                },
+                {
+                  "key": "otp_verify",
+                  "value": "false",
+                  "type": "text"
+                },
+                {
+                  "key": "investment_certificate_file",
+                  "type": "file",
+                  "src": "/home/manpreet/Pictures/Screenshots/Screenshot from 2024-07-23 00-07-14.png"
+                },
+                {
+                  "key": "completed_date_time",
+                  "value": "2024-07-23T09:04:57.400136Z",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/user_investment/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "user_investment", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user_investment",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/user_investment/2/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "user_investment", "2", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user_review",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "user_review",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "rating",
+                  "value": "3",
+                  "description": "1 to 5",
+                  "type": "text"
+                },
+                {
+                  "key": "user",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "investment_project",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "auction",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "text",
+                  "value": "sample review",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/user_review/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "user_review", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user_review",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token cb132a45e2f6b7f0412cbd9323b5b754600c7e38",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/v1/api/user_review/1/",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["v1", "api", "user_review", "1", ""]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "app_utils",
+      "item": [
+        {
+          "name": "city",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token 07a1a1e00adab43d2f941ff6460c808908b16b77",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.quickbider.com/v1/api/city/",
+              "protocol": "https",
+              "host": ["api", "quickbider", "com"],
+              "path": ["v1", "api", "city", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "city",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token 07a1a1e00adab43d2f941ff6460c808908b16b77",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Brompton",
+                  "type": "text"
+                },
+                {
+                  "key": "province",
+                  "value": "1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api.quickbider.com/v1/api/city/",
+              "protocol": "https",
+              "host": ["api", "quickbider", "com"],
+              "path": ["v1", "api", "city", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "province",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "province",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token 07a1a1e00adab43d2f941ff6460c808908b16b77",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "ON",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api.quickbider.com/v1/api/province/",
+              "protocol": "https",
+              "host": ["api", "quickbider", "com"],
+              "path": ["v1", "api", "province", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reaction",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token 07a1a1e00adab43d2f941ff6460c808908b16b77",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.quickbider.com/v1/api/reaction/",
+              "protocol": "https",
+              "host": ["api", "quickbider", "com"],
+              "path": ["v1", "api", "reaction", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reaction",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token 07a1a1e00adab43d2f941ff6460c808908b16b77",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "reaction_type",
+                  "value": "emoji",
+                  "type": "text"
+                },
+                {
+                  "key": "emoji_type",
+                  "value": "like",
+                  "type": "text"
+                },
+                {
+                  "key": "sender",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "receiver",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "auction",
+                  "value": "1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api.quickbider.com/v1/api/reaction/",
+              "protocol": "https",
+              "host": ["api", "quickbider", "com"],
+              "path": ["v1", "api", "reaction", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "general",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "general",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token 07a1a1e00adab43d2f941ff6460c808908b16b77",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "type",
+                  "value": "terms_and_conditions",
+                  "type": "text"
+                },
+                {
+                  "key": "text",
+                  "value": "sample terms and conditions",
+                  "type": "text"
+                },
+                {
+                  "key": "business_phone_no",
+                  "value": "2345678",
+                  "type": "text"
+                },
+                {
+                  "key": "business_address",
+                  "value": "asdf 345678",
+                  "type": "text"
+                },
+                {
+                  "key": "business_email",
+                  "value": "dcfvgbhynjumkii@gmail.com",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api.quickbider.com/v1/api/general/",
+              "protocol": "https",
+              "host": ["api", "quickbider", "com"],
+              "path": ["v1", "api", "general", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "general",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token 07a1a1e00adab43d2f941ff6460c808908b16b77",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://api.quickbider.com/v1/api/general/1/",
+              "protocol": "https",
+              "host": ["api", "quickbider", "com"],
+              "path": ["v1", "api", "general", "1", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "project_stat",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token 07a1a1e00adab43d2f941ff6460c808908b16b77",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.quickbider.com/v1/api/project_stat/",
+              "protocol": "https",
+              "host": ["api", "quickbider", "com"],
+              "path": ["v1", "api", "project_stat", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "project_stat",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token 07a1a1e00adab43d2f941ff6460c808908b16b77",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "total_bidders",
+                  "value": "10",
+                  "type": "text"
+                },
+                {
+                  "key": "total_winners",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "total_investment",
+                  "value": "30",
+                  "type": "text"
+                },
+                {
+                  "key": "avg_return",
+                  "value": "12",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api.quickbider.com/v1/api/project_stat/",
+              "protocol": "https",
+              "host": ["api", "quickbider", "com"],
+              "path": ["v1", "api", "project_stat", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "project_stat",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://api.quickbider.com/v1/api/project_stat/1/",
+              "protocol": "https",
+              "host": ["api", "quickbider", "com"],
+              "path": ["v1", "api", "project_stat", "1", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "contact_us",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "contact_us",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "token 07a1a1e00adab43d2f941ff6460c808908b16b77",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "manpreet1",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "manpreet1@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "message",
+                  "value": "hello team, i need assitance",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api.quickbider.com/v1/api/contact_us/",
+              "protocol": "https",
+              "host": ["api", "quickbider", "com"],
+              "path": ["v1", "api", "contact_us", ""]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
