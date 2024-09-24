@@ -9,7 +9,7 @@ export default function AuctionCard({ data, from }) {
             onClick={() => { navigate(`/dashboard/bids`, { state: { auctionDetails: { ...data, from } } }) }}
             className={`bg-white border shadow-sm  rounded-xl group lg:hover:scale-105 duration-300 transform ease-in cursor-pointer w-full h-full md:max-w-[310px] max-w-[300px] lg:max-w-[300px] xl:max-w-[250px] `}>
             <div className='space-y-4 p-4 relative '>
-                <img src={data?.thumbnail_image} alt="" className=' min-h-[150px] w-full  object-contain !rounded-lg bg-gray-200 ' />
+                <img src={data?.thumbnail_image} alt="" className=' h-[140px] max-h-[150px] w-full  object-fill !rounded-lg bg-gray-200 ' />
                 <div className=''>
                     <CountDownTimer timeStamp={data?.bid_date_time} />
                 </div>

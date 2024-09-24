@@ -19,8 +19,7 @@ function InvestmentProjectCard({ data, hideInvestment, aciveInvestmentButtonRef 
                         <img src={data?.display_pic} alt="" className="w-[40px] h-[40px] rounded-full" />
                         :
                         <div className="h-[40px] w-[40px] bg-gray-4 flex items-center justify-center text-white rounded-full capitalize">
-                            {/* {data?.name[0] || "das"} */}
-                            {"asgdj"}
+                            {data?.name[0] || "A"}
                         </div>
                     }
                 </div>

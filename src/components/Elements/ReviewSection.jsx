@@ -65,7 +65,7 @@ function ReviewSection({
                 <div className="w-full border-b-2"></div>
                 <div className="text-custom-blue min-w-max">
                     <button
-                        onClick={() => { navigate("/investments/all-reviews") }}
+                        onClick={() => { navigate(`/${reviewType === "investment_project" ? "investments" : "auction"}/all-reviews`) }}
                         className="text-sm md:text-base font-semibold font-poppins hover:scale-105 hover:text-blue-500 outline-none">
                         View all
                     </button>

@@ -64,7 +64,7 @@ export const TrendingAuction = () => {
                             No Auction available at this time
                         </div>
                         :
-                        auctionData?.results?.slice(0, 3)?.map((data, index) => (
+                        auctionData?.results?.slice(6, 9)?.map((data, index) => (
                             <AuctionCard data={data} key={index} />
                         ))}
             </div>

@@ -6,6 +6,7 @@ import { useState } from 'react'
 import ReactionPopup from 'components/Popups/ReactionPopup'
 import SuccessPopup from 'components/Popups/SuccessPopup'
 import Svgs from 'assets/svgs'
+import { Button } from 'components/Button'
 
 
 export const RecentWinnersSection = () => {
@@ -47,7 +48,7 @@ export const RecentWinnersSection = () => {
             <div className='flex flex-col gap-2.5 px-1'>
 
                 <div
-                    className='flex xl:flex-row flex-col xl:items-center items-start justify-between py-4 px-4 bg-custom-blue bg-opacity-10 rounded-2xl gap-4 w-full'>
+                    className='flex md:flex-row flex-col md:items-center items-start justify-between py-4 px-4 bg-custom-blue bg-opacity-10 rounded-2xl gap-4 w-full'>
                     <div className='flex flex-row space-x-2 items-center'>
                         <Svgs.TrophyIcon />
                         <img src={IMAGES?.winnerPic} alt="" className='object-contain h-12 w-12' />
@@ -67,14 +68,14 @@ export const RecentWinnersSection = () => {
                     </div>
 
 
-                    <div className=' flex flex-row space-x-3 justify-between xl:w-auto w-full items-center'>
+                    <div className=' flex flex-row space-x-3 justify-between md:w-auto w-full items-center'>
 
                         <div className='flex flex-col items-start justify-center'>
-                            <div className='flex items-center space-x-1 font-poppins lg:text-sm text-xs'>
+                            <div className='flex items-center space-x-1 font-poppins lg:text-sm text-sm'>
                                 <p className='font-normal text-gray-4'>Date:</p>
                                 <p className='font-semibold text-gray-1'>24/05/2024</p>
                             </div>
-                            <div className='flex items-center space-x-1 font-poppins lg:text-sm text-xs'>
+                            <div className='flex items-center space-x-1 font-poppins lg:text-sm text-sm'>
                                 <p className='font-normal text-gray-4'>Province:</p>
                                 <p className='font-semibold text-gray-1'>Surrey(BC)</p>
                             </div>
@@ -84,10 +85,12 @@ export const RecentWinnersSection = () => {
 
                         <div className='flex flex-col items-center justify-center space-y-1'>
                             <div>
-                                <OutlineButton
+                                <Button
+                                    customTheme={"btn-outline"}
                                     onClick={handleShowPopup}
                                     title={"Send reaction"}
-                                    className={" !text-sm !py-2.5 !px-4"}
+                                    customPadding={"py-2.5 px-4 max-md:px-2.5 max-md:py-2"}
+                                    className={" !text-sm !bg-transparent"}
                                 />
                             </div>
 
@@ -104,7 +107,7 @@ export const RecentWinnersSection = () => {
                 </div>
 
                 <div
-                    className='flex xl:flex-row flex-col xl:items-center items-start justify-between py-4 px-4 bg-[#ffc586] bg-opacity-10 rounded-2xl gap-4 w-full'>
+                    className='flex md:flex-row flex-col md:items-center items-start justify-between py-4 px-4 bg-[#ffc586] bg-opacity-10 rounded-2xl gap-4 w-full'>
                     <div className='flex flex-row space-x-2 items-center'>
                         <Svgs.TrophyIcon />
                         <img src={IMAGES?.winnerPic} alt="" className='object-contain h-12 w-12' />
@@ -124,14 +127,14 @@ export const RecentWinnersSection = () => {
                     </div>
 
 
-                    <div className=' flex flex-row space-x-3 justify-between xl:w-auto w-full items-center'>
+                    <div className=' flex flex-row space-x-3 justify-between md:w-auto w-full items-center'>
 
                         <div className='flex flex-col items-start justify-center'>
-                            <div className='flex items-center space-x-1 font-poppins lg:text-sm text-xs'>
+                            <div className='flex items-center space-x-1 font-poppins text-sm '>
                                 <p className='font-normal text-gray-4'>Date:</p>
                                 <p className='font-semibold text-gray-1'>24/05/2024</p>
                             </div>
-                            <div className='flex items-center space-x-1 font-poppins lg:text-sm text-xs'>
+                            <div className='flex items-center space-x-1 font-poppins text-sm '>
                                 <p className='font-normal text-gray-4'>Province:</p>
                                 <p className='font-semibold text-gray-1'>Surrey(BC)</p>
                             </div>
@@ -141,10 +144,12 @@ export const RecentWinnersSection = () => {
 
                         <div className='flex flex-col items-center justify-center space-y-1'>
                             <div>
-                                <OutlineButton
+                                <Button
+                                    customTheme={"btn-outline"}
                                     onClick={handleShowPopup}
                                     title={"Send reaction"}
-                                    className={" !text-sm !py-2.5 !px-4"}
+                                    customPadding={"py-2.5 px-4 max-md:px-2.5 max-md:py-2"}
+                                    className={" !text-sm  !bg-transparent"}
                                 />
                             </div>
 

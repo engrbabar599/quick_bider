@@ -61,13 +61,12 @@ export const DropdownSidebar = () => {
     ]
 
     return (
-        <div className='w-full bg-white py-2 xl:hidden'>
+        <div className='w-full bg-white py-2 xl:hidden '>
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
                 className={`!text-custom-blue w-full bg-custom-blue bg-opacity-10 border border-custom-blue focus:ring-1 focus:outline-none focus:ring-custom-blue font-base-2 rounded-xl text-base px-4 py-4 text-center  items-center justify-between inline-flex xl:hidden  `} type="button">
                 <div className='flex flex-row gap-2 items-center text-base '>
-                    {/* {React.cloneElement(dropdownData?.filter(item => location.pathname.includes(item.navigate))[0]?.icon, { color: "#6F9CFF" })} */}
                     {React.cloneElement(
                         dropdownData?.filter(
                             item => location.pathname.includes(item.navigate) ||
@@ -85,7 +84,7 @@ export const DropdownSidebar = () => {
             </button>
 
             {/* <!-- Dropdown menu-- > */}
-            <div id="dropdown" className={`z-10 ${isOpen ? " " : " hidden "} bg-white divide-y divide-gray-100 rounded-lg shadow w-full absolute`}>
+            <div id="dropdown" className={`z-10 ${isOpen ? " " : " hidden "} bg-white w-[95vw]      divide-y divide-gray-100 rounded-lg shadow-[rgba(0,0,0,0.2)] shadow-md  absolute`}>
                 <ul className="py-2 text-base text-gray-4 space-y-2 " aria-labelledby="dropdownDefaultButton">
                     {dropdownData?.map((item, index) => (
                         <li key={index}>

@@ -18,6 +18,7 @@ import BreadCrumb from 'components/BreadCrumb'
 
 export const BidsDetailsPage = () => {
   const { state } = useLocation()
+  console.log(state)
   const [bidRound, setBidRound] = useState(1)
   const [showSuccessPopup, setShowSuccessPopup] = useState({
     show: false,
@@ -139,15 +140,13 @@ export const BidsDetailsPage = () => {
       bid_amount: state?.auctionDetails?.bid_amount,
       auction_participant: "1",
       round_no: "1",
-      // user_score: "120",
-      // user_rank: "12"
     })
   }
 
-
+  console.log(state?.auctionDetails?.from)
 
   return (
-    <DashboardLayout activeSidebar={"Dashboard"}>
+    <DashboardLayout activeSidebar={state?.auctionDetails?.from ? state?.auctionDetails?.from : "Dashboard"}>
       <div className='xl:grid xl:grid-cols-5 flex flex-col gap-8 '>
 
         <div className='lg:col-span-3 flex flex-col gap-6 relative '>
@@ -160,7 +159,7 @@ export const BidsDetailsPage = () => {
 
 
           <BreadCrumb
-            first={"Dashboard"}
+            first={state?.auctionDetails?.from ? state?.auctionDetails?.from : "Dashboard"}
             second={state?.auctionDetails?.title}
           />
 

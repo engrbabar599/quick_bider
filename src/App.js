@@ -27,6 +27,7 @@ import Setting from "pages/DashboardPages/Settings/index";
 import PortfolioPage from "pages/DashboardPages/Investment/Portfolio";
 import AllInvestors from "pages/DashboardPages/Investment/AllInvesters";
 import CompletedInvestmentPage from "pages/DashboardPages/Investment/CompletedInvestmentPage";
+import AllReviewsPage from "pages/DashboardPages/AllReviewsPage";
 
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
@@ -45,12 +46,13 @@ const router = createBrowserRouter([
 
       { path: "/my-bids", element: <MyBids /> },
       { path: "/my-bids/bid-details", element: <BidDetailsSection /> },
+      { path: "/:name/all-reviews", element: <AllReviewsPage /> },
 
       { path: "/investments", element: <Investment /> },
       { path: "/portfolio", element: <PortfolioPage /> },
       { path: "/investments/project-details", element: <ProjectDetails /> },
       { path: "/investments/investment-completed", element: <CompletedInvestmentPage /> },
-      { path: "/investments/all-reviews", element: <Allreviews /> },
+      // { path: "/investments/all-reviews", element: <Allreviews /> },
       { path: "/investments/all-investors", element: <AllInvestors /> },
 
       { path: "/ads", element: <AdsPage /> },

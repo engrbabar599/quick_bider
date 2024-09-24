@@ -113,7 +113,7 @@ function BankCard({ show, onClose, bankDetailsToEdit }) {
     <div>
       {dialog && (
         <div className=" fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ">
-          <div className=" flex items-center justify-center h-[100vh]  md:w-[30vw] w-[90%]">
+          <div className=" flex items-center justify-center h-[100vh] lg:w-[40vw] xl:w-[30vw]  md:w-[50vw] w-[90%]">
             <div ref={popupRef} className=" mx-auto p-8 bg-white rounded-lg shadow-md  w-full py-10 ">
               <div className="flex justify-between "></div>
               <Formik

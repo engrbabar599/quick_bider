@@ -153,7 +153,7 @@ function ProjectDetails() {
                   </div>
                 </div>
 
-                <div className="pt-5 flex flex-col md:flex-row items-start justify-center gap-4 ">
+                <div className="pt-5 flex flex-col md:flex-row md:items-start items-center justify-center gap-4 md:w-[90%] ">
                   <div className="w-full">
                     <Input
                       type={"number"}
@@ -242,15 +242,15 @@ function ProjectDetails() {
                             {data?.first_name} {data?.last_name}
                           </td>
                           <td className="py-2 font-poppins font-light text-[#1E1E1E] lg:text-base uppercase text-sm">
-                            {/* {formatDate(projectDetails?.completed_date_time, {
+                            {formatDate(projectDetails?.completed_date_time, {
                               hour: "2-digit",
                               minute: '2-digit',
                               second: '2-digit',
                               hour12: '2-digit'
-                            })} */}
+                            })}05:30:00 AM
                           </td>
                           <td className="py-2 font-poppins font-light text-[#1E1E1E] lg:text-base uppercase  lg:w-1/5 text-sm">
-                            ${data?.invested_amount}
+                            ${data?.invested_amount}**
                           </td>
                         </tr>
                       ))}

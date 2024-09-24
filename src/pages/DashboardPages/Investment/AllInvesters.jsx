@@ -23,37 +23,65 @@ function AllInvestors() {
           <p className="text-custom-blue font-semibold">All investors</p>
         </div>
       </div>
-      <div className="">
-        <div className="pt-5 lg:grid grid-cols-12">
-          <div className="border rounded-xl p-5  w-full justify-between flex flex-col items-stretch  col-span-7">
-            <div className="grid grid-cols-3 text-[#1E1E1E]">
-              <div className="text-lg font-medium font-poppins">Name</div>
-              <div className="text-lg font-medium font-poppins">Time</div>
-              <div className="text-lg font-medium font-poppins text-end 2xl:text-center">Investment</div>
-              <div className="border-b-2 pt-2 col-span-3"></div>
-            </div>
-            {investment.map((value, i) => {
-              return (
-                <>
-                  <div
-                    key={i}
-                    className="grid grid-cols-3 pt-4 border-b text-[#1E1E1E]"
-                  >
-                    <div><h1 className=" font-normal text-[#686868] font-open-sans text-base underline">{value.first_name} {value?.last_name}</h1></div>
-                    <div><p className="text-base font-light">
-                      {formatDate(value?.completed_date_time, {
+
+      <div className="pt-5">
+
+        <div className=" p-[14px] md:p-[28px] border rounded-[16px] md:w-[75vw] lg:w-[60vw] xl:w-[50vw] w-full">
+
+          <table className="table-fixed w-full  space-y-20 ">
+            <thead className=" w-full   text-[#1E1E1E] ">
+              <tr className=" border-b border-gray-5 text-base">
+                <th className=" pb-2 text-left font-poppins font-medium max-md:text-sm">
+                  Name
+                </th>
+                <th className=" pb-2 text-left  font-poppins font-medium  max-md:text-sm">
+                  Time
+                </th>
+                <th className="pb-2 text-left md:w-1/5 w-[30%]  font-poppins font-medium  max-md:text-sm ">
+                  Investment
+                </th>
+              </tr>
+            </thead>
+
+
+            <tr className="h-[16px]"></tr>
+            <tbody>
+              {false ?
+                Array(8).fill(null)?.map((_, index) => (
+                  <tr key={index} className="border-b border-gray-5">
+                    <td className="py-2">
+                      <Skeleton width={100} />
+                    </td>
+                    <td className="py-2">
+                      <Skeleton width={100} />
+                    </td>
+                    <td className="py-2">
+                      <Skeleton width={75} />
+                    </td>
+                  </tr>
+                ))
+                :
+                investment?.map((data, index) => (
+                  <tr key={index} className="border-b border-gray-5 ">
+                    <td className="py-2 font-open-sans text-[#686868]  max-md:text-sm text-base underline underline-offset-1 decoration-[#686868] decoration-1 ">
+                      {data?.username}
+                    </td>
+                    <td className="py-2 font-poppins font-light  max-md:text-sm text-[#1E1E1E] text-base uppercase">
+                      {formatDate(data?.completed_date_time, {
                         hour: "2-digit",
                         minute: '2-digit',
                         second: '2-digit',
                         hour12: '2-digit'
                       })}
-                    </p></div>
-                    <div><p className="text-base font-light text-center">$**</p></div>
-                  </div>
-                </>
-              );
-            })}
-          </div>
+                    </td>
+                    <td className="py-2 font-poppins font-light  max-md:text-sm text-[#1E1E1E] text-base uppercase  md:w-1/5 w-[30%]  ">
+                      $**
+                    </td>
+                  </tr>
+                ))}
+
+            </tbody>
+          </table>
         </div>
       </div>
     </DashboardLayout>

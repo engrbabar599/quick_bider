@@ -102,42 +102,50 @@ const Investment = () => {
 
         </div>
         :
-        <section className="space-y-4 flex   justify-start flex-col ">
+        <section className="space-y-4 flex  justify-start flex-col ">
           <div className="grid xl:grid-cols-12   md:space-x-6 items-center justify-center  space-y-4 w-full pr-0">
             {
               userProfile?.active_investment ?
-                <div className="flex flex-col justify-between  xl:col-span-8 gap-4  w-full">
-                  <div className="flex flex-row flex-wrap items-center justify-center gap-2.5   ">
-                    {isLoadingProjects ?
-                      Array(3).fill()?.map((_, index) => (
-                        <InvestmentSkeleton key={index} hideInvestment={"md:max-xl:last:hidden"} />
-                      ))
-                      :
-                      projects?.results?.slice(0, 3)?.map((data) => (
-                        <InvestmentCard
-                          id={data?.id}
-                          buttonTitle={"Invest"}
-                          createdBy={data?.createdBy}
-                          display_pic={data?.display_pic}
-                          min_amount={data?.min_amount}
-                          name={data?.name}
-                          investors={data?.investors}
-                          start_date_time={data?.start_date_time}
-                        />
-                      ))}
+                <section
+                  className="bg-white p-6 rounded-lg shadow-sm border xl:col-span-8">
+                  <h2 className="md:text-xl font-medium mb-4 text-wrap font-poppins xs:text-center md:text-start">
+                    Get Started with Confidence
+                  </h2>
+                  <p className="text-gray-600 mb-4 text-xs md:text-sm font-normal text-wrap text-justify md:text-start">
+                    Explore upcoming projects, track your portfolio performance, and monitor your returns—all from one place. Need guidance? We’ve got you covered. Our comprehensive Investment Guides offer expert tips and insights to help you navigate the world of investing, no matter your experience level.
+                  </p>
+                  <div className="bg-custom-blue bg-opacity-10 px-4 py-6 border rounded-xl mb-4 flex  lg:flex-row flex-col justify-center items-center gap-4 w-full ">
+                    <div className="items-center flex flex-col justify-center">
+                      <span className="text-center  md:text-xl font-medium text-gray-2 ">
+                        Your investment service is activated
+                      </span>
+                      <span className="text-center w-full md:text-xl font-medium text-gray-2 ">
+                        start exploring opportunities and grow your wealth today!
+                      </span>
+                    </div>
 
                   </div>
-                  <div className="flex items-center justify-center ">
-                    <Button
-                      customTheme={"btn-outline"}
-                      customWidth={"min-w-max"}
-                      title={"View all"}
-                    >
-                      View all
-                    </Button>
-                  </div>
 
-                </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                    <div className="bg-white p-4 rounded-lg shadow-md">
+                      <p className=" text-sm font-normal text-gray-2">Total investment</p>
+                      <h3 className="text-2xl font-semibold">${projectStat?.total_investment} </h3>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-md">
+                      <p className=" text-sm font-normal text-gray-2">ROI</p>
+                      <h3 className="text-2xl font-semibold text-green-500">{projectStat?.avg_return}%</h3>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-md">
+                      <p className=" text-sm font-normal text-gray-2">Total projects</p>
+                      <h3 className="text-2xl font-semibold">224</h3>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-md">
+                      <p className=" text-sm font-normal text-gray-2">Total investors</p>
+                      <h3 className="text-2xl font-semibold">11K</h3>
+                    </div>
+                  </div>
+                </section>
                 :
                 <section
                   className="bg-white p-6 rounded-lg shadow-sm border xl:col-span-8">
@@ -192,7 +200,7 @@ const Investment = () => {
             }
 
 
-            <div className="w-full xl:col-span-4 ">
+            <div className=" xl:col-span-4 max-xl:w-[90vw]">
               <BalanceSection />
             </div>
           </div>
@@ -215,18 +223,18 @@ const Investment = () => {
               </div>
 
               <div className="pt-5">
-                <div className="p-[28px] border rounded-[16px] ">
+                <div className=" p-[14px] md:p-[28px] border rounded-[16px] ">
 
                   <table className="table-fixed w-full space-y-20 ">
                     <thead className=" w-full   text-[#1E1E1E] ">
                       <tr className=" border-b border-gray-5 text-base">
-                        <th className=" pb-2 text-left font-poppins font-medium">
+                        <th className=" pb-2 text-left font-poppins font-medium max-md:text-sm">
                           Name
                         </th>
-                        <th className=" pb-2 text-left  font-poppins font-medium">
+                        <th className=" pb-2 text-left  font-poppins font-medium  max-md:text-sm">
                           Time
                         </th>
-                        <th className="pb-2 text-left w-1/5  font-poppins font-medium ">
+                        <th className="pb-2 text-right md:w-1/5 w-[30%] font-poppins font-medium  max-md:text-sm ">
                           Investment
                         </th>
                       </tr>
@@ -252,10 +260,10 @@ const Investment = () => {
                         :
                         allInvestors?.slice(0, 8)?.map((data, index) => (
                           <tr key={index} className="border-b border-gray-5 ">
-                            <td className="py-2 font-open-sans text-[#686868] text-base underline underline-offset-1 decoration-[#686868] decoration-1 ">
+                            <td className="py-2 font-open-sans text-[#686868]  max-md:text-sm text-base underline underline-offset-1 decoration-[#686868] decoration-1 ">
                               {data?.username}
                             </td>
-                            <td className="py-2 font-poppins font-light text-[#1E1E1E] text-base uppercase">
+                            <td className="py-2 font-poppins font-light  max-md:text-sm text-[#1E1E1E] text-base uppercase">
                               {formatDate(data?.completed_date_time, {
                                 hour: "2-digit",
                                 minute: '2-digit',
@@ -263,7 +271,7 @@ const Investment = () => {
                                 hour12: '2-digit'
                               })}
                             </td>
-                            <td className="py-2 font-poppins font-light text-[#1E1E1E] text-base uppercase  w-1/5">
+                            <td className="py-2 font-poppins font-light  max-md:text-sm text-[#1E1E1E] text-base uppercase  md:w-1/5 w-[30%]">
                               $**
                             </td>
                           </tr>

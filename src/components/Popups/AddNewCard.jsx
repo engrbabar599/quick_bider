@@ -13,7 +13,7 @@ import Popup from "components/Popup";
 
 function AddNewCard({ show, onClose, cardDetailsToEdit }) {
   const popupRef = useRef();
-  const isEditable = Object.entries(cardDetailsToEdit).length > 0 ? true : false
+  const isEditable = cardDetailsToEdit ? Object.entries(cardDetailsToEdit).length > 0 && true : false
   console.log(cardDetailsToEdit)
   const [dialog, setDialog] = useState(true);
   const [openSuccessModal, setOpenSuccessModal] = useState(false)

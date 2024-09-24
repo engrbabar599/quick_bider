@@ -186,8 +186,8 @@ function MyBids() {
 
                             <Button
                               onClick={() => {
-                                if (activeTab === "active") {
-                                  // navigate(`/my-bids/bid-details`, { state: { auctionDetails: { ...data, from: "Auction" } } })
+                                if (statusFilter === "active") {
+                                  navigate(`/my-bids/bid-details`, { state: { auctionDetails: { ...data, from: "Auction" } } })
                                   // navigate("/my-bids/bid-details")
                                 }
                                 else {
@@ -270,9 +270,9 @@ function MyBids() {
                         <div className="">
                           <Button
                             onClick={() => {
-                              if (activeTab === "active") {
+                              if (statusFilter === "active") {
                                 // navigate(`/my-bids/bid-details`, { state: { auctionDetails: { ...data, from: "Auction" } } })
-                                // navigate("/my-bids/bid-details")
+                                navigate("/my-bids/bid-details")
                               }
                               else {
                                 navigate("/dashboard/results")

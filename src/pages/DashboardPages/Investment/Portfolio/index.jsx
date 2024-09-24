@@ -115,9 +115,9 @@ function PortfolioPage() {
                             <h2 className="text-base md:text-lg font-medium text-[#737373] font-lato min-w-max">
                                 My Investments
                             </h2>
-                            <p className="lg:text-5xl text-2xl font-semibold font-lato py-3">
+                            <p className=" md:text-[48px] text-2xl font-semibold font-lato py-3">
                                 ${userInvestments?.my_investments || 0}
-                                <span className="hidden md:inline text-3xl text-green-500 font-lato">
+                                <span className="hidden md:inline text-[36px] text-[#3EB14A] font-lato">
                                     (+21%)
                                 </span>
                             </p>
@@ -128,24 +128,24 @@ function PortfolioPage() {
                     </div>
 
 
-                    <div className="md:pt-14 pt-[28px]">
-                        <div className=" flex flex-row  justify-between p-4 md:border border-gray-5 rounded-xl">
-                            <div className="flex flex-col  items-start justify-center gap-[12px] md:min-w-[150px] xl:min-w-[191px] ">
+                    <div className="md:pt-14 pt-[28px] ">
+                        <div className=" flex flex-row  justify-between md:p-4 md:border border-gray-5 rounded-xl">
+                            <div className="flex flex-col  items-start justify-center gap-[6px] md:gap-[12px] md:min-w-[150px] xl:min-w-[191px] ">
                                 <p className="text-[#737373] md:text-lg text-xs font-normal font-lato ">Total Returns</p>
                                 <p className="md:text-[32px] text-base font-bold font-lato text-[#66C87B]">
                                     ${userInvestments?.total_return || 0}
                                 </p>
-                                <p className="text-[#66C87B] text-xs font-lato font-normal">↑ 21%</p>
+                                <p className="text-[#66C87B] text-xs font-lato font-medium">↑ 21%</p>
                             </div>
 
                             <div className="border border-black border-opacity-[0.12] "></div>
 
-                            <div className="flex flex-col items-end justify-center  md:min-w-[150px] xl:min-w-[191px] gap-[12px] ">
+                            <div className="flex flex-col items-end justify-center  md:min-w-[150px] xl:min-w-[191px] gap-[6px] md:gap-[12px] ">
                                 <p className="text-[#737373] md:text-lg text-xs font-normal font-lato text-right">My balance</p>
                                 <p className="md:text-[32px]  text-base   font-bold font-lato text-[#66C87B]">
                                     ${walletDetails?.balance || 0}
                                 </p>
-                                <p className="text-[#66C87B] text-xs font-lato font-normal text-right">
+                                <p className="text-[#66C87B] text-xs font-lato font-medium text-right">
                                     ↑ 21%
                                 </p>
                             </div>
@@ -208,16 +208,15 @@ function PortfolioPage() {
                                     <InvestmentSkeleton key={index} />
                                 ))
                                 :
-                                userInvestments?.investments?.results?.length > 0 ?
-
-                                    userInvestments?.investments?.results?.map((data) =>
+                                investmentProjects?.results?.length > 0 ?
+                                    investmentProjects?.results?.map((data) =>
                                         <>
-                                            <InvestmentProjectCard data={data} />
+                                            <InvestmentProjectCard data={{ ...data, status: statusFilter == "True" ? "active" : "completed" }} />
                                         </>
                                     )
                                     :
-                                    <div className='flex items-center justify-center w-[50vw] capitalize text-2xl font-semibold h-[30vh]'>
-                                        No {statusFilter} investments
+                                    <div className='flex items-center justify-center w-[60vw] capitalize text-2xl font-semibold h-[30vh]'>
+                                        No {statusFilter == "True" ? "Active" : "Completed"} investments
                                     </div>
 
                             }

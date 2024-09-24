@@ -57,7 +57,7 @@ export const MyBidsSection = () => {
                                     @invest.audi
                                 </p>
                             </div>
-                            <div>
+                            <div className='hidden'>
                                 <Button
                                     customTheme={'btn-outline'}
                                     onClick={() => { navigate("/my-bids/bid-details") }}
@@ -73,7 +73,7 @@ export const MyBidsSection = () => {
                         </p>
 
                         <div
-                            className='flex flex-row flex-wrap w-full items-center  gap-0  bg-[#F5F5F5] p-[12px] rounded-xl  gap-y-5 justify-between   '
+                            className='flex flex-row flex-wrap w-full items-center   gap-0  bg-[#F5F5F5] p-[12px] rounded-xl  gap-y-5 justify-between   '
                         >
                             <div className='flex flex-col items-center justify-between  xl:w-[33%] lg:w-[40%] md:w-[33%] w-[45%]  '>
                                 <h5 className='text-custom-blue text-lg font-semibold'>
@@ -95,7 +95,7 @@ export const MyBidsSection = () => {
                             </div>
                             <div className=' h-[54px] w-[0.5px] bg-[#BDBDBD] lg:max-xl:hidden  block max-md:hidden'></div>
 
-                            <div className=' flex-col items-center justify-between gap-3  md:w-[33%] flex xl:w-[33%] w-[40%] lg:w-full'>
+                            <div className=' flex-col items-center justify-center gap-3  md:w-[33%] flex xl:w-[33%] w-full lg:w-full'>
                                 <h5 className='text-gray-1 text-lg font-semibold'>
                                     25/05/2024
                                 </h5>

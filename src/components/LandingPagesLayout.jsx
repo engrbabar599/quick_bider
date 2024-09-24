@@ -1,26 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import 'tailwindcss/tailwind.css'; // Import Tailwind CSS
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import quickBidLogo from "../assets/images/quickbider logo png 2.png";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useLoginContext } from "../context/LoginContext";
 import banner from "../assets/images/White and Black Modern Need Car Rent Banner (1) 1.png";
-import facebook from "../assets/images/facebook.png";
-import tiktok from "../assets/images/tiktok.png";
-import youtube from "../assets/images/youtube.png";
-import twitter from "../assets/images/twitter.png";
-import baseImage from "../assets/images/Wave.png"
-import { OutlineButton } from "./OutlineButton";
-import { Button } from "./Button";
 import { HomeNavbar } from "./LandingPages/HomeNavbar";
 import Svgs from "assets/svgs";
 
 
 export const LandingPageLayout = ({ children }) => {
-    const navigate = useNavigate();
-    const [openDropdown, setOpenDropdown] = useState(false)
     const { isLoggedIn, setIsLoggedIn } = useLoginContext()
 
     const handleScrollToTop = () => {

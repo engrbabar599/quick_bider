@@ -105,7 +105,7 @@ function CompletedInvestmentPage() {
           />
 
 
-          <div className="upsidebox border bg-[#F1F5ff] rounded-xl py-6 px-3 md:px-10">
+          <div className="upsidebox border bg-[#F1F5ff] rounded-xl py-6 mt-4 px-3 md:px-10">
             <div className="flex justify-center items-center gap-1">
               <img src={partyImage} alt="" />
               <h1 className=" md:text-xl font-medium font-poppins">Congratulations</h1>
@@ -148,13 +148,13 @@ function CompletedInvestmentPage() {
                 </div>
                 <div>
                   <h1 className="md:text-2xl lato font-semibold capitalize">{projectDetails?.name}</h1>
-                  <p className="xs:text-xs md:text-base font-medium lato text-gray-1">
+                  <p className="text-xs md:text-base font-medium lato text-gray-1">
                     {projectDetails?.created_by}
                   </p>
                 </div>
               </div>
               <div className="py-6">
-                <p className="font-noraml font-poppins xs:text-xs md:text-base text-gray-2">
+                <p className="font-noraml font-poppins text-sm md:text-base text-gray-2">
                   {projectDetails?.detail}
                 </p>
               </div>
@@ -169,14 +169,14 @@ function CompletedInvestmentPage() {
                     </h1>
                   </div>
                   <div className="flex gap-1">
-                    <h1 className="text-xs md:text-sm font-poppins font-normal text-gray-4">Minimum Investment:</h1>
+                    <h1 className="text-xs md:text-sm font-poppins font-normal text-gray-4">Invested amount:</h1>
                     <h1 className="text-[#6F9CFF] font-poppins text-xs md:text-sm font-semibold">${projectDetails?.min_amount}</h1>
                   </div>
                 </div>
                 <div className="flex justify-between pt-3">
                   <div className="flex gap-1">
-                    <h1 className=" text-sm font-poppins font-normal text-gray-4">Time:</h1>
-                    <h1 className=" text-gray-1 font-poppins text-sm font-semibold uppercase">
+                    <h1 className=" text-xs font-poppins font-normal text-gray-4">Time:</h1>
+                    <h1 className=" text-gray-1 font-poppins text-xs font-semibold uppercase">
                       {formatDate(projectDetails?.created_at, {
                         hour: '2-digit',
                         minute: '2-digit',
@@ -185,10 +185,10 @@ function CompletedInvestmentPage() {
                     </h1>
                   </div>
                   <div className="flex gap-1">
-                    <h1 className=" text-sm font-poppins font-normal text-gray-4">
-                      Return on investment:
+                    <h1 className=" text-xs font-poppins font-normal text-gray-4">
+                      ROI:
                     </h1>
-                    <h1 className="text-[#3EB14A] font-poppins text-sm font-semibold">
+                    <h1 className="text-[#3EB14A] font-poppins text-xs font-semibold">
                       21%
                     </h1>
                   </div>
@@ -218,9 +218,9 @@ function CompletedInvestmentPage() {
           </div>
         </div>
 
-        <div className="rightside lg:col-span-5 xs:col-span-12 space-y-6">
+        <div className="rightside lg:col-span-5 col-span-12 space-y-6">
           <section className=" ">
-            <div className=" flex justify-between items-center gap-4">
+            <div className=" flex justify-between items-center gap-4 w-full">
               <div className=" min-w-max">
                 <h1 className="lg:text-2xl text-base font-semibold font-poppins text-gray-1">All Investers</h1>
               </div>
@@ -233,56 +233,65 @@ function CompletedInvestmentPage() {
             </div>
 
             <div className="pt-5">
-              <div className="p-[14px] lg:p-[28px] border rounded-[16px] w-full">
+              <div className="p-[14px] lg:p-[28px] border rounded-[16px] w-full max-sm:w-[90vw]">
+                {projectDetails?.investors?.length > 0 ?
+                  <>
+                    <table className="table-fixed w-full space-y-20 ">
+                      <thead className=" w-full   text-[#1E1E1E] ">
+                        <tr className=" border-b border-gray-5 text-base">
+                          <th className=" pb-2 text-left font-poppins font-medium">
+                            Name
+                          </th>
+                          <th className=" pb-2 text-left  font-poppins font-medium">
+                            Time
+                          </th>
+                          <th className="pb-2 text-left text-base lg:w-1/5  font-poppins font-medium ">
+                            Investment
+                          </th>
+                        </tr>
+                      </thead>
 
-                <table className="table-fixed w-full space-y-20 ">
-                  <thead className=" w-full   text-[#1E1E1E] ">
-                    <tr className=" border-b border-gray-5 text-base">
-                      <th className=" pb-2 text-left font-poppins font-medium">
-                        Name
-                      </th>
-                      <th className=" pb-2 text-left  font-poppins font-medium">
-                        Time
-                      </th>
-                      <th className="pb-2 text-left text-base lg:w-1/5  font-poppins font-medium ">
-                        Investment
-                      </th>
-                    </tr>
-                  </thead>
 
+                      <tr className="h-[16px]"></tr>
+                      <tbody>
 
-                  <tr className="h-[16px]"></tr>
-                  <tbody>
-
-                    {projectDetails?.investors?.slice(0, 8)?.map((data, index) => (
-                      <tr key={index} className="border-b border-gray-5 ">
-                        <td className="py-2 font-open-sans text-[#686868] lg:text-base text-sm underline underline-offset-1 decoration-[#686868] decoration-1  capitalize">
-                          {data?.first_name} {data?.last_name}
-                        </td>
-                        <td className="py-2 font-poppins font-light text-[#1E1E1E] lg:text-base uppercase text-sm">
-                          {/* {formatDate(projectDetails?.completed_date_time, {
+                        {projectDetails?.investors?.slice(0, 8)?.map((data, index) => (
+                          <tr key={index} className="border-b border-gray-5 ">
+                            <td className="py-2 font-open-sans text-[#686868] lg:text-base text-sm underline underline-offset-1 decoration-[#686868] decoration-1  capitalize">
+                              {data?.first_name} {data?.last_name}
+                            </td>
+                            <td className="py-2 font-poppins font-light text-[#1E1E1E] lg:text-base uppercase text-sm">
+                              {/* {formatDate(projectDetails?.completed_date_time, {
                               hour: "2-digit",
                               minute: '2-digit',
                               second: '2-digit',
                               hour12: '2-digit'
                             })} */}
-                        </td>
-                        <td className="py-2 font-poppins font-light text-[#1E1E1E] lg:text-base uppercase  lg:w-1/5 text-sm">
-                          ${data?.invested_amount}
-                        </td>
-                      </tr>
-                    ))}
+                            </td>
+                            <td className="py-2 font-poppins font-light text-[#1E1E1E] lg:text-base uppercase  lg:w-1/5 text-sm">
+                              ${data?.invested_amount}
+                            </td>
+                          </tr>
+                        ))}
 
-                  </tbody>
-                </table>
-                <div className="flex items-center justify-center pt-5">
-                  <Button
-                    customWidth={"min-w-max"}
-                    customPadding={"px-[12px] py-[8px]"}
-                    customTheme={"btn-outline"}
-                    title={"View all"}
-                  />
-                </div>
+                      </tbody>
+                    </table>
+                    <div className="flex items-center justify-center pt-5">
+                      <Button
+                        customWidth={"min-w-max"}
+                        customPadding={"px-[12px] py-[8px]"}
+                        customTheme={"btn-outline"}
+                        title={"View all"}
+                      />
+                    </div>
+                  </>
+
+                  :
+
+                  <div className="flex items-center w-full min-w-max justify-center min-h-[30vh] font-poppins font-semibold text-xl">
+                    No Investors Yet!
+                  </div>
+                }
               </div>
 
 

@@ -6,6 +6,7 @@ import filledstar from "assets/images/filledstars.png"
 import { useState } from "react";
 import { DashboardLayout } from "components/Layout";
 import { useGetUserReview } from "api/AuctionManagement";
+import Svgs from "assets/svgs";
 
 function Allreviews() {
   const review = [
@@ -68,7 +69,7 @@ function Allreviews() {
         </svg>
         <div className="flex flex-row">
           <p onClick={() => navigate(-1)} className=" text-black">
-            Ford mustang/
+            Investments/
           </p>
           <p className="text-custom-blue">All reviews</p>
         </div>
@@ -77,10 +78,10 @@ function Allreviews() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 my-4">
           {activeReview === "review" && (
             <>
-              {userReviews?.map((value, i) => {
+              {userReviews?.results?.map((value, i) => {
                 return (
                   <>
-                    <div className="border p-3 rounded-xl shadow">
+                    {/* <div className="border p-3 rounded-xl shadow">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4">
                           <div className="icon">
@@ -107,6 +108,51 @@ function Allreviews() {
                           about investing, wink wink youtube gurus. I
                           recommend this book to anyone trying to understand
                           the stock market before investing.
+                        </p>
+                      </div>
+                    </div> */}
+                    <div
+                      key={i}
+                      className="border p-3 md:p-4 rounded-xl  my-0">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3 ">
+                          {value?.display_pic
+                            ?
+                            <img
+                              src={value?.display_pic}
+                              alt="Profile Pic"
+                              className='aspect-square 
+                                                        h-[32px] w-[32px]
+                                            md:h-[49px] md:w-[49px] bg-white border rounded-xl object-cover' />
+                            :
+                            <div
+                              className='h-[32px] w-[32px]
+                                            md:h-[49px] md:w-[49px] rounded-full bg-custom-blue text-white  text-xs md:text-base text-center flex items-center justify-center '>
+                              {value?.user?.first_name[0]}
+                              {value?.user?.last_name[0]}
+                            </div>
+                          }
+
+                          <div>
+                            <h1 className="md:text-xl text-base font-semibold font-poppins capitalize text-[#414042] whitespace-nowrap  max-w-[200px] overflow-hidden truncate">
+                              {value?.user?.first_name} {value?.user?.last_name}
+                            </h1>
+                            <p className=" text-sm  md:text-base font-normal font-poppins text-[#7A7A7A]">
+                              {value?.investment_project != null ? "Investor" : "Bidder"}
+                            </p>
+                          </div>
+                        </div>
+                        <div
+                          className="flex flex-row items-center justify-center gap-[7px]">
+                          {Array(5).fill()?.map((_, index) => (
+                            <Svgs.ReviewStarIcon color={value?.rating >= index + 1 ? "#FFB543" : "#C5C5C5"} />
+                          ))}
+                        </div>
+                      </div>
+                      <div className="pt-4">
+                        <p
+                          className=" text-sm font-normal font-poppins text-gray-4">
+                          {value?.text}
                         </p>
                       </div>
                     </div>

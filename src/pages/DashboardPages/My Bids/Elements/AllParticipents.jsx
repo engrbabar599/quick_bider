@@ -40,7 +40,7 @@ export const AllParticipents = () => {
                     return (
                         <>
                             <div
-                                className='flex xl:flex-row flex-col xl:items-center items-start justify-between py-4 px-4 shadow-sm border bg-opacity-10 rounded-2xl gap-4 w-full'>
+                                className='flex md:flex-row bg-red-50 flex-col md:items-center items-start justify-between py-4 px-4 shadow-sm border bg-opacity-10 rounded-2xl gap-4 w-full'>
                                 <div className='flex flex-row space-x-3 items-center'>
                                     <p className=' text-[#33333359] font-poppins font-medium'>{value.id}</p>
                                     <div className='flex flex-row gap-4'>
@@ -64,14 +64,14 @@ export const AllParticipents = () => {
                                 </div>
 
 
-                                <div className=' flex flex-row space-x-3 justify-between xl:w-auto w-full items-center'>
+                                <div className=' flex flex-row space-x-3 justify-between md:w-auto w-full items-center'>
 
                                     <div className='flex flex-col items-start justify-center'>
-                                        <div className='flex items-center space-x-1 font-poppins lg:text-sm text-xs'>
+                                        <div className='flex items-center space-x-1 font-poppins lg:text-sm text-sm'>
                                             <p className='font-normal text-gray-4'>Date:</p>
                                             <p className='font-semibold text-gray-1'>24/05/2024</p>
                                         </div>
-                                        <div className='flex items-center space-x-1 font-poppins lg:text-sm text-xs'>
+                                        <div className='flex items-center space-x-1 font-poppins lg:text-sm text-sm'>
                                             <p className='font-normal text-gray-4'>Province:</p>
                                             <p className='font-semibold text-gray-1'>Surrey(BC)</p>
                                         </div>

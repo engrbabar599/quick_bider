@@ -29,10 +29,10 @@ export const AuctionPage = () => {
                             :
                             auctionData?.results?.map((data) => (
                                 <div
-                                    onClick={() => { navigate(`/dashboard/bids`, { state: { auctionDetails: data } }) }}
+                                    onClick={() => { navigate(`/dashboard/bids`, { state: { auctionDetails: { ...data, from: "Auction" } } }) }}
                                     className={`bg-white border shadow-sm  rounded-xl group lg:hover:scale-105 duration-300 transform ease-in cursor-pointer w-full h-full md:max-w-[310px] max-w-[300px] lg:max-w-[300px] xl:max-w-[250px] `}>
                                     <div className='space-y-4 p-4 relative '>
-                                        <img src={data?.thumbnail_image} alt="" className=' w-full  min-h-[150px] object-contain h-full !rounded-lg bg-gray-200  ' />
+                                        <img src={data?.thumbnail_image} alt="" className=' w-full h-[140px] lg:max-h-[180px] xs:max-lg:h-[180px] max-lg:h-[160px] max-xl:h-[170px] object-fill !rounded-lg bg-gray-200  ' />
                                         <div className=''>
                                             <CountDownTimer timeStamp={data?.bid_date_time} />
                                         </div>
@@ -60,6 +60,8 @@ export const AuctionPage = () => {
                                             <div>
 
                                                 <button
+                                                    onClick={() => { navigate(`/dashboard/bids`, { state: { auctionDetails: { ...data, from: "Auction" } } }) }}
+
                                                     className={"p-2  bg-custom-blue text-white border  text-xs lg:text-sm rounded-xl outline-none"}
                                                 >
                                                     Place a Bid

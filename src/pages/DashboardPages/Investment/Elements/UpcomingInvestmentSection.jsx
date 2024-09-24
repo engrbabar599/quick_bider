@@ -5,7 +5,7 @@ import InvestmentProjectCard from "./InvestmentProjectCard";
 import { InvestmentSkeleton } from "components/Skeleton/InvestmentSkeleton";
 import InvestmentCard from "components/Elements/InvestmentCard";
 
-function UpcomingInvestmentSection({ hadding, padding, activeInvestmentRef }) {
+function UpcomingInvestmentSection({ hadding, padding }) {
   const { data: investmentProjects, isLoading: isLoadingInvestments } = useGetInvestmentProject()
 
   return (
@@ -28,7 +28,6 @@ function UpcomingInvestmentSection({ hadding, padding, activeInvestmentRef }) {
               :
               investmentProjects?.results?.slice(0, 4)?.map((data, index) =>
                 <>
-                  {console.log(data)}
                   <InvestmentCard
                     buttonTitle={"Invest"}
                     display_pic={data?.display_pic}
